@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using SharpGLTF.Geometry;
 using SharpGLTF.Geometry.VertexTypes;
@@ -8,87 +9,178 @@ using VERTEX = SharpGLTF.Geometry.VertexTypes.VertexPositionNormal;
 namespace AbatementTrainer.Tools;
 
 /// <summary>
-/// 生成一个用于演示/测试的 GLB:若干带名字的彩色盒子,
-/// 节点名与示例清单的 part.node 对应,方便端到端跑通。
+/// 生成用于演示/测试的 GLB:用圆柱(容器/滤芯/送风机)+ 管线(成段圆管)等
+/// 更接近真实设备的几何,节点名与示例清单的 part.node 对应,可端到端跑通。
+/// 材质采用 glTF PBR(金属/粗糙度),导入后 Helix 映射为 PBRMaterial。
 /// </summary>
 public static class SampleModelBuilder
 {
-    private record BoxSpec(string Node, Vector3 Center, Vector3 Size, Vector4 Color);
+    // 一个命名部件 = 一个 MeshBuilder(可由多段几何累加,如管线由多段圆管组成)
+    private sealed class Part
+    {
+        public required string Node;
+        public required Vector3 Center;
+        public required MeshBuilder<VERTEX> Mesh;
+    }
 
-    /// <summary>写出与示例清单 abatement-unit-A 匹配的演示 GLB。</summary>
+    private static MaterialBuilder Pbr(string name, float r, float g, float b, float metallic, float rough)
+        => new MaterialBuilder(name)
+            .WithDoubleSide(false)
+            .WithMetallicRoughnessShader()
+            .WithBaseColor(new Vector4(r, g, b, 1))
+            .WithMetallicRoughness(metallic, rough);
+
+    /// <summary>除害装置 A 型:立式圆筒容器 + 前面板 + 滤芯 + 送风机 + 进出口管线。</summary>
     public static void WriteUnitA(string path)
     {
-        var boxes = new[]
-        {
-            new BoxSpec("housing",      new Vector3(0, 0, 0),     new Vector3(1.2f, 1.6f, 0.8f), new Vector4(0.6f, 0.6f, 0.65f, 1)),
-            new BoxSpec("front_panel",  new Vector3(0, 0, 0.42f), new Vector3(1.1f, 1.5f, 0.05f), new Vector4(0.3f, 0.5f, 0.8f, 1)),
-            new BoxSpec("filter",       new Vector3(0, 0.2f, 0),  new Vector3(0.7f, 0.7f, 0.5f), new Vector4(0.85f, 0.75f, 0.3f, 1)),
-            new BoxSpec("blower",       new Vector3(0, -0.55f, 0),new Vector3(0.6f, 0.4f, 0.5f), new Vector4(0.4f, 0.7f, 0.45f, 1)),
-        };
+        var parts = new System.Collections.Generic.List<Part>();
 
-        WriteBoxes(path, boxes);
+        // 主体外壳:立式圆筒容器(金属)
+        var housing = NewMesh();
+        AddCylinder(housing, Pbr("housing", 0.62f, 0.64f, 0.68f, 0.7f, 0.35f),
+            Vector3.Zero, radius: 0.6f, halfLen: 0.8f, axis: 1);
+        AddCylinder(housing, Pbr("housing_top", 0.62f, 0.64f, 0.68f, 0.7f, 0.35f),
+            new Vector3(0, 0.8f, 0), radius: 0.62f, halfLen: 0.06f, axis: 1);
+        parts.Add(new Part { Node = "housing", Center = Vector3.Zero, Mesh = housing });
+
+        // 前面板:略带弧度的金属板(用扁圆柱近似)
+        var panel = NewMesh();
+        AddBox(panel, Pbr("front_panel", 0.30f, 0.50f, 0.80f, 0.3f, 0.5f),
+            Vector3.Zero, new Vector3(0.9f, 1.2f, 0.06f));
+        parts.Add(new Part { Node = "front_panel", Center = new Vector3(0, 0, 0.58f), Mesh = panel });
+
+        // 滤芯:圆柱(陶瓷/塑料,低金属)
+        var filter = NewMesh();
+        AddCylinder(filter, Pbr("filter", 0.85f, 0.75f, 0.30f, 0.1f, 0.6f),
+            Vector3.Zero, radius: 0.34f, halfLen: 0.30f, axis: 1);
+        parts.Add(new Part { Node = "filter", Center = new Vector3(0, 0.2f, 0), Mesh = filter });
+
+        // 送风机:横置电机圆柱(金属)
+        var blower = NewMesh();
+        AddCylinder(blower, Pbr("blower", 0.40f, 0.70f, 0.45f, 0.6f, 0.45f),
+            Vector3.Zero, radius: 0.28f, halfLen: 0.30f, axis: 2);
+        parts.Add(new Part { Node = "blower", Center = new Vector3(0, -0.55f, 0.35f), Mesh = blower });
+
+        // 管线:进口竖管 + 顶部横管 + 出口管(多段圆管累加成一个部件)
+        var pipe = NewMesh();
+        var pipeMat = Pbr("piping", 0.75f, 0.78f, 0.82f, 0.95f, 0.30f);
+        AddCylinder(pipe, pipeMat, new Vector3(0.65f, 0.30f, 0), radius: 0.08f, halfLen: 0.55f, axis: 1); // 进口竖管
+        AddCylinder(pipe, pipeMat, new Vector3(0.35f, 0.86f, 0), radius: 0.08f, halfLen: 0.35f, axis: 0); // 顶部横管(接入容器顶)
+        AddCylinder(pipe, pipeMat, new Vector3(0, -0.10f, 0.75f), radius: 0.08f, halfLen: 0.30f, axis: 2); // 出口管
+        AddCylinder(pipe, pipeMat, new Vector3(0.65f, 0.86f, 0), radius: 0.11f, halfLen: 0.10f, axis: 1); // 弯头处法兰
+        parts.Add(new Part { Node = "piping", Center = Vector3.Zero, Mesh = pipe });
+
+        WriteParts(path, parts);
     }
 
-    /// <summary>写出与示例清单 abatement-unit-B 匹配的演示 GLB(立式塔结构)。</summary>
+    /// <summary>除害装置 B 型:立式塔(圆筒)+ 底座 + 顶盖 + 洗涤塔 + 排液阀。</summary>
     public static void WriteUnitB(string path)
     {
-        var boxes = new[]
-        {
-            new BoxSpec("base",         new Vector3(0, -0.9f, 0), new Vector3(1.0f, 0.3f, 1.0f), new Vector4(0.55f, 0.55f, 0.6f, 1)),
-            new BoxSpec("tower",        new Vector3(0, 0.1f, 0),  new Vector3(0.6f, 1.6f, 0.6f), new Vector4(0.5f, 0.6f, 0.7f, 1)),
-            new BoxSpec("top_cover",    new Vector3(0, 0.95f, 0), new Vector3(0.7f, 0.12f, 0.7f), new Vector4(0.3f, 0.5f, 0.8f, 1)),
-            new BoxSpec("scrubber",     new Vector3(0.5f, 0.2f, 0), new Vector3(0.4f, 0.9f, 0.4f), new Vector4(0.85f, 0.6f, 0.3f, 1)),
-            new BoxSpec("drain_valve",  new Vector3(0, -0.65f, 0.45f), new Vector3(0.2f, 0.2f, 0.2f), new Vector4(0.8f, 0.3f, 0.3f, 1)),
-        };
-        WriteBoxes(path, boxes);
+        var parts = new System.Collections.Generic.List<Part>();
+
+        var baseMesh = NewMesh();
+        AddCylinder(baseMesh, Pbr("base", 0.55f, 0.55f, 0.60f, 0.6f, 0.5f),
+            Vector3.Zero, radius: 0.7f, halfLen: 0.15f, axis: 1);
+        parts.Add(new Part { Node = "base", Center = new Vector3(0, -0.9f, 0), Mesh = baseMesh });
+
+        var tower = NewMesh();
+        AddCylinder(tower, Pbr("tower", 0.50f, 0.60f, 0.70f, 0.7f, 0.35f),
+            Vector3.Zero, radius: 0.4f, halfLen: 0.85f, axis: 1);
+        parts.Add(new Part { Node = "tower", Center = new Vector3(0, 0.1f, 0), Mesh = tower });
+
+        var topCover = NewMesh();
+        AddCylinder(topCover, Pbr("top_cover", 0.30f, 0.50f, 0.80f, 0.4f, 0.4f),
+            Vector3.Zero, radius: 0.45f, halfLen: 0.07f, axis: 1);
+        parts.Add(new Part { Node = "top_cover", Center = new Vector3(0, 0.98f, 0), Mesh = topCover });
+
+        var scrubber = NewMesh();
+        AddCylinder(scrubber, Pbr("scrubber", 0.85f, 0.60f, 0.30f, 0.4f, 0.5f),
+            Vector3.Zero, radius: 0.22f, halfLen: 0.45f, axis: 1);
+        // 洗涤塔进液管
+        AddCylinder(scrubber, Pbr("scrubber_pipe", 0.75f, 0.78f, 0.82f, 0.95f, 0.3f),
+            new Vector3(-0.3f, 0.2f, 0), radius: 0.06f, halfLen: 0.25f, axis: 0);
+        parts.Add(new Part { Node = "scrubber", Center = new Vector3(0.5f, 0.2f, 0), Mesh = scrubber });
+
+        var valve = NewMesh();
+        AddCylinder(valve, Pbr("drain_valve", 0.80f, 0.30f, 0.30f, 0.9f, 0.3f),
+            Vector3.Zero, radius: 0.10f, halfLen: 0.12f, axis: 2);
+        parts.Add(new Part { Node = "drain_valve", Center = new Vector3(0, -0.65f, 0.45f), Mesh = valve });
+
+        WriteParts(path, parts);
     }
 
-    private static void WriteBoxes(string path, BoxSpec[] boxes)
+    // ───────── 装配与导出 ─────────
+
+    private static MeshBuilder<VERTEX> NewMesh() => new MeshBuilder<VERTEX>("part");
+
+    private static void WriteParts(string path, System.Collections.Generic.List<Part> parts)
     {
         var scene = new SceneBuilder();
-        foreach (var b in boxes)
+        foreach (var p in parts)
         {
-            var material = new MaterialBuilder(b.Node)
-                .WithDoubleSide(true)
-                .WithMetallicRoughnessShader()
-                .WithBaseColor(b.Color);
-            var mesh = BuildBox(b.Node, b.Size, material);
-            var node = new NodeBuilder(b.Node) { LocalTransform = Matrix4x4.CreateTranslation(b.Center) };
-            scene.AddRigidMesh(mesh, node);
+            var node = new NodeBuilder(p.Node) { LocalTransform = Matrix4x4.CreateTranslation(p.Center) };
+            scene.AddRigidMesh(p.Mesh, node);
         }
         scene.ToGltf2().SaveGLB(path);
     }
 
-    /// <summary>构造一个轴对齐盒子的 MeshBuilder。</summary>
-    private static MeshBuilder<VERTEX> BuildBox(string name, Vector3 size, MaterialBuilder material)
+    // ───────── 几何 ─────────
+
+    /// <summary>向网格累加一个圆柱(含两端封盖)。axis:0=X,1=Y,2=Z。</summary>
+    private static void AddCylinder(MeshBuilder<VERTEX> mesh, MaterialBuilder mat,
+        Vector3 center, float radius, float halfLen, int axis, int segments = 28)
     {
-        var mesh = new MeshBuilder<VERTEX>(name);
-        var prim = mesh.UsePrimitive(material);
-        var h = size * 0.5f;
+        var prim = mesh.UsePrimitive(mat);
+        Vector3 Axis(float a, float b, float c) => axis switch
+        {
+            0 => new Vector3(c, a, b),   // 沿 X:长度在 X,环在 (Y,Z)
+            2 => new Vector3(a, b, c),   // 沿 Z:长度在 Z,环在 (X,Y)
+            _ => new Vector3(a, c, b),   // 沿 Y(默认):长度在 Y,环在 (X,Z)
+        };
 
-        // 8 个角点
-        Vector3 P(float sx, float sy, float sz) => new(sx * h.X, sy * h.Y, sz * h.Z);
+        for (int i = 0; i < segments; i++)
+        {
+            float t0 = (float)(2 * Math.PI * i / segments);
+            float t1 = (float)(2 * Math.PI * (i + 1) / segments);
+            var (c0, s0) = ((float)Math.Cos(t0), (float)Math.Sin(t0));
+            var (c1, s1) = ((float)Math.Cos(t1), (float)Math.Sin(t1));
 
-        // 6 个面,每面 2 三角;法线朝外
-        AddQuad(prim, P(-1, -1, 1), P(1, -1, 1), P(1, 1, 1), P(-1, 1, 1), new Vector3(0, 0, 1));   // +Z
-        AddQuad(prim, P(1, -1, -1), P(-1, -1, -1), P(-1, 1, -1), P(1, 1, -1), new Vector3(0, 0, -1)); // -Z
-        AddQuad(prim, P(1, -1, 1), P(1, -1, -1), P(1, 1, -1), P(1, 1, 1), new Vector3(1, 0, 0));   // +X
-        AddQuad(prim, P(-1, -1, -1), P(-1, -1, 1), P(-1, 1, 1), P(-1, 1, -1), new Vector3(-1, 0, 0)); // -X
-        AddQuad(prim, P(-1, 1, 1), P(1, 1, 1), P(1, 1, -1), P(-1, 1, -1), new Vector3(0, 1, 0));   // +Y
-        AddQuad(prim, P(-1, -1, -1), P(1, -1, -1), P(1, -1, 1), P(-1, -1, 1), new Vector3(0, -1, 0)); // -Y
+            // 侧面四点(下=-halfLen,上=+halfLen)
+            var b0 = center + Axis(c0 * radius, s0 * radius, -halfLen);
+            var b1 = center + Axis(c1 * radius, s1 * radius, -halfLen);
+            var t0p = center + Axis(c0 * radius, s0 * radius, +halfLen);
+            var t1p = center + Axis(c1 * radius, s1 * radius, +halfLen);
+            var n0 = Vector3.Normalize(Axis(c0, s0, 0));
+            var n1 = Vector3.Normalize(Axis(c1, s1, 0));
 
-        return mesh;
+            prim.AddTriangle(new VERTEX(b0, n0), new VERTEX(b1, n1), new VERTEX(t1p, n1));
+            prim.AddTriangle(new VERTEX(b0, n0), new VERTEX(t1p, n1), new VERTEX(t0p, n0));
+
+            // 顶盖 / 底盖(三角扇)
+            var capN = Vector3.Normalize(Axis(0, 0, 1));
+            var topC = center + Axis(0, 0, +halfLen);
+            prim.AddTriangle(new VERTEX(topC, capN), new VERTEX(t0p, capN), new VERTEX(t1p, capN));
+            var botC = center + Axis(0, 0, -halfLen);
+            prim.AddTriangle(new VERTEX(botC, -capN), new VERTEX(b1, -capN), new VERTEX(b0, -capN));
+        }
     }
 
-    private static void AddQuad(
-        PrimitiveBuilder<MaterialBuilder, VERTEX, VertexEmpty, VertexEmpty> prim,
-        Vector3 a, Vector3 b, Vector3 c, Vector3 d, Vector3 normal)
+    /// <summary>向网格累加一个轴对齐盒子。</summary>
+    private static void AddBox(MeshBuilder<VERTEX> mesh, MaterialBuilder mat, Vector3 center, Vector3 size)
     {
-        var va = new VERTEX(a, normal);
-        var vb = new VERTEX(b, normal);
-        var vc = new VERTEX(c, normal);
-        var vd = new VERTEX(d, normal);
-        prim.AddTriangle(va, vb, vc);
-        prim.AddTriangle(va, vc, vd);
+        var prim = mesh.UsePrimitive(mat);
+        var h = size * 0.5f;
+        Vector3 P(float sx, float sy, float sz) => center + new Vector3(sx * h.X, sy * h.Y, sz * h.Z);
+        void Quad(Vector3 a, Vector3 b, Vector3 c, Vector3 d, Vector3 n)
+        {
+            prim.AddTriangle(new VERTEX(a, n), new VERTEX(b, n), new VERTEX(c, n));
+            prim.AddTriangle(new VERTEX(a, n), new VERTEX(c, n), new VERTEX(d, n));
+        }
+        Quad(P(-1, -1, 1), P(1, -1, 1), P(1, 1, 1), P(-1, 1, 1), new Vector3(0, 0, 1));
+        Quad(P(1, -1, -1), P(-1, -1, -1), P(-1, 1, -1), P(1, 1, -1), new Vector3(0, 0, -1));
+        Quad(P(1, -1, 1), P(1, -1, -1), P(1, 1, -1), P(1, 1, 1), new Vector3(1, 0, 0));
+        Quad(P(-1, -1, -1), P(-1, -1, 1), P(-1, 1, 1), P(-1, 1, -1), new Vector3(-1, 0, 0));
+        Quad(P(-1, 1, 1), P(1, 1, 1), P(1, 1, -1), P(-1, 1, -1), new Vector3(0, 1, 0));
+        Quad(P(-1, -1, -1), P(1, -1, -1), P(1, -1, 1), P(-1, -1, 1), new Vector3(0, -1, 0));
     }
 }

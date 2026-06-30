@@ -10,7 +10,9 @@
     { "id": "filter", "node": "filter",
       "name": { "zh": "滤芯", "ja": "フィルター" }, "partNo": "P-002" },
     { "id": "blower", "node": "blower",
-      "name": { "zh": "送风机", "ja": "ブロワー" }, "partNo": "P-003" }
+      "name": { "zh": "送风机", "ja": "ブロワー" }, "partNo": "P-003" },
+    { "id": "piping", "node": "piping",
+      "name": { "zh": "进出口管线", "ja": "入出口配管" }, "partNo": "P-004" }
   ],
   "procedure": {
     "title": { "zh": "前面板与滤芯拆卸", "ja": "フロントパネル・フィルター取り外し" },
@@ -45,6 +47,16 @@
         "instruction": { "zh": "目视检查送风机叶轮有无积垢或损伤", "ja": "ブロワーの羽根に付着・損傷がないか目視点検" },
         "safetyChecks": [
           { "type": "Torque", "text": { "zh": "确认固定螺栓扭矩符合规范", "ja": "固定ボルトのトルクが規定値であることを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 4,
+        "action": "highlight",
+        "targetPart": "piping",
+        "instruction": { "zh": "检查进出口管线法兰有无泄漏或腐蚀", "ja": "入出口配管のフランジに漏れ・腐食がないか点検" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认管线内无残压、无泄漏", "ja": "配管内に残圧・漏れがないことを確認" }, "required": true },
+          { "type": "Ppe",       "text": { "zh": "确认已佩戴防护装备", "ja": "保護具の着用を確認" }, "required": true }
         ]
       }
     ]

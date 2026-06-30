@@ -108,10 +108,17 @@
                     <hx:Viewport3DX x:Name="View"
                                     EffectsManager="{Binding EffectsManager}"
                                     Camera="{Binding Camera}"
-                                    ShowCoordinateSystem="True">
-                        <hx:AmbientLight3D Color="#404040" />
-                        <hx:DirectionalLight3D Color="#C8C8C8" Direction="-1,-1,-1" />
-                        <hx:DirectionalLight3D Color="#646464" Direction="1,1,1" />
+                                    ShowCoordinateSystem="True"
+                                    MSAA="Four"
+                                    FXAALevel="Medium"
+                                    EnableSSAO="True"
+                                    SSAOQuality="High"
+                                    BackgroundColor="#2B3038">
+                        <!-- 三点布光:主光 + 补光 + 轮廓光,提升体积感 -->
+                        <hx:AmbientLight3D Color="#33373B" />
+                        <hx:DirectionalLight3D Color="#E6E6E6" Direction="-0.6,-1,-0.7" />
+                        <hx:DirectionalLight3D Color="#6E7886" Direction="0.8,-0.2,0.6" />
+                        <hx:DirectionalLight3D Color="#9AA6B2" Direction="0.2,0.6,-0.9" />
                         <!-- M2:动态加载的模型场景图挂到此分组节点(代码后置 AddNode) -->
                         <hx:SceneNodeGroupModel3D x:Name="GroupModel" />
                         <!-- M3 节点高亮:与 SceneController 的 "highlight" 后效同名 -->
