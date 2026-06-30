@@ -8,6 +8,7 @@ using AbatementTrainer.Core.Procedure;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using HelixToolkit.SharpDX.Core;
+using HelixToolkit.SharpDX.Core.Model.Scene;
 using HelixToolkit.Wpf.SharpDX;
 
 namespace AbatementTrainer.App.ViewModels;
@@ -31,7 +32,6 @@ public sealed partial class MainViewModel : ObservableObject
     private Manifest? _manifest;
     private SceneController? _scene;
     private ProcedureRunner? _runner;
-    private SceneNodeGroupModel3D? _group;
 
     public MainViewModel()
     {
@@ -44,8 +44,6 @@ public sealed partial class MainViewModel : ObservableObject
             FarPlaneDistance = 1000,
             NearPlaneDistance = 0.1
         };
-        ModelItems = new ObservableElement3DCollection();
-
         // 语言切换 → 刷新所有本地化文案
         _loc.LanguageChanged += (_, _) => RefreshAllLanguage();
 
@@ -55,10 +53,15 @@ public sealed partial class MainViewModel : ObservableObject
     // ───────── Viewport 绑定属性(M2) ─────────
     public IEffectsManager EffectsManager { get; }
     public PerspectiveCamera Camera { get; }
-    public ObservableElement3DCollection ModelItems { get; }
 
     /// <summary>请求复位视角(由窗口订阅后调用 viewport.ZoomExtents)。</summary>
     public event EventHandler? ResetViewRequested;
+
+    /// <summary>模型场景图就绪:窗口将其 AddNode 到视口的分组节点。</summary>
+    public event Action<SceneNode>? ModelRootReady;
+
+    /// <summary>清空当前模型:窗口清空分组节点。</summary>
+    public event Action? ModelCleared;
 
     // ───────── 状态 ─────────
     public LocalizationService Loc => _loc;
@@ -107,12 +110,10 @@ public sealed partial class MainViewModel : ObservableObject
                 return;
             }
 
-            // M2:导入模型并加入视口
+            // M2:导入模型并加入视口(实际 AddNode 在窗口代码后置完成)
             var loaded = _loader.Load(modelPath);
-            ModelItems.Clear();
-            _group = new SceneNodeGroupModel3D();
-            _group.AddNode(loaded.Root);
-            ModelItems.Add(_group);
+            ModelCleared?.Invoke();
+            ModelRootReady?.Invoke(loaded.Root);
 
             _manifest = manifest;
             _scene = new SceneController(loaded.NodesByName);
@@ -140,8 +141,7 @@ public sealed partial class MainViewModel : ObservableObject
     {
         IsTrainingActive = false;
         IsExamActive = false;
-        ModelItems.Clear();
-        _group = null;
+        ModelCleared?.Invoke();
         _scene = null;
         _runner = null;
         Parts.Clear();

@@ -108,16 +108,12 @@
                     <hx:Viewport3DX x:Name="View"
                                     EffectsManager="{Binding EffectsManager}"
                                     Camera="{Binding Camera}"
-                                    ItemsSource="{Binding ModelItems}"
-                                    BackgroundColor="#20262E"
-                                    ShowCoordinateSystem="True"
-                                    ShowFrameRate="True"
-                                    IsZoomEnabled="True"
-                                    IsRotationEnabled="True"
-                                    IsPanEnabled="True">
+                                    ShowCoordinateSystem="True">
                         <hx:AmbientLight3D Color="#404040" />
                         <hx:DirectionalLight3D Color="#C8C8C8" Direction="-1,-1,-1" />
                         <hx:DirectionalLight3D Color="#646464" Direction="1,1,1" />
+                        <!-- M2:动态加载的模型场景图挂到此分组节点(代码后置 AddNode) -->
+                        <hx:SceneNodeGroupModel3D x:Name="GroupModel" />
                         <!-- M3 节点高亮:与 SceneController 的 "highlight" 后效同名 -->
                         <hx:PostEffectMeshBorderHighlight EffectName="highlight" />
                     </hx:Viewport3DX>

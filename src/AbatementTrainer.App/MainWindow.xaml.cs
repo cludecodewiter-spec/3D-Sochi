@@ -21,6 +21,9 @@ public partial class MainWindow : Window
         {
             // 复位视角:VM 请求 → 调用 Viewport3DX.ZoomExtents(按模型包围盒)
             vm.ResetViewRequested += (_, _) => View.ZoomExtents();
+            // M2:模型场景图就绪/清空 → 维护视口分组节点
+            vm.ModelRootReady += root => GroupModel.AddNode(root);
+            vm.ModelCleared += () => GroupModel.Clear();
             // M3:在 3D 中点选部件 → 反向选中列表项
             View.MouseDown3D += OnViewMouseDown;
         }
