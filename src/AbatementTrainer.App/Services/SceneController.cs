@@ -1,9 +1,8 @@
 using System.Collections.Generic;
+using System.Numerics;
 using System.Windows.Threading;
-using HelixToolkit.SharpDX.Core.Model;
-using HelixToolkit.SharpDX.Core.Model.Scene;
-using SharpDXMatrix = global::SharpDX.Matrix;
-using SharpDXVector3 = global::SharpDX.Vector3;
+using HelixToolkit.SharpDX.Model;
+using HelixToolkit.SharpDX.Model.Scene;
 
 namespace AbatementTrainer.App.Services;
 
@@ -11,10 +10,10 @@ namespace AbatementTrainer.App.Services;
 /// M3/M4/M7:对场景图节点执行显隐、隔离、高亮、平移取下动画。
 /// 仅操作 SceneNode(与具体控件解耦)。
 ///
-/// 说明:Helix v3(SharpDX 线)节点变换 <see cref="SceneNode.ModelMatrix"/> 为
-/// 行主序 <c>SharpDX.Matrix</c>;高亮采用节点级 PostEffect("highlight"),
-/// 需在 Viewport3DX 中注册对应的边框高亮后效(见 MainWindow.xaml)。
-/// 具体后效名称/材质 API 请对照 Helix v3 官方示例核对(BUILD_SPEC §6)。
+/// 说明:Helix v3 节点变换 <see cref="SceneNode.ModelMatrix"/> 为
+/// 行主序 <c>System.Numerics.Matrix4x4</c>(v3 已弃用 SharpDX 数学库);
+/// 高亮采用节点级 PostEffect("highlight"),需在 Viewport3DX 中注册同名
+/// PostEffectMeshBorderHighlight 后效(见 MainWindow.xaml)。
 /// </summary>
 public sealed class SceneController
 {
@@ -23,7 +22,7 @@ public sealed class SceneController
     private readonly IReadOnlyDictionary<string, SceneNode> _nodesByName;
 
     // 记录每个节点的初始变换,便于回退/复位
-    private readonly Dictionary<SceneNode, SharpDXMatrix> _baseMatrix = new();
+    private readonly Dictionary<SceneNode, Matrix4x4> _baseMatrix = new();
 
     private SceneNode? _highlighted;
     private DispatcherTimer? _animTimer;
@@ -94,7 +93,7 @@ public sealed class SceneController
             return;
         }
 
-        var translate = new SharpDXVector3(offset[0], offset[1], offset[2]);
+        var translate = new Vector3(offset[0], offset[1], offset[2]);
         Animate(node, translate, hideAtEnd: true);
     }
 
@@ -121,7 +120,7 @@ public sealed class SceneController
     }
 
     // 用 DispatcherTimer 做平移插值动画
-    private void Animate(SceneNode node, SharpDXVector3 totalTranslate, bool hideAtEnd)
+    private void Animate(SceneNode node, Vector3 totalTranslate, bool hideAtEnd)
     {
         StopAnim();
         var baseM = _baseMatrix.TryGetValue(node, out var m) ? m : node.ModelMatrix;
@@ -136,7 +135,7 @@ public sealed class SceneController
             // 缓动(easeInOut)
             var e = t < 0.5 ? 2 * t * t : 1 - Math.Pow(-2 * t + 2, 2) / 2;
             var step = totalTranslate * (float)e;
-            node.ModelMatrix = baseM * SharpDXMatrix.Translation(step);
+            node.ModelMatrix = baseM * Matrix4x4.CreateTranslation(step);
 
             if (t >= 1.0)
             {

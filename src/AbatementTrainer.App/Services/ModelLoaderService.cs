@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using HelixToolkit.SharpDX.Core;
-using HelixToolkit.SharpDX.Core.Assimp;
-using HelixToolkit.SharpDX.Core.Model.Scene;
+using HelixToolkit.SharpDX;
+using HelixToolkit.SharpDX.Assimp;
+using HelixToolkit.SharpDX.Model.Scene;
 
 namespace AbatementTrainer.App.Services;
 
 /// <summary>
 /// M2:用 HelixToolkit.SharpDX.Assimp 导入器加载 glTF/GLB,返回场景图根 SceneNode。
-/// 注意:Helix v3 的 SharpDX 类型位于 HelixToolkit.SharpDX.Core.* 命名空间,
-/// WPF 包装控件(Viewport3DX 等)在 HelixToolkit.Wpf.SharpDX。
+/// 注意:Helix v3 的 SharpDX 类型位于 HelixToolkit.SharpDX.*(渲染核心)与
+/// HelixToolkit.SharpDX.Assimp(导入器);WPF 包装控件在 HelixToolkit.Wpf.SharpDX。
 /// </summary>
 public sealed class ModelLoaderService
 {

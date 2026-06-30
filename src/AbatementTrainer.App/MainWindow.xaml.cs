@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Windows;
 using AbatementTrainer.App.ViewModels;
-using HelixToolkit.SharpDX.Core.Model.Scene;
+using HelixToolkit.SharpDX.Model.Scene;
 using HelixToolkit.Wpf.SharpDX;
 
 namespace AbatementTrainer.App;

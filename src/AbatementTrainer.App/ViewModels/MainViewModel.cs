@@ -7,8 +7,8 @@ using AbatementTrainer.Core.Manifest;
 using AbatementTrainer.Core.Procedure;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using HelixToolkit.SharpDX.Core;
-using HelixToolkit.SharpDX.Core.Model.Scene;
+using HelixToolkit.SharpDX;
+using HelixToolkit.SharpDX.Model.Scene;
 using HelixToolkit.Wpf.SharpDX;
 
 namespace AbatementTrainer.App.ViewModels;
