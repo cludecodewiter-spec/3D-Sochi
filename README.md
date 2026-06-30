@@ -23,8 +23,8 @@ AbatementTrainer.sln
 │   ├─ Resources/               .resx 多语言(zh / ja)
 │   └─ MainWindow.xaml          视口 + 部件树 + 步骤/安全面板 + 考核覆盖层 + 免责横幅
 ├─ src/AbatementTrainer.Tools   控制台:glTF 节点检视 / 清单校验 / 生成示例模型
-├─ tests/AbatementTrainer.Tests xUnit:Core 逻辑测试(17 项)
-└─ content/                     设备库内容(index.json + 各设备 manifest + .glb)
+├─ tests/AbatementTrainer.Tests xUnit:Core 逻辑测试(30 项)
+└─ content/                     设备库内容(index.json + unitA/unitB manifest + .glb)
 ```
 
 **架构铁律:** 逻辑全部在 Core(可单测、可换引擎);App 只做 UI。安全门 `ProcedureRunner.CanAdvance`
@@ -101,11 +101,23 @@ JSON 用 camelCase,枚举用字符串(大小写不敏感)。关键结构:
 
 ---
 
-## 关于渲染层 API 的说明
+## 持续集成(CI)
+
+`.github/workflows/ci.yml` 在每次推送时:
+- **Linux job**:构建 Core/Tools 并运行 30 项 xUnit 测试。
+- **Windows job**:构建完整 WPF App(`dotnet build`),实测渲染层代码可编译。
+
+二者均为绿色(WPF App 已在 windows-latest 上成功编译)。
+
+## 关于渲染层 API
 
 Build Spec §6 要求「先核对 HelixToolkit.Wpf.SharpDX v3 实际 API,不要臆造签名」。
-本仓库的 Core/Tools/Tests 已在 .NET 8 上实际编译并跑通测试;App 的渲染相关代码
-(`Services/SceneController.cs` 的高亮 PostEffect、`ModelLoaderService` 的 Assimp 导入、
-`MainWindow.xaml.cs` 的命中测试)按 Helix v3 文档/示例编写,**首次在 Windows 上构建时
-请对照官方示例 FileLoaderDemo / CoreDemo / 三角面选择 demo 确认具体签名**(尤其
-节点级高亮后效的注册方式)。相关位置均有中文注释标注。
+本仓库针对 **HelixToolkit v3.1.2**(`HelixToolkit.Wpf.SharpDX` / `HelixToolkit.SharpDX`
+/ `HelixToolkit.SharpDX.Assimp` / `HelixToolkit.Maths`)逐一核对了实际程序集签名:
+- 渲染核心类型在 `HelixToolkit.SharpDX.*`(v2 的 `*.Core.*` 已取消);
+- v3 已弃用 SharpDX 数学库,`SceneNode.ModelMatrix` 为 `System.Numerics.Matrix4x4`;
+- 模型动态内容经 XAML 中的 `SceneNodeGroupModel3D` 承载(Viewport3DX 无 ItemsSource);
+- 节点高亮用 `SceneNode.AddPostEffect(new EffectAttributes("highlight"))` +
+  视口内同名 `PostEffectMeshBorderHighlight`。
+
+Windows CI job 已验证以上代码可成功编译。
