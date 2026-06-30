@@ -101,6 +101,18 @@ JSON 用 camelCase,枚举用字符串(大小写不敏感)。关键结构:
 
 ---
 
+## 3D 渲染示例
+
+下面是 App 实际加载的同一批 `.glb`(示例设备)经 PBR + 环境光渲染的效果。
+几何由 glTF 提供(架构「App 只加载、不造几何」),真实设备的管线/阀门细节取决于导入的模型。
+
+| 除害装置 A 型(卧式,含进出口管线) | 除害装置 B 型(立式塔) |
+|---|---|
+| ![unitA](docs/renders/unitA.png) | ![unitB](docs/renders/unitB.png) |
+
+> 注:示例模型为程序生成的圆柱+管线演示几何;Helix(DX11)与此渲染(WebGL)同为 PBR,
+> Viewport3DX 已开启 MSAA/FXAA/SSAO + 三点布光,真实画面请在 Windows 上启动查看。
+
 ## 持续集成(CI)
 
 `.github/workflows/ci.yml` 在每次推送时:

@@ -24,8 +24,10 @@ public static class SampleModelBuilder
     }
 
     private static MaterialBuilder Pbr(string name, float r, float g, float b, float metallic, float rough)
+        // 双面渲染:程序生成的圆柱/管线绕序不保证完全一致,开双面可避免出现「透视」空洞
+        // (对应 BUILD_SPEC §6 的三角面绕序提示);演示内容量小,性能可接受。
         => new MaterialBuilder(name)
-            .WithDoubleSide(false)
+            .WithDoubleSide(true)
             .WithMetallicRoughnessShader()
             .WithBaseColor(new Vector4(r, g, b, 1))
             .WithMetallicRoughness(metallic, rough);
