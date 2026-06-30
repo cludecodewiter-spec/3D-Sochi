@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Windows.Threading;
+using HelixToolkit.SharpDX.Core.Model;
 using HelixToolkit.SharpDX.Core.Model.Scene;
 using SharpDXMatrix = global::SharpDX.Matrix;
 using SharpDXVector3 = global::SharpDX.Vector3;
@@ -73,7 +74,8 @@ public sealed class SceneController
 
         var node = Find(nodeName);
         if (node is null) return;
-        node.AddPostEffect(HighlightEffect);
+        // 节点级后效:需在 Viewport3DX 中注册同名 PostEffectMeshBorderHighlight(见 MainWindow.xaml)
+        node.AddPostEffect(new EffectAttributes(HighlightEffect));
         _highlighted = node;
     }
 

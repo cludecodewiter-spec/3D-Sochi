@@ -118,6 +118,8 @@
                         <hx:AmbientLight3D Color="#404040" />
                         <hx:DirectionalLight3D Color="#C8C8C8" Direction="-1,-1,-1" />
                         <hx:DirectionalLight3D Color="#646464" Direction="1,1,1" />
+                        <!-- M3 节点高亮:与 SceneController 的 "highlight" 后效同名 -->
+                        <hx:PostEffectMeshBorderHighlight EffectName="highlight" />
                     </hx:Viewport3DX>
                 </Border>
 

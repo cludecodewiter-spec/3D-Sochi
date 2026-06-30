@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Windows;
-using System.Windows.Input;
 using AbatementTrainer.App.ViewModels;
 using HelixToolkit.SharpDX.Core.Model.Scene;
+using HelixToolkit.Wpf.SharpDX;
 
 namespace AbatementTrainer.App;
 
@@ -26,18 +26,14 @@ public partial class MainWindow : Window
         }
     }
 
-    /// <summary>3D 命中测试:点中某节点则在部件列表中选中它。</summary>
+    /// <summary>3D 命中测试:点中某节点则在部件列表中选中它(M3 反向联动)。</summary>
     private void OnViewMouseDown(object? sender, RoutedEventArgs e)
     {
         if (DataContext is not MainViewModel vm) return;
-        if (e is not MouseButtonEventArgs me || me.ChangedButton != MouseButton.Left) return;
+        // Helix 的 3D 鼠标事件携带命中结果,无需再次 FindHits
+        if (e is not MouseDown3DEventArgs args || args.HitTestResult is null) return;
 
-        var pos = me.GetPosition(View);
-        var hits = View.FindHits(pos);
-        if (hits is null || hits.Count == 0) return;
-
-        // 取最近命中,向上回溯到带名字的节点
-        var node = hits[0].ModelHit as SceneNode;
+        var node = args.HitTestResult.ModelHit as SceneNode;
         var name = AscendToNamed(node);
         if (name is null) return;
 
