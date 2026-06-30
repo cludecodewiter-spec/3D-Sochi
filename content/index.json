@@ -1,0 +1,7 @@
+[
+  {
+    "equipmentId": "abatement-unit-A",
+    "name": { "zh": "除害装置 A 型", "ja": "除害装置 A 型" },
+    "manifestPath": "unitA/manifest.json"
+  }
+]

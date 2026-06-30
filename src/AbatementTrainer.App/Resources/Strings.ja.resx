@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppTitle" xml:space="preserve"><value>除害装置 3D メンテナンス訓練システム</value></data>
+  <data name="Disclaimer" xml:space="preserve"><value>訓練補助。実際の作業は公式手順に従ってください。</value></data>
+  <data name="DeviceLibrary" xml:space="preserve"><value>設備ライブラリ</value></data>
+  <data name="Parts" xml:space="preserve"><value>部品一覧</value></data>
+  <data name="Isolate" xml:space="preserve"><value>アイソレート</value></data>
+  <data name="ShowAll" xml:space="preserve"><value>すべて表示</value></data>
+  <data name="ResetView" xml:space="preserve"><value>視点リセット</value></data>
+  <data name="Step" xml:space="preserve"><value>ステップ</value></data>
+  <data name="Next" xml:space="preserve"><value>次へ</value></data>
+  <data name="Previous" xml:space="preserve"><value>戻る</value></data>
+  <data name="Restart" xml:space="preserve"><value>やり直す</value></data>
+  <data name="SafetyChecks" xml:space="preserve"><value>安全確認</value></data>
+  <data name="Required" xml:space="preserve"><value>必須</value></data>
+  <data name="AllComplete" xml:space="preserve"><value>すべて完了しました</value></data>
+  <data name="GateBlocked" xml:space="preserve"><value>必須の安全確認がすべて完了するまで次へ進めません。</value></data>
+  <data name="Language" xml:space="preserve"><value>言語</value></data>
+  <data name="ExamMode" xml:space="preserve"><value>試験モード</value></data>
+  <data name="TrainingMode" xml:space="preserve"><value>訓練モード</value></data>
+  <data name="ExamSubmit" xml:space="preserve"><value>採点する</value></data>
+  <data name="ExamInstruction" xml:space="preserve"><value>正しい手順の順番に並べ替えてください。</value></data>
+  <data name="ExamScore" xml:space="preserve"><value>正答率</value></data>
+  <data name="MoveUp" xml:space="preserve"><value>上へ</value></data>
+  <data name="MoveDown" xml:space="preserve"><value>下へ</value></data>
+  <data name="LoadError" xml:space="preserve"><value>読み込みエラー</value></data>
+  <data name="ValidationFailed" xml:space="preserve"><value>マニフェストの検証に失敗しました</value></data>
+</root>

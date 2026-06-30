@@ -1,0 +1,52 @@
+{
+  "equipmentId": "abatement-unit-A",
+  "name": { "zh": "除害装置 A 型", "ja": "除害装置 A 型" },
+  "modelFile": "models/unitA.glb",
+  "parts": [
+    { "id": "housing", "node": "housing",
+      "name": { "zh": "主体外壳", "ja": "本体ハウジング" }, "partNo": "P-000" },
+    { "id": "front_panel", "node": "front_panel",
+      "name": { "zh": "前面板", "ja": "フロントパネル" }, "partNo": "P-001" },
+    { "id": "filter", "node": "filter",
+      "name": { "zh": "滤芯", "ja": "フィルター" }, "partNo": "P-002" },
+    { "id": "blower", "node": "blower",
+      "name": { "zh": "送风机", "ja": "ブロワー" }, "partNo": "P-003" }
+  ],
+  "procedure": {
+    "title": { "zh": "前面板与滤芯拆卸", "ja": "フロントパネル・フィルター取り外し" },
+    "steps": [
+      {
+        "order": 1,
+        "action": "remove",
+        "targetPart": "front_panel",
+        "removeOffset": [0, 0, 0.4],
+        "instruction": { "zh": "拧下四角螺栓,沿正前方取下前面板", "ja": "四隅のボルトを外し、フロントパネルを正面方向へ取り外す" },
+        "safetyChecks": [
+          { "type": "Loto", "text": { "zh": "确认主电源已隔离、上锁并挂牌", "ja": "主電源の遮断・施錠・札掛けを確認" }, "required": true },
+          { "type": "Ppe",  "text": { "zh": "确认已佩戴防毒面具与手套", "ja": "防毒マスク・手袋の着用を確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 2,
+        "action": "remove",
+        "targetPart": "filter",
+        "removeOffset": [0, 0.5, 0],
+        "instruction": { "zh": "确认已吹扫后,向上抽出滤芯", "ja": "パージ完了を確認後、フィルターを上方へ引き抜く" },
+        "safetyChecks": [
+          { "type": "Purge",     "text": { "zh": "确认内部气体已吹扫置换", "ja": "内部ガスのパージ・置換を確認" }, "required": true },
+          { "type": "LeakCheck", "text": { "zh": "确认无残留泄漏", "ja": "残留漏れがないことを確認" }, "required": true },
+          { "type": "Ppe",       "text": { "zh": "确认防护装备完好", "ja": "保護具の状態を確認" }, "required": false }
+        ]
+      },
+      {
+        "order": 3,
+        "action": "highlight",
+        "targetPart": "blower",
+        "instruction": { "zh": "目视检查送风机叶轮有无积垢或损伤", "ja": "ブロワーの羽根に付着・損傷がないか目視点検" },
+        "safetyChecks": [
+          { "type": "Torque", "text": { "zh": "确认固定螺栓扭矩符合规范", "ja": "固定ボルトのトルクが規定値であることを確認" }, "required": true }
+        ]
+      }
+    ]
+  }
+}
