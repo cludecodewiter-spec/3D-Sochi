@@ -26,6 +26,25 @@ public static class SampleModelBuilder
             new BoxSpec("blower",       new Vector3(0, -0.55f, 0),new Vector3(0.6f, 0.4f, 0.5f), new Vector4(0.4f, 0.7f, 0.45f, 1)),
         };
 
+        WriteBoxes(path, boxes);
+    }
+
+    /// <summary>写出与示例清单 abatement-unit-B 匹配的演示 GLB(立式塔结构)。</summary>
+    public static void WriteUnitB(string path)
+    {
+        var boxes = new[]
+        {
+            new BoxSpec("base",         new Vector3(0, -0.9f, 0), new Vector3(1.0f, 0.3f, 1.0f), new Vector4(0.55f, 0.55f, 0.6f, 1)),
+            new BoxSpec("tower",        new Vector3(0, 0.1f, 0),  new Vector3(0.6f, 1.6f, 0.6f), new Vector4(0.5f, 0.6f, 0.7f, 1)),
+            new BoxSpec("top_cover",    new Vector3(0, 0.95f, 0), new Vector3(0.7f, 0.12f, 0.7f), new Vector4(0.3f, 0.5f, 0.8f, 1)),
+            new BoxSpec("scrubber",     new Vector3(0.5f, 0.2f, 0), new Vector3(0.4f, 0.9f, 0.4f), new Vector4(0.85f, 0.6f, 0.3f, 1)),
+            new BoxSpec("drain_valve",  new Vector3(0, -0.65f, 0.45f), new Vector3(0.2f, 0.2f, 0.2f), new Vector4(0.8f, 0.3f, 0.3f, 1)),
+        };
+        WriteBoxes(path, boxes);
+    }
+
+    private static void WriteBoxes(string path, BoxSpec[] boxes)
+    {
         var scene = new SceneBuilder();
         foreach (var b in boxes)
         {
@@ -33,18 +52,11 @@ public static class SampleModelBuilder
                 .WithDoubleSide(true)
                 .WithMetallicRoughnessShader()
                 .WithBaseColor(b.Color);
-
             var mesh = BuildBox(b.Node, b.Size, material);
-            // 用 NodeBuilder 显式命名节点,确保导出后的 glTF 节点名 = 部件 node 名
-            var node = new NodeBuilder(b.Node)
-            {
-                LocalTransform = Matrix4x4.CreateTranslation(b.Center)
-            };
+            var node = new NodeBuilder(b.Node) { LocalTransform = Matrix4x4.CreateTranslation(b.Center) };
             scene.AddRigidMesh(mesh, node);
         }
-
-        var model = scene.ToGltf2();
-        model.SaveGLB(path);
+        scene.ToGltf2().SaveGLB(path);
     }
 
     /// <summary>构造一个轴对齐盒子的 MeshBuilder。</summary>

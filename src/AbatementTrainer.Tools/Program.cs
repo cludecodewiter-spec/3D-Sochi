@@ -29,6 +29,12 @@ try
             Console.WriteLine($"✓ 已生成示例模型:{args[1]}");
             return 0;
         }
+        case "gen-sample-b":
+        {
+            SampleModelBuilder.WriteUnitB(args[1]);
+            Console.WriteLine($"✓ 已生成示例模型:{args[1]}");
+            return 0;
+        }
         case "nodes":
         {
             var names = GltfInspector.ListNodeNames(args[1]);
