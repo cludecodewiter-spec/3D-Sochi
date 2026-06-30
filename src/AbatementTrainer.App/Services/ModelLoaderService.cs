@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using HelixToolkit.SharpDX;
 using HelixToolkit.SharpDX.Assimp;
 using HelixToolkit.SharpDX.Model.Scene;
