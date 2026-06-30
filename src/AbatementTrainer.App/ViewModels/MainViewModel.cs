@@ -141,6 +141,7 @@ public sealed partial class MainViewModel : ObservableObject
     {
         IsTrainingActive = false;
         IsExamActive = false;
+        _scene?.ResetAll();        // 停止可能在途的取下动画(DispatcherTimer)
         ModelCleared?.Invoke();
         _scene = null;
         _runner = null;
@@ -192,9 +193,12 @@ public sealed partial class MainViewModel : ObservableObject
     [ObservableProperty] private string _progressText = string.Empty;
     [ObservableProperty] private bool _isComplete;
 
-    /// <summary>M6:仅当当前步骤 required 安全项全确认才可前进(绑「下一步」按钮可用性)。</summary>
+    /// <summary>M6:当前步骤 required 安全项是否全部确认(安全门语义;驱动门控提示)。</summary>
     public bool CanAdvance =>
         _runner is not null && _runner.CanAdvance(ConfirmedIndices());
+
+    /// <summary>「下一步」按钮可用性:安全门通过且流程尚未完成。</summary>
+    public bool CanGoNext => _runner is not null && !_runner.IsComplete && CanAdvance;
 
     private IReadOnlySet<int> ConfirmedIndices() =>
         SafetyChecks.Where(c => c.IsConfirmed).Select(c => c.Index).ToHashSet();
@@ -228,16 +232,18 @@ public sealed partial class MainViewModel : ObservableObject
 
         NextCommand.NotifyCanExecuteChanged();
         OnPropertyChanged(nameof(CanAdvance));
+        OnPropertyChanged(nameof(CanGoNext));
     }
 
     private void OnCheckToggled(object? sender, bool e)
     {
         OnPropertyChanged(nameof(CanAdvance));
+        OnPropertyChanged(nameof(CanGoNext));
         NextCommand.NotifyCanExecuteChanged();
     }
 
     /// <summary>M6/M7:推进到下一步(安全门硬约束;所有前进路径都走这里)。</summary>
-    [RelayCommand(CanExecute = nameof(CanAdvance))]
+    [RelayCommand(CanExecute = nameof(CanGoNext))]
     private void Next()
     {
         if (_runner is null) return;
