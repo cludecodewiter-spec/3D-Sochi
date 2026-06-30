@@ -193,35 +193,80 @@
                         BorderBrush="#BDBDBD" BorderThickness="1" Padding="0"
                         HorizontalAlignment="Center" VerticalAlignment="Center">
                     <DockPanel DataContext="{Binding Exam}">
+                        <DockPanel.Resources>
+                            <local:BoolToVisibilityConverter x:Key="BVis" />
+                        </DockPanel.Resources>
                         <TextBlock DockPanel.Dock="Top"
                                    Text="{Binding DataContext.Loc[ExamMode], RelativeSource={RelativeSource AncestorType=Window}}"
                                    FontSize="18" FontWeight="Bold" Margin="16,12,16,4" />
-                        <TextBlock DockPanel.Dock="Top"
-                                   Text="{Binding DataContext.Loc[ExamInstruction], RelativeSource={RelativeSource AncestorType=Window}}"
-                                   Margin="16,0,16,8" TextWrapping="Wrap" Foreground="#555" />
 
-                        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="16" HorizontalAlignment="Right">
-                            <TextBlock Text="{Binding ResultSummary}" VerticalAlignment="Center" Margin="0,0,16,0"
-                                       FontWeight="Bold" Foreground="#1976D2" />
-                            <Button Content="{Binding DataContext.Loc[MoveUp], RelativeSource={RelativeSource AncestorType=Window}}"
-                                    Command="{Binding MoveUpCommand}" Margin="3" Padding="8,4" />
-                            <Button Content="{Binding DataContext.Loc[MoveDown], RelativeSource={RelativeSource AncestorType=Window}}"
-                                    Command="{Binding MoveDownCommand}" Margin="3" Padding="8,4" />
-                            <Button Content="{Binding DataContext.Loc[ExamSubmit], RelativeSource={RelativeSource AncestorType=Window}}"
-                                    Command="{Binding SubmitCommand}" Margin="3" Padding="10,4"
-                                    Background="#1976D2" Foreground="White" />
-                            <Button Content="✕"
-                                    Command="{Binding DataContext.ExitExamCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                    Margin="3" Padding="10,4" />
+                        <!-- 关闭按钮(常驻) -->
+                        <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Content="✕"
+                                Command="{Binding DataContext.ExitExamCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                Margin="0,-28,16,0" Padding="8,2" />
+
+                        <!-- ① 排序阶段 -->
+                        <DockPanel Visibility="{Binding IsArranging, Converter={StaticResource BVis}}">
+                            <TextBlock DockPanel.Dock="Top"
+                                       Text="{Binding DataContext.Loc[ExamInstruction], RelativeSource={RelativeSource AncestorType=Window}}"
+                                       Margin="16,0,16,8" TextWrapping="Wrap" Foreground="#555" />
+                            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="16" HorizontalAlignment="Right">
+                                <Button Content="{Binding DataContext.Loc[MoveUp], RelativeSource={RelativeSource AncestorType=Window}}"
+                                        Command="{Binding MoveUpCommand}" Margin="3" Padding="8,4" />
+                                <Button Content="{Binding DataContext.Loc[MoveDown], RelativeSource={RelativeSource AncestorType=Window}}"
+                                        Command="{Binding MoveDownCommand}" Margin="3" Padding="8,4" />
+                                <Button Content="{Binding DataContext.Loc[ExamSubmit], RelativeSource={RelativeSource AncestorType=Window}}"
+                                        Command="{Binding SubmitCommand}" Margin="3" Padding="10,4"
+                                        Background="#1976D2" Foreground="White" />
+                            </StackPanel>
+                            <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Selected}" Margin="16,0" MinHeight="200">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:ExamStepViewModel}">
+                                        <TextBlock Text="{Binding Instruction}" TextWrapping="Wrap" Padding="4" />
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DockPanel>
+
+                        <!-- ② 执行阶段(安全门仍强制) -->
+                        <DockPanel Visibility="{Binding IsExecuting, Converter={StaticResource BVis}}">
+                            <TextBlock DockPanel.Dock="Top" Text="{Binding ExecProgress}" Foreground="#607D8B" Margin="16,0,16,4" />
+                            <Border DockPanel.Dock="Top" Background="#FFF8E1" BorderBrush="#FFE082" BorderThickness="1"
+                                    Padding="10" Margin="16,0,16,10" CornerRadius="4">
+                                <TextBlock Text="{Binding ExecInstruction}" TextWrapping="Wrap" />
+                            </Border>
+                            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="16" HorizontalAlignment="Right">
+                                <Button Content="{Binding DataContext.Loc[Next], RelativeSource={RelativeSource AncestorType=Window}}"
+                                        Command="{Binding NextExecCommand}" Margin="3" Padding="14,5"
+                                        FontWeight="Bold" Background="#1976D2" Foreground="White" />
+                            </StackPanel>
+                            <ScrollViewer Margin="16,0">
+                                <ItemsControl ItemsSource="{Binding SafetyChecks}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:SafetyCheckViewModel}">
+                                            <DockPanel Margin="0,4">
+                                                <Border DockPanel.Dock="Right" CornerRadius="3" Padding="5,1" Background="#D32F2F"
+                                                        Visibility="{Binding Required, Converter={StaticResource BVis}}">
+                                                    <TextBlock Text="{Binding DataContext.Loc[Required], RelativeSource={RelativeSource AncestorType=Window}}"
+                                                               Foreground="White" FontSize="11" />
+                                                </Border>
+                                                <CheckBox IsChecked="{Binding IsConfirmed}" Margin="0,0,8,0">
+                                                    <TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
+                                                </CheckBox>
+                                            </DockPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </DockPanel>
+
+                        <!-- ③ 结果 -->
+                        <StackPanel Visibility="{Binding IsFinished, Converter={StaticResource BVis}}" Margin="16">
+                            <TextBlock Text="{Binding DataContext.Loc[AllComplete], RelativeSource={RelativeSource AncestorType=Window}}"
+                                       FontSize="16" FontWeight="Bold" Foreground="#2E7D32" />
+                            <TextBlock Text="{Binding OrderingSummary}" Margin="0,8,0,0" FontWeight="Bold" Foreground="#1976D2" />
+                            <TextBlock Text="{Binding ResultSummary}" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="#37474F" />
                         </StackPanel>
-
-                        <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Selected}" Margin="16,0">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate DataType="{x:Type vm:ExamStepViewModel}">
-                                    <TextBlock Text="{Binding Instruction}" TextWrapping="Wrap" Padding="4" />
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
                     </DockPanel>
                 </Border>
             </Border>
