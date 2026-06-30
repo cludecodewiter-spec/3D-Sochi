@@ -81,6 +81,19 @@ public class ValidatorEdgeTests
     }
 
     [Fact]
+    public void NonContiguousStepOrders_IsWarningNotError()
+    {
+        var steps = new[]
+        {
+            new Step(1, StepAction.Highlight, "p1", null, T(), new List<SafetyCheck>()),
+            new Step(5, StepAction.Highlight, "p1", null, T(), new List<SafetyCheck>()),
+        };
+        var report = ManifestValidator.Validate(Make(steps: steps), (IReadOnlyList<string>?)null);
+        Assert.True(report.IsValid); // 仅告警,不阻断
+        Assert.Contains(report.Issues, i => i.Severity == ValidationSeverity.Warning && i.Message.Contains("连续"));
+    }
+
+    [Fact]
     public void NullNodeList_SkipsNodeExistenceCheck()
     {
         // 不传节点集合时,node 存在性不校验,其余结构合法 → 通过

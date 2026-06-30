@@ -146,6 +146,12 @@ public static class ManifestValidator
             }
         }
 
+        // 步骤 order 建议从 1 起连续递增(便于排序/考核);非连续仅告警,不阻断。
+        var orders = steps.Select(s => s.Order).OrderBy(o => o).ToList();
+        var expected = Enumerable.Range(1, orders.Count).ToList();
+        if (!orders.SequenceEqual(expected))
+            report.Warn($"步骤 order 不是从 1 起的连续序列(实际:{string.Join(",", orders)})");
+
         return report;
     }
 

@@ -119,6 +119,25 @@ public class ManifestTests
     }
 
     [Fact]
+    public void GltfInspector_DumpHierarchy_ShowsParentAndIndentedChildren()
+    {
+        var path = Path.Combine(Path.GetTempPath(), $"test_{System.Guid.NewGuid():N}.glb");
+        try
+        {
+            TestGlb.WriteNested(path, "assembly", "front_panel", "filter");
+            var lines = GltfInspector.DumpHierarchy(path);
+            Assert.Contains(lines, l => l.Trim() == "- assembly");
+            // 子节点应带缩进(深度 1 → 两个空格)
+            Assert.Contains(lines, l => l.StartsWith("  - front_panel"));
+            Assert.Contains(lines, l => l.StartsWith("  - filter"));
+        }
+        finally
+        {
+            if (File.Exists(path)) File.Delete(path);
+        }
+    }
+
+    [Fact]
     public void Validate_AgainstGeneratedGlb_Passes()
     {
         var path = Path.Combine(Path.GetTempPath(), $"test_{System.Guid.NewGuid():N}.glb");
