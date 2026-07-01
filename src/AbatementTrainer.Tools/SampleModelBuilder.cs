@@ -111,6 +111,74 @@ public static class SampleModelBuilder
         WriteParts(path, parts);
     }
 
+    /// <summary>
+    /// 除害装置 C 型(柜式):米色柜体外壳 + 立式管柱(含管件/阀门)+ 不锈钢容器 +
+    /// 右侧控制面板(压力表 + 流量计 + 指示灯)。结构参照真实照片。
+    /// </summary>
+    public static void WriteUnitC(string path)
+    {
+        var parts = new System.Collections.Generic.List<Part>();
+        var cream = (0.88f, 0.86f, 0.78f);
+        var steel = (0.80f, 0.82f, 0.86f);
+
+        // 柜体外壳:后背板 + 左右侧板 + 顶 + 底座 + 中间隔板(前面敞开可见内部)
+        var cab = NewMesh();
+        var cabMat = Pbr("cabinet", cream.Item1, cream.Item2, cream.Item3, 0.1f, 0.7f);
+        AddBox(cab, cabMat, new Vector3(0, 0, -0.42f), new Vector3(1.30f, 2.10f, 0.04f)); // 背板
+        AddBox(cab, cabMat, new Vector3(-0.65f, 0, 0), new Vector3(0.04f, 2.10f, 0.84f));  // 左侧板
+        AddBox(cab, cabMat, new Vector3(0.65f, 0, 0), new Vector3(0.04f, 2.10f, 0.84f));   // 右侧板
+        AddBox(cab, cabMat, new Vector3(0, 1.05f, 0), new Vector3(1.30f, 0.05f, 0.84f));   // 顶板
+        AddBox(cab, cabMat, new Vector3(0, -1.02f, 0), new Vector3(1.30f, 0.10f, 0.84f));  // 底座
+        AddBox(cab, cabMat, new Vector3(0.30f, 0, 0), new Vector3(0.03f, 2.10f, 0.84f));   // 中间隔板
+        parts.Add(new Part { Node = "cabinet", Center = Vector3.Zero, Mesh = cab });
+
+        // 立式管柱:细长竖管 + 数个管件(短粗环)+ 顶部横向支管
+        var col = NewMesh();
+        var pipeMat = Pbr("column", steel.Item1, steel.Item2, steel.Item3, 0.9f, 0.28f);
+        AddCylinder(col, pipeMat, new Vector3(-0.15f, 0.25f, 0), radius: 0.045f, halfLen: 0.70f, axis: 1); // 主竖管
+        foreach (var y in new[] { -0.35f, -0.05f, 0.35f, 0.70f })                                          // 管件
+            AddCylinder(col, pipeMat, new Vector3(-0.15f, y, 0), radius: 0.075f, halfLen: 0.04f, axis: 1);
+        AddCylinder(col, pipeMat, new Vector3(0.02f, 0.90f, 0), radius: 0.045f, halfLen: 0.20f, axis: 0);  // 顶部横支管
+        parts.Add(new Part { Node = "column", Center = Vector3.Zero, Mesh = col });
+
+        // 阀门(手轮):管柱上的红色圆盘 + 短轴
+        var valve = NewMesh();
+        var valveMat = Pbr("valve", 0.75f, 0.22f, 0.20f, 0.5f, 0.4f);
+        AddCylinder(valve, valveMat, Vector3.Zero, radius: 0.11f, halfLen: 0.02f, axis: 0);   // 手轮盘
+        AddCylinder(valve, valveMat, new Vector3(-0.08f, 0, 0), radius: 0.03f, halfLen: 0.08f, axis: 0); // 阀杆
+        parts.Add(new Part { Node = "valve", Center = new Vector3(-0.02f, 0.05f, 0.10f), Mesh = valve });
+
+        // 不锈钢容器:主圆筒 + 顶盖(短粗)+ 底部法兰
+        var vessel = NewMesh();
+        var vMat = Pbr("vessel", steel.Item1, steel.Item2, steel.Item3, 0.9f, 0.25f);
+        AddCylinder(vessel, vMat, Vector3.Zero, radius: 0.26f, halfLen: 0.42f, axis: 1);
+        AddCylinder(vessel, vMat, new Vector3(0, 0.42f, 0), radius: 0.28f, halfLen: 0.05f, axis: 1);
+        AddCylinder(vessel, vMat, new Vector3(0, -0.44f, 0), radius: 0.30f, halfLen: 0.04f, axis: 1);
+        parts.Add(new Part { Node = "vessel", Center = new Vector3(-0.15f, -0.45f, 0), Mesh = vessel });
+
+        // 控制面板:右格米色面板
+        var panel = NewMesh();
+        AddBox(panel, Pbr("control_panel", 0.90f, 0.89f, 0.83f, 0.1f, 0.6f),
+            Vector3.Zero, new Vector3(0.30f, 1.9f, 0.06f));
+        parts.Add(new Part { Node = "control_panel", Center = new Vector3(0.48f, 0, 0.30f), Mesh = panel });
+
+        // 压力表:白面圆盘 + 深色表框
+        var gauge = NewMesh();
+        AddCylinder(gauge, Pbr("gauge_rim", 0.25f, 0.25f, 0.28f, 0.6f, 0.4f),
+            new Vector3(0, 0, -0.02f), radius: 0.10f, halfLen: 0.02f, axis: 2);
+        AddCylinder(gauge, Pbr("gauge_face", 0.96f, 0.96f, 0.94f, 0.0f, 0.6f),
+            new Vector3(0, 0, 0.01f), radius: 0.085f, halfLen: 0.012f, axis: 2);
+        parts.Add(new Part { Node = "gauge", Center = new Vector3(0.48f, 0.62f, 0.34f), Mesh = gauge });
+
+        // 流量计:竖向透明管(浅蓝)
+        var flow = NewMesh();
+        AddCylinder(flow, Pbr("flow_meter", 0.72f, 0.82f, 0.88f, 0.1f, 0.12f),
+            Vector3.Zero, radius: 0.03f, halfLen: 0.22f, axis: 1);
+        parts.Add(new Part { Node = "flow_meter", Center = new Vector3(0.48f, 0.15f, 0.34f), Mesh = flow });
+
+        WriteParts(path, parts);
+    }
+
     // ───────── 装配与导出 ─────────
 
     private static MeshBuilder<VERTEX> NewMesh() => new MeshBuilder<VERTEX>("part");
