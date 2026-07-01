@@ -112,68 +112,92 @@ public static class SampleModelBuilder
     }
 
     /// <summary>
-    /// 除害装置 C 型(柜式):米色柜体外壳 + 立式管柱(含管件/阀门)+ 不锈钢容器 +
-    /// 右侧控制面板(压力表 + 流量计 + 指示灯)。结构参照真实照片。
+    /// 除害装置 C 型(柜式,细化版):柜体外壳 + 不锈钢容器(筒身/顶盖分离)+
+    /// 可逐段插拔的管线网络(立管/横管/出口管,各带法兰+螺栓)+ 阀门 +
+    /// 右侧控制面板(压力表 + 流量计)。每根管/每个部件都是独立节点,可单独插拔。
+    /// 各部件的插拔方向见对应清单 removeOffset。
     /// </summary>
     public static void WriteUnitC(string path)
     {
         var parts = new System.Collections.Generic.List<Part>();
         var cream = (0.88f, 0.86f, 0.78f);
         var steel = (0.80f, 0.82f, 0.86f);
+        MaterialBuilder Steel(string n) => Pbr(n, steel.Item1, steel.Item2, steel.Item3, 0.9f, 0.28f);
+        MaterialBuilder Bolt(string n) => Pbr(n, 0.35f, 0.36f, 0.40f, 0.9f, 0.45f);
 
-        // 柜体外壳:后背板 + 左右侧板 + 顶 + 底座 + 中间隔板(前面敞开可见内部)
+        var vx = -0.15f; // 容器/管线所在的 X
+
+        // 柜体外壳:后背板 + 左右侧板 + 顶 + 底座 + 中间隔板(前面敞开)
         var cab = NewMesh();
         var cabMat = Pbr("cabinet", cream.Item1, cream.Item2, cream.Item3, 0.1f, 0.7f);
-        AddBox(cab, cabMat, new Vector3(0, 0, -0.42f), new Vector3(1.30f, 2.10f, 0.04f)); // 背板
-        AddBox(cab, cabMat, new Vector3(-0.65f, 0, 0), new Vector3(0.04f, 2.10f, 0.84f));  // 左侧板
-        AddBox(cab, cabMat, new Vector3(0.65f, 0, 0), new Vector3(0.04f, 2.10f, 0.84f));   // 右侧板
-        AddBox(cab, cabMat, new Vector3(0, 1.05f, 0), new Vector3(1.30f, 0.05f, 0.84f));   // 顶板
-        AddBox(cab, cabMat, new Vector3(0, -1.02f, 0), new Vector3(1.30f, 0.10f, 0.84f));  // 底座
-        AddBox(cab, cabMat, new Vector3(0.30f, 0, 0), new Vector3(0.03f, 2.10f, 0.84f));   // 中间隔板
+        AddBox(cab, cabMat, new Vector3(0, 0, -0.42f), new Vector3(1.30f, 2.10f, 0.04f));
+        AddBox(cab, cabMat, new Vector3(-0.65f, 0, 0), new Vector3(0.04f, 2.10f, 0.84f));
+        AddBox(cab, cabMat, new Vector3(0.65f, 0, 0), new Vector3(0.04f, 2.10f, 0.84f));
+        AddBox(cab, cabMat, new Vector3(0, 1.05f, 0), new Vector3(1.30f, 0.05f, 0.84f));
+        AddBox(cab, cabMat, new Vector3(0, -1.02f, 0), new Vector3(1.30f, 0.10f, 0.84f));
+        AddBox(cab, cabMat, new Vector3(0.30f, 0, 0), new Vector3(0.03f, 2.10f, 0.84f));
         parts.Add(new Part { Node = "cabinet", Center = Vector3.Zero, Mesh = cab });
 
-        // 立式管柱:细长竖管 + 数个管件(短粗环)+ 顶部横向支管
-        var col = NewMesh();
-        var pipeMat = Pbr("column", steel.Item1, steel.Item2, steel.Item3, 0.9f, 0.28f);
-        AddCylinder(col, pipeMat, new Vector3(-0.15f, 0.25f, 0), radius: 0.045f, halfLen: 0.70f, axis: 1); // 主竖管
-        foreach (var y in new[] { -0.35f, -0.05f, 0.35f, 0.70f })                                          // 管件
-            AddCylinder(col, pipeMat, new Vector3(-0.15f, y, 0), radius: 0.075f, halfLen: 0.04f, axis: 1);
-        AddCylinder(col, pipeMat, new Vector3(0.02f, 0.90f, 0), radius: 0.045f, halfLen: 0.20f, axis: 0);  // 顶部横支管
-        parts.Add(new Part { Node = "column", Center = Vector3.Zero, Mesh = col });
-
-        // 阀门(手轮):管柱上的红色圆盘 + 短轴
-        var valve = NewMesh();
-        var valveMat = Pbr("valve", 0.75f, 0.22f, 0.20f, 0.5f, 0.4f);
-        AddCylinder(valve, valveMat, Vector3.Zero, radius: 0.11f, halfLen: 0.02f, axis: 0);   // 手轮盘
-        AddCylinder(valve, valveMat, new Vector3(-0.08f, 0, 0), radius: 0.03f, halfLen: 0.08f, axis: 0); // 阀杆
-        parts.Add(new Part { Node = "valve", Center = new Vector3(-0.02f, 0.05f, 0.10f), Mesh = valve });
-
-        // 不锈钢容器:主圆筒 + 顶盖(短粗)+ 底部法兰
+        // 不锈钢容器:筒身 + 底部法兰(顶盖单独成件,可先拔出)
         var vessel = NewMesh();
-        var vMat = Pbr("vessel", steel.Item1, steel.Item2, steel.Item3, 0.9f, 0.25f);
-        AddCylinder(vessel, vMat, Vector3.Zero, radius: 0.26f, halfLen: 0.42f, axis: 1);
-        AddCylinder(vessel, vMat, new Vector3(0, 0.42f, 0), radius: 0.28f, halfLen: 0.05f, axis: 1);
-        AddCylinder(vessel, vMat, new Vector3(0, -0.44f, 0), radius: 0.30f, halfLen: 0.04f, axis: 1);
-        parts.Add(new Part { Node = "vessel", Center = new Vector3(-0.15f, -0.45f, 0), Mesh = vessel });
+        AddCylinder(vessel, Steel("vessel"), Vector3.Zero, radius: 0.26f, halfLen: 0.40f, axis: 1);
+        AddFlange(vessel, Steel("vessel_base"), Bolt("vessel_bolts"),
+            new Vector3(0, -0.42f, 0), discR: 0.30f, axis: 1, boltCount: 8, boltRingR: 0.24f);
+        parts.Add(new Part { Node = "vessel", Center = new Vector3(vx, -0.45f, 0), Mesh = vessel });
 
-        // 控制面板:右格米色面板
+        // 容器顶盖:短粗圆盖 + 顶法兰(向上插拔)
+        var lid = NewMesh();
+        AddCylinder(lid, Steel("lid"), Vector3.Zero, radius: 0.27f, halfLen: 0.05f, axis: 1);
+        AddFlange(lid, Steel("lid_flange"), Bolt("lid_bolts"),
+            new Vector3(0, 0.05f, 0), discR: 0.30f, axis: 1, boltCount: 8, boltRingR: 0.24f);
+        parts.Add(new Part { Node = "vessel_lid", Center = new Vector3(vx, 0.02f, 0), Mesh = lid });
+
+        // 立管:从顶盖向上的竖管 + 上下法兰(向上插拔)
+        var riser = NewMesh();
+        AddCylinder(riser, Steel("riser"), Vector3.Zero, radius: 0.045f, halfLen: 0.34f, axis: 1);
+        AddFlange(riser, Steel("riser_fl_b"), Bolt("riser_bolt_b"), new Vector3(0, -0.34f, 0), 0.09f, 1, 4, 0.06f);
+        AddFlange(riser, Steel("riser_fl_t"), Bolt("riser_bolt_t"), new Vector3(0, 0.34f, 0), 0.09f, 1, 4, 0.06f);
+        parts.Add(new Part { Node = "riser_pipe", Center = new Vector3(vx, 0.44f, 0), Mesh = riser });
+
+        // 横管:顶部水平支管 + 两端法兰(向 +X 插拔)
+        var cross = NewMesh();
+        AddCylinder(cross, Steel("cross"), Vector3.Zero, radius: 0.045f, halfLen: 0.26f, axis: 0);
+        AddFlange(cross, Steel("cross_fl"), Bolt("cross_bolt"), new Vector3(-0.26f, 0, 0), 0.09f, 0, 4, 0.06f);
+        parts.Add(new Part { Node = "cross_pipe", Center = new Vector3(vx + 0.15f, 0.80f, 0), Mesh = cross });
+
+        // 出口管:容器侧面向前的管 + 端法兰(向 +Z 插拔)
+        var outlet = NewMesh();
+        AddCylinder(outlet, Steel("outlet"), Vector3.Zero, radius: 0.05f, halfLen: 0.24f, axis: 2);
+        AddFlange(outlet, Steel("outlet_fl"), Bolt("outlet_bolt"), new Vector3(0, 0, 0.24f), 0.10f, 2, 6, 0.07f);
+        parts.Add(new Part { Node = "outlet_pipe", Center = new Vector3(vx + 0.22f, -0.45f, 0.30f), Mesh = outlet });
+
+        // 阀门(手轮):立管上的红色手轮 + 阀体(向 +Z 插拔/操作)
+        var valve = NewMesh();
+        var valveMat = Pbr("valve", 0.78f, 0.20f, 0.18f, 0.5f, 0.4f);
+        AddCylinder(valve, valveMat, new Vector3(0, 0, 0.06f), radius: 0.10f, halfLen: 0.015f, axis: 2); // 手轮
+        for (int i = 0; i < 6; i++) // 手轮辐条
+        {
+            var a = (float)(Math.PI * i / 6);
+            AddBox(valve, valveMat, new Vector3(0, 0, 0.06f),
+                new Vector3(0.18f * (float)Math.Cos(a), 0.18f * (float)Math.Sin(a), 0.01f) + new Vector3(0.02f, 0.02f, 0.01f));
+        }
+        AddCylinder(valve, Steel("valve_body"), Vector3.Zero, radius: 0.05f, halfLen: 0.05f, axis: 2); // 阀体
+        parts.Add(new Part { Node = "valve", Center = new Vector3(vx, 0.44f, 0.05f), Mesh = valve });
+
+        // 控制面板 + 压力表 + 流量计(右格)
         var panel = NewMesh();
-        AddBox(panel, Pbr("control_panel", 0.90f, 0.89f, 0.83f, 0.1f, 0.6f),
-            Vector3.Zero, new Vector3(0.30f, 1.9f, 0.06f));
+        AddBox(panel, Pbr("control_panel", 0.90f, 0.89f, 0.83f, 0.1f, 0.6f), Vector3.Zero, new Vector3(0.30f, 1.9f, 0.06f));
         parts.Add(new Part { Node = "control_panel", Center = new Vector3(0.48f, 0, 0.30f), Mesh = panel });
 
-        // 压力表:白面圆盘 + 深色表框
         var gauge = NewMesh();
-        AddCylinder(gauge, Pbr("gauge_rim", 0.25f, 0.25f, 0.28f, 0.6f, 0.4f),
-            new Vector3(0, 0, -0.02f), radius: 0.10f, halfLen: 0.02f, axis: 2);
-        AddCylinder(gauge, Pbr("gauge_face", 0.96f, 0.96f, 0.94f, 0.0f, 0.6f),
-            new Vector3(0, 0, 0.01f), radius: 0.085f, halfLen: 0.012f, axis: 2);
+        AddCylinder(gauge, Pbr("gauge_rim", 0.25f, 0.25f, 0.28f, 0.6f, 0.4f), new Vector3(0, 0, -0.02f), 0.10f, 0.02f, 2);
+        AddCylinder(gauge, Pbr("gauge_face", 0.96f, 0.96f, 0.94f, 0.0f, 0.6f), new Vector3(0, 0, 0.012f), 0.085f, 0.012f, 2);
+        AddBox(gauge, Pbr("gauge_needle", 0.2f, 0.2f, 0.2f, 0.2f, 0.6f), new Vector3(0.03f, 0.02f, 0.03f), new Vector3(0.07f, 0.008f, 0.004f)); // 指针
         parts.Add(new Part { Node = "gauge", Center = new Vector3(0.48f, 0.62f, 0.34f), Mesh = gauge });
 
-        // 流量计:竖向透明管(浅蓝)
         var flow = NewMesh();
-        AddCylinder(flow, Pbr("flow_meter", 0.72f, 0.82f, 0.88f, 0.1f, 0.12f),
-            Vector3.Zero, radius: 0.03f, halfLen: 0.22f, axis: 1);
+        AddCylinder(flow, Pbr("flow_meter", 0.72f, 0.82f, 0.88f, 0.1f, 0.12f), Vector3.Zero, 0.03f, 0.22f, 1);
+        AddCylinder(flow, Pbr("flow_float", 0.85f, 0.35f, 0.30f, 0.3f, 0.4f), new Vector3(0, -0.05f, 0), 0.022f, 0.02f, 1); // 浮子
         parts.Add(new Part { Node = "flow_meter", Center = new Vector3(0.48f, 0.15f, 0.34f), Mesh = flow });
 
         WriteParts(path, parts);
@@ -253,4 +277,25 @@ public static class SampleModelBuilder
         Quad(P(-1, 1, 1), P(1, 1, 1), P(1, 1, -1), P(-1, 1, -1), new Vector3(0, 1, 0));
         Quad(P(-1, -1, -1), P(1, -1, -1), P(1, -1, 1), P(-1, -1, 1), new Vector3(0, -1, 0));
     }
+
+    /// <summary>向网格累加一个法兰(短粗圆盘 + 一圈螺栓),axis 为法兰面法向轴。</summary>
+    private static void AddFlange(MeshBuilder<VERTEX> mesh, MaterialBuilder disc, MaterialBuilder bolt,
+        Vector3 center, float discR, int axis, int boltCount, float boltRingR)
+    {
+        AddCylinder(mesh, disc, center, radius: discR, halfLen: 0.022f, axis);
+        for (int i = 0; i < boltCount; i++)
+        {
+            float a = (float)(2 * Math.PI * i / boltCount);
+            var off = PlaneOffset(axis, (float)Math.Cos(a) * boltRingR, (float)Math.Sin(a) * boltRingR);
+            AddCylinder(mesh, bolt, center + off, radius: 0.013f, halfLen: 0.03f, axis);
+        }
+    }
+
+    /// <summary>在垂直于 axis 的平面内构造偏移向量。</summary>
+    private static Vector3 PlaneOffset(int axis, float a, float b) => axis switch
+    {
+        0 => new Vector3(0, a, b),   // 轴 X → 环在 (Y,Z)
+        2 => new Vector3(a, b, 0),   // 轴 Z → 环在 (X,Y)
+        _ => new Vector3(a, 0, b),   // 轴 Y → 环在 (X,Z)
+    };
 }
