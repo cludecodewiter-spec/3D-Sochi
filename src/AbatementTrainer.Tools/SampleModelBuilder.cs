@@ -200,6 +200,40 @@ public static class SampleModelBuilder
         AddCylinder(flow, Pbr("flow_float", 0.85f, 0.35f, 0.30f, 0.3f, 0.4f), new Vector3(0, -0.05f, 0), 0.022f, 0.02f, 1); // 浮子
         parts.Add(new Part { Node = "flow_meter", Center = new Vector3(0.48f, 0.15f, 0.34f), Mesh = flow });
 
+        // 排液管:容器底部向前下方的管 + 端法兰(向 +Z 插拔)
+        var drain = NewMesh();
+        AddCylinder(drain, Steel("drain"), new Vector3(0, 0, 0), radius: 0.035f, halfLen: 0.18f, axis: 2);
+        AddCylinder(drain, Pbr("drain_valve", 0.78f, 0.20f, 0.18f, 0.5f, 0.4f), new Vector3(0, 0, 0.12f), 0.05f, 0.04f, 2);
+        AddFlange(drain, Steel("drain_fl"), Bolt("drain_bolt"), new Vector3(0, 0, 0.18f), 0.07f, 2, 4, 0.045f);
+        parts.Add(new Part { Node = "drain_pipe", Center = new Vector3(vx, -0.80f, 0.28f), Mesh = drain });
+
+        // 传感器:容器侧壁的两个探头(温度/液位)+ 接头
+        var sensor = NewMesh();
+        var sMat = Pbr("sensor_body", 0.15f, 0.16f, 0.18f, 0.5f, 0.5f);
+        AddCylinder(sensor, sMat, new Vector3(0, 0.15f, 0), 0.03f, 0.10f, 2);
+        AddBox(sensor, sMat, new Vector3(0, 0.15f, 0.12f), new Vector3(0.06f, 0.06f, 0.05f));
+        AddCylinder(sensor, sMat, new Vector3(0, -0.15f, 0), 0.03f, 0.10f, 2);
+        AddBox(sensor, sMat, new Vector3(0, -0.15f, 0.12f), new Vector3(0.06f, 0.06f, 0.05f));
+        parts.Add(new Part { Node = "sensor", Center = new Vector3(vx - 0.24f, -0.45f, 0.10f), Mesh = sensor });
+
+        // 线路/电缆线束:从控制面板引出的多色电缆(Manhattan 走线,近似真实线束)
+        var wire = NewMesh();
+        void Cable((float r, float g, float b) c, params (Vector3 ctr, float half, int ax)[] segs)
+        {
+            var m = Pbr($"cable_{c.r}_{c.g}", c.r, c.g, c.b, 0.0f, 0.6f);
+            foreach (var s in segs) AddCylinder(wire, m, s.ctr, radius: 0.012f, halfLen: s.half, axis: s.ax);
+        }
+        var red = (0.85f, 0.20f, 0.18f); var blu = (0.20f, 0.40f, 0.80f);
+        var yel = (0.90f, 0.80f, 0.20f); var grn = (0.25f, 0.65f, 0.35f);
+        // 面板(x≈0.30)→ 横向到设备区(x≈-0.15)→ 分别到 阀门/传感器/顶盖/表
+        Cable(red, (new Vector3(0.08f, 0.55f, 0.33f), 0.24f, 0), (new Vector3(-0.15f, 0.50f, 0.33f), 0.06f, 1)); // →阀门
+        Cable(blu, (new Vector3(0.08f, 0.50f, 0.31f), 0.24f, 0), (new Vector3(-0.38f, 0.20f, 0.31f), 0.32f, 1)); // →传感器
+        Cable(yel, (new Vector3(0.08f, 0.45f, 0.35f), 0.24f, 0), (new Vector3(-0.15f, 0.30f, 0.35f), 0.18f, 1)); // →顶盖区
+        Cable(grn, (new Vector3(0.14f, 0.60f, 0.29f), 0.05f, 0), (new Vector3(0.20f, 0.35f, 0.29f), 0.28f, 1)); // 面板内竖走
+        // 沿后壁竖向线槽(灰)
+        AddCylinder(wire, Pbr("conduit", 0.5f, 0.5f, 0.52f, 0.3f, 0.6f), new Vector3(-0.55f, 0.1f, -0.30f), 0.03f, 0.8f, 1);
+        parts.Add(new Part { Node = "wiring", Center = Vector3.Zero, Mesh = wire });
+
         WriteParts(path, parts);
     }
 

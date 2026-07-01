@@ -11,6 +11,10 @@
       "name": { "zh": "压力表", "ja": "圧力計" }, "partNo": "C-002" },
     { "id": "flow_meter", "node": "flow_meter",
       "name": { "zh": "流量计", "ja": "流量計" }, "partNo": "C-003" },
+    { "id": "wiring", "node": "wiring",
+      "name": { "zh": "电气线路 / 电缆", "ja": "電気配線・ケーブル" }, "partNo": "C-010" },
+    { "id": "sensor", "node": "sensor",
+      "name": { "zh": "传感器探头", "ja": "センサープローブ" }, "partNo": "C-011" },
     { "id": "valve", "node": "valve",
       "name": { "zh": "进气阀", "ja": "給気バルブ" }, "partNo": "C-004" },
     { "id": "cross_pipe", "node": "cross_pipe",
@@ -19,6 +23,8 @@
       "name": { "zh": "立管", "ja": "縦配管" }, "partNo": "C-006" },
     { "id": "outlet_pipe", "node": "outlet_pipe",
       "name": { "zh": "出口管", "ja": "出口配管" }, "partNo": "C-007" },
+    { "id": "drain_pipe", "node": "drain_pipe",
+      "name": { "zh": "排液管", "ja": "ドレン配管" }, "partNo": "C-012" },
     { "id": "vessel_lid", "node": "vessel_lid",
       "name": { "zh": "容器顶盖", "ja": "容器トップカバー" }, "partNo": "C-008" },
     { "id": "vessel", "node": "vessel",
@@ -39,6 +45,15 @@
       {
         "order": 2,
         "action": "highlight",
+        "targetPart": "wiring",
+        "instruction": { "zh": "确认相关电气线路已断电、隔离", "ja": "関連する電気配線の断電・隔離を確認" },
+        "safetyChecks": [
+          { "type": "Loto", "text": { "zh": "确认控制电源已断开并上锁挂牌", "ja": "制御電源の遮断・施錠・札掛けを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 3,
+        "action": "highlight",
         "targetPart": "valve",
         "instruction": { "zh": "关闭进气阀并上锁挂牌", "ja": "給気バルブを閉じ、施錠・札掛けを行う" },
         "safetyChecks": [
@@ -47,7 +62,7 @@
         ]
       },
       {
-        "order": 3,
+        "order": 4,
         "action": "remove",
         "targetPart": "cross_pipe",
         "removeOffset": [0.75, 0, 0],
@@ -58,7 +73,7 @@
         ]
       },
       {
-        "order": 4,
+        "order": 5,
         "action": "remove",
         "targetPart": "riser_pipe",
         "removeOffset": [0, 0.8, 0],
@@ -68,7 +83,7 @@
         ]
       },
       {
-        "order": 5,
+        "order": 6,
         "action": "remove",
         "targetPart": "outlet_pipe",
         "removeOffset": [0, 0, 0.75],
@@ -78,7 +93,17 @@
         ]
       },
       {
-        "order": 6,
+        "order": 7,
+        "action": "remove",
+        "targetPart": "drain_pipe",
+        "removeOffset": [0, 0, 0.6],
+        "instruction": { "zh": "确认底部已排空后,拆下排液管", "ja": "底部の排出完了を確認後、ドレン配管を取り外す" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认排液管路无残液、无残压", "ja": "ドレンラインに残液・残圧がないことを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 8,
         "action": "remove",
         "targetPart": "vessel_lid",
         "removeOffset": [0, 0.4, 0],
@@ -89,7 +114,7 @@
         ]
       },
       {
-        "order": 7,
+        "order": 9,
         "action": "remove",
         "targetPart": "vessel",
         "removeOffset": [0, 0, 0.6],
