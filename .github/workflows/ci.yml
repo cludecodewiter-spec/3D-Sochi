@@ -39,3 +39,25 @@ jobs:
       # WPF App 仅能在 Windows 构建(net8.0-windows + SharpDX)
       - name: Build App
         run: dotnet build src/AbatementTrainer.App/AbatementTrainer.App.csproj -c Release
+
+      # M11 发布验证(PM 审核 P1:自包含单文件发布是「宣称」→ 实测)
+      - name: Publish self-contained single-file
+        run: >
+          dotnet publish src/AbatementTrainer.App/AbatementTrainer.App.csproj
+          -c Release -r win-x64 --self-contained true
+          -p:PublishSingleFile=true -o publish
+
+      - name: Verify publish output (exe + content shipped)
+        shell: pwsh
+        run: |
+          if (!(Test-Path publish/AbatementTrainer.exe)) { throw "AbatementTrainer.exe 缺失" }
+          if (!(Test-Path publish/content/index.json)) { throw "content/ 未随发布携带" }
+          Get-ChildItem publish -Recurse | Measure-Object Length -Sum |
+            ForEach-Object { "publish 总大小: {0:N1} MB" -f ($_.Sum/1MB) }
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AbatementTrainer-win-x64
+          path: publish
+          retention-days: 14

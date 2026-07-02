@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Numerics;
 using AbatementTrainer.App.Services;
 using AbatementTrainer.Core.Models;
 using AbatementTrainer.Core.Manifest;
@@ -46,6 +47,11 @@ public sealed partial class MainViewModel : ObservableObject
         };
         // 语言切换 → 刷新所有本地化文案
         _loc.LanguageChanged += (_, _) => RefreshAllLanguage();
+
+        // PLC → 3D 运转视觉:每个扫描周期驱动表针/浮子/信号灯/LED;开关阀转手轮
+        Plc.Scanned += () => _scene?.UpdatePlcVisuals(
+            Plc.PressureKpa, Plc.FlowLpm, Plc.BeaconOn, Plc.Running, Plc.AlarmLampOn, Plc.ValveOpen);
+        Plc.ValveToggled += open => _scene?.SpinValveWheel(open);
 
         LoadLibrary();
     }
@@ -120,6 +126,7 @@ public sealed partial class MainViewModel : ObservableObject
 
             _manifest = manifest;
             _scene = new SceneController(loaded.NodesByName);
+            _scene.BindPlcVisuals();   // 绑定 PLC 动画子网格(表针/信号灯/LED/浮子/手轮)
 
             // M3/M4:构建部件列表
             BuildParts();
@@ -319,6 +326,31 @@ public sealed partial class MainViewModel : ObservableObject
     // 由 part.id(targetPart)解析到 glTF 节点名
     private string NodeOf(string partId) =>
         _manifest?.Parts.FirstOrDefault(p => p.Id == partId)?.Node ?? partId;
+
+    // ───────── 拖拽插拔支持(窗口层调用) ─────────
+
+    /// <summary>场景控制器(供窗口拖拽访问 GetBaseTranslation/SetPullout/SnapPullout)。</summary>
+    public SceneController? Scene => _scene;
+
+    /// <summary>
+    /// 按 glTF 节点名取插拔轴:优先用清单该部件 remove 步骤的 removeOffset;
+    /// 无预设方向的部件默认向前(+Z)0.5。非部件(如 environment 地面)返回 null=不可拖。
+    /// </summary>
+    public (Vector3 Dir, float Len)? GetDragAxis(string nodeName)
+    {
+        if (_manifest is null) return null;
+        var part = _manifest.Parts.FirstOrDefault(p => p.Node == nodeName);
+        if (part is null) return null;
+        var step = _manifest.Procedure.Steps
+            .FirstOrDefault(s => s.TargetPart == part.Id && s.RemoveOffset is { Length: 3 });
+        if (step?.RemoveOffset is { } off)
+        {
+            var v = new Vector3(off[0], off[1], off[2]);
+            var len = v.Length();
+            if (len > 1e-4f) return (v / len, len);
+        }
+        return (new Vector3(0, 0, 1), 0.5f);
+    }
 
     // ───────── M10 考核 ─────────
     [ObservableProperty] private ExamViewModel? _exam;

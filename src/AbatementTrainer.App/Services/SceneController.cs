@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using System.Windows.Threading;
+using HelixToolkit.Maths;
 using HelixToolkit.SharpDX.Model;
 using HelixToolkit.SharpDX.Model.Scene;
 
@@ -185,5 +186,125 @@ public sealed class SceneController
         _animTimer?.Stop();
         _animTimer = null;
         _animNode = null;
+    }
+
+    // ═══════════════ 拖拽插拔支持(与网页版同一套轴约束数学) ═══════════════
+
+    /// <summary>取部件初始位移(基准矩阵的平移分量;拖拽轴线起点)。</summary>
+    public Vector3 GetBaseTranslation(string nodeName)
+    {
+        var node = Find(nodeName);
+        return node is not null && _baseMatrix.TryGetValue(node, out var m)
+            ? m.Translation
+            : Vector3.Zero;
+    }
+
+    /// <summary>取部件当前沿 <paramref name="dir"/> 的拔出量(供拖拽起始点计算)。</summary>
+    public float GetPulloutAmount(string nodeName, Vector3 dir)
+    {
+        var node = Find(nodeName);
+        if (node is null || !_baseMatrix.TryGetValue(node, out var m)) return 0;
+        return Vector3.Dot(node.ModelMatrix.Translation - m.Translation, dir);
+    }
+
+    /// <summary>把部件放到「基准位 + dir×t」处(拖拽中实时调用;t 由调用方裁剪)。</summary>
+    public void SetPullout(string nodeName, Vector3 dir, float t)
+    {
+        var node = Find(nodeName);
+        if (node is null || !_baseMatrix.TryGetValue(node, out var m)) return;
+        node.ModelMatrix = m * Matrix4x4.CreateTranslation(dir * t);
+    }
+
+    /// <summary>拖拽结束吸附:超过 60% 拔到位,否则弹回装好(带动画)。</summary>
+    public void SnapPullout(string nodeName, Vector3 dir, float len)
+    {
+        var node = Find(nodeName);
+        if (node is null) return;
+        float cur = GetPulloutAmount(nodeName, dir);
+        if (cur > len * 0.6f)
+            Animate(node, dir * len, hideAtEnd: false);   // 拔到位(保持可见,与网页版一致)
+        else
+            RestorePart(nodeName);                        // 弹回安装位
+    }
+
+    // ═══════════════ PLC → 3D 运转视觉(表针/信号灯/LED/浮子/手轮) ═══════════════
+    // 生成器给动画件用了独立材质名(needle/beacon/led_g/led_a/led_r/red_paint),
+    // Assimp 导入后按「部件根节点 + 材质名」定位对应 MeshNode;找不到则安静降级(不同模型无此件)。
+
+    private MeshNode? _needle, _beacon, _ledG, _ledA, _ledR, _wheel, _float;
+    private Matrix4x4 _needleBase, _wheelBase, _floatBase;
+    private float _wheelAngle, _wheelTarget;
+
+    /// <summary>扫描部件子树,绑定 PLC 动画子网格。加载模型后调用一次。</summary>
+    public void BindPlcVisuals()
+    {
+        _needle = FindMesh("gauge", "needle");
+        _beacon = FindMesh("cabinet", "beacon");
+        _ledG = FindMesh("control_panel", "led_g");
+        _ledA = FindMesh("control_panel", "led_a");
+        _ledR = FindMesh("control_panel", "led_r");
+        _wheel = FindMesh("valve", "red_paint");
+        _float = FindMesh("flow_meter", "red_paint");
+        if (_needle is not null) _needleBase = _needle.ModelMatrix;
+        if (_wheel is not null) _wheelBase = _wheel.ModelMatrix;
+        if (_float is not null) _floatBase = _float.ModelMatrix;
+        _wheelAngle = _wheelTarget = 0;
+    }
+
+    /// <summary>阀门开/关时调用:手轮目标转角 ±2 圈。</summary>
+    public void SpinValveWheel(bool open) =>
+        _wheelTarget += (open ? 1 : -1) * 4 * MathF.PI;
+
+    /// <summary>
+    /// 每个 PLC 扫描周期调用:驱动表针旋转、浮子升降、信号灯/LED 发光、手轮旋转。
+    /// 找不到对应网格时各自跳过(非 unitC 模型无这些件)。
+    /// </summary>
+    public void UpdatePlcVisuals(double pressureKpa, double flowLpm, bool beaconOn,
+        bool running, bool alarmLampOn, bool valveOpen)
+    {
+        // 表针:0 kPa=225°,满量程(300kPa)扫过 270°(与表盘贴图刻度一致)
+        if (_needle is not null)
+        {
+            float deg = 225f - 270f * (float)Math.Min(1.0, pressureKpa / 300.0);
+            _needle.ModelMatrix = Matrix4x4.CreateRotationZ(deg * MathF.PI / 180f) * _needleBase;
+        }
+        // 浮子:随流量升起(满量程升 0.15,本地 Y)
+        if (_float is not null)
+        {
+            float fn = (float)Math.Min(1.0, flowLpm / 42.0);
+            _float.ModelMatrix = _floatBase * Matrix4x4.CreateTranslation(0, fn * 0.15f, 0);
+        }
+        // 手轮:向目标角度平滑逼近
+        if (_wheel is not null)
+        {
+            _wheelAngle += (_wheelTarget - _wheelAngle) * 0.15f;
+            _wheel.ModelMatrix = Matrix4x4.CreateRotationZ(_wheelAngle) * _wheelBase;
+        }
+        SetEmissive(_beacon, beaconOn, 1f, 0.15f, 0.1f);
+        SetEmissive(_ledG, running, 0.15f, 0.9f, 0.25f);
+        SetEmissive(_ledA, !running && !alarmLampOn && valveOpen, 0.95f, 0.65f, 0.15f);
+        SetEmissive(_ledR, alarmLampOn, 1f, 0.15f, 0.1f);
+    }
+
+    private static void SetEmissive(MeshNode? mesh, bool on, float r, float g, float b)
+    {
+        if (mesh?.Material is PBRMaterialCore pbr)
+            pbr.EmissiveColor = on ? new Color4(r, g, b, 1f) : new Color4(r * 0.08f, g * 0.08f, b * 0.08f, 1f);
+    }
+
+    /// <summary>在部件根节点子树内按材质名找 MeshNode。</summary>
+    private MeshNode? FindMesh(string partNode, string materialName)
+    {
+        var root = Find(partNode);
+        if (root is null) return null;
+        MeshNode? hit = null;
+        void Walk(SceneNode n)
+        {
+            if (hit is not null) return;
+            if (n is MeshNode mesh && mesh.Material?.Name == materialName) { hit = mesh; return; }
+            foreach (var c in n.Items) Walk(c);
+        }
+        Walk(root);
+        return hit;
     }
 }

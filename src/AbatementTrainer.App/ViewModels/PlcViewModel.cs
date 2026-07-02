@@ -40,6 +40,12 @@ public sealed partial class PlcViewModel : ObservableObject
     /// <summary>报警灯是否点亮(报警 + 闪烁相位;便于 XAML 直接绑定)。</summary>
     public bool AlarmLampOn => Alarm && BeaconOn;
 
+    /// <summary>每个扫描周期结束后触发(MainViewModel 借此驱动 3D 运转视觉)。</summary>
+    public event Action? Scanned;
+
+    /// <summary>阀门开/关切换时触发(参数=开;驱动 3D 手轮旋转)。</summary>
+    public event Action<bool>? ValveToggled;
+
     private void Scan(double dt)
     {
         _plc.ValveOpen = ValveOpen;
@@ -54,13 +60,19 @@ public sealed partial class PlcViewModel : ObservableObject
         OnPropertyChanged(nameof(PressurePercent));
         OnPropertyChanged(nameof(FlowPercent));
         OnPropertyChanged(nameof(AlarmLampOn));
+        Scanned?.Invoke();
     }
 
     // ───── HMI 按钮 ─────
     [RelayCommand] private void Start() => _plc.PressStart();
     [RelayCommand] private void Stop() => _plc.PressStop();
     [RelayCommand] private void ResetAlarm() => _plc.PressReset();
-    [RelayCommand] private void ToggleValve() => ValveOpen = !ValveOpen;
+    [RelayCommand]
+    private void ToggleValve()
+    {
+        ValveOpen = !ValveOpen;
+        ValveToggled?.Invoke(ValveOpen);
+    }
     [RelayCommand] private void ToggleEStop() => EStop = !EStop;
 
     /// <summary>切换设备/离开训练时复位。</summary>
