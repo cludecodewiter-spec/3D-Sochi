@@ -1,0 +1,22 @@
+## .NET build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+
+## Rider / VS
+.idea/
+.vs/
+
+## Publish output
+publish/
+*.publish.xml
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Node (webdemo 构建依赖)
+node_modules/

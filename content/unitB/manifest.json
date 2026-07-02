@@ -1,0 +1,64 @@
+{
+  "equipmentId": "abatement-unit-B",
+  "name": { "zh": "除害装置 B 型(立式塔)", "ja": "除害装置 B 型(立形塔)" },
+  "modelFile": "models/unitB.glb",
+  "parts": [
+    { "id": "base", "node": "base",
+      "name": { "zh": "底座", "ja": "ベース" }, "partNo": "B-000" },
+    { "id": "tower", "node": "tower",
+      "name": { "zh": "塔体", "ja": "タワー本体" }, "partNo": "B-001" },
+    { "id": "top_cover", "node": "top_cover",
+      "name": { "zh": "顶盖", "ja": "トップカバー" }, "partNo": "B-002" },
+    { "id": "scrubber", "node": "scrubber",
+      "name": { "zh": "洗涤塔", "ja": "スクラバー" }, "partNo": "B-003" },
+    { "id": "drain_valve", "node": "drain_valve",
+      "name": { "zh": "排液阀", "ja": "ドレンバルブ" }, "partNo": "B-004" }
+  ],
+  "procedure": {
+    "title": { "zh": "顶盖与洗涤塔检修", "ja": "トップカバー・スクラバー点検" },
+    "steps": [
+      {
+        "order": 1,
+        "action": "remove",
+        "targetPart": "top_cover",
+        "removeOffset": [0, 0.5, 0],
+        "instruction": { "zh": "确认隔离上锁后,向上吊起顶盖", "ja": "隔離・施錠を確認後、トップカバーを上方へ吊り上げる" },
+        "safetyChecks": [
+          { "type": "Loto", "text": { "zh": "确认主电源与气源已隔离上锁挂牌", "ja": "主電源・ガス源の遮断・施錠・札掛けを確認" }, "required": true },
+          { "type": "Ppe",  "text": { "zh": "确认已佩戴防护装备", "ja": "保護具の着用を確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 2,
+        "action": "remove",
+        "targetPart": "drain_valve",
+        "removeOffset": [0, 0, 0.4],
+        "instruction": { "zh": "确认已排空残液后,拆下排液阀", "ja": "残液の排出を確認後、ドレンバルブを取り外す" },
+        "safetyChecks": [
+          { "type": "Purge",     "text": { "zh": "确认塔内已吹扫置换", "ja": "塔内のパージ・置換を確認" }, "required": true },
+          { "type": "LeakCheck", "text": { "zh": "确认排液管路无残压", "ja": "排液ラインに残圧がないことを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 3,
+        "action": "highlight",
+        "targetPart": "scrubber",
+        "instruction": { "zh": "检查洗涤塔填料有无堵塞或结垢", "ja": "スクラバー充填材の閉塞・スケールを点検" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认循环液无泄漏", "ja": "循環液の漏れがないことを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 4,
+        "action": "remove",
+        "targetPart": "tower",
+        "removeOffset": [0.8, 0, 0],
+        "instruction": { "zh": "如需更换,松开法兰后水平抽出塔体", "ja": "交換時はフランジを緩め、タワー本体を水平に引き抜く" },
+        "safetyChecks": [
+          { "type": "Torque", "text": { "zh": "确认法兰螺栓按规范松开", "ja": "フランジボルトを規定どおり緩めたことを確認" }, "required": true },
+          { "type": "Ppe",    "text": { "zh": "确认起重作业安全", "ja": "吊り作業の安全を確認" }, "required": true }
+        ]
+      }
+    ]
+  }
+}

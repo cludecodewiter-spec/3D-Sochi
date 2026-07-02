@@ -1,0 +1,129 @@
+{
+  "equipmentId": "abatement-unit-C",
+  "name": { "zh": "除害装置 C 型(柜式)", "ja": "除害装置 C 型(キャビネット式)" },
+  "modelFile": "models/unitC.glb",
+  "parts": [
+    { "id": "cabinet", "node": "cabinet",
+      "name": { "zh": "柜体外壳", "ja": "キャビネット筐体" }, "partNo": "C-000" },
+    { "id": "control_panel", "node": "control_panel",
+      "name": { "zh": "控制面板", "ja": "制御パネル" }, "partNo": "C-001" },
+    { "id": "gauge", "node": "gauge",
+      "name": { "zh": "压力表", "ja": "圧力計" }, "partNo": "C-002" },
+    { "id": "flow_meter", "node": "flow_meter",
+      "name": { "zh": "流量计", "ja": "流量計" }, "partNo": "C-003" },
+    { "id": "wiring", "node": "wiring",
+      "name": { "zh": "电气线路 / 电缆", "ja": "電気配線・ケーブル" }, "partNo": "C-010" },
+    { "id": "sensor", "node": "sensor",
+      "name": { "zh": "传感器探头", "ja": "センサープローブ" }, "partNo": "C-011" },
+    { "id": "valve", "node": "valve",
+      "name": { "zh": "进气阀", "ja": "給気バルブ" }, "partNo": "C-004" },
+    { "id": "cross_pipe", "node": "cross_pipe",
+      "name": { "zh": "顶部横管", "ja": "上部横配管" }, "partNo": "C-005" },
+    { "id": "riser_pipe", "node": "riser_pipe",
+      "name": { "zh": "立管", "ja": "縦配管" }, "partNo": "C-006" },
+    { "id": "outlet_pipe", "node": "outlet_pipe",
+      "name": { "zh": "出口管", "ja": "出口配管" }, "partNo": "C-007" },
+    { "id": "drain_pipe", "node": "drain_pipe",
+      "name": { "zh": "排液管", "ja": "ドレン配管" }, "partNo": "C-012" },
+    { "id": "vessel_lid", "node": "vessel_lid",
+      "name": { "zh": "容器顶盖", "ja": "容器トップカバー" }, "partNo": "C-008" },
+    { "id": "vessel", "node": "vessel",
+      "name": { "zh": "不锈钢容器", "ja": "ステンレス容器" }, "partNo": "C-009" }
+  ],
+  "procedure": {
+    "title": { "zh": "柜式装置容器更换(逐段拆管)", "ja": "キャビネット式装置 容器交換(配管分解)" },
+    "steps": [
+      {
+        "order": 1,
+        "action": "highlight",
+        "targetPart": "gauge",
+        "instruction": { "zh": "确认压力表读数已归零,内部无残压", "ja": "圧力計がゼロを示し、内部に残圧がないことを確認" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认压力表归零、无残压", "ja": "圧力計ゼロ・残圧なしを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 2,
+        "action": "highlight",
+        "targetPart": "wiring",
+        "instruction": { "zh": "确认相关电气线路已断电、隔离", "ja": "関連する電気配線の断電・隔離を確認" },
+        "safetyChecks": [
+          { "type": "Loto", "text": { "zh": "确认控制电源已断开并上锁挂牌", "ja": "制御電源の遮断・施錠・札掛けを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 3,
+        "action": "highlight",
+        "targetPart": "valve",
+        "instruction": { "zh": "关闭进气阀并上锁挂牌", "ja": "給気バルブを閉じ、施錠・札掛けを行う" },
+        "safetyChecks": [
+          { "type": "Loto", "text": { "zh": "确认进气阀已关闭、上锁挂牌", "ja": "給気バルブの閉止・施錠・札掛けを確認" }, "required": true },
+          { "type": "Ppe",  "text": { "zh": "确认已佩戴防护装备", "ja": "保護具の着用を確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 4,
+        "action": "remove",
+        "targetPart": "cross_pipe",
+        "removeOffset": [0.75, 0, 0],
+        "instruction": { "zh": "松开横管两端法兰螺栓,沿水平方向抽出顶部横管", "ja": "横配管両端のフランジボルトを緩め、水平方向へ引き抜く" },
+        "safetyChecks": [
+          { "type": "Purge",  "text": { "zh": "确认管路已吹扫置换", "ja": "配管のパージ・置換を確認" }, "required": true },
+          { "type": "Torque", "text": { "zh": "确认法兰螺栓按规范松开", "ja": "フランジボルトを規定どおり緩めたことを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 5,
+        "action": "remove",
+        "targetPart": "riser_pipe",
+        "removeOffset": [0, 0.12, 0.7],
+        "instruction": { "zh": "松开立管上下法兰,稍抬起后向前方抽出立管", "ja": "縦配管の上下フランジを緩め、少し持ち上げて手前へ引き抜く" },
+        "safetyChecks": [
+          { "type": "Torque", "text": { "zh": "确认上下法兰螺栓已松开", "ja": "上下フランジボルトの緩めを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 6,
+        "action": "remove",
+        "targetPart": "outlet_pipe",
+        "removeOffset": [0, 0, 0.75],
+        "instruction": { "zh": "松开出口管法兰,向前水平抽出出口管", "ja": "出口配管フランジを緩め、手前へ水平に引き抜く" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认出口管路无残压、无泄漏", "ja": "出口ラインに残圧・漏れがないことを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 7,
+        "action": "remove",
+        "targetPart": "drain_pipe",
+        "removeOffset": [0, 0, 0.6],
+        "instruction": { "zh": "确认底部已排空后,拆下排液管", "ja": "底部の排出完了を確認後、ドレン配管を取り外す" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认排液管路无残液、无残压", "ja": "ドレンラインに残液・残圧がないことを確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 8,
+        "action": "remove",
+        "targetPart": "vessel_lid",
+        "removeOffset": [0, 0.4, 0],
+        "instruction": { "zh": "松开顶盖法兰螺栓,竖直向上取下容器顶盖", "ja": "トップカバーのフランジボルトを緩め、垂直上方へ取り外す" },
+        "safetyChecks": [
+          { "type": "Torque", "text": { "zh": "确认顶盖螺栓按对角顺序松开", "ja": "トップカバーのボルトを対角順に緩めたことを確認" }, "required": true },
+          { "type": "Ppe",    "text": { "zh": "确认防护装备完好", "ja": "保護具の状態を確認" }, "required": true }
+        ]
+      },
+      {
+        "order": 9,
+        "action": "remove",
+        "targetPart": "vessel",
+        "removeOffset": [0, 0, 0.6],
+        "instruction": { "zh": "确认已排空后,向前取出不锈钢容器", "ja": "排出完了を確認後、ステンレス容器を手前へ取り出す" },
+        "safetyChecks": [
+          { "type": "LeakCheck", "text": { "zh": "确认容器内已排空、无泄漏", "ja": "容器内の排出完了・漏れなしを確認" }, "required": true },
+          { "type": "Ppe",       "text": { "zh": "确认搬运作业安全", "ja": "運搬作業の安全を確認" }, "required": true }
+        ]
+      }
+    ]
+  }
+}

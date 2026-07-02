@@ -1,0 +1,17 @@
+[
+  {
+    "equipmentId": "abatement-unit-A",
+    "name": { "zh": "除害装置 A 型", "ja": "除害装置 A 型" },
+    "manifestPath": "unitA/manifest.json"
+  },
+  {
+    "equipmentId": "abatement-unit-B",
+    "name": { "zh": "除害装置 B 型(立式塔)", "ja": "除害装置 B 型(立形塔)" },
+    "manifestPath": "unitB/manifest.json"
+  },
+  {
+    "equipmentId": "abatement-unit-C",
+    "name": { "zh": "除害装置 C 型(柜式)", "ja": "除害装置 C 型(キャビネット式)" },
+    "manifestPath": "unitC/manifest.json"
+  }
+]
