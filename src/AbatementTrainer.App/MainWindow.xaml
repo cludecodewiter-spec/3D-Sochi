@@ -144,6 +144,74 @@
 
                     <ScrollViewer>
                         <StackPanel Margin="10">
+                            <!-- ───── HMI 触摸屏(PLC 仿真,Core 逻辑)───── -->
+                            <Border Background="#10151C" BorderBrush="#2C3947" BorderThickness="2"
+                                    CornerRadius="8" Padding="10" Margin="0,0,0,12"
+                                    DataContext="{Binding Plc}">
+                                <StackPanel>
+                                    <TextBlock Text="HMI" Foreground="#6FE3FF" FontSize="11"
+                                               HorizontalAlignment="Center" Margin="0,0,0,6" />
+                                    <UniformGrid Columns="4">
+                                        <Button Content="启动" Command="{Binding StartCommand}"
+                                                Background="#1D8A44" Foreground="White" Margin="2" Padding="4,7" BorderThickness="0" />
+                                        <Button Content="停止" Command="{Binding StopCommand}"
+                                                Background="#8A2C25" Foreground="White" Margin="2" Padding="4,7" BorderThickness="0" />
+                                        <Button Content="复位" Command="{Binding ResetAlarmCommand}"
+                                                Background="#3D5570" Foreground="White" Margin="2" Padding="4,7" BorderThickness="0" />
+                                        <Button Content="急停" Command="{Binding ToggleEStopCommand}"
+                                                Background="#C62828" Foreground="White" Margin="2" Padding="4,7"
+                                                BorderBrush="#FFD54F" BorderThickness="2" />
+                                    </UniformGrid>
+                                    <DockPanel Margin="0,8,0,4">
+                                        <TextBlock Text="进气阀" Foreground="#9FB3C8" FontSize="12" VerticalAlignment="Center" />
+                                        <ToggleButton IsChecked="{Binding ValveOpen}" Content="开/关"
+                                                      Margin="8,0,0,0" Padding="8,3" />
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <Ellipse Width="12" Height="12" Margin="8,0,4,0">
+                                                <Ellipse.Style>
+                                                    <Style TargetType="Ellipse">
+                                                        <Setter Property="Fill" Value="#233041" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Running}" Value="True">
+                                                                <Setter Property="Fill" Value="#31E06C" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Ellipse.Style>
+                                            </Ellipse>
+                                            <TextBlock Text="运转" Foreground="#9FB3C8" FontSize="11" />
+                                            <Ellipse Width="12" Height="12" Margin="10,0,4,0">
+                                                <Ellipse.Style>
+                                                    <Style TargetType="Ellipse">
+                                                        <Setter Property="Fill" Value="#233041" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding AlarmLampOn}" Value="True">
+                                                                <Setter Property="Fill" Value="#FF4438" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Ellipse.Style>
+                                            </Ellipse>
+                                            <TextBlock Text="报警" Foreground="#9FB3C8" FontSize="11" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <TextBlock Text="压力" Foreground="#9FB3C8" FontSize="11" Width="30" />
+                                        <TextBlock DockPanel.Dock="Right" Foreground="#6FE3FF" FontSize="11"
+                                                   Text="{Binding PressureKpa, StringFormat={}{0:F0} kPa}" />
+                                        <ProgressBar Value="{Binding PressurePercent, Mode=OneWay}" Maximum="100"
+                                                     Height="7" Margin="4,0" Background="#1A222D" Foreground="#1976D2" BorderThickness="0" />
+                                    </DockPanel>
+                                    <DockPanel Margin="0,4,0,0">
+                                        <TextBlock Text="流量" Foreground="#9FB3C8" FontSize="11" Width="30" />
+                                        <TextBlock DockPanel.Dock="Right" Foreground="#6FE3FF" FontSize="11"
+                                                   Text="{Binding FlowLpm, StringFormat={}{0:F1} L/min}" />
+                                        <ProgressBar Value="{Binding FlowPercent, Mode=OneWay}" Maximum="100"
+                                                     Height="7" Margin="4,0" Background="#1A222D" Foreground="#1976D2" BorderThickness="0" />
+                                    </DockPanel>
+                                </StackPanel>
+                            </Border>
+
                             <Border Background="#FFF8E1" BorderBrush="#FFE082" BorderThickness="1"
                                     Padding="10" Margin="0,0,0,12" CornerRadius="4">
                                 <TextBlock Text="{Binding StepInstruction}" TextWrapping="Wrap" FontSize="14" />

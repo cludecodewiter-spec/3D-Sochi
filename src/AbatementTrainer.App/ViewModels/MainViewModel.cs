@@ -66,6 +66,9 @@ public sealed partial class MainViewModel : ObservableObject
     // ───────── 状态 ─────────
     public LocalizationService Loc => _loc;
 
+    /// <summary>HMI 触摸屏(PLC 仿真,Core 逻辑)。</summary>
+    public PlcViewModel Plc { get; } = new();
+
     /// <summary>当前是否在训练界面(false=设备库起始页)。</summary>
     [ObservableProperty] private bool _isTrainingActive;
 
@@ -142,6 +145,7 @@ public sealed partial class MainViewModel : ObservableObject
         IsTrainingActive = false;
         IsExamActive = false;
         _scene?.ResetAll();        // 停止可能在途的取下动画(DispatcherTimer)
+        Plc.ResetAll();            // HMI/PLC 状态复位
         ModelCleared?.Invoke();
         _scene = null;
         _runner = null;

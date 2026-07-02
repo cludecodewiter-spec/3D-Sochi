@@ -246,11 +246,14 @@ public static class SampleModelBuilder
             AddBox(panel, dark, new Vector3(0, -0.62f - i * 0.045f, 0.033f), new Vector3(0.20f, 0.014f, 0.008f));
         parts.Add(new Part { Node = "control_panel", Center = new Vector3(0.48f, 0, 0.30f), Mesh = panel });
 
-        // ── 压力表(黑框 + 刻度表盘贴图 + 指针)──
+        // ── 压力表(黑框 + 刻度表盘贴图 + 可旋转指针)──
         var gauge = new MESH("gauge");
         AddCylinder(gauge, dark, new Vector3(0, 0, -0.01f), 0.10f, 0.022f, 2, 24);       // 表框
         AddCylinder(gauge, Tex("dial", texDial, 0.0f, 0.5f), new Vector3(0, 0, 0.016f), 0.088f, 0.004f, 2, 24); // 表盘
-        AddBox(gauge, dark, new Vector3(0.022f, 0.022f, 0.024f), new Vector3(0.062f, 0.007f, 0.004f)); // 指针
+        // 指针:独立材质 "needle" → 导入后成为独立子网格,可绕表盘中心(节点原点)旋转指示压力。
+        // 静止时沿 +X;运行时由 HMI 按压力值旋转(0 kPa=225°,满量程=-45°)。
+        AddBox(gauge, Pbr("needle", 0.10f, 0.10f, 0.12f, 0.2f, 0.5f),
+            new Vector3(0.032f, 0, 0.024f), new Vector3(0.064f, 0.006f, 0.004f));
         parts.Add(new Part { Node = "gauge", Center = new Vector3(0.48f, 0.62f, 0.34f), Mesh = gauge });
 
         // ── 流量计(亚克力管 + 上下钢接头 + 红色浮子)──
