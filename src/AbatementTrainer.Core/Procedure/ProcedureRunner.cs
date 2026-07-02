@@ -38,9 +38,11 @@ public sealed class ProcedureRunner
         return true;
     }
 
-    /// <summary>尝试推进;门控未通过则不前进并返回 false。</summary>
+    /// <summary>尝试推进;门控未通过或已全部完成则不前进并返回 false。</summary>
     public bool TryAdvance(IReadOnlySet<int> confirmedCheckIndices)
     {
+        // 已完成后不再累加索引:防止 Index 越过 Count,导致 Back() 需多次才能回到真实步骤
+        if (IsComplete) return false;
         if (!CanAdvance(confirmedCheckIndices)) return false;
         _index++;
         return true;

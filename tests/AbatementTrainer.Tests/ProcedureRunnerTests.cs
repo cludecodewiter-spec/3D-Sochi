@@ -92,4 +92,31 @@ public class ProcedureRunnerTests
         Assert.Null(runner.Current);
         Assert.True(runner.CanAdvance(Confirmed()));   // 完成态下 CanAdvance 返回 true
     }
+
+    [Fact] // ⑤ 完成后继续 TryAdvance:不得越过 Count 累加索引(否则 Back 需多次才能回到真实步骤)
+    public void TryAdvance_AfterComplete_DoesNotOverrunIndex()
+    {
+        var runner = new ProcedureRunner(new[] { MakeStep(1), MakeStep(2) });
+        runner.TryAdvance(Confirmed());
+        runner.TryAdvance(Confirmed());
+        Assert.True(runner.IsComplete);
+
+        Assert.False(runner.TryAdvance(Confirmed()));  // 完成后推进无效
+        Assert.False(runner.TryAdvance(Confirmed()));
+        Assert.Equal(2, runner.Index);                 // 索引停在 Count
+
+        runner.Back();                                 // 一次 Back 即回到最后一步
+        Assert.Equal(1, runner.Index);
+        Assert.NotNull(runner.Current);
+    }
+
+    [Fact] // ⑥ 空流程:构造即完成,推进无效
+    public void EmptySteps_IsCompleteImmediately()
+    {
+        var runner = new ProcedureRunner(System.Array.Empty<Step>());
+        Assert.True(runner.IsComplete);
+        Assert.Null(runner.Current);
+        Assert.False(runner.TryAdvance(Confirmed()));
+        Assert.Equal(0, runner.Index);
+    }
 }

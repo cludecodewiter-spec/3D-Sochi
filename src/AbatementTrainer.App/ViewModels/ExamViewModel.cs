@@ -170,7 +170,12 @@ public sealed partial class ExamViewModel : ObservableObject
     {
         foreach (var it in Items) it.RefreshLanguage();
         foreach (var c in SafetyChecks) c.RefreshLanguage();
-        if (IsExecuting) RefreshExecStep();
+        // 只刷文案:不能调 RefreshExecStep 重建确认项(会把学员已勾选的项清空)
+        if (IsExecuting && _session.Runner is { Current: { } step } runner)
+        {
+            ExecInstruction = _loc.Localize(step.Instruction);
+            ExecProgress = $"{_loc["Step"]} {runner.Index + 1}/{runner.Count}";
+        }
         if (IsFinished) BuildResult();
     }
 }

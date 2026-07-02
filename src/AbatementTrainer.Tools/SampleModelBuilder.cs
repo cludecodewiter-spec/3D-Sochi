@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using SharpGLTF.Geometry;
 using SharpGLTF.Geometry.VertexTypes;
@@ -62,7 +63,7 @@ public static class SampleModelBuilder
     public static void WriteUnitA(string path)
     {
         var steel = Tex("steel", ProceduralTextures.BrushedSteel(), 0.85f, 0.35f);
-        var parts = new System.Collections.Generic.List<Part>();
+        var parts = new List<Part>();
 
         var housing = new MESH("housing");
         AddCylinder(housing, steel, Vector3.Zero, 0.6f, 0.8f, 1);
@@ -95,7 +96,7 @@ public static class SampleModelBuilder
     public static void WriteUnitB(string path)
     {
         var steel = Tex("steel", ProceduralTextures.BrushedSteel(), 0.85f, 0.35f);
-        var parts = new System.Collections.Generic.List<Part>();
+        var parts = new List<Part>();
 
         var baseMesh = new MESH("base");
         AddCylinder(baseMesh, Pbr("base", 0.55f, 0.55f, 0.60f, 0.6f, 0.5f), Vector3.Zero, 0.7f, 0.15f, 1);
@@ -145,7 +146,7 @@ public static class SampleModelBuilder
         var dark = Pbr("dark_plastic", 0.12f, 0.13f, 0.15f, 0.2f, 0.6f);
         var red = Pbr("red_paint", 0.72f, 0.16f, 0.14f, 0.35f, 0.45f);
 
-        var parts = new System.Collections.Generic.List<Part>();
+        var parts = new List<Part>();
         var vx = -0.15f; // 容器/管线所在 X
 
         // ── 柜体外壳 ──
@@ -298,7 +299,7 @@ public static class SampleModelBuilder
 
     // ───────── 装配与导出 ─────────
 
-    private static void WriteParts(string path, System.Collections.Generic.List<Part> parts)
+    private static void WriteParts(string path, List<Part> parts)
     {
         var scene = new SceneBuilder();
         foreach (var p in parts)
@@ -324,11 +325,13 @@ public static class SampleModelBuilder
     {
         var prim = mesh.UsePrimitive(mat);
         bool flat = segments <= 8;
+        // 注意:三种映射都必须是"旋转"(行列式 +1)而不能是"交换两轴"(反射),
+        // 否则三角形绕序会翻转,单面材质(如发光灯罩)在开启背面剔除的渲染器里会被剔除。
         Vector3 Axis(float a, float b, float c) => axis switch
         {
             0 => new Vector3(c, a, b),
             2 => new Vector3(a, b, c),
-            _ => new Vector3(a, c, b),
+            _ => new Vector3(b, c, a), // 轴向 c→Y;用循环置换保持绕序(原 (a,c,b) 为反射,绕序反了)
         };
 
         for (int i = 0; i < segments; i++)

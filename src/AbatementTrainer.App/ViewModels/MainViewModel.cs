@@ -130,6 +130,7 @@ public sealed partial class MainViewModel : ObservableObject
 
             IsTrainingActive = true;
             IsExamActive = false;
+            StartExamCommand.NotifyCanExecuteChanged();   // _manifest 就绪 → 考核按钮可用
             RefreshStep();
             ResetViewRequested?.Invoke(this, EventArgs.Empty);
         }
@@ -147,9 +148,17 @@ public sealed partial class MainViewModel : ObservableObject
         _scene?.ResetAll();        // 停止可能在途的取下动画(DispatcherTimer)
         Plc.ResetAll();            // HMI/PLC 状态复位
         ModelCleared?.Invoke();
+        SelectedPart = null;       // 清除选中(避免残留高亮联动到下一台设备)
         _scene = null;
         _runner = null;
+        _manifest = null;          // 复位路径完整:防止旧清单被 StartExam/NodeOf 复用
+        Exam = null;               // 释放旧考核会话(其步骤引用旧清单)
         Parts.Clear();
+        // 解除安全确认项事件订阅并清空(否则旧 VM 挂着 OnCheckToggled 残留)
+        foreach (var c in SafetyChecks) c.Confirmed -= OnCheckToggled;
+        SafetyChecks.Clear();
+        IsComplete = false;
+        StartExamCommand.NotifyCanExecuteChanged();   // _manifest 已清空 → 考核按钮禁用
     }
 
     // ───────── M3/M4 部件树 ─────────
@@ -218,14 +227,28 @@ public sealed partial class MainViewModel : ObservableObject
         IsComplete = _runner.IsComplete;
         if (_runner.Current is { } step)
         {
-            StepInstruction = _loc.Localize(step.Instruction);
-            StepTitle = _manifest is null ? string.Empty : _loc.Localize(_manifest.Procedure.Title);
             for (int i = 0; i < step.SafetyChecks.Count; i++)
             {
                 var vm = new SafetyCheckViewModel(step.SafetyChecks[i], i);
                 vm.Confirmed += OnCheckToggled;
                 SafetyChecks.Add(vm);
             }
+        }
+        RefreshStepTexts();
+
+        NextCommand.NotifyCanExecuteChanged();
+        OnPropertyChanged(nameof(CanAdvance));
+        OnPropertyChanged(nameof(CanGoNext));
+    }
+
+    /// <summary>只刷新当前步骤的本地化文案(不重建确认项;语言切换时保留已勾选状态)。</summary>
+    private void RefreshStepTexts()
+    {
+        if (_runner is null) return;
+        if (_runner.Current is { } step)
+        {
+            StepInstruction = _loc.Localize(step.Instruction);
+            StepTitle = _manifest is null ? string.Empty : _loc.Localize(_manifest.Procedure.Title);
             ProgressText = $"{_loc["Step"]} {_runner.Index + 1}/{_runner.Count}";
         }
         else
@@ -233,10 +256,6 @@ public sealed partial class MainViewModel : ObservableObject
             StepInstruction = _loc["AllComplete"];
             ProgressText = $"{_runner.Count}/{_runner.Count}";
         }
-
-        NextCommand.NotifyCanExecuteChanged();
-        OnPropertyChanged(nameof(CanAdvance));
-        OnPropertyChanged(nameof(CanGoNext));
     }
 
     private void OnCheckToggled(object? sender, bool e)
@@ -292,6 +311,7 @@ public sealed partial class MainViewModel : ObservableObject
     {
         _runner?.Reset();
         _scene?.ResetAll();
+        SelectedPart = null;   // ResetAll 已清 3D 高亮,同步清列表选中,避免两侧状态不一致
         foreach (var p in Parts) p.IsVisible = true;
         RefreshStep();
     }
@@ -303,12 +323,17 @@ public sealed partial class MainViewModel : ObservableObject
     // ───────── M10 考核 ─────────
     [ObservableProperty] private ExamViewModel? _exam;
 
-    [RelayCommand]
+    /// <summary>考核进行中禁止重开(防刷分:B1-HIGH——重开会拿到相同排列反复试错)。</summary>
+    private bool CanStartExam => _manifest is not null && !IsExamActive;
+
+    partial void OnIsExamActiveChanged(bool value) => StartExamCommand.NotifyCanExecuteChanged();
+
+    [RelayCommand(CanExecute = nameof(CanStartExam))]
     private void StartExam()
     {
         if (_manifest is null) return;
-        // 固定种子保证同一会话可复现;实际可换其他种子来源
-        Exam = new ExamViewModel(_manifest.Procedure.Steps, shuffleSeed: 12345);
+        // 种子取时钟节拍:每次考核排列不同,杜绝「记住上次排列刷满分」
+        Exam = new ExamViewModel(_manifest.Procedure.Steps, shuffleSeed: Environment.TickCount);
         IsExamActive = true;
     }
 
@@ -325,6 +350,7 @@ public sealed partial class MainViewModel : ObservableObject
         foreach (var p in Parts) p.RefreshLanguage();
         foreach (var c in SafetyChecks) c.RefreshLanguage();
         Exam?.RefreshLanguage();
-        RefreshStep();
+        // 只刷文案:切语言不得重建确认项(重建会清空已勾选,UX P5「切换不打断当前步」)
+        RefreshStepTexts();
     }
 }

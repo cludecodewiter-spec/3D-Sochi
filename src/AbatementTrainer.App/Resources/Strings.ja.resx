@@ -30,4 +30,16 @@
   <data name="MoveDown" xml:space="preserve"><value>下へ</value></data>
   <data name="LoadError" xml:space="preserve"><value>読み込みエラー</value></data>
   <data name="ValidationFailed" xml:space="preserve"><value>マニフェストの検証に失敗しました</value></data>
+  <data name="ToggleVisibility" xml:space="preserve"><value>表示/非表示</value></data>
+  <data name="HmiTitle" xml:space="preserve"><value>HMI タッチパネル</value></data>
+  <data name="HmiStart" xml:space="preserve"><value>起動</value></data>
+  <data name="HmiStop" xml:space="preserve"><value>停止</value></data>
+  <data name="HmiReset" xml:space="preserve"><value>リセット</value></data>
+  <data name="HmiEStop" xml:space="preserve"><value>非常停止</value></data>
+  <data name="HmiValve" xml:space="preserve"><value>給気バルブ</value></data>
+  <data name="HmiValveToggle" xml:space="preserve"><value>開/閉</value></data>
+  <data name="HmiRun" xml:space="preserve"><value>運転</value></data>
+  <data name="HmiAlarm" xml:space="preserve"><value>警報</value></data>
+  <data name="HmiPressure" xml:space="preserve"><value>圧力</value></data>
+  <data name="HmiFlow" xml:space="preserve"><value>流量</value></data>
 </root>

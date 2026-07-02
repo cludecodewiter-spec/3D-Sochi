@@ -90,13 +90,16 @@ public sealed class PlcSimulator
     /// </summary>
     public void Tick(double dtSeconds)
     {
-        if (dtSeconds <= 0) return;
+        // 非法时间步(负数/NaN/无穷)直接忽略,防止污染过程量与时钟;
+        // dt=0 仍执行保护逻辑——急停等安全逻辑不允许因时间步为零被跳过,
+        // 过程模拟部分在 dt=0 时增量自然为零,无副作用。
+        if (dtSeconds < 0 || !double.IsFinite(dtSeconds)) return;
         _clock += dtSeconds;
 
         // ① 保护逻辑:急停 → 立即停机 + 报警锁存;运行中关阀 → 停机 + 报警
         if (EStop)
         {
-            if (Running || !Alarm) Alarm = true;
+            Alarm = true; // 急停期间报警始终锁存(原条件与恒真等价,直接写明)
             Running = false;
         }
         else if (Running && !ValveOpen)

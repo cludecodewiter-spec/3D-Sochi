@@ -54,8 +54,18 @@ public static class ManifestValidator
         IReadOnlyList<string>? nodeNames = null;
         if (!string.IsNullOrEmpty(gltfPath) && File.Exists(gltfPath))
         {
-            var model = ModelRoot.Load(gltfPath);
-            nodeNames = GltfInspector.ListNodeNames(model);
+            try
+            {
+                var model = ModelRoot.Load(gltfPath);
+                nodeNames = GltfInspector.ListNodeNames(model);
+            }
+            catch (System.Exception ex)
+            {
+                // 模型文件损坏/非法时给出校验错误而非抛异常(设计 §3.3:失败给出中文错误)
+                var report = Validate(manifest, (IReadOnlyList<string>?)null);
+                report.Error($"glTF 模型「{gltfPath}」加载失败:{ex.Message}");
+                return report;
+            }
         }
         return Validate(manifest, nodeNames);
     }
@@ -124,9 +134,10 @@ public static class ManifestValidator
                 report.Error($"步骤 order 重复:{step.Order}");
 
             // ② 每个 step.targetPart 必须在 parts.id 中存在
+            //(parts 为空时同样报错,避免「无部件清单 + 引用幽灵部件」静默通过)
             if (string.IsNullOrWhiteSpace(step.TargetPart))
                 report.Error($"步骤 {step.Order} 的 targetPart 为空");
-            else if (partIds.Count > 0 && !partIds.Contains(step.TargetPart))
+            else if (!partIds.Contains(step.TargetPart))
                 report.Error($"步骤 {step.Order} 的 targetPart「{step.TargetPart}」不在 parts.id 中");
 
             CheckLocalized(report, step.Instruction, $"步骤 {step.Order} 的 instruction");
@@ -134,6 +145,10 @@ public static class ManifestValidator
             // removeOffset 若提供必须是 3 个分量
             if (step.RemoveOffset is not null && step.RemoveOffset.Length != 3)
                 report.Error($"步骤 {step.Order} 的 removeOffset 必须为 3 个分量,实际 {step.RemoveOffset.Length}");
+
+            // remove 动作建议提供 removeOffset(设计 §3.2 要求;为兼容既有内容降为告警)
+            if (step.Action == StepAction.Remove && step.RemoveOffset is null)
+                report.Warn($"步骤 {step.Order} 为 remove 动作但缺少 removeOffset,拆卸动画将无位移");
 
             if (step.SafetyChecks is null || step.SafetyChecks.Count == 0)
             {

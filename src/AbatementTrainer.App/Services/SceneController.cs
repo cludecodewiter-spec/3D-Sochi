@@ -25,7 +25,12 @@ public sealed class SceneController
     private readonly Dictionary<SceneNode, Matrix4x4> _baseMatrix = new();
 
     private SceneNode? _highlighted;
+
+    // 在途动画状态(同一时刻至多一个动画;新动画启动前旧动画被「直达终态」)
     private DispatcherTimer? _animTimer;
+    private SceneNode? _animNode;
+    private Vector3 _animTranslate;
+    private bool _animHideAtEnd;
 
     public SceneController(IReadOnlyDictionary<string, SceneNode> nodesByName)
     {
@@ -41,17 +46,28 @@ public sealed class SceneController
     public SceneNode? Find(string nodeName) =>
         _nodesByName.TryGetValue(nodeName, out var n) ? n : null;
 
-    /// <summary>设置单个部件可见性。</summary>
+    /// <summary>
+    /// 设置单个部件可见性。重新显示时把变换复位到安装位——
+    /// 已「取下」的部件停在位移终点且隐藏,若直接重现会悬浮在半空(B1 审计发现)。
+    /// </summary>
     public void SetVisible(string nodeName, bool visible)
     {
         var node = Find(nodeName);
-        if (node is not null) node.Visible = visible;
+        if (node is null) return;
+        if (visible && !node.Visible && _baseMatrix.TryGetValue(node, out var m))
+            node.ModelMatrix = m;   // 从隐藏恢复显示 → 回到安装位,避免悬浮
+        node.Visible = visible;
     }
 
-    /// <summary>全部显示。</summary>
+    /// <summary>全部显示(隐藏件同时复位到安装位,见 <see cref="SetVisible"/>)。</summary>
     public void ShowAll()
     {
-        foreach (var node in _nodesByName.Values) node.Visible = true;
+        foreach (var kv in _nodesByName)
+        {
+            if (!kv.Value.Visible && _baseMatrix.TryGetValue(kv.Value, out var m))
+                kv.Value.ModelMatrix = m;
+            kv.Value.Visible = true;
+        }
     }
 
     /// <summary>隔离:仅显示指定部件,其余隐藏。</summary>
@@ -102,6 +118,8 @@ public sealed class SceneController
     {
         var node = Find(nodeName);
         if (node is null) return;
+        // 若该节点正处于取下动画中,先取消(否则后续 Tick 会再次平移并在末尾隐藏它)
+        if (node == _animNode) CancelAnim();
         node.Visible = true;
         if (_baseMatrix.TryGetValue(node, out var m))
             node.ModelMatrix = m;
@@ -110,7 +128,7 @@ public sealed class SceneController
     /// <summary>把所有节点恢复到初始变换与可见状态。</summary>
     public void ResetAll()
     {
-        StopAnim();
+        CancelAnim(); // 直接取消即可:下面统一恢复初始状态
         foreach (var kv in _baseMatrix)
         {
             kv.Key.ModelMatrix = kv.Value;
@@ -122,8 +140,11 @@ public sealed class SceneController
     // 用 DispatcherTimer 做平移插值动画
     private void Animate(SceneNode node, Vector3 totalTranslate, bool hideAtEnd)
     {
-        StopAnim();
+        FinishAnim(); // 上一个在途动画直达终态(防止连续两步取下时,前一部件停在半空且未隐藏)
         var baseM = _baseMatrix.TryGetValue(node, out var m) ? m : node.ModelMatrix;
+        _animNode = node;
+        _animTranslate = totalTranslate;
+        _animHideAtEnd = hideAtEnd;
 
         var elapsed = 0;
         const int interval = 16; // ~60fps
@@ -139,16 +160,30 @@ public sealed class SceneController
 
             if (t >= 1.0)
             {
-                StopAnim();
+                CancelAnim();
                 if (hideAtEnd) node.Visible = false;
             }
         };
         _animTimer.Start();
     }
 
-    private void StopAnim()
+    /// <summary>把在途动画直接推进到终态(平移到位并按需隐藏),然后停表。</summary>
+    private void FinishAnim()
+    {
+        if (_animNode is not null)
+        {
+            var baseM = _baseMatrix.TryGetValue(_animNode, out var m) ? m : _animNode.ModelMatrix;
+            _animNode.ModelMatrix = baseM * Matrix4x4.CreateTranslation(_animTranslate);
+            if (_animHideAtEnd) _animNode.Visible = false;
+        }
+        CancelAnim();
+    }
+
+    /// <summary>仅停表并清除在途动画记录,不改变节点当前状态(调用方随后自行复位)。</summary>
+    private void CancelAnim()
     {
         _animTimer?.Stop();
         _animTimer = null;
+        _animNode = null;
     }
 }

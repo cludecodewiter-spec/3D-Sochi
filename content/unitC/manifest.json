@@ -76,8 +76,8 @@
         "order": 5,
         "action": "remove",
         "targetPart": "riser_pipe",
-        "removeOffset": [0, 0.8, 0],
-        "instruction": { "zh": "松开立管上下法兰,竖直向上抽出立管", "ja": "縦配管の上下フランジを緩め、垂直上方へ引き抜く" },
+        "removeOffset": [0, 0.12, 0.7],
+        "instruction": { "zh": "松开立管上下法兰,稍抬起后向前方抽出立管", "ja": "縦配管の上下フランジを緩め、少し持ち上げて手前へ引き抜く" },
         "safetyChecks": [
           { "type": "Torque", "text": { "zh": "确认上下法兰螺栓已松开", "ja": "上下フランジボルトの緩めを確認" }, "required": true }
         ]

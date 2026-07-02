@@ -17,3 +17,6 @@ publish/
 ## OS
 .DS_Store
 Thumbs.db
+
+## Node (webdemo 构建依赖)
+node_modules/

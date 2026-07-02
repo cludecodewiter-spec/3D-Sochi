@@ -47,7 +47,15 @@ public static class ManifestLoader
             throw new FileNotFoundException("索引文件不存在", path);
 
         var json = File.ReadAllText(path);
-        var list = JsonSerializer.Deserialize<System.Collections.Generic.List<ContentIndexEntry>>(json, ManifestJson.Options);
-        return list ?? new System.Collections.Generic.List<ContentIndexEntry>();
+        try
+        {
+            var list = JsonSerializer.Deserialize<System.Collections.Generic.List<ContentIndexEntry>>(json, ManifestJson.Options);
+            return list ?? new System.Collections.Generic.List<ContentIndexEntry>();
+        }
+        catch (JsonException ex)
+        {
+            // 与 Parse 保持一致的异常契约:JSON 非法统一抛 InvalidDataException
+            throw new InvalidDataException("索引 JSON 解析失败:" + ex.Message, ex);
+        }
     }
 }

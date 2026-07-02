@@ -30,4 +30,16 @@
   <data name="MoveDown" xml:space="preserve"><value>下移</value></data>
   <data name="LoadError" xml:space="preserve"><value>加载错误</value></data>
   <data name="ValidationFailed" xml:space="preserve"><value>清单校验失败</value></data>
+  <data name="ToggleVisibility" xml:space="preserve"><value>显示/隐藏</value></data>
+  <data name="HmiTitle" xml:space="preserve"><value>HMI 触摸屏</value></data>
+  <data name="HmiStart" xml:space="preserve"><value>启动</value></data>
+  <data name="HmiStop" xml:space="preserve"><value>停止</value></data>
+  <data name="HmiReset" xml:space="preserve"><value>复位</value></data>
+  <data name="HmiEStop" xml:space="preserve"><value>急停</value></data>
+  <data name="HmiValve" xml:space="preserve"><value>进气阀</value></data>
+  <data name="HmiValveToggle" xml:space="preserve"><value>开/关</value></data>
+  <data name="HmiRun" xml:space="preserve"><value>运转</value></data>
+  <data name="HmiAlarm" xml:space="preserve"><value>报警</value></data>
+  <data name="HmiPressure" xml:space="preserve"><value>压力</value></data>
+  <data name="HmiFlow" xml:space="preserve"><value>流量</value></data>
 </root>

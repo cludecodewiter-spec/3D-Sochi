@@ -100,4 +100,51 @@ public class ValidatorEdgeTests
         var report = ManifestValidator.Validate(Make(), (IReadOnlyList<string>?)null);
         Assert.True(report.IsValid);
     }
+
+    [Fact]
+    public void EmptyParts_WithStepTargetPart_IsError()
+    {
+        // parts 为空但步骤仍引用部件:不得静默通过(幽灵部件)
+        var m = Make(parts: new List<Part>(), steps: new[]
+        {
+            new Step(1, StepAction.Highlight, "ghost", null, T(), new List<SafetyCheck>())
+        });
+        var report = ManifestValidator.Validate(m, (IReadOnlyList<string>?)null);
+        Assert.False(report.IsValid);
+        Assert.Contains(report.Errors, e => e.Contains("ghost"));
+    }
+
+    [Fact]
+    public void RemoveAction_WithoutOffset_IsWarningNotError()
+    {
+        // remove 动作缺 removeOffset:告警提示(拆卸动画无位移),但不阻断既有内容
+        var steps = new[]
+        {
+            new Step(1, StepAction.Remove, "p1", null, T(),
+                new[] { new SafetyCheck(SafetyType.Loto, T(), true) })
+        };
+        var report = ManifestValidator.Validate(Make(steps: steps), (IReadOnlyList<string>?)null);
+        Assert.True(report.IsValid);
+        Assert.Contains(report.Issues, i =>
+            i.Severity == ValidationSeverity.Warning && i.Message.Contains("removeOffset"));
+    }
+
+    [Fact]
+    public void CorruptGlbFile_ReportsErrorInsteadOfThrowing()
+    {
+        // 损坏的模型文件:校验器应报「加载失败」错误而不是抛异常
+        var path = System.IO.Path.Combine(System.IO.Path.GetTempPath(),
+            $"corrupt_{System.Guid.NewGuid():N}.glb");
+        try
+        {
+            System.IO.File.WriteAllBytes(path, new byte[] { 0x00, 0x01, 0x02, 0x03 });
+            var report = ManifestValidator.Validate(Make(), path);
+            Assert.False(report.IsValid);
+            Assert.Contains(report.Errors, e => e.Contains("加载失败"));
+        }
+        finally
+        {
+            if (System.IO.File.Exists(path)) System.IO.File.Delete(path);
+        }
+    }
 }

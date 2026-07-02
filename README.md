@@ -23,7 +23,7 @@ AbatementTrainer.sln
 │   ├─ Resources/               .resx 多语言(zh / ja)
 │   └─ MainWindow.xaml          视口 + 部件树 + 步骤/安全面板 + 考核覆盖层 + 免责横幅
 ├─ src/AbatementTrainer.Tools   控制台:glTF 节点检视 / 清单校验 / 生成示例模型
-├─ tests/AbatementTrainer.Tests xUnit:Core 逻辑测试(30 项)
+├─ tests/AbatementTrainer.Tests xUnit:Core 逻辑测试(68 项)
 └─ content/                     设备库内容(index.json + unitA/unitB manifest + .glb)
 ```
 
@@ -116,7 +116,7 @@ JSON 用 camelCase,枚举用字符串(大小写不敏感)。关键结构:
 ## 持续集成(CI)
 
 `.github/workflows/ci.yml` 在每次推送时:
-- **Linux job**:构建 Core/Tools 并运行 30 项 xUnit 测试。
+- **Linux job**:构建 Core/Tools 并运行 68 项 xUnit 测试。
 - **Windows job**:构建完整 WPF App(`dotnet build`),实测渲染层代码可编译。
 
 二者均为绿色(WPF App 已在 windows-latest 上成功编译)。

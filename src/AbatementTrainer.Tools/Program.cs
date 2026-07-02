@@ -6,16 +6,24 @@ using AbatementTrainer.Tools;
 //   nodes  <model.glb>                 列出 glTF 所有节点名
 //   tree   <model.glb>                 打印 glTF 节点层级
 //   validate <manifest.json> [model.glb]  校验清单(可选对照模型)
-//   gen-sample <out.glb>               生成示例演示模型(与示例清单匹配)
+//   gen-sample / gen-sample-b / gen-sample-c <out.glb>  生成 A/B/C 型示例模型(与示例清单匹配)
+
+// 统一的用法说明(参数不足与未知命令共用)
+static int PrintUsage()
+{
+    Console.WriteLine("用法:");
+    Console.WriteLine("  nodes        <model.glb>                  列出 glTF 节点名");
+    Console.WriteLine("  tree         <model.glb>                  打印节点层级");
+    Console.WriteLine("  validate     <manifest.json> [model.glb]  校验清单");
+    Console.WriteLine("  gen-sample   <out.glb>                    生成 A 型示例模型");
+    Console.WriteLine("  gen-sample-b <out.glb>                    生成 B 型示例模型");
+    Console.WriteLine("  gen-sample-c <out.glb>                    生成 C 型示例模型");
+    return 1;
+}
 
 if (args.Length < 2)
 {
-    Console.WriteLine("用法:");
-    Console.WriteLine("  nodes      <model.glb>                  列出 glTF 节点名");
-    Console.WriteLine("  tree       <model.glb>                  打印节点层级");
-    Console.WriteLine("  validate   <manifest.json> [model.glb]  校验清单");
-    Console.WriteLine("  gen-sample <out.glb>                    生成示例演示模型");
-    return 1;
+    return PrintUsage();
 }
 
 var cmd = args[0].ToLowerInvariant();
@@ -23,22 +31,20 @@ try
 {
     switch (cmd)
     {
-        case "gen-sample":
+        case "gen-sample" or "gen-sample-b" or "gen-sample-c":
         {
-            SampleModelBuilder.WriteUnitA(args[1]);
-            Console.WriteLine($"✓ 已生成示例模型:{args[1]}");
-            return 0;
-        }
-        case "gen-sample-b":
-        {
-            SampleModelBuilder.WriteUnitB(args[1]);
-            Console.WriteLine($"✓ 已生成示例模型:{args[1]}");
-            return 0;
-        }
-        case "gen-sample-c":
-        {
-            SampleModelBuilder.WriteUnitC(args[1]);
-            Console.WriteLine($"✓ 已生成示例模型:{args[1]}");
+            var outPath = args[1];
+            // 提前建好输出目录,避免 SaveGLB 抛出晦涩的路径异常
+            var outDir = Path.GetDirectoryName(Path.GetFullPath(outPath));
+            if (!string.IsNullOrEmpty(outDir)) Directory.CreateDirectory(outDir);
+            Action<string> write = cmd switch
+            {
+                "gen-sample" => SampleModelBuilder.WriteUnitA,
+                "gen-sample-b" => SampleModelBuilder.WriteUnitB,
+                _ => SampleModelBuilder.WriteUnitC,
+            };
+            write(outPath);
+            Console.WriteLine($"✓ 已生成示例模型:{outPath}");
             return 0;
         }
         case "nodes":
@@ -74,7 +80,7 @@ try
         }
         default:
             Console.WriteLine($"未知命令:{cmd}");
-            return 1;
+            return PrintUsage();
     }
 }
 catch (Exception ex)

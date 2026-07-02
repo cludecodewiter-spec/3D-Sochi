@@ -91,6 +91,69 @@ public class ExamSessionTests
         Assert.Equal(before, s.Arrangement.Select(x => x.Order).ToArray());
     }
 
+    [Theory] // 排序阶段 Move 越界:任一下标越界都必须整体忽略,不得抛异常/不得改动排列
+    [InlineData(-1, 0)]
+    [InlineData(0, -1)]
+    [InlineData(3, 0)]   // from == Count(刚好越界)
+    [InlineData(0, 3)]   // to == Count(刚好越界)
+    [InlineData(99, 1)]
+    [InlineData(1, 99)]
+    [InlineData(-5, -5)]
+    public void Move_OutOfRange_IsIgnored(int from, int to)
+    {
+        var s = new ExamSession(Steps(), shuffleSeed: 11);
+        var before = s.Arrangement.Select(x => x.Order).ToArray();
+
+        s.Move(from, to);
+
+        Assert.Equal(before, s.Arrangement.Select(x => x.Order).ToArray());
+    }
+
+    [Fact] // Move 到原位置:合法但应无变化
+    public void Move_SamePosition_NoChange()
+    {
+        var s = new ExamSession(Steps(), shuffleSeed: 11);
+        var before = s.Arrangement.Select(x => x.Order).ToArray();
+        s.Move(1, 1);
+        Assert.Equal(before, s.Arrangement.Select(x => x.Order).ToArray());
+    }
+
+    [Fact] // 排序阶段(未提交)不能执行推进
+    public void TryAdvanceExecution_BeforeSubmit_ReturnsFalse()
+    {
+        var s = new ExamSession(Steps(), shuffleSeed: 2);
+        Assert.False(s.TryAdvanceExecution(Confirm(0)));
+        Assert.Equal(ExamPhase.Arranging, s.Phase);
+    }
+
+    [Fact] // 结束后再推进:返回 false,阶段保持 Finished
+    public void TryAdvanceExecution_AfterFinished_ReturnsFalse()
+    {
+        var s = new ExamSession(Steps(), shuffleSeed: 4);
+        SortToCorrect(s);
+        s.SubmitArrangement();
+        while (s.Phase == ExamPhase.Executing) s.TryAdvanceExecution(Confirm(0));
+
+        Assert.Equal(ExamPhase.Finished, s.Phase);
+        Assert.False(s.TryAdvanceExecution(Confirm(0)));
+        Assert.Equal(ExamPhase.Finished, s.Phase);
+    }
+
+    [Fact] // 重复提交排序:第二次应被忽略,不重置执行进度
+    public void SubmitArrangement_Twice_DoesNotResetProgress()
+    {
+        var s = new ExamSession(Steps(), shuffleSeed: 6);
+        SortToCorrect(s);
+        s.SubmitArrangement();
+        s.TryAdvanceExecution(Confirm(0));
+        var runner = s.Runner;
+
+        s.SubmitArrangement(); // 应无效
+
+        Assert.Same(runner, s.Runner);
+        Assert.Equal(1, s.Runner!.Index);
+    }
+
     // 通过反复 Move 把排列整理成 order 升序(稳定选择)
     private static void SortToCorrect(ExamSession s)
     {

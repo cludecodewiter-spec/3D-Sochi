@@ -36,15 +36,14 @@ public sealed class ExamOutcome
 /// </summary>
 public sealed class ExamSession
 {
-    private readonly IReadOnlyList<Step> _original;
-    private List<Step> _arrangement;
+    private readonly List<Step> _arrangement;
     private ProcedureRunner? _runner;
     private bool _hadGateViolation;
 
     /// <summary>用流程步骤构造,按种子打乱初始排列。</summary>
     public ExamSession(IReadOnlyList<Step> steps, int shuffleSeed)
     {
-        _original = steps;
+        // 评分只依赖排列中各步骤自带的 order,无需另存原始序列
         _arrangement = ExamScorer.Shuffle(steps, shuffleSeed).ToList();
         Phase = ExamPhase.Arranging;
     }
