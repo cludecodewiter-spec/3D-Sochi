@@ -31,7 +31,7 @@ export const HEIST_CONFIG: SegmentRunConfig = {
     {
       id: 'recon',
       title: '踩点',
-      intro: '你在半个街区外停下来。从这里能看见它，也能看见看见它的人。',
+      intro: '你在半个街区外停下来。从这里能看见它，也能看见那些能看见它的人。',
       tell: {
         accurate: '巡逻车刚过去。按你知道的节奏，下一趟在四十分钟以后。',
         vague: '街上很安静。安静得让你不太确定这是好事还是坏事。',

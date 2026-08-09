@@ -7,11 +7,15 @@
 
 import type { Era, SkillKey, VehicleDefense } from '../engine/types.js'
 
+/** Side-profile silhouette used by the procedural art layer. */
+export type BodyType = 'wagon' | 'sedan' | 'pickup' | 'coupe' | 'sleek'
+
 export interface VehicleDef {
   id: string
   name: string
   year: number
   era: Era
+  bodyType: BodyType
   /** Pre-fence value. The actual payout runs through §5.5. */
   basePrice: number
   defense: VehicleDefense

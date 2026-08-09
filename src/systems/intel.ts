@@ -320,6 +320,21 @@ export interface ObservedRecord {
  * honesty/access — an informant the player has never tested reads as unknown,
  * which is correct and is the whole tension of the early game.
  */
+/**
+ * How the player should feel about a source, from witnessed outcomes only.
+ * Deliberately conservative: one hit and one miss is *not* a good record, and
+ * an untested source reads as unknown rather than safe.
+ */
+export function reputationTone(
+  record: Pick<ObservedRecord, 'accurate' | 'wrong' | 'accuracy'>,
+): 'good' | 'bad' | 'neutral' {
+  if (record.accuracy === null) return 'neutral'
+  const resolved = record.accurate + record.wrong
+  if (resolved >= 2 && record.accuracy >= 0.75) return 'good'
+  if (record.accuracy <= 0.5 && record.wrong > 0) return 'bad'
+  return 'neutral'
+}
+
 export function observedReliability(
   state: GameState,
   informantId: string,
