@@ -61,8 +61,9 @@ export interface CarArtOptions {
   height?: number
 }
 
-export function carSvg(options: CarArtOptions): string {
-  const { bodyType, era, gone = false, condition = 100, height = 74 } = options
+/** The shapes alone, on a `0 0 202 78` grid — so a scene can nest them. */
+export function carInner(options: CarArtOptions): string {
+  const { bodyType, era, gone = false, condition = 100 } = options
   const body = BODY[bodyType]
   const [front, rear] = WHEELS[bodyType]
   const stroke = gone ? 'var(--art-line-soft)' : 'var(--art-line)'
@@ -90,8 +91,7 @@ export function carSvg(options: CarArtOptions): string {
       ? `<path d="M${rear - 20} 44 l6 5 l-4 4 l7 3" fill="none" stroke="var(--art-red)" stroke-width="1.4" opacity=".85"/>`
       : ''
 
-  return `<svg class="car-art" viewBox="0 0 202 78" role="img" aria-hidden="true"
-    style="height:${height}px;width:100%;max-width:100%" preserveAspectRatio="xMidYMid meet">
+  return `
     <path d="${body.shell}" fill="var(--art-fill)" stroke="${stroke}" stroke-width="1.8"
       stroke-linejoin="round" opacity="${gone ? 0.35 : 1}"/>
     ${body.glass.map((g) => `<path d="${g}" fill="var(--art-fill-2)" stroke="${stroke}" stroke-width="1" opacity="${gone ? 0.3 : 0.9}"/>`).join('')}
@@ -99,5 +99,12 @@ export function carSvg(options: CarArtOptions): string {
     ${damage}
     ${wheel(front)}${wheel(rear)}
     ${gone ? `<line x1="18" y1="14" x2="186" y2="66" stroke="var(--art-red)" stroke-width="2" opacity=".7"/>` : ''}
-  </svg>`
+  `
+}
+
+export function carSvg(options: CarArtOptions): string {
+  const height = options.height ?? 74
+  return `<svg class="car-art" viewBox="0 0 202 78" role="img" aria-hidden="true"
+    style="height:${height}px;width:100%;max-width:100%"
+    preserveAspectRatio="xMidYMid meet">${carInner(options)}</svg>`
 }

@@ -10,12 +10,49 @@ import type { Era, SkillKey, VehicleDefense } from '../engine/types.js'
 /** Side-profile silhouette used by the procedural art layer. */
 export type BodyType = 'wagon' | 'sedan' | 'pickup' | 'coupe' | 'sleek'
 
+/** The trade an informant is in. Drives which icon marks them on the map. */
+export type RoleKey = 'dock' | 'nurse' | 'mechanic' | 'adjuster'
+
+/** The kind of place something sits in. Drives the icon and the scene art. */
+export type VenueKey =
+  | 'alley'
+  | 'warehouse'
+  | 'store'
+  | 'laundry'
+  | 'apartment'
+  | 'house'
+  | 'lot'
+  | 'gas'
+  | 'deck'
+  | 'bar'
+  | 'diner'
+  | 'shop'
+  | 'cafe'
+
+export const VENUE_LABELS: Record<VenueKey, string> = {
+  alley: '巷子',
+  warehouse: '仓库',
+  store: '店面',
+  laundry: '洗衣房',
+  apartment: '公寓',
+  house: '独栋',
+  lot: '停车场',
+  gas: '加油站',
+  deck: '地下车库',
+  bar: '酒吧',
+  diner: '快餐店',
+  shop: '修车铺',
+  cafe: '咖啡馆',
+}
+
 export interface VehicleDef {
   id: string
   name: string
   year: number
   era: Era
   bodyType: BodyType
+  /** Where it is parked — picks the location icon and the scene illustration. */
+  venue: VenueKey
   /** Pre-fence value. The actual payout runs through §5.5. */
   basePrice: number
   defense: VehicleDefense
@@ -39,6 +76,10 @@ export interface InformantDef {
   id: string
   name: string
   role: string
+  /** Their trade, as an icon. */
+  roleIcon: RoleKey
+  /** Where they can be found. */
+  venue: VenueKey
   honesty: number
   access: number
   /** Asking price per tip. */

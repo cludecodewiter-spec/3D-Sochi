@@ -17,6 +17,10 @@ import { INTEL_TEMPLATES } from '../src/content/intel.js'
 import { UNLOCKS, ADVISOR_LINES, UNLOCK_SPACING } from '../src/content/unlocks.js'
 import { TUTORIAL_TARGET, BETRAYAL } from '../src/content/script.js'
 import { FENCE_CHANNELS } from '../src/content/balance.js'
+import { VENUE_LABELS } from '../src/content/types.js'
+import type { BodyType, RoleKey, VenueKey } from '../src/content/types.js'
+import { ROLE_GLYPHS, VEHICLE_GLYPHS, VENUE_GLYPHS, iconSvg } from '../src/ui/art/icons.js'
+import { venueScene } from '../src/ui/art/scene.js'
 
 describe('every location resolves to a district on the map', () => {
   it('for every vehicle', () => {
@@ -116,5 +120,67 @@ describe('heist config is well formed', () => {
     for (const rule of HEIST_CONFIG.failWhen) {
       expect(Object.keys(HEIST_CONFIG.vars)).toContain(rule.var)
     }
+  })
+})
+
+describe('the art layer covers every content key', () => {
+  const venues = Object.keys(VENUE_LABELS) as VenueKey[]
+
+  it('gives every vehicle a body type and a venue that both have art', () => {
+    for (const v of VEHICLES) {
+      expect(VEHICLE_GLYPHS[v.bodyType]).toBeDefined()
+      expect(VENUE_GLYPHS[v.venue]).toBeDefined()
+      expect(VENUE_LABELS[v.venue]).toBeTruthy()
+    }
+  })
+
+  it('gives every informant a trade icon and a venue that both have art', () => {
+    for (const i of INFORMANTS) {
+      expect(ROLE_GLYPHS[i.roleIcon]).toBeDefined()
+      expect(VENUE_GLYPHS[i.venue]).toBeDefined()
+    }
+  })
+
+  it('draws a scene for every venue', () => {
+    for (const venue of venues) {
+      const svg = venueScene({ venue })
+      expect(svg.startsWith('<svg')).toBe(true)
+      expect(svg.length).toBeGreaterThan(200)
+    }
+  })
+})
+
+describe('no two pieces of art are the same drawing', () => {
+  // The point of an icon is to say *which one*. Two identical shapes under two
+  // different names is the failure mode this guards — and it is the kind of
+  // thing a copy-paste leaves behind without anything ever throwing.
+  const distinct = (items: string[]): boolean => new Set(items).size === items.length
+
+  it('across vehicle silhouettes', () => {
+    const bodies = Object.keys(VEHICLE_GLYPHS) as BodyType[]
+    expect(distinct(bodies.map((b) => VEHICLE_GLYPHS[b]('#000', '#fff')))).toBe(true)
+  })
+
+  it('across trades', () => {
+    const roles = Object.keys(ROLE_GLYPHS) as RoleKey[]
+    expect(distinct(roles.map((r) => ROLE_GLYPHS[r]('#000')))).toBe(true)
+  })
+
+  it('across venue icons', () => {
+    const venues = Object.keys(VENUE_GLYPHS) as VenueKey[]
+    expect(distinct(venues.map((v) => iconSvg(VENUE_GLYPHS[v])))).toBe(true)
+  })
+
+  it('across venue scenes', () => {
+    const venues = Object.keys(VENUE_LABELS) as VenueKey[]
+    expect(distinct(venues.map((v) => venueScene({ venue: v })))).toBe(true)
+  })
+
+  it('and a scene changes when the car parked in it changes', () => {
+    const bodies = Object.keys(VEHICLE_GLYPHS) as BodyType[]
+    const scenes = bodies.map((bodyType) =>
+      venueScene({ venue: 'lot', car: { bodyType, era: 'classic' } }),
+    )
+    expect(distinct(scenes)).toBe(true)
   })
 })

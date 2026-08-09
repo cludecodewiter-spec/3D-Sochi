@@ -15,6 +15,7 @@ import { DIFFICULTIES } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { INFORMANTS, informantDef } from '../content/informants.js'
 import { vehicleDef } from '../content/vehicles.js'
+import { VENUE_LABELS } from '../content/types.js'
 import { TUTORIAL_TARGET } from '../content/script.js'
 import { availableChannels, fencePrice } from '../systems/economy.js'
 import { tierFor } from '../systems/heat.js'
@@ -30,6 +31,8 @@ import {
   verify,
 } from '../systems/game.js'
 import { carSvg } from './art/car.js'
+import { ROLE_GLYPHS, VENUE_GLYPHS, iconSvg } from './art/icons.js'
+import { venueScene } from './art/scene.js'
 import { portraitSvg } from './art/portrait.js'
 import { buildMap } from './art/map.js'
 import type { MapPin } from './art/map.js'
@@ -143,7 +146,16 @@ export function contextPanel(ui: Ui): HTMLElement {
     const body = h('div', {})
 
     body.appendChild(
-      photo(carSvg({ bodyType: def.bodyType, era: def.era, gone: target.stolen, height: 62 })),
+      photo(
+        venueScene({
+          venue: def.venue,
+          car: {
+            bodyType: def.bodyType,
+            era: def.era,
+            ...(target.stolen ? { gone: true } : {}),
+          },
+        }),
+      ),
     )
     body.appendChild(
       h(
@@ -153,7 +165,14 @@ export function contextPanel(ui: Ui): HTMLElement {
         h('span', { class: `tag era-${def.era}` }, ERA_LABELS[def.era].split('（')[0] ?? def.era),
       ),
     )
-    body.appendChild(h('div', { class: 'small faint' }, def.location))
+    body.appendChild(
+      h(
+        'div',
+        { class: 'row small faint', style: 'gap:5px;align-items:center' },
+        svg(iconSvg(VENUE_GLYPHS[def.venue], 14)),
+        h('span', {}, def.location),
+      ),
+    )
     body.appendChild(h('div', { class: 'small', style: 'margin:4px 0' }, def.flavor))
     body.appendChild(
       h('div', { class: 'row small', style: 'margin-bottom:4px' }, '估值 ',
@@ -229,7 +248,7 @@ export function contextPanel(ui: Ui): HTMLElement {
         ),
       )
     }
-    return panel('目标信息', body)
+    return panel(`目标信息 · ${VENUE_LABELS[def.venue]}`, body)
   }
 
   // informant
@@ -241,21 +260,34 @@ export function contextPanel(ui: Ui): HTMLElement {
   const body = h('div', {})
 
   if (memory) body.appendChild(h('div', { class: 'recall' }, memory))
+  body.appendChild(photo(venueScene({ venue: def.venue, height: 78 })))
   body.appendChild(
     h(
       'div',
-      { class: 'row', style: 'gap:8px;align-items:flex-start' },
-      photo(portraitSvg({ id: def.id, size: 62, tone: reputationTone(observed) })),
+      { class: 'row', style: 'gap:8px;align-items:flex-start;margin-top:5px' },
+      photo(portraitSvg({ id: def.id, size: 54, tone: reputationTone(observed) })),
       h(
         'div',
         { style: 'flex:1;min-width:0' },
         h('div', { style: 'font-weight:700' }, def.name),
-        h('div', { class: 'small faint' }, def.role),
+        h(
+          'div',
+          { class: 'row small faint', style: 'gap:4px;align-items:center' },
+          svg(iconSvg(ROLE_GLYPHS[def.roleIcon], 13)),
+          h('span', {}, def.role),
+        ),
         h('div', { class: 'small' }, money(def.price), ' / 条'),
       ),
     ),
   )
-  body.appendChild(h('div', { class: 'small faint', style: 'margin:4px 0' }, def.hangout))
+  body.appendChild(
+    h(
+      'div',
+      { class: 'row small faint', style: 'gap:5px;align-items:center;margin:4px 0' },
+      svg(iconSvg(VENUE_GLYPHS[def.venue], 14)),
+      h('span', {}, def.hangout),
+    ),
+  )
   body.appendChild(h('div', { class: 'small', style: 'margin-bottom:6px' }, def.intro))
 
   if (record?.met) {
@@ -293,7 +325,7 @@ export function contextPanel(ui: Ui): HTMLElement {
       h('span', { class: 'small faint' }, '1 行动点'),
     ),
   )
-  return panel('人物信息', body)
+  return panel(`人物信息 · ${VENUE_LABELS[def.venue]}`, body)
 }
 
 // ── centre: status strip, map, wanted level ──────────────────────────
@@ -335,6 +367,7 @@ export function mapPanel(ui: Ui): HTMLElement {
       id: target.id,
       kind: 'vehicle',
       location: def.location,
+      bodyType: def.bodyType,
       label: `${def.name} ${def.year} · ${def.location}`,
       ...(target.stolen ? { gone: true } : {}),
       ...(state.intel.some((i) => i.targetInstanceId === target.id && !i.resolved)
@@ -348,7 +381,8 @@ export function mapPanel(ui: Ui): HTMLElement {
         id: `inf-${def.id}`,
         kind: 'informant',
         location: def.hangout,
-        label: `${def.name} · ${def.hangout}`,
+        roleIcon: def.roleIcon,
+        label: `${def.name} · ${def.role} · ${def.hangout}`,
       })
     }
   }

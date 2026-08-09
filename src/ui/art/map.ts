@@ -8,6 +8,9 @@
  * same neighbourhood stay individually clickable.
  */
 
+import type { BodyType, RoleKey } from '../../content/types.js'
+import { ROLE_GLYPHS, VEHICLE_GLYPHS, badgeGlyph } from './icons.js'
+
 export interface District {
   id: string
   x: number
@@ -35,24 +38,34 @@ export interface MapPin {
   kind: 'vehicle' | 'informant'
   location: string
   label: string
+  /** Which silhouette to draw — the body type for a car, the trade for a person. */
+  bodyType?: BodyType
+  roleIcon?: RoleKey
   /** Dimmed and struck through — already taken. */
   gone?: boolean
   /** Player is carrying intel about this target. */
   flagged?: boolean
 }
 
-const CAR_GLYPH =
-  'M-5.2 1.2 h.9 a2 2 0 0 1 4 0 h1.6 a2 2 0 0 1 4 0 h.9 v-1.6 l-1.6-.5 l-2-2.2 h-4 l-2 2.2 l-1.8.5 z'
-const HEAD_GLYPH = 'M0 -3.4 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 M-3.6 4.6 a3.6 3.6 0 0 1 7.2 0 z'
+/**
+ * A pin has to say *which one*. A wagon reads as a wagon and a nurse reads as a
+ * nurse, so the player can pick a target straight off the map instead of
+ * clicking every identical dot to find out what it is.
+ */
+function pinGlyph(pin: MapPin, background: string): string {
+  return pin.kind === 'vehicle'
+    ? badgeGlyph(VEHICLE_GLYPHS[pin.bodyType ?? 'sedan'], 'var(--art-line)', 1.14, background)
+    : badgeGlyph(ROLE_GLYPHS[pin.roleIcon ?? 'dock'], 'var(--art-line)', 0.82)
+}
 
 function cluster(count: number, index: number): [number, number] {
-  if (count === 1) return [0, -13]
-  const spread = 20
+  if (count === 1) return [0, -14]
+  const spread = 25
   const perRow = Math.min(3, count)
   const row = Math.floor(index / perRow)
   const col = index % perRow
   const rowWidth = Math.min(perRow, count - row * perRow)
-  return [(col - (rowWidth - 1) / 2) * spread, -13 + row * 19]
+  return [(col - (rowWidth - 1) / 2) * spread, -14 + row * 21]
 }
 
 export interface MapOptions {
@@ -95,15 +108,14 @@ export function buildMap(options: MapOptions): HTMLElement {
           : 'var(--art-accent)'
       badges.push(`<g class="node" data-pin="${pin.id}" transform="translate(${x} ${y})">
         <title>${pin.label}</title>
-        <circle class="ring" r="11.5" fill="none" stroke="var(--art-red)" stroke-width="2.4"
+        <circle class="ring" r="13.8" fill="none" stroke="var(--art-red)" stroke-width="2.4"
           opacity="${on ? 1 : 0}"/>
-        <circle r="10" fill="#f0e4c6" opacity=".95"/>
-        <circle r="8.6" fill="${fill}" stroke="var(--art-line)" stroke-width="1"
+        <circle r="12.4" fill="#f0e4c6" opacity=".95"/>
+        <circle r="10.8" fill="${fill}" stroke="var(--art-line)" stroke-width="1"
           opacity="${pin.gone ? 0.4 : 1}"/>
-        <path d="${pin.kind === 'vehicle' ? CAR_GLYPH : HEAD_GLYPH}"
-          fill="var(--art-line)" opacity="${pin.gone ? 0.4 : 0.92}" transform="scale(1.15)"/>
-        ${pin.flagged ? '<circle cx="6.6" cy="-6.6" r="3" fill="var(--art-red)" stroke="var(--art-fill-2)" stroke-width=".8"/>' : ''}
-        ${pin.gone ? '<line x1="-7" y1="-7" x2="7" y2="7" stroke="var(--art-red)" stroke-width="2"/>' : ''}
+        <g opacity="${pin.gone ? 0.4 : 1}">${pinGlyph(pin, fill)}</g>
+        ${pin.flagged ? '<circle cx="7.4" cy="-7.4" r="3.2" fill="var(--art-red)" stroke="var(--art-fill-2)" stroke-width=".9"/>' : ''}
+        ${pin.gone ? '<line x1="-8" y1="-8" x2="8" y2="8" stroke="var(--art-red)" stroke-width="2.2"/>' : ''}
       </g>`)
     })
   }
