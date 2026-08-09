@@ -29,6 +29,40 @@ export type VenueKey =
   | 'shop'
   | 'cafe'
 
+/** §2.4 地图角标：照片说明是哪一个，角标说明是哪一类。 */
+export const VENUE_BADGE: Record<VenueKey, string> = {
+  alley: 'mask',
+  warehouse: 'house',
+  store: 'cart',
+  laundry: 'house',
+  apartment: 'house',
+  house: 'house',
+  lot: 'P',
+  gas: 'fuel',
+  deck: 'P',
+  bar: 'glass',
+  diner: 'fork',
+  shop: 'wrench',
+  cafe: 'fork',
+}
+
+/** 场所照片。素材有限，几处复用是有意的。 */
+export const VENUE_PHOTO: Record<VenueKey, string> = {
+  alley: 'scenes/alley',
+  warehouse: 'places/junkyard',
+  store: 'places/supermarket',
+  laundry: 'places/motel',
+  apartment: 'places/residential',
+  house: 'places/residential',
+  lot: 'places/parking',
+  gas: 'places/gasstation',
+  deck: 'places/parking',
+  bar: 'places/nightclub',
+  diner: 'places/diner',
+  shop: 'places/junkyard',
+  cafe: 'places/diner',
+}
+
 export const VENUE_LABELS: Record<VenueKey, string> = {
   alley: '巷子',
   warehouse: '仓库',
@@ -53,6 +87,8 @@ export interface VehicleDef {
   bodyType: BodyType
   /** Where it is parked — picks the location icon and the scene illustration. */
   venue: VenueKey
+  /** Real photograph key under public/assets. §2.4 */
+  photo: string
   /** Pre-fence value. The actual payout runs through §5.5. */
   basePrice: number
   defense: VehicleDefense
@@ -80,6 +116,8 @@ export interface InformantDef {
   roleIcon: RoleKey
   /** Where they can be found. */
   venue: VenueKey
+  /** ⚠️ people/* are real people — prototype only. See assets/CREDITS.md. */
+  photo: string
   honesty: number
   access: number
   /** Asking price per tip. */

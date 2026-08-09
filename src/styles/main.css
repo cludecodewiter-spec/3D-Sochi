@@ -5,50 +5,62 @@
  */
 
 :root {
-  /* parchment skin */
-  --paper: #e6d9ba;
-  --paper-2: #d8c69f;
-  --paper-3: #c9b487;
-  --paper-sunken: #f0e7ce;
+  /* ── CLAUDE.md §2.1 设计令牌（原值，不要改）────────────────────── */
+  --tan: #e2c296;
+  --panel: #dcb88a;
+  --sunk: #c9a171;
+  --dk: #a8814d;
+  --lt: #f2ddb8;
+  --ink: #1c1508;
+  --blue: #0000c0;
+  --red: #a81c08;
+  --grn: #137a20;
+  --dim: #8c7a55;
+
+  /* 由上表派生，不新增色相 */
+  --paper: var(--panel);
+  --paper-2: var(--tan);
+  --paper-3: var(--sunk);
+  --paper-sunken: #efe0c4;
   --felt: #6d5836;
   --felt-2: #56442a;
-
-  --bevel-hi: #f7f0dd;
-  --bevel-lo: #8a7247;
-  --rule: #a08council;
-  --rule: #a08a5c;
-
-  --ink: #2b2013;
+  --bevel-hi: var(--lt);
+  --bevel-lo: var(--dk);
+  --rule: var(--dk);
   --ink-2: #5d4b2f;
-  --ink-3: #8a7550;
+  --ink-3: var(--dim);
+  --amber: #e8a33d;
 
-  --red: #9d2b1f;
-  --green: #3f6b2c;
+  /* 标题栏（Win9x 活动窗口蓝），不在 §2.1 表内但布局需要 */
   --blue-1: #2a5b9c;
   --blue-2: #14356b;
-  --amber: #b8721c;
 
-  --bar-good: #4f8b34;
-  --bar-mid: #b8951c;
-  --bar-bad: #9d2b1f;
+  --bar-good: #4caf50;
+  --bar-mid: var(--amber);
+  --bar-bad: var(--red);
+  --bar-disguise: #7bb0e0;
 
-  --sans: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC",
-    "Source Han Sans SC", sans-serif;
-  --mono: ui-monospace, "SF Mono", Consolas, "Noto Sans Mono CJK SC", monospace;
+  /* §2.1 字体：不要换成 Inter/Roboto，会立刻失去 2000 年代 Windows 应用的质感 */
+  --sans: Tahoma, "MS Sans Serif", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --mono: Tahoma, "MS Sans Serif", ui-monospace, Consolas, monospace;
 
-  /* dedicated tokens for the procedural art layer — never reuse the
-     semantic text colours here, or every drawing turns into a brown blob */
+  /* 美术层专用 token（§10.2）*/
   --art-bg: #e2d4b0;
   --art-fill: #dccca4;
   --art-fill-2: #f2ead3;
   --art-line: #5a4829;
   --art-line-soft: #94805a;
-  --art-accent: #b8721c;
-  --art-red: #9d2b1f;
-  --art-green: #3f6b2c;
+  --art-accent: var(--amber);
+  --art-red: var(--red);
+  --art-green: var(--grn);
 }
 
 * { box-sizing: border-box; }
+
+/* ── CLAUDE.md §2.2 Win9x 立体边框（灵魂，不可省略）───────────────
+   用纯色块或 border-radius 会毁掉整个观感。圆标是唯一例外。 */
+.rise { border: 2px solid; border-color: var(--lt) var(--dk) var(--dk) var(--lt); }
+.sunk { border: 2px solid; border-color: var(--dk) var(--lt) var(--lt) var(--dk); }
 
 html, body {
   margin: 0;
@@ -58,8 +70,8 @@ html, body {
     linear-gradient(160deg, var(--felt), var(--felt-2));
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 11px;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -84,7 +96,7 @@ html, body {
   padding: 3px 6px;
   background: linear-gradient(180deg, var(--blue-1), var(--blue-2));
   color: #f2ead6;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.04em;
   border-bottom: 1px solid var(--bevel-lo);
 }
@@ -125,7 +137,7 @@ html, body {
   padding: 2px 6px;
   background: linear-gradient(180deg, var(--paper-2), var(--paper-3));
   border-bottom: 1px solid var(--rule);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--ink);
   display: flex;
@@ -154,7 +166,7 @@ html, body {
   flex-wrap: wrap;
   gap: 2px 16px;
   padding: 4px 8px;
-  font-size: 12px;
+  font-size: 11px;
 }
 .strip .k { color: var(--ink-2); }
 .strip .v { font-family: var(--mono); font-weight: 700; }
@@ -176,7 +188,7 @@ html, body {
   align-items: center;
   gap: 5px;
   margin-bottom: 3px;
-  font-size: 12px;
+  font-size: 11px;
 }
 .stat .num { font-family: var(--mono); text-align: right; font-size: 11px; }
 .stat .num em { color: var(--green); font-style: normal; }
@@ -196,7 +208,7 @@ html, body {
 button {
   font: inherit;
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink);
   background: linear-gradient(180deg, var(--paper), var(--paper-2));
   border: 2px solid;
@@ -212,9 +224,10 @@ button:focus-visible { outline: 1px dotted var(--ink-2); outline-offset: -4px; }
 button:disabled { color: var(--ink-3); opacity: 0.6; cursor: not-allowed; }
 button.act { font-weight: 700; padding: 5px 14px; }
 button.act.go { color: var(--red); }
+/* §2.1 可交互文字：蓝色粗体，这是原作的按钮语汇 */
 button.link {
   border: none; background: none; padding: 1px 3px; text-decoration: underline;
-  color: var(--ink-2);
+  color: var(--blue); font-weight: bold;
 }
 /* menu-list buttons: the selected entry turns red, as in the reference */
 button.opt {
@@ -255,7 +268,7 @@ button.opt.on { color: var(--red); font-weight: 700; }
 
 /* ── list rows ───────────────────────────────────────────────────── */
 
-.rows { width: 100%; border-collapse: collapse; font-size: 12px; }
+.rows { width: 100%; border-collapse: collapse; font-size: 11px; }
 .rows th {
   text-align: left; font-weight: 700; font-size: 11px; color: var(--ink-2);
   border-bottom: 1px solid var(--rule); padding: 2px 4px;
@@ -269,7 +282,7 @@ button.opt.on { color: var(--red); font-weight: 700; }
 /* ── message log ─────────────────────────────────────────────────── */
 
 .log { height: 116px; }
-.log .in { font-size: 12px; }
+.log .in { font-size: 11px; }
 .log .l { margin: 0 0 1px; }
 .log .l.bad { color: var(--red); }
 .log .l.good { color: var(--green); }
@@ -326,9 +339,9 @@ button.opt.on { color: var(--red); font-weight: 700; }
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--ink-3);
   border-bottom: 1px solid var(--rule); padding-bottom: 3px; margin-bottom: 6px;
 }
-.doc-calllog .line { font-family: var(--mono); font-size: 12px; margin: 2px 0; }
+.doc-calllog .line { font-family: var(--mono); font-size: 11px; margin: 2px 0; }
 .doc-calllog .line::before { content: "› "; color: var(--red); }
-.doc-ledger table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
+.doc-ledger table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 11px; }
 .doc-ledger td { padding: 1px 0; border-bottom: 1px dotted var(--rule); }
 .doc-ledger td:last-child { text-align: right; }
 .doc-ledger td.pos { color: var(--green); }
@@ -362,7 +375,7 @@ button.opt.on { color: var(--red); font-weight: 700; }
   border: 1px solid var(--red); padding: 3px 6px; margin-bottom: 5px;
 }
 .recall::before { content: "ⓘ "; }
-.empty { color: var(--ink-3); font-size: 12px; padding: 10px 4px; text-align: center; }
+.empty { color: var(--ink-3); font-size: 11px; padding: 10px 4px; text-align: center; }
 .tag {
   font-size: 10px; padding: 0 4px; border: 1px solid var(--rule);
   background: var(--paper-2); color: var(--ink-2);
@@ -373,7 +386,7 @@ button.opt.on { color: var(--red); font-weight: 700; }
 .red { color: var(--red); }
 .green { color: var(--green); }
 .faint { color: var(--ink-3); }
-.small { font-size: 11px; }
+.small { font-size: 10px; }
 .portrait, .car-art { display: block; }
 /* sunken photo frame, as in the reference build's 人物档案 */
 .photo {
@@ -388,7 +401,7 @@ button.opt.on { color: var(--red); font-weight: 700; }
 
 .tabs { display: flex; gap: 2px; padding: 3px 4px 0; }
 .tabs button {
-  border-bottom-color: var(--paper); padding: 2px 10px; font-size: 12px;
+  border-bottom-color: var(--paper); padding: 2px 10px; font-size: 11px;
 }
 .tabs button.on { background: var(--paper); font-weight: 700; color: var(--red); }
 
@@ -397,3 +410,9 @@ button.opt.on { color: var(--red); font-weight: 700; }
   .col { max-height: none; }
   .log { height: 90px; }
 }
+
+/* §2.4 颜色编码：绿=可信 / 红=坑过你 / 默认=还没验证过 */
+.slot.tone-good { box-shadow: inset 0 0 0 2px var(--grn); }
+.slot.tone-bad { box-shadow: inset 0 0 0 2px var(--red); }
+.photo.tone-good { border-color: var(--grn); }
+.photo.tone-bad { border-color: var(--red); }

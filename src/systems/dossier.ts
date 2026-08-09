@@ -16,7 +16,7 @@ import { DIFFICULTIES } from '../content/balance.js'
 import { INFORMANTS, informantDef } from '../content/informants.js'
 import { vehicleDef } from '../content/vehicles.js'
 import { observedReliability } from './intel.js'
-import { tierFor } from './heat.js'
+import { heatOf, tierFor } from './heat.js'
 
 export interface CausalNode {
   event: GameEvent
@@ -164,16 +164,16 @@ export interface CaseFile {
 }
 
 export function caseFile(state: GameState, log: EventLog): CaseFile {
-  const visible = state.heat >= CASEFILE_THRESHOLD
+  const visible = heatOf(state) >= CASEFILE_THRESHOLD
   if (!visible) {
-    return { visible, tier: tierFor(state.heat).label, heat: state.heat, entries: [] }
+    return { visible, tier: tierFor(heatOf(state)).label, heat: heatOf(state), entries: [] }
   }
   const entries = log
     .byType('heist_result', 'sale', 'heat_change')
     .filter((e) => e.tone === 'bad' || e.type === 'sale')
     .slice(-12)
     .map((e) => `第 ${e.turn} 天 —— ${e.summary}`)
-  return { visible, tier: tierFor(state.heat).label, heat: state.heat, entries }
+  return { visible, tier: tierFor(heatOf(state)).label, heat: heatOf(state), entries }
 }
 
 /**

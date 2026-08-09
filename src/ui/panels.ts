@@ -15,10 +15,10 @@ import { DIFFICULTIES } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { INFORMANTS, informantDef } from '../content/informants.js'
 import { vehicleDef } from '../content/vehicles.js'
-import { VENUE_LABELS } from '../content/types.js'
+import { VENUE_BADGE, VENUE_LABELS } from '../content/types.js'
 import { TUTORIAL_TARGET } from '../content/script.js'
 import { availableChannels, fencePrice } from '../systems/economy.js'
-import { tierFor } from '../systems/heat.js'
+import { heatOf, tierFor } from '../systems/heat.js'
 import { observedReliability, reputationTone } from '../systems/intel.js'
 import { recall } from '../systems/dossier.js'
 import {
@@ -31,9 +31,9 @@ import {
   verify,
 } from '../systems/game.js'
 import { carSvg } from './art/car.js'
+import { photoTile, portraitKey } from './art/photo.js'
 import { ROLE_GLYPHS, VENUE_GLYPHS, iconSvg } from './art/icons.js'
 import { venueScene } from './art/scene.js'
-import { portraitSvg } from './art/portrait.js'
 import { buildMap } from './art/map.js'
 import type { MapPin } from './art/map.js'
 import { h, money, pct, photo, svg } from './dom.js'
@@ -76,7 +76,9 @@ export function characterPanel(ui: Ui): HTMLElement {
     h(
       'div',
       { class: 'row', style: 'gap:8px;align-items:flex-start;margin-bottom:6px' },
-      photo(portraitSvg({ id: `marco${state.flags['face'] ?? 11}`, size: 68 })),
+      // §2.3 人物档案用真实照片。⚠️ people/* 仅原型可用，见 assets/CREDITS.md
+      // §2.3 人物档案用真实照片。⚠️ people/* 仅原型可用，见 assets/CREDITS.md
+      photo(photoTile(portraitKey(state.flags['face'] ?? 2), 68, 68)),
       h(
         'div',
         { style: 'flex:1;min-width:0' },
@@ -106,16 +108,21 @@ export function characterPanel(ui: Ui): HTMLElement {
     )
   }
 
-  const tier = tierFor(state.heat)
+  const total = heatOf(state)
   if (state.unlocked.includes('heat')) {
+    const tier = tierFor(total)
     body.appendChild(
       h(
         'div',
         { class: 'stat', style: 'margin-top:6px' },
         h('span', {}, '热度'),
-        bar(state.heat, 100, 'heat'),
-        h('span', { class: 'num' }, `${state.heat} ${tier.label}`),
+        bar(total, 100, 'heat'),
+        // §3.3 双段显示："底案+累积"，不要合成一个数
+        h('span', { class: 'num' }, `${state.wanted.base}+${state.wanted.current}`),
       ),
+    )
+    body.appendChild(
+      h('div', { class: 'small faint', style: 'margin-top:2px' }, `等级：${tier.label}`),
     )
   }
 
@@ -145,6 +152,9 @@ export function contextPanel(ui: Ui): HTMLElement {
     const def = vehicleDef(target.defId)
     const body = h('div', {})
 
+    // §2.3 — Info 大图是 152×110 的真实照片。下面那条是地点，用画的，
+    // 因为照片库里没有「这辆车停在哪」这种镜头。
+    body.appendChild(photo(photoTile(def.photo, 152, 110)))
     body.appendChild(
       photo(
         venueScene({
@@ -154,6 +164,7 @@ export function contextPanel(ui: Ui): HTMLElement {
             era: def.era,
             ...(target.stolen ? { gone: true } : {}),
           },
+          height: 52,
         }),
       ),
     )
@@ -260,12 +271,13 @@ export function contextPanel(ui: Ui): HTMLElement {
   const body = h('div', {})
 
   if (memory) body.appendChild(h('div', { class: 'recall' }, memory))
-  body.appendChild(photo(venueScene({ venue: def.venue, height: 78 })))
+  body.appendChild(photo(photoTile(def.photo, 152, 110)))
+  body.appendChild(photo(venueScene({ venue: def.venue, height: 46 })))
   body.appendChild(
     h(
       'div',
       { class: 'row', style: 'gap:8px;align-items:flex-start;margin-top:5px' },
-      photo(portraitSvg({ id: def.id, size: 54, tone: reputationTone(observed) })),
+      photo(photoTile(def.photo, 44, 44)),
       h(
         'div',
         { style: 'flex:1;min-width:0' },
@@ -367,7 +379,8 @@ export function mapPanel(ui: Ui): HTMLElement {
       id: target.id,
       kind: 'vehicle',
       location: def.location,
-      bodyType: def.bodyType,
+      photo: def.photo,
+      badge: 'car',
       label: `${def.name} ${def.year} · ${def.location}`,
       ...(target.stolen ? { gone: true } : {}),
       ...(state.intel.some((i) => i.targetInstanceId === target.id && !i.resolved)
@@ -381,7 +394,8 @@ export function mapPanel(ui: Ui): HTMLElement {
         id: `inf-${def.id}`,
         kind: 'informant',
         location: def.hangout,
-        roleIcon: def.roleIcon,
+        photo: def.photo,
+        badge: VENUE_BADGE[def.venue],
         label: `${def.name} · ${def.role} · ${def.hangout}`,
       })
     }
@@ -394,7 +408,7 @@ export function mapPanel(ui: Ui): HTMLElement {
         ? ui.selected.id
         : `inf-${ui.selected.id}`
       : null,
-    heat: state.heat,
+    heat: heatOf(state),
     onSelect: (id) => {
       ui.selected = id.startsWith('inf-')
         ? { kind: 'informant', id: id.slice(4) }
@@ -413,7 +427,8 @@ export function mapPanel(ui: Ui): HTMLElement {
 
 export function wantedStrip(ui: Ui): HTMLElement {
   const { state } = ui.game
-  const tier = tierFor(state.heat)
+  const total = heatOf(state)
+  const tier = tierFor(total)
   const shown = state.unlocked.includes('heat')
 
   return h(
@@ -427,9 +442,10 @@ export function wantedStrip(ui: Ui): HTMLElement {
             'div',
             { class: 'row', style: 'flex:1;gap:6px;align-items:center;min-width:0' },
             h('span', { class: 'k' }, '警方通缉指数'),
-            h('div', { style: 'flex:1;min-width:60px' }, bar(state.heat, 100, 'heat')),
-            h('span', { class: 'v' }, String(state.heat)),
-            h('span', { class: state.heat >= 60 ? 'v red' : 'v' }, tier.label),
+            h('div', { style: 'flex:1;min-width:60px' }, bar(total, 100, 'heat')),
+            h('span', { class: 'v' }, `${state.wanted.base}+${state.wanted.current}`),
+            h('span', { class: total >= 60 ? 'v red' : 'v' }, tier.label),
+            state.wanted.locked ? h('span', { class: 'v red' }, '· 区域封锁') : null,
           )
         : h('div', { style: 'flex:1' }, h('span', { class: 'k' }, '本市 · 第一纪')),
       state.ap > 0 && state.turn > 1
@@ -510,21 +526,16 @@ export function informantRack(ui: Ui): HTMLElement | null {
     return h(
       'div',
       {
-        class: `slot filled ${ui.selected?.kind === 'informant' && ui.selected.id === def.id ? 'on' : ''}`,
+        class:
+          `slot filled tone-${record?.met ? reputationTone(observed) : 'neutral'} ` +
+          (ui.selected?.kind === 'informant' && ui.selected.id === def.id ? 'on' : ''),
         title: def.name,
         onclick: () => {
           ui.selected = { kind: 'informant', id: def.id }
           ui.render()
         },
       },
-      svg(
-        portraitSvg({
-          id: def.id,
-          size: 56,
-          filed: false,
-          tone: record?.met ? reputationTone(observed) : 'neutral',
-        }),
-      ),
+      photo(photoTile(def.photo, 56, 56)),
       h('span', { class: 'cap2' }, def.name.split(' ')[0] ?? def.name),
     )
   })

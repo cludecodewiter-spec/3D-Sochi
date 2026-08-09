@@ -11,7 +11,7 @@ import { resetAp } from '../engine/time.js'
 import { DEBT } from '../content/balance.js'
 import { recoverMarket, settleDebt } from './economy.js'
 import type { DebtSettlement } from './economy.js'
-import { decayHeat } from './heat.js'
+import { decayHeat, heatOf } from './heat.js'
 import { processUnlocks } from './unlocks.js'
 import type { UnlockEvent } from './unlocks.js'
 
@@ -50,9 +50,9 @@ export function endTurn(state: GameState, log: EventLog): TurnReport {
     turn: state.turn,
     type: 'turn_end',
     actors: [],
-    summary: `第 ${state.turn} 天结束。现金 $${state.cash}，热度 ${state.heat}`,
+    summary: `第 ${state.turn} 天结束。现金 $${state.cash}，通缉 ${state.wanted.base}+${state.wanted.current}`,
     tone: 'neutral',
-    payload: { cash: state.cash, heat: state.heat, heatDelta },
+    payload: { cash: state.cash, wanted: { ...state.wanted }, heatDelta },
   })
 
   state.turn += 1
@@ -102,7 +102,7 @@ function checkFailure(state: GameState, debt: DebtSettlement | null): FailureKin
   if (debt?.liquidated || state.debt.missed >= DEBT.defaultsUntilLiquidation) {
     return 'liquidated'
   }
-  if (state.heat >= 100) return 'arrested'
+  if (heatOf(state) >= 100) return 'arrested'
   if (state.cash < 0 && state.garage.length === 0) {
     const streak = (state.flags['brokeStreak'] ?? 0) + 1
     state.flags['brokeStreak'] = streak

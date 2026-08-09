@@ -7,22 +7,22 @@
 import type { Difficulty } from '../../engine/types.js'
 import { DIFFICULTIES } from '../../content/balance.js'
 import { OPENING } from '../../content/script.js'
-import { h, svg } from '../dom.js'
-import { portraitSvg } from '../art/portrait.js'
+import { h, photo } from '../dom.js'
+import { PORTRAIT_COUNT, photoTile, portraitKey } from '../art/photo.js'
 import { panel } from '../panels.js'
 import type { Ui } from '../app.js'
 
-export const FACE_COUNT = 28
+export const FACE_COUNT = PORTRAIT_COUNT
 
 export function renderTitle(ui: Ui): HTMLElement {
   let difficulty: Difficulty = 'standard'
-  let face = 11
+  let face = 2
   let seedText = ''
   let name = 'MARCO'
 
   const faceBox = h('div', { style: 'display:flex;justify-content:center' })
   const paintFace = (): void => {
-    faceBox.replaceChildren(svg(portraitSvg({ id: `marco${face}`, size: 104 })))
+    faceBox.replaceChildren(photo(photoTile(portraitKey(face), 104, 104)))
   }
   paintFace()
 

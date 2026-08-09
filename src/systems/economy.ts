@@ -9,7 +9,7 @@ import type { FenceChannel } from '../content/balance.js'
 import { DEBT, DIFFICULTIES, FENCE_CHANNELS, MARKET } from '../content/balance.js'
 import { vehicleDef } from '../content/vehicles.js'
 import { debtCallFor } from '../content/script.js'
-import { tierFor } from './heat.js'
+import { heatOf, tierFor } from './heat.js'
 
 export const availableChannels = (state: GameState): FenceChannel[] =>
   FENCE_CHANNELS.filter((c) => state.turn >= c.unlockTurn)
@@ -42,7 +42,7 @@ export function fencePrice(
   const channel = channelById(channelId)
   const decay = state.marketDecay[defId] ?? 0
   const conditionFactor = clamp(condition, 0, 100) / 100
-  const heatFactor = 1 - state.heat / 250
+  const heatFactor = 1 - heatOf(state) / 250
   const demandFactor = 1 - decay
 
   return {
@@ -88,7 +88,7 @@ export function sellVehicle(
   recordSale(state, car.defId)
 
   const def = vehicleDef(car.defId)
-  const tier = tierFor(state.heat)
+  const tier = tierFor(heatOf(state))
   log.append({
     turn: state.turn,
     type: 'sale',

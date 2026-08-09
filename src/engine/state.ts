@@ -122,6 +122,24 @@ export interface FailureState {
   terminal: boolean
 }
 
+/**
+ * CLAUDE.md §3.3 — 通缉度是双段的，不要写成单值。
+ *
+ *   base    重案永久抬升，贿赂消不掉
+ *   current 每回合自然衰减，贿赂主要减这一段
+ *
+ * 显示为 "10+15"。base > 0 意味着这座城市已经记住你了，
+ * 而不只是这周比较热闹。
+ */
+export interface WantedState {
+  base: number
+  current: number
+  /** §2.1 总值过高 → 区域封锁，必须离城才能继续作业。 */
+  locked: boolean
+}
+
+export const wantedTotal = (w: WantedState): number => w.base + w.current
+
 export interface GameState {
   /** Chosen at setup. Lives in state so it survives a save. */
   playerName: string
@@ -130,8 +148,8 @@ export interface GameState {
   maxAp: number
   difficulty: Difficulty
   cash: number
-  /** 0-100. §5.4 */
-  heat: number
+  /** §3.3 双段通缉度。 */
+  wanted: WantedState
   debt: DebtState
   marco: MarcoState
   informants: InformantState[]
@@ -163,7 +181,7 @@ export function createInitialState(options: NewGameOptions = {}): GameState {
     maxAp: 3,
     difficulty: options.difficulty ?? 'standard',
     cash: 340,
-    heat: 0,
+    wanted: { base: 0, current: 0, locked: false },
     debt: {
       principal: 12_000,
       minimumPayment: 1_500,

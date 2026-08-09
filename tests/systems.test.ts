@@ -178,7 +178,7 @@ describe('economy (§5.5, §5.6)', () => {
 
   it('docks the price for damage, heat and market saturation', () => {
     const session = newGame({ seed: 1 })
-    session.state.heat = 50
+    session.state.wanted.current = 50
     session.state.marketDecay['delano_marlin_84'] = 0.16
     const p = fencePrice(session.state, 'delano_marlin_84', 70, 'chop')
     expect(p.final).toBe(Math.round(2_200 * 0.35 * 0.7 * 0.8 * 0.84))

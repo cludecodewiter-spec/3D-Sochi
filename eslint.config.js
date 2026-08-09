@@ -2,7 +2,8 @@ import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules'] },
+  // __*.mjs are throwaway browser-driving harnesses, not shipped code
+  { ignores: ['dist', 'node_modules', '__*.mjs', '__*.ts', 'public'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

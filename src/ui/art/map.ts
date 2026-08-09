@@ -8,8 +8,7 @@
  * same neighbourhood stay individually clickable.
  */
 
-import type { BodyType, RoleKey } from '../../content/types.js'
-import { ROLE_GLYPHS, VEHICLE_GLYPHS, badgeGlyph } from './icons.js'
+import { photoBadge } from './photo.js'
 
 export interface District {
   id: string
@@ -38,34 +37,23 @@ export interface MapPin {
   kind: 'vehicle' | 'informant'
   location: string
   label: string
-  /** Which silhouette to draw — the body type for a car, the trade for a person. */
-  bodyType?: BodyType
-  roleIcon?: RoleKey
+  /** §2.4 — the photograph says which one, the corner glyph says which kind. */
+  photo: string
+  badge: string
   /** Dimmed and struck through — already taken. */
   gone?: boolean
   /** Player is carrying intel about this target. */
   flagged?: boolean
 }
 
-/**
- * A pin has to say *which one*. A wagon reads as a wagon and a nurse reads as a
- * nurse, so the player can pick a target straight off the map instead of
- * clicking every identical dot to find out what it is.
- */
-function pinGlyph(pin: MapPin, background: string): string {
-  return pin.kind === 'vehicle'
-    ? badgeGlyph(VEHICLE_GLYPHS[pin.bodyType ?? 'sedan'], 'var(--art-line)', 1.14, background)
-    : badgeGlyph(ROLE_GLYPHS[pin.roleIcon ?? 'dock'], 'var(--art-line)', 0.82)
-}
-
 function cluster(count: number, index: number): [number, number] {
-  if (count === 1) return [0, -14]
-  const spread = 25
+  if (count === 1) return [0, -18]
+  const spread = 32
   const perRow = Math.min(3, count)
   const row = Math.floor(index / perRow)
   const col = index % perRow
   const rowWidth = Math.min(perRow, count - row * perRow)
-  return [(col - (rowWidth - 1) / 2) * spread, -14 + row * 21]
+  return [(col - (rowWidth - 1) / 2) * spread, -18 + row * 30]
 }
 
 export interface MapOptions {
@@ -98,24 +86,20 @@ export function buildMap(options: MapOptions): HTMLElement {
     const list = byDistrict.get(district.id) ?? []
     list.forEach((pin, index) => {
       const [dx, dy] = cluster(list.length, index)
-      const x = district.x + dx
-      const y = district.y + dy
-      const on = pin.id === selectedId
-      const fill = pin.gone
-        ? 'var(--paper-3)'
-        : pin.kind === 'informant'
-          ? '#cfae62'
-          : 'var(--art-accent)'
-      badges.push(`<g class="node" data-pin="${pin.id}" transform="translate(${x} ${y})">
+      // §2.4 — a real photograph, ringed, with a high-contrast corner badge.
+      // §8 calls a purely vector map badge an anti-pattern: the reference build
+      // is photographic and dropping that costs the whole period texture.
+      badges.push(`<g class="node" data-pin="${pin.id}"
+        transform="translate(${district.x + dx} ${district.y + dy})">
         <title>${pin.label}</title>
-        <circle class="ring" r="13.8" fill="none" stroke="var(--art-red)" stroke-width="2.4"
-          opacity="${on ? 1 : 0}"/>
-        <circle r="12.4" fill="#f0e4c6" opacity=".95"/>
-        <circle r="10.8" fill="${fill}" stroke="var(--art-line)" stroke-width="1"
-          opacity="${pin.gone ? 0.4 : 1}"/>
-        <g opacity="${pin.gone ? 0.4 : 1}">${pinGlyph(pin, fill)}</g>
-        ${pin.flagged ? '<circle cx="7.4" cy="-7.4" r="3.2" fill="var(--art-red)" stroke="var(--art-fill-2)" stroke-width=".9"/>' : ''}
-        ${pin.gone ? '<line x1="-8" y1="-8" x2="8" y2="8" stroke="var(--art-red)" stroke-width="2.2"/>' : ''}
+        ${photoBadge({
+          photo: pin.photo,
+          glyph: pin.badge,
+          size: 30,
+          ...(pin.id === selectedId ? { selected: true } : {}),
+          ...(pin.gone ? { gone: true } : {}),
+          ...(pin.flagged ? { flagged: true } : {}),
+        })}
       </g>`)
     })
   }
@@ -141,7 +125,7 @@ export function buildMap(options: MapOptions): HTMLElement {
     <g>${DISTRICTS.map(
       (d) => `<g>
         <circle cx="${d.x}" cy="${d.y}" r="2.6" fill="#a08a5c"/>
-        <text x="${d.x}" y="${d.y + 14}" font-size="10" text-anchor="middle"
+        <text x="${d.x}" y="${d.y + 17}" font-size="10" text-anchor="middle"
           font-family="var(--sans)" fill="#6f5c3a">${d.id}</text>
       </g>`,
     ).join('')}</g>

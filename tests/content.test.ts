@@ -21,6 +21,10 @@ import { VENUE_LABELS } from '../src/content/types.js'
 import type { BodyType, RoleKey, VenueKey } from '../src/content/types.js'
 import { ROLE_GLYPHS, VEHICLE_GLYPHS, VENUE_GLYPHS, iconSvg } from '../src/ui/art/icons.js'
 import { venueScene } from '../src/ui/art/scene.js'
+import { VENUE_BADGE, VENUE_PHOTO } from '../src/content/types.js'
+import { BADGE_PATHS, PORTRAIT_COUNT, portraitKey } from '../src/ui/art/photo.js'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 
 describe('every location resolves to a district on the map', () => {
   it('for every vehicle', () => {
@@ -182,5 +186,38 @@ describe('no two pieces of art are the same drawing', () => {
       venueScene({ venue: 'lot', car: { bodyType, era: 'classic' } }),
     )
     expect(distinct(scenes)).toBe(true)
+  })
+})
+
+describe('every photo the content asks for is actually on disk', () => {
+  // A wrong photo key does not throw — it renders a broken image and nothing
+  // anywhere says so. Same silent-failure class as Benny's missing district.
+  const present = (key: string): boolean =>
+    existsSync(join(process.cwd(), 'public', 'assets', `${key}.jpg`))
+
+  it('for every vehicle', () => {
+    expect(VEHICLES.filter((v) => !present(v.photo)).map((v) => v.photo)).toEqual([])
+  })
+
+  it('for every informant', () => {
+    expect(INFORMANTS.filter((i) => !present(i.photo)).map((i) => i.photo)).toEqual([])
+  })
+
+  it('for every venue', () => {
+    const missing = Object.entries(VENUE_PHOTO).filter(([, k]) => !present(k))
+    expect(missing).toEqual([])
+  })
+
+  it('for every portrait slot the face picker can reach', () => {
+    const missing = Array.from({ length: PORTRAIT_COUNT }, (_, i) => portraitKey(i)).filter(
+      (k) => !present(k),
+    )
+    expect(missing).toEqual([])
+  })
+
+  it('and every venue badge names a glyph that exists', () => {
+    const missing = Object.entries(VENUE_BADGE).filter(([, g]) => !BADGE_PATHS[g])
+    expect(missing).toEqual([])
+    expect(BADGE_PATHS['car']).toBeDefined()
   })
 })

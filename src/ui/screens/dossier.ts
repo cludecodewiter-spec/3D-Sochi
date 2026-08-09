@@ -8,11 +8,12 @@
 
 import type { GameEvent } from '../../engine/events.js'
 import { caseFile, dayCards, informantEntries, vehicleEntries } from '../../systems/dossier.js'
-import { showsCaseFile } from '../../systems/heat.js'
+import { heatOf, showsCaseFile } from '../../systems/heat.js'
 import { reputationTone } from '../../systems/intel.js'
 import { vehicleDef } from '../../content/vehicles.js'
 import { h, money, pct, svg } from '../dom.js'
-import { portraitSvg } from '../art/portrait.js'
+import { photoTile } from '../art/photo.js'
+import { informantDef } from '../../content/informants.js'
 import { carSvg } from '../art/car.js'
 import { panel } from '../panels.js'
 import type { Ui } from '../app.js'
@@ -55,7 +56,7 @@ export function renderDossier(ui: Ui): HTMLElement {
 
   const tabs = h('div', { class: 'tabs', style: 'padding:0 0 5px' })
   for (const tab of TABS) {
-    if (tab.id === 'case' && !showsCaseFile(state.heat)) continue
+    if (tab.id === 'case' && !showsCaseFile(heatOf(state))) continue
     tabs.appendChild(
       h(
         'button',
@@ -207,13 +208,10 @@ export function renderDossier(ui: Ui): HTMLElement {
             h(
               'div',
               { class: 'row', style: 'gap:8px;align-items:flex-start' },
-              svg(
-                portraitSvg({
-                  id: person.id,
-                  size: 58,
-                  filed: false,
-                  tone: reputationTone(person),
-                }),
+              h(
+                'div',
+                { class: `photo tone-${reputationTone(person)}` },
+                h('span', { html: photoTile(informantDef(person.id).photo, 58, 58) }),
               ),
               h(
                 'div',

@@ -98,7 +98,7 @@ describe('save round-trip', () => {
   it('restores state and log identically', () => {
     const session = newGame({ seed: 4242 })
     session.state.cash = 777
-    session.state.heat = 31
+    session.state.wanted = { base: 4, current: 27, locked: false }
     const restored = deserialize(serialize(session))
 
     expect(restored.state).toEqual(session.state)

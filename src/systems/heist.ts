@@ -19,7 +19,7 @@ import { HEIST_CONFIG } from '../content/heist.js'
 import { vehicleDef } from '../content/vehicles.js'
 import { BETRAYAL, TUTORIAL_TARGET } from '../content/script.js'
 import { probability, resolve } from './checks.js'
-import { addHeat } from './heat.js'
+import { addHeat, heatOf } from './heat.js'
 import { intelEffect, resolveIntel } from './intel.js'
 import { defenseFor } from './vehicles.js'
 import type { RunContext, RunView, StepResult } from './segment-run.js'
@@ -61,7 +61,7 @@ export function buildContext(state: GameState, targetInstanceId: string): RunCon
       segmentId === 'escape' && (vars['danger'] ?? 0) >= AMBUSH_THRESHOLD
         ? AMBUSH_OPPOSITION
         : 0,
-    heat: state.heat,
+    heat: heatOf(state),
     injured: state.marco.injuryTurns > 0,
     difficulty: state.difficulty,
     nerve: state.marco.skills.nerve,
@@ -246,6 +246,12 @@ function finishHeist(
     if (ambushFired) {
       lines.push('仓库里有六个人。')
       lines.push('其中四个，本来就在等你。')
+      // §3.3 有人看清了你的脸。这一段进底案，贿赂消不掉。
+      addHeat(state, log, HEAT.perWitness, '有人看清了你', {
+        causedBy: resultEvent.id,
+        actors: [run.contextId],
+        permanent: true,
+      })
       injure(state, log, BETRAYAL.injuryTurns, resultEvent.id)
       lines.push(`你肩膀上挨了一枪。接下来 ${BETRAYAL.injuryTurns} 个回合，你干什么都比平时吃力。`)
     } else {

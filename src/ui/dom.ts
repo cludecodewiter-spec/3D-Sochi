@@ -53,11 +53,15 @@ export function svg(markup: string): SVGElement {
   return node
 }
 
-/** Wraps art in the sunken photo frame used across the character panels. */
+/**
+ * Wraps art in the sunken photo frame used across the character panels.
+ * Takes either SVG or plain HTML — the frame holds drawn art and real
+ * photographs alike, so it must not assume one of them.
+ */
 export const photo = (markup: string): HTMLElement => {
   const frame = document.createElement('div')
   frame.className = 'photo'
-  frame.appendChild(svg(markup))
+  frame.innerHTML = markup.trim()
   return frame
 }
 

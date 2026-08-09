@@ -26,6 +26,7 @@ import {
 } from '../src/systems/game.js'
 import { offerIntel, observedReliability, reputationTone } from '../src/systems/intel.js'
 import { informantEntries, vehicleEntries } from '../src/systems/dossier.js'
+import { addHeat, bribe } from '../src/systems/heat.js'
 import { endTurn as advanceTurn } from '../src/systems/turn.js'
 import { injure } from '../src/systems/heist.js'
 import { FormRotation } from '../src/ui/docs/index.js'
@@ -218,9 +219,9 @@ describe('B3 · injuries tick exactly once a day', () => {
 
   it('buys extra cooling instead', () => {
     const session = newGame({ seed: 2 })
-    session.state.heat = 40
+    session.state.wanted.current = 40
     rest(session)
-    expect(session.state.heat).toBeLessThan(40)
+    expect(session.state.wanted.current).toBeLessThan(40)
   })
 })
 
@@ -274,6 +275,87 @@ describe('B6 · a save carries everything the screen shows', () => {
     const restored = deserialize(serialize(session))
     expect(restored.state.intel.find((i) => i.id === tipId)?.outcome).toBe('inconclusive')
     expect(verdictOf(restored, tipId)).toBe('inconclusive')
+  })
+})
+
+// ── 双段通缉度（CLAUDE.md §3.3）────────────────────────────────────────────
+
+describe('通缉度是双段的，不是一个数', () => {
+  it('普通热度只进累积段，会自然衰减', () => {
+    const state = createInitialState()
+    const log = new EventLog()
+    addHeat(state, log, 20, '偷了一辆车')
+    expect(state.wanted).toMatchObject({ base: 0, current: 20 })
+    advanceTurn(state, log)
+    expect(state.wanted.current).toBeLessThan(20)
+    expect(state.wanted.base).toBe(0)
+  })
+
+  it('重案进底案，衰减不掉它', () => {
+    const state = createInitialState()
+    const log = new EventLog()
+    addHeat(state, log, 12, '有人看清了你', { permanent: true })
+    expect(state.wanted).toMatchObject({ base: 12, current: 0 })
+    for (let i = 0; i < 10; i++) advanceTurn(state, log)
+    expect(state.wanted.base).toBe(12)
+  })
+
+  it('贿赂只砍累积段，底案分毫不动', () => {
+    const state = createInitialState()
+    const log = new EventLog()
+    state.cash = 20_000
+    state.wanted = { base: 15, current: 40, locked: false }
+    expect(bribe(state, log, 10_000, 0)).toBe(true) // roll 0 ⇒ 必成
+    expect(state.wanted.base).toBe(15)
+    expect(state.wanted.current).toBe(20)
+  })
+
+  it('贿赂失败也要把钱扣掉', () => {
+    const state = createInitialState()
+    const log = new EventLog()
+    state.cash = 20_000
+    state.wanted = { base: 0, current: 40, locked: false }
+    expect(bribe(state, log, 1_000, 0.99)).toBe(false)
+    expect(state.cash).toBe(19_000)
+    expect(state.wanted.current).toBe(40)
+  })
+
+  it('拒收负数金额——原型那版能靠这个白拿钱', () => {
+    const state = createInitialState()
+    const log = new EventLog()
+    state.cash = 1_000
+    expect(() => bribe(state, log, -5_000, 0)).toThrow()
+    expect(state.cash).toBe(1_000)
+  })
+
+  it('付不起就不许付', () => {
+    const state = createInitialState()
+    state.cash = 100
+    expect(() => bribe(state, new EventLog(), 5_000, 0)).toThrow()
+    expect(state.cash).toBe(100)
+  })
+
+  it('总值过 90 触发区域封锁，降下来自动解除', () => {
+    const state = createInitialState()
+    const log = new EventLog()
+    addHeat(state, log, 95, '一连串的事')
+    expect(state.wanted.locked).toBe(true)
+    addHeat(state, log, -40, '风头过去了')
+    expect(state.wanted.locked).toBe(false)
+  })
+
+  it('v1 存档能迁移过来：旧的 heat 全部算作累积段', () => {
+    const legacy = {
+      version: 1,
+      createdAt: new Date().toISOString(),
+      rng: { seed: 1, step: 0 },
+      state: { ...createInitialState(), heat: 33, wanted: undefined },
+      log: [],
+    }
+    delete (legacy.state as Record<string, unknown>)['wanted']
+    const restored = deserialize(legacy as never)
+    expect(restored.state.wanted).toEqual({ base: 0, current: 33, locked: false })
+    expect(restored.state.playerName).toBe('MARCO')
   })
 })
 

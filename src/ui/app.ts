@@ -11,10 +11,10 @@ import { SLICE_END } from '../content/script.js'
 import type { TurnReport } from '../systems/turn.js'
 import { ActionError, endTurn as advanceTurn, newGame } from '../systems/game.js'
 import { caseFile as caseFileData, dayCards } from '../systems/dossier.js'
-import { tierFor } from '../systems/heat.js'
+import { heatOf, tierFor } from '../systems/heat.js'
 import { clear, h, money, photo } from './dom.js'
 import { play } from './audio.js'
-import { portraitSvg } from './art/portrait.js'
+import { photoTile } from './art/photo.js'
 import * as docs from './docs/index.js'
 import type { DocKind } from './docs/index.js'
 import {
@@ -39,6 +39,9 @@ export type Mode = 'map' | 'heist' | 'dossier' | 'ending'
 export type Selection = { kind: 'vehicle' | 'informant'; id: string }
 
 const SAVE_KEY = 'gtt.save.v1'
+
+/** ⚠️ real person — prototype only, see assets/CREDITS.md */
+const SOLOMON_PHOTO = 'people/p07'
 
 export interface HeistBeat {
   text: string
@@ -74,7 +77,7 @@ export class Ui {
   start(
     difficulty: Difficulty,
     seed?: number,
-    profile: { name: string; face: number } = { name: 'MARCO', face: 11 },
+    profile: { name: string; face: number } = { name: 'MARCO', face: 2 },
   ): void {
     this.session = newGame({
       difficulty,
@@ -143,7 +146,7 @@ export class Ui {
         h(
           'div',
           { class: 'advisor' },
-          photo(portraitSvg({ id: 'solomon', size: 78 })),
+          photo(photoTile(SOLOMON_PHOTO, 78, 78)),
           h('div', {}, h('div', { class: 'who' }, 'SOLOMON'), h('div', { class: 'said' }, text)),
         ),
       )
@@ -179,7 +182,7 @@ export class Ui {
       h(
         'div',
         { style: 'padding:8px' },
-        docs.caseFile(copy.stamp, state.heat, copy.lines),
+        docs.caseFile(copy.stamp, heatOf(state), copy.lines),
         h('p', { class: 'red' }, copy.tail),
       ),
     )
@@ -238,7 +241,7 @@ export class Ui {
                   })),
                 card.cashDelta,
               )
-            : docs.surveillance(`第 ${card.turn} 天`, tierFor(state.heat).label, card.headline),
+            : docs.surveillance(`第 ${card.turn} 天`, tierFor(heatOf(state)).label, card.headline),
         ),
       )
     }

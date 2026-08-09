@@ -11,7 +11,7 @@ import type { RngState } from './rng.js'
 import { Rng } from './rng.js'
 import type { GameState } from './state.js'
 
-export const SAVE_VERSION = 1
+export const SAVE_VERSION = 2
 
 export interface SaveFile {
   version: number
@@ -28,7 +28,20 @@ export interface Session {
 }
 
 /** version n → version n+1. Add an entry whenever SAVE_VERSION goes up. */
-const migrations: Record<number, (save: SaveFile) => SaveFile> = {}
+const migrations: Record<number, (save: SaveFile) => SaveFile> = {
+  // v1 stored a single `heat` number. §3.3 splits it into base + current:
+  // an old save has no way to know which half its heat belonged to, and the
+  // honest answer is all of it is the decaying half — the player never
+  // committed a crime the old model recorded as permanent.
+  1: (save) => {
+    const state = save.state as unknown as Record<string, unknown>
+    const heat = typeof state['heat'] === 'number' ? (state['heat'] as number) : 0
+    delete state['heat']
+    state['wanted'] = { base: 0, current: heat, locked: false }
+    state['playerName'] ??= 'MARCO'
+    return { ...save, version: 2 }
+  },
+}
 
 export function serialize(session: Session, now = new Date()): SaveFile {
   return {
