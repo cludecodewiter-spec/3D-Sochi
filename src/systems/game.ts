@@ -16,10 +16,12 @@ import { AP_COSTS, canAfford, spendAp } from '../engine/time.js'
 import type { ActionKey } from '../engine/time.js'
 import type { Difficulty } from '../engine/types.js'
 import { VEHICLES } from '../content/vehicles.js'
+import { HEAT } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { BETRAYAL, OPENING } from '../content/script.js'
 import { informantDef } from '../content/informants.js'
 import { sellVehicle } from './economy.js'
+import { addHeat } from './heat.js'
 import type { PriceBreakdown } from './economy.js'
 import { beginHeist, heistAbort, heistStep, heistView } from './heist.js'
 import type { HeistStepResult } from './heist.js'
@@ -35,14 +37,16 @@ export const VERIFY_FEE = 200
 export interface NewGameOptions {
   seed?: number
   difficulty?: Difficulty
+  playerName?: string
 }
 
 export function newGame(options: NewGameOptions = {}): Session {
   const seed = options.seed ?? Math.floor(Math.random() * 0x7fff_ffff)
   const session: Session = {
-    state: createInitialState(
-      options.difficulty ? { difficulty: options.difficulty } : {},
-    ),
+    state: createInitialState({
+      ...(options.difficulty ? { difficulty: options.difficulty } : {}),
+      ...(options.playerName ? { playerName: options.playerName } : {}),
+    }),
     log: new EventLog(),
     rng: new Rng(seed),
   }
@@ -82,6 +86,17 @@ function requireUnlocked(state: GameState, systemId: string): void {
   }
 }
 
+/**
+ * Nothing else may happen while a job is in progress. The UI hides these
+ * buttons, but the guard belongs here — the facade is what makes the
+ * invariant structural rather than a property of one screen's markup.
+ */
+function requireNoActiveRun(state: GameState): void {
+  if (state.activeRun && !state.activeRun.finished) {
+    throw new ActionError('你正在动手，现在没工夫做别的。')
+  }
+}
+
 // ── Actions ───────────────────────────────────────────────────────────────
 
 /** Your own eyes. Costs an action point, and what you see is always true. */
@@ -91,6 +106,7 @@ export function scout(
   segmentId: string,
 ): void {
   const { state, log } = session
+  requireNoActiveRun(state)
   requireAp(state, 'scout')
   const target = getTarget(state, targetInstanceId)
   if (!target) throw new ActionError('没有这个目标。')
@@ -124,6 +140,7 @@ export function buyIntel(
   segmentId?: string,
 ): IntelItem {
   const { state, log, rng } = session
+  requireNoActiveRun(state)
   requireUnlocked(state, 'informants')
   requireAp(state, 'meetInformant')
   const source = informantDef(informantId)
@@ -153,6 +170,7 @@ export function verify(
   verifierId: string,
 ): VerifyResult {
   const { state, log, rng } = session
+  requireNoActiveRun(state)
   requireUnlocked(state, 'verify')
   requireAp(state, 'verifyIntel')
   if (state.cash < VERIFY_FEE) throw new ActionError(`验证要 $${VERIFY_FEE}。你没有。`)
@@ -184,20 +202,27 @@ export function fence(
   channelId: string,
 ): { payout: number; breakdown: PriceBreakdown } {
   const { state, log } = session
+  requireNoActiveRun(state)
   requireUnlocked(state, 'fence')
   requireAp(state, 'fence')
   spendAp(state, 'fence')
   return sellVehicle(state, log, instanceId, channelId)
 }
 
-/** Burns the rest of the day. Cools heat and speeds up recovery. */
+/**
+ * Burns the rest of the day. Note it does *not* tick the injury clock —
+ * recovery happens in exactly one place (`systems/turn.ts`), or resting would
+ * heal two turns per day and swallow the recovery notice on the last tick.
+ * What resting actually buys is extra cooling.
+ */
 export function rest(session: Session): void {
   const { state, log } = session
+  requireNoActiveRun(state)
   state.ap = 0
-  if (state.marco.injuryTurns > 0) state.marco.injuryTurns -= 1
+  addHeat(state, log, -HEAT.restBonus, '在家待了一天')
   log.append({
     turn: state.turn,
-    type: 'turn_end',
+    type: 'advisor',
     actors: ['marco'],
     summary: '你今天什么都没做。',
     tone: 'neutral',

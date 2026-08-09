@@ -13,7 +13,7 @@
  */
 
 import type { EventLog, GameEvent } from '../engine/events.js'
-import type { GameState, IntelItem } from '../engine/state.js'
+import type { GameState, IntelItem, IntelOutcome } from '../engine/state.js'
 import type { Rng } from '../engine/rng.js'
 import { clamp } from '../engine/types.js'
 import type { Truth } from '../engine/types.js'
@@ -272,13 +272,14 @@ export function resolveIntel(
   state: GameState,
   log: EventLog,
   intelId: string,
-  outcome: 'helped' | 'harmed' | 'neutral',
+  outcome: IntelOutcome,
   detail: string,
   causedBy?: string,
 ): GameEvent {
   const item = state.intel.find((i) => i.id === intelId)
   if (!item) throw new Error(`没有这条情报：${intelId}`)
   item.resolved = true
+  item.outcome = outcome
 
   const record = getInformant(state, item.sourceId)
   if (record) {
@@ -309,16 +310,20 @@ export interface ObservedRecord {
   offered: number
   accurate: number
   wrong: number
+  /** Acted on, but nothing about it was ever demonstrated either way. */
+  inconclusive: number
   pending: number
   spent: number
-  /** null until the player has actually seen an outcome. */
+  /** null until at least one tip has actually proved itself. */
   accuracy: number | null
 }
 
 /**
- * Derived purely from what the player has *witnessed*. It is never a peek at
- * honesty/access — an informant the player has never tested reads as unknown,
- * which is correct and is the whole tension of the early game.
+ * Derived purely from what the player has *witnessed* — it reads `outcome`
+ * and never `truth`. This distinction is the whole point of §6: a lie that
+ * happened to work out is not something the player saw, so it must not show
+ * up here as a mark against the source. An untested informant reads as
+ * unknown, which is correct and is the tension of the early game.
  */
 /**
  * How the player should feel about a source, from witnessed outcomes only.
@@ -329,8 +334,8 @@ export function reputationTone(
   record: Pick<ObservedRecord, 'accurate' | 'wrong' | 'accuracy'>,
 ): 'good' | 'bad' | 'neutral' {
   if (record.accuracy === null) return 'neutral'
-  const resolved = record.accurate + record.wrong
-  if (resolved >= 2 && record.accuracy >= 0.75) return 'good'
+  const proved = record.accurate + record.wrong
+  if (proved >= 2 && record.accuracy >= 0.75) return 'good'
   if (record.accuracy <= 0.5 && record.wrong > 0) return 'bad'
   return 'neutral'
 }
@@ -340,16 +345,18 @@ export function observedReliability(
   informantId: string,
 ): ObservedRecord {
   const items = state.intel.filter((i) => i.sourceId === informantId)
-  const resolved = items.filter((i) => i.resolved)
-  const wrong = resolved.filter((i) => i.truth === 'false' || i.truth === 'partial').length
-  const accurate = resolved.length - wrong
+  const accurate = items.filter((i) => i.outcome === 'helped').length
+  const wrong = items.filter((i) => i.outcome === 'harmed').length
+  const inconclusive = items.filter((i) => i.outcome === 'inconclusive').length
+  const proved = accurate + wrong
   const record = getInformant(state, informantId)
   return {
     offered: items.length,
     accurate,
     wrong,
-    pending: items.length - resolved.length,
+    inconclusive,
+    pending: items.filter((i) => !i.resolved).length,
     spent: record?.totalSpent ?? 0,
-    accuracy: resolved.length === 0 ? null : accurate / resolved.length,
+    accuracy: proved === 0 ? null : accurate / proved,
   }
 }

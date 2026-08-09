@@ -15,8 +15,6 @@ import { CASEFILE_THRESHOLD, HEAT, HEAT_TIERS } from '../content/balance.js'
 export interface HeatTier {
   min: number
   label: string
-  checkPenalty: number
-  salePenalty: number
 }
 
 export function tierFor(heat: number): HeatTier {
@@ -26,8 +24,6 @@ export function tierFor(heat: number): HeatTier {
   }
   return current
 }
-
-export const checkPenalty = (heat: number): number => tierFor(heat).checkPenalty
 
 export const showsCaseFile = (heat: number): boolean => heat >= CASEFILE_THRESHOLD
 

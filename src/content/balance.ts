@@ -29,12 +29,20 @@ export const HEAT = {
   max: 100,
 } as const
 
+/**
+ * Tiers are presentation only — they name a band, they do not carry numbers.
+ * The design table's per-tier check penalties (-0.08 / -0.12 / -0.16) are
+ * exactly what the linear `-heat/500` term in §5.3 produces at each boundary,
+ * and the sale penalty is `1 - heat/250` in §5.5. Storing them again here
+ * would be a second source of truth that nothing reads — which is what they
+ * were before, silently ignoring anyone who tried to tune them.
+ */
 export const HEAT_TIERS = [
-  { min: 0, label: '平静', checkPenalty: 0, salePenalty: 0 },
-  { min: 20, label: '留意', checkPenalty: 0, salePenalty: 0.08 },
-  { min: 40, label: '关注', checkPenalty: 0.08, salePenalty: 0.08 },
-  { min: 60, label: '专案', checkPenalty: 0.12, salePenalty: 0.08 },
-  { min: 80, label: '通缉', checkPenalty: 0.16, salePenalty: 0.08 },
+  { min: 0, label: '平静' },
+  { min: 20, label: '留意' },
+  { min: 40, label: '关注' },
+  { min: 60, label: '专案' },
+  { min: 80, label: '通缉' },
 ] as const
 
 /** Heat at or above this reveals the player's own police file in the dossier. §5.4 */

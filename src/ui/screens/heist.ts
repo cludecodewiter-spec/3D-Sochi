@@ -138,8 +138,8 @@ function choose(ui: Ui, optionId: string, segmentId: string): void {
     }
     play(result.outcome.result === 'success' ? 'cash' : 'siren')
     ui.heistEnded = true
-    ui.autosave()
   }
+  ui.autosave()
   ui.render()
 }
 

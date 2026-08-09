@@ -41,8 +41,11 @@ export interface IntelEntry {
   intelId: string
   turn: number
   text: string
-  /** Only populated once resolved — before that the player genuinely does not know. */
-  verdict: 'accurate' | 'wrong' | 'pending'
+  /**
+   * Mirrors `IntelItem.outcome` — what the player saw, never the hidden truth.
+   * `inconclusive` is a real and common verdict: acted on, and still unproven.
+   */
+  verdict: 'accurate' | 'wrong' | 'inconclusive' | 'pending'
   consequences: CausalNode[]
 }
 
@@ -57,6 +60,7 @@ export interface InformantEntry {
   offered: number
   accurate: number
   wrong: number
+  inconclusive: number
   pending: number
   /** Hidden on hardcore. §8.2 — this is a *disclosure* setting, not a triage aid. */
   accuracy: number | null
@@ -76,7 +80,13 @@ export function informantEntries(state: GameState, log: EventLog): InformantEntr
         intelId: i.id,
         turn: i.receivedTurn,
         text: i.text,
-        verdict: !i.resolved ? 'pending' : i.truth === 'true' ? 'accurate' : 'wrong',
+        verdict: !i.resolved
+          ? 'pending'
+          : i.outcome === 'helped'
+            ? 'accurate'
+            : i.outcome === 'harmed'
+              ? 'wrong'
+              : 'inconclusive',
         consequences: causalTree(log, i.eventId),
       }))
 
@@ -91,6 +101,7 @@ export function informantEntries(state: GameState, log: EventLog): InformantEntr
       offered: observed.offered,
       accurate: observed.accurate,
       wrong: observed.wrong,
+      inconclusive: observed.inconclusive,
       pending: observed.pending,
       accuracy: showScore ? observed.accuracy : null,
       intel,
@@ -128,12 +139,14 @@ export function vehicleEntries(log: EventLog): VehicleEntry[] {
     const stolen = events.some(
       (e) => e.type === 'heist_result' && e.payload['result'] === 'success',
     )
+    // Buying a tip about a car is not the same as having gone after it.
+    const attempted = events.some((e) => e.type === 'heist_result')
     return {
       defId,
       name: def.name,
       year: def.year,
       era: def.era,
-      outcome: sold ? 'sold' : stolen ? 'stolen' : 'failed',
+      outcome: sold ? 'sold' : stolen ? 'stolen' : attempted ? 'failed' : 'untouched',
       events,
     }
   })
@@ -199,7 +212,8 @@ export function dayCards(log: EventLog): DayCard[] {
         const payout = e.type === 'sale' ? Number(e.payload['payout'] ?? 0) : 0
         const paid = e.type === 'debt_payment' ? -Number(e.payload['paid'] ?? 0) : 0
         const cost = e.type === 'intel_received' ? -Number(e.payload['cost'] ?? 0) : 0
-        return sum + payout + paid + cost
+        const fee = e.type === 'intel_verified' ? -Number(e.payload['fee'] ?? 0) : 0
+        return sum + payout + paid + cost + fee
       }, 0)
       const notable =
         events.find((e) => e.tone === 'bad') ??

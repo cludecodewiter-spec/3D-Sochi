@@ -3,12 +3,13 @@
  * queue. All rules live in `systems/`; this layer only calls the facade.
  */
 
+import type { FailureKind } from '../engine/state.js'
 import type { Session } from '../engine/save.js'
 import { fromJSON, toJSON } from '../engine/save.js'
 import type { Difficulty } from '../engine/types.js'
 import { SLICE_END } from '../content/script.js'
 import type { TurnReport } from '../systems/turn.js'
-import { endTurn as advanceTurn, newGame } from '../systems/game.js'
+import { ActionError, endTurn as advanceTurn, newGame } from '../systems/game.js'
 import { caseFile as caseFileData, dayCards } from '../systems/dossier.js'
 import { tierFor } from '../systems/heat.js'
 import { clear, h, money, photo } from './dom.js'
@@ -53,7 +54,6 @@ export class Ui {
   dossierTab = 'people'
   beats: HeistBeat[] = []
   heistEnded = false
-  playerName = 'MARCO'
   readonly rotation = new docs.FormRotation()
 
   #root: HTMLElement
@@ -76,9 +76,12 @@ export class Ui {
     seed?: number,
     profile: { name: string; face: number } = { name: 'MARCO', face: 11 },
   ): void {
-    this.session = newGame({ difficulty, ...(seed !== undefined ? { seed } : {}) })
+    this.session = newGame({
+      difficulty,
+      playerName: profile.name,
+      ...(seed !== undefined ? { seed } : {}),
+    })
     this.game.state.flags['face'] = profile.face
-    this.playerName = profile.name
     this.mode = 'map'
     this.selected = null
     this.beats = []
@@ -99,6 +102,21 @@ export class Ui {
 
   modalCount(): number {
     return this.#modals.length
+  }
+
+  /**
+   * Runs a facade action and persists the result. Every player action goes
+   * through here — scouting, buying, fencing and verifying used to be lost on
+   * a refresh because only turn ends and heists remembered to save.
+   */
+  act(action: () => void): void {
+    try {
+      action()
+    } catch (error) {
+      this.toast(error instanceof ActionError ? error.message : String(error))
+    }
+    this.autosave()
+    this.render()
   }
 
   toast(message: string): void {
@@ -138,11 +156,34 @@ export class Ui {
     const report = advanceTurn(this.game)
     play('tick')
     this.presentTurn(report)
+    this.announceFailure(report.failure)
     this.flushAdvisor()
     this.fencing = null
     this.autosave()
     if (this.game.state.turn > SLICE_END.turn) this.mode = 'ending'
     this.render()
+  }
+
+  /**
+   * §7 — three of the four failures are not game over, but every one of them
+   * has to be said out loud. Silently setting a flag and carrying on is the
+   * one thing that is definitely wrong.
+   */
+  private announceFailure(kind: FailureKind | null): void {
+    if (!kind) return
+    const { state } = this.game
+    play('siren')
+    this.rotation.record(state.turn, 'casefile')
+    const copy = FAILURE_COPY[kind]
+    this.push(() =>
+      h(
+        'div',
+        { style: 'padding:8px' },
+        docs.caseFile(copy.stamp, state.heat, copy.lines),
+        h('p', { class: 'red' }, copy.tail),
+      ),
+    )
+    if (state.failure?.terminal) this.mode = 'ending'
   }
 
   private presentTurn(report: TurnReport): void {
@@ -350,4 +391,28 @@ export class Ui {
     )
     return panel(SLICE_END.title, body, { flex: true })
   }
+}
+
+/** §7 — what each failure looks like when it lands on the player's desk. */
+const FAILURE_COPY: Record<FailureKind, { stamp: string; lines: string[]; tail: string }> = {
+  bankrupt: {
+    stamp: '资不抵债',
+    lines: ['你身上一分钱都没有了。', '也没有任何能卖掉的东西。'],
+    tail: '接下来你只能接别人指定的活了。',
+  },
+  arrested: {
+    stamp: '已被拘留',
+    lines: ['他们在你家门口等着。', '你没跑，跑也没用。'],
+    tail: '审讯室里只有一个问题：你说出谁的名字？',
+  },
+  alone: {
+    stamp: '孤身一人',
+    lines: ['没有人可以叫了。'],
+    tail: '现在只剩下你和一根铁丝。',
+  },
+  liquidated: {
+    stamp: '结清',
+    lines: ['他们不再打电话了。'],
+    tail: '这件事到此为止。',
+  },
 }

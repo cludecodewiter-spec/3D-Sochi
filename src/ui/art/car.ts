@@ -101,8 +101,3 @@ export function carSvg(options: CarArtOptions): string {
     ${gone ? `<line x1="18" y1="14" x2="186" y2="66" stroke="var(--art-red)" stroke-width="2" opacity=".7"/>` : ''}
   </svg>`
 }
-
-/** Tiny row-sized glyph for dense list rows. */
-export function carGlyph(bodyType: BodyType, era: Era): string {
-  return carSvg({ bodyType, era, height: 26 })
-}

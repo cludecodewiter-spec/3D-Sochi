@@ -8,7 +8,7 @@
  */
 
 import type { EventLog, GameEvent } from '../engine/events.js'
-import type { GameState, SegmentRunState } from '../engine/state.js'
+import type { GameState, IntelOutcome, SegmentRunState } from '../engine/state.js'
 import { getTarget } from '../engine/state.js'
 import type { Rng } from '../engine/rng.js'
 import { clamp } from '../engine/types.js'
@@ -179,7 +179,7 @@ export function heistAbort(state: GameState, log: EventLog): string[] {
     payload: { result: 'aborted', segmentId: segment.id },
     causedBy: run.startedEventId,
   })
-  settleIntel(state, log, run, 'aborted')
+  settleIntel(state, log, run, 'aborted', false)
   state.activeRun = null
   return lines
 }
@@ -189,13 +189,17 @@ function finishHeist(
   log: EventLog,
   run: SegmentRunState,
   result: StepResult,
-  ambushed: boolean,
+  atRisk: boolean,
 ): string[] {
   const target = getTarget(state, run.contextId)
   if (!target) throw new Error(`没有这个目标：${run.contextId}`)
   const def = vehicleDef(target.defId)
   const outcome = result.outcome!
   const lines: string[] = []
+  // `atRisk` only says people *were* waiting. It becomes an ambush the player
+  // can see — and evidence against whoever set them up — only if the getaway
+  // actually fell apart. Drive out clean and nobody ever learns a thing.
+  const ambushFired = atRisk && outcome.result !== 'success'
 
   if (result.brokeRule) lines.push(result.brokeRule)
 
@@ -231,7 +235,7 @@ function finishHeist(
       actors: [run.contextId, target.defId],
       summary: `${def.name} 没能得手`,
       tone: 'bad',
-      payload: { result: 'failure', defId: target.defId, ambushed },
+      payload: { result: 'failure', defId: target.defId, ambushed: ambushFired },
       causedBy: run.startedEventId,
     })
     addHeat(state, log, HEAT.perFailedEscape, '失手', {
@@ -239,7 +243,7 @@ function finishHeist(
       actors: [run.contextId],
     })
 
-    if (ambushed) {
+    if (ambushFired) {
       lines.push('仓库里有六个人。')
       lines.push('其中四个，本来就在等你。')
       injure(state, log, BETRAYAL.injuryTurns, resultEvent.id)
@@ -249,7 +253,7 @@ function finishHeist(
     }
   }
 
-  settleIntel(state, log, run, outcome.result, resultEvent.id)
+  settleIntel(state, log, run, outcome.result, ambushFired, resultEvent.id)
   state.activeRun = null
   return lines
 }
@@ -274,34 +278,61 @@ export function injure(
 
 /**
  * §6.5 — write every outcome back onto the tip that informed it, so the
- * dossier can render "你信了这条 → 你去偷了 → Marco 中枪" without anybody
- * authoring that chain by hand.
+ * dossier can render 情报 → 下手 → 后果 without anybody authoring that chain.
+ *
+ * The verdict is written from what the player could *see*, never from the
+ * hidden `truth`:
+ *
+ *   埋伏兑现            → 错。六个人在等你，这无可辩驳
+ *   行动栽在这一步上，
+ *     且现实确实与它相悖 → 错
+ *     但它其实是真的     → 说不好。运气差不该算在线人头上
+ *   走到了，行动成功      → 准
+ *   根本没走到那一步      → 说不好
+ *
+ * The consequence is deliberate: a lie the player got away with earns the
+ * liar credit, and Benny's record stays clean right up until it isn't.
  */
 function settleIntel(
   state: GameState,
   log: EventLog,
   run: SegmentRunState,
   result: 'success' | 'failure' | 'aborted',
+  ambushed: boolean,
   causedBy?: string,
 ): void {
+  // Walking away tests nothing. The tips stay on hand, still unresolved.
+  if (result === 'aborted') return
+
   const used = state.intel.filter(
     (i) => i.targetInstanceId === run.contextId && !i.resolved,
   )
+  const endedAt = run.history[run.history.length - 1]?.segmentId
+
   for (const item of used) {
-    if (result === 'aborted') continue
-    const harmed = item.truth === 'false' && result === 'failure'
-    const helped = item.truth === 'true' && result === 'success'
-    resolveIntel(
-      state,
-      log,
-      item.id,
-      harmed ? 'harmed' : helped ? 'helped' : 'neutral',
-      harmed
-        ? '实际情况和他说的完全不一样。'
-        : helped
-          ? '和他说的一模一样。'
-          : '结果说明不了什么。',
-      causedBy,
-    )
+    const reached = run.history.some((h) => h.segmentId === item.segmentId)
+    const contradicted = item.truth !== 'true'
+
+    let outcome: IntelOutcome
+    let detail: string
+
+    if (ambushed && item.truth === 'false') {
+      outcome = 'harmed'
+      detail = '有人在那儿等着你。他知道，而且他没说。'
+    } else if (!reached) {
+      outcome = 'inconclusive'
+      detail = '你没走到能验证这句话的那一步。'
+    } else if (result === 'success') {
+      outcome = 'helped'
+      detail = '和他说的对得上。'
+    } else if (endedAt === item.segmentId && contradicted) {
+      outcome = 'harmed'
+      detail = '就是在这一步上出的岔子。'
+    } else {
+      outcome = 'inconclusive'
+      detail = '这次说明不了什么。'
+    }
+
+    resolveIntel(state, log, item.id, outcome, detail, causedBy)
   }
 }

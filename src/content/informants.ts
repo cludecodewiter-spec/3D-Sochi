@@ -22,7 +22,7 @@ export const INFORMANTS: InformantDef[] = [
     honesty: 45,
     access: 70,
     price: 150,
-    hangout: '港口区 · 那家没有招牌的酒吧',
+    hangout: '码头区 · 那家没有招牌的酒吧',
     intro:
       '他在码头干了十四年，什么船进来、什么车出去，他都看得见。' +
       '他跟你说话的时候一直在看别的地方。',

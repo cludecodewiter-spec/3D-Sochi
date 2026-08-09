@@ -15,12 +15,12 @@ import { DIFFICULTIES } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { INFORMANTS, informantDef } from '../content/informants.js'
 import { vehicleDef } from '../content/vehicles.js'
+import { TUTORIAL_TARGET } from '../content/script.js'
 import { availableChannels, fencePrice } from '../systems/economy.js'
 import { tierFor } from '../systems/heat.js'
 import { observedReliability, reputationTone } from '../systems/intel.js'
 import { recall } from '../systems/dossier.js'
 import {
-  ActionError,
   VERIFY_FEE,
   buyIntel,
   fence,
@@ -63,15 +63,6 @@ export function bar(value: number, max = 100, cls = ''): HTMLElement {
   return h('div', { class: `bar ${tone}` }, h('span', { style: `width:${ratio * 100}%` }))
 }
 
-function act(ui: Ui, fn: () => void): void {
-  try {
-    fn()
-  } catch (error) {
-    ui.toast(error instanceof ActionError ? error.message : String(error))
-  }
-  ui.render()
-}
-
 // ── left: character sheet ────────────────────────────────────────────
 
 export function characterPanel(ui: Ui): HTMLElement {
@@ -86,7 +77,7 @@ export function characterPanel(ui: Ui): HTMLElement {
       h(
         'div',
         { style: 'flex:1;min-width:0' },
-        h('div', { style: 'font-weight:700' }, ui.playerName),
+        h('div', { style: 'font-weight:700' }, state.playerName),
         h('div', { class: 'small faint' }, '47 岁 · 二十年手艺'),
         h(
           'div',
@@ -204,7 +195,7 @@ export function contextPanel(ui: Ui): HTMLElement {
                 class: 'small',
                 style: 'padding:2px 6px',
                 disabled: done || state.ap < 1,
-                onclick: () => act(ui, () => scout(ui.game, target.id, segment.id)),
+                onclick: () => ui.act(() => scout(ui.game, target.id, segment.id)),
               },
               done ? `✓${segment.title}` : segment.title,
             ),
@@ -224,7 +215,7 @@ export function contextPanel(ui: Ui): HTMLElement {
               class: 'act go',
               disabled: state.ap < 2,
               onclick: () =>
-                act(ui, () => {
+                ui.act(() => {
                   startHeist(ui.game, target.id)
                   play('heart')
                   ui.beats = []
@@ -275,7 +266,8 @@ export function contextPanel(ui: Ui): HTMLElement {
         h('tr', {}, h('td', {}, '给过'), h('td', { class: 'n' }, String(observed.offered))),
         h('tr', {}, h('td', {}, '准'), h('td', { class: 'n green' }, String(observed.accurate))),
         h('tr', {}, h('td', {}, '错'), h('td', { class: 'n red' }, String(observed.wrong))),
-        h('tr', {}, h('td', {}, '待验'), h('td', { class: 'n' }, String(observed.pending))),
+        h('tr', {}, h('td', {}, '说不好'), h('td', { class: 'n' }, String(observed.inconclusive))),
+        h('tr', {}, h('td', {}, '没用过'), h('td', { class: 'n' }, String(observed.pending))),
         showScore && observed.accuracy !== null
           ? h('tr', {}, h('td', {}, '准确率'), h('td', { class: 'n' }, pct(observed.accuracy)))
           : null,
@@ -338,7 +330,7 @@ export function mapPanel(ui: Ui): HTMLElement {
   const tutorialOnly = state.turn === 1
   for (const target of state.targets) {
     const def = vehicleDef(target.defId)
-    if (tutorialOnly && target.defId !== 'delano_marlin_84') continue
+    if (tutorialOnly && target.defId !== TUTORIAL_TARGET) continue
     pins.push({
       id: target.id,
       kind: 'vehicle',
@@ -409,7 +401,7 @@ export function wantedStrip(ui: Ui): HTMLElement {
       state.ap > 0 && state.turn > 1
         ? h(
             'button',
-            { onclick: () => act(ui, () => { rest(ui.game); ui.endTurn() }) },
+            { onclick: () => ui.act(() => { rest(ui.game); ui.endTurn() }) },
             '休息',
           )
         : null,
@@ -461,7 +453,7 @@ export function garagePanel(ui: Ui): HTMLElement {
             title: channel.note,
             disabled: state.ap < 1,
             onclick: () =>
-              act(ui, () => {
+              ui.act(() => {
                 fence(ui.game, picked.instanceId, channel.id)
                 ui.fencing = null
                 play('cash')
@@ -593,7 +585,7 @@ export function verifyPickerBody(ui: Ui, intelId: string, excludeId: string): HT
         {
           style: 'display:block;width:100%;text-align:left;margin-top:4px',
           onclick: () => {
-            act(ui, () => verify(ui.game, intelId, def.id))
+            ui.act(() => verify(ui.game, intelId, def.id))
             ui.closeModal()
           },
         },
@@ -620,7 +612,7 @@ export function intelPickerBody(ui: Ui, informantId: string): HTMLElement {
         {
           style: 'display:block;width:100%;text-align:left;margin-top:4px',
           onclick: () => {
-            act(ui, () => {
+            ui.act(() => {
               buyIntel(ui.game, informantId, target.id)
               play('pick')
             })

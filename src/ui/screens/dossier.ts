@@ -94,7 +94,7 @@ export function renderDossier(ui: Ui): HTMLElement {
                   class:
                     item.verdict === 'wrong' ? 'red' : item.verdict === 'accurate' ? 'green' : 'faint',
                 },
-                item.verdict === 'wrong' ? '错的' : item.verdict === 'accurate' ? '准的' : '还没验证',
+                VERDICT[item.verdict],
               ),
             ),
             h('div', { style: 'margin:3px 0' }, `「${item.text}」`),
@@ -227,6 +227,7 @@ export function renderDossier(ui: Ui): HTMLElement {
                   h('span', { class: 'green' }, `准 ${person.accurate}`),
                   ' · ',
                   h('span', { class: 'red' }, `错 ${person.wrong}`),
+                  ` · 说不好 ${person.inconclusive}`,
                   person.accuracy !== null ? ` · 准确率 ${pct(person.accuracy)}` : '',
                 ),
                 h(
@@ -252,6 +253,17 @@ export function renderDossier(ui: Ui): HTMLElement {
   }
 
   return panel('档案库', root, { flex: true })
+}
+
+/**
+ * 说不好 is the honest label for a tip that was acted on and still proved
+ * nothing. The game never tells the player which way it actually fell.
+ */
+const VERDICT: Record<string, string> = {
+  accurate: '准的',
+  wrong: '错的',
+  inconclusive: '说不好',
+  pending: '还没用过',
 }
 
 const OUTCOME: Record<string, string> = {

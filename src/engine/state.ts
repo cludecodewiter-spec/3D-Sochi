@@ -39,6 +39,14 @@ export interface InformantState {
   totalSpent: number
 }
 
+/**
+ * What the player actually saw come of a tip. Derived from the run they used
+ * it on — never from `truth`. The dossier and the reliability numbers read
+ * this and nothing else, which is what keeps §6 honest: the player can only
+ * judge a source by outcomes they witnessed.
+ */
+export type IntelOutcome = 'helped' | 'harmed' | 'inconclusive'
+
 /** §6 — one piece of intel. `truth` is hidden from the UI, always. */
 export interface IntelItem {
   id: string
@@ -50,8 +58,10 @@ export interface IntelItem {
   text: string
   truth: 'true' | 'partial' | 'false'
   costPaid: number
-  /** Set once the intel has been acted on and the outcome is known. */
+  /** Set once the intel has been acted on. */
   resolved: boolean
+  /** Only what the player could observe. Absent until resolved. */
+  outcome?: IntelOutcome
   /** §6.4 — a cross-check gives a *second data point*, not the truth. */
   verifiedBy?: string
   verifiedSignal?: 'confirms' | 'contradicts'
@@ -113,6 +123,8 @@ export interface FailureState {
 }
 
 export interface GameState {
+  /** Chosen at setup. Lives in state so it survives a save. */
+  playerName: string
   turn: number
   ap: number
   maxAp: number
@@ -140,10 +152,12 @@ export interface GameState {
 
 export interface NewGameOptions {
   difficulty?: Difficulty
+  playerName?: string
 }
 
 export function createInitialState(options: NewGameOptions = {}): GameState {
   return {
+    playerName: options.playerName ?? 'MARCO',
     turn: 1,
     ap: 3,
     maxAp: 3,
