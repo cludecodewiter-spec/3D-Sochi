@@ -16,6 +16,8 @@ import { AP_COSTS, canAfford, spendAp } from '../engine/time.js'
 import type { ActionKey } from '../engine/time.js'
 import type { Difficulty } from '../engine/types.js'
 import { VEHICLES } from '../content/vehicles.js'
+import { LOCATIONS } from '../content/locations.js'
+import type { CrimeKey } from '../content/crimes.js'
 import { HEAT } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { BETRAYAL, OPENING } from '../content/script.js'
@@ -24,6 +26,8 @@ import { sellVehicle } from './economy.js'
 import { addHeat } from './heat.js'
 import type { PriceBreakdown } from './economy.js'
 import { beginHeist, heistAbort, heistStep, heistView } from './heist.js'
+import { beginCrime, crimeAbort, crimeAp, crimeStep, crimeView } from './crime.js'
+import type { CrimeStepResult } from './crime.js'
 import type { HeistStepResult } from './heist.js'
 import { offerIntel, verifyIntel } from './intel.js'
 import type { VerifyResult } from './intel.js'
@@ -51,6 +55,11 @@ export function newGame(options: NewGameOptions = {}): Session {
     rng: new Rng(seed),
   }
 
+  session.state.places = LOCATIONS.map((l) => ({
+    id: l.id,
+    readyOnTurn: l.unlockTurn,
+    timesHit: 0,
+  }))
   session.state.targets = VEHICLES.map((v) => ({
     id: `t-${v.id}`,
     defId: v.id,
@@ -194,6 +203,39 @@ export function chooseHeistOption(session: Session, optionId: string): HeistStep
 
 export function giveUpHeist(session: Session): string[] {
   return heistAbort(session.state, session.log)
+}
+
+// ── crimes against places ─────────────────────────────────────────────────
+
+export function startCrime(
+  session: Session,
+  locationId: string,
+  crime: CrimeKey,
+): SegmentRunState {
+  const { state, log } = session
+  requireNoActiveRun(state)
+  requireUnlocked(state, 'crimes')
+  const cost = crimeAp(crime)
+  if (state.ap < cost) {
+    throw new ActionError(`行动点不够。这件事要 ${cost} 点，你还剩 ${state.ap} 点。`)
+  }
+  state.ap -= cost
+  try {
+    return beginCrime(state, log, locationId, crime)
+  } catch (error) {
+    state.ap += cost // 没开成就把行动点退回去
+    throw new ActionError(error instanceof Error ? error.message : String(error))
+  }
+}
+
+export const currentCrime = (session: Session): RunView => crimeView(session.state)
+
+export function chooseCrimeOption(session: Session, optionId: string): CrimeStepResult {
+  return crimeStep(session.state, session.log, session.rng, optionId)
+}
+
+export function giveUpCrime(session: Session): string[] {
+  return crimeAbort(session.state, session.log)
 }
 
 export function fence(

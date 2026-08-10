@@ -21,9 +21,10 @@ export function breachMechanicalOpposition(defense: VehicleDefense): number {
 }
 
 export function defenseValue(defense: VehicleDefense, key: DefenseKey): number {
-  return key === 'breachMechanical'
-    ? breachMechanicalOpposition(defense)
-    : defense[key]
+  if (key === 'breachMechanical') return breachMechanicalOpposition(defense)
+  // `security` / `response` belong to places, not cars. A heist config never
+  // asks for them; if one ever does, fall back rather than read undefined.
+  return key in defense ? defense[key as keyof VehicleDefense] : defense.pursuit
 }
 
 export function defenseFor(defId: string, key: DefenseKey): number {

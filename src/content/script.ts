@@ -88,7 +88,7 @@ export const OPENING = {
 }
 
 export const SLICE_END = {
-  turn: 12,
+  turn: 15,
   title: '第一纪 · 未完',
   body: [
     '这是垂直切片的终点。',

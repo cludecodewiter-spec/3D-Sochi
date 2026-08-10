@@ -447,6 +447,10 @@ button.opt.on { color: var(--red); font-weight: 700; }
   .slot { min-height: 60px; }
   .rows td { padding: 5px 4px; }
 
+  /* 一张 152×110 的图按比例铺满 370px 宽的面板会有 268px 高，
+     两张叠起来就把按钮顶出屏幕了。 */
+  .photo img { max-height: 132px; object-position: center; }
+
   .strip { gap: 3px 12px; }
   .doc-newspaper .body { column-count: 1; }
   .modal { padding: 8px; }

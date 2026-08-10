@@ -5,8 +5,18 @@
  */
 
 import { HEIST_CONFIG } from '../../content/heist.js'
+import { crimeConfig } from '../../content/crimes.js'
+import type { CrimeKey } from '../../content/crimes.js'
 import { vehicleDef } from '../../content/vehicles.js'
-import { chooseHeistOption, currentHeist, giveUpHeist } from '../../systems/game.js'
+import { locationDef } from '../../content/locations.js'
+import {
+  chooseCrimeOption,
+  chooseHeistOption,
+  currentCrime,
+  currentHeist,
+  giveUpCrime,
+  giveUpHeist,
+} from '../../systems/game.js'
 import { h, pct } from '../dom.js'
 import { play } from '../audio.js'
 import { panel } from '../panels.js'
@@ -24,12 +34,22 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
   const run = state.activeRun
   const done = !run || ui.heistEnded
 
-  const target = run ? state.targets.find((t) => t.id === run.contextId) : undefined
-  const def = target ? vehicleDef(target.defId) : null
+  // One screen, two kinds of job. Which config is running decides everything
+  // else — that is the payoff of putting car theft on the generic engine.
+  const isHeist = !run || run.configId === HEIST_CONFIG.id
+  const config = isHeist ? HEIST_CONFIG : crimeConfig(run.configId as CrimeKey)
+
+  const title = !run
+    ? ''
+    : isHeist
+      ? (state.targets.find((t) => t.id === run.contextId)
+          ? vehicleDef(state.targets.find((t) => t.id === run.contextId)!.defId).name
+          : '')
+      : locationDef(run.contextId).name
 
   const stage = h('div', { class: 'stagebar' })
-  const index = done ? HEIST_CONFIG.segments.length : (run?.segmentIndex ?? 0)
-  HEIST_CONFIG.segments.forEach((segment, i) => {
+  const index = done ? config.segments.length : (run?.segmentIndex ?? 0)
+  config.segments.forEach((segment, i) => {
     stage.appendChild(
       h('span', { class: i < index ? 'done' : i === index ? 'active' : '' }, segment.title),
     )
@@ -43,7 +63,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
   }
 
   if (!done) {
-    const view = currentHeist(ui.game)
+    const view = isHeist ? currentHeist(ui.game) : currentCrime(ui.game)
     script.appendChild(h('p', { class: 'sys' }, view.intro))
     script.appendChild(h('p', { class: 'tell' }, view.tell))
     if (view.nerveHint) script.appendChild(h('p', { class: 'hint' }, view.nerveHint))
@@ -57,7 +77,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
       acts.appendChild(
         h(
           'button',
-          { class: 'act-row', onclick: () => choose(ui, option.id, view.segmentId) },
+          { class: 'act-row', onclick: () => choose(ui, option.id, view.segmentId, isHeist) },
           h('span', { class: 'ic' }, `${i + 1}`),
           h(
             'span',
@@ -93,7 +113,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
       )
     }
     vars.appendChild(h('span', { style: 'flex:1' }))
-    vars.appendChild(h('button', { onclick: () => giveUp(ui) }, '放下手里的东西，走开'))
+    vars.appendChild(h('button', { onclick: () => giveUp(ui, isHeist) }, '放下手里的东西，走开'))
     body.appendChild(vars)
   } else {
     script.appendChild(h('p', { class: 'sys' }, '── 结束 ──'))
@@ -119,16 +139,16 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
     )
   }
 
-  const section = panel(`作案现场 · ${def?.name ?? ''}`, body, { flex: true })
+  const section = panel(`作案现场 · ${title}`, body, { flex: true })
   queueMicrotask(() => {
     script.scrollTop = script.scrollHeight
   })
   return section
 }
 
-function choose(ui: Ui, optionId: string, segmentId: string): void {
+function choose(ui: Ui, optionId: string, segmentId: string, isHeist: boolean): void {
   play(SOUND[segmentId] ?? 'tick')
-  const result = chooseHeistOption(ui.game, optionId)
+  const result = isHeist ? chooseHeistOption(ui.game, optionId) : chooseCrimeOption(ui.game, optionId)
   ui.beats.push({ text: result.text, failed: !result.success })
   if (!result.success) play('fail')
 
@@ -143,8 +163,9 @@ function choose(ui: Ui, optionId: string, segmentId: string): void {
   ui.render()
 }
 
-function giveUp(ui: Ui): void {
-  for (const line of giveUpHeist(ui.game)) ui.beats.push({ text: line, failed: false })
+function giveUp(ui: Ui, isHeist: boolean): void {
+  const lines = isHeist ? giveUpHeist(ui.game) : giveUpCrime(ui.game)
+  for (const line of lines) ui.beats.push({ text: line, failed: false })
   ui.heistEnded = true
   ui.autosave()
   ui.render()

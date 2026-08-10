@@ -52,17 +52,25 @@ describe('unlock curve (§8.1)', () => {
     expect(session.state.unlocked).toEqual(['heist', 'fence'])
   })
 
-  it('hands the player the dossier at turn 6 — a tool for hour five, not hour one', () => {
+  it('opens up crimes other than car theft once the loop is learned', () => {
     const session = newGame({ seed: 11 })
     advanceTo(session, 5)
-    expect(session.state.unlocked).not.toContain('dossier')
+    expect(session.state.unlocked).not.toContain('crimes')
     advanceTo(session, 6)
+    expect(session.state.unlocked).toContain('crimes')
+  })
+
+  it('hands the player the dossier at turn 9 — a tool for hour five, not hour one', () => {
+    const session = newGame({ seed: 11 })
+    advanceTo(session, 8)
+    expect(session.state.unlocked).not.toContain('dossier')
+    advanceTo(session, 9)
     expect(session.state.unlocked).toContain('dossier')
   })
 
   it('reveals heat only after the player has quietly accumulated some', () => {
     const session = newGame({ seed: 11 })
-    advanceTo(session, 9)
+    advanceTo(session, 12)
     expect(session.state.unlocked).toContain('heat')
   })
 
@@ -76,7 +84,7 @@ describe('unlock curve (§8.1)', () => {
 
   it('goes silent on hardcore', () => {
     const session = newGame({ seed: 11, difficulty: 'hardcore' })
-    advanceTo(session, 6)
+    advanceTo(session, 9)
     expect(session.log.byType('advisor')).toHaveLength(0)
     expect(session.state.unlocked).toContain('dossier')
   })
@@ -253,7 +261,7 @@ describe('the betrayal is mechanical, not scripted (§4.3, VERTICAL_SLICE §3)',
 })
 
 describe('first-hour acceptance checklist (§5)', () => {
-  it('hits every item on the list within twelve turns', () => {
+  it('hits every item on the list within fifteen turns', () => {
     const session = newGame({ seed: 31 })
     const checklist = {
       stoleACar: false,
@@ -289,7 +297,7 @@ describe('first-hour acceptance checklist (§5)', () => {
     endTurn(session)
     const lie = buyIntel(session, 'benny', 't-vantry_coast_91')
     checklist.wasLiedTo = lie.truth === 'false'
-    expect(session.state.turn).toBeLessThanOrEqual(12)
+    expect(session.state.turn).toBeLessThanOrEqual(15)
 
     // The one car on the list that cannot be taken. The player will try it.
     session.state.ap = 3

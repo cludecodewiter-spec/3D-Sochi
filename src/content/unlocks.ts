@@ -33,21 +33,27 @@ export const UNLOCKS: UnlockDef[] = [
     description: '有人愿意卖消息给你。消息可能是假的。',
   },
   {
+    id: 'crimes',
+    label: '别的活',
+    turn: 6,
+    description: '车不是唯一能变成钱的东西。',
+  },
+  {
     id: 'dossier',
     label: '档案库',
-    turn: 6,
+    turn: 9,
     description: '你记不住的，它替你记着——包括谁害过你。',
   },
   {
     id: 'heat',
     label: '警方热度',
-    turn: 9,
+    turn: 12,
     description: '你做的每一件事都在别人的本子上记着。',
   },
   {
     id: 'verify',
     label: '情报验证',
-    turn: 12,
+    turn: 15,
     description: '找第二个人对一遍。它不会告诉你真相，只给你第二个数据点。',
   },
 ]
@@ -92,6 +98,13 @@ export const ADVISOR_LINES: AdvisorLine[] = [
     text:
       '条子不是突然出现的。\n' +
       '他们是慢慢攒够了理由。你每干一票，就往那个本子上添一行。',
+  },
+  {
+    trigger: 'crimes',
+    speaker: 'SOLOMON',
+    text:
+      '车只是其中一样。\n' +
+      '街上有的是不用钥匙的东西——只是每一样都比车更容易让人记住你的脸。',
   },
   {
     trigger: 'dossier',

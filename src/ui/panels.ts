@@ -15,6 +15,9 @@ import { DIFFICULTIES } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { INFORMANTS, informantDef } from '../content/informants.js'
 import { vehicleDef } from '../content/vehicles.js'
+import { LOCATIONS, locationDef } from '../content/locations.js'
+import { CRIME_AP, CRIME_LABELS } from '../content/crimes.js'
+import { isReady, placeOf } from '../systems/crime.js'
 import { VENUE_BADGE, VENUE_LABELS, VENUE_PHOTO } from '../content/types.js'
 import { TUTORIAL_TARGET } from '../content/script.js'
 import { availableChannels, fencePrice } from '../systems/economy.js'
@@ -27,6 +30,7 @@ import {
   fence,
   rest,
   scout,
+  startCrime,
   startHeist,
   verify,
 } from '../systems/game.js'
@@ -248,6 +252,8 @@ export function contextPanel(ui: Ui): HTMLElement {
     return panel(`目标信息 · ${VENUE_LABELS[def.venue]}`, body)
   }
 
+  if (selected.kind === 'place') return placePanel(ui, selected.id)
+
   // informant
   const def = informantDef(selected.id)
   const record = getInformant(state, def.id)
@@ -326,6 +332,94 @@ export function contextPanel(ui: Ui): HTMLElement {
   return panel(`人物信息 · ${VENUE_LABELS[def.venue]}`, body)
 }
 
+/** A crime spot: what it is, what it resists, and what you can do to it. */
+function placePanel(ui: Ui, id: string): HTMLElement {
+  const { state } = ui.game
+  const def = locationDef(id)
+  const record = placeOf(state, id)
+  const ready = isReady(state, id)
+  const body = h('div', {})
+
+  body.appendChild(photo(photoTile(def.photo, 152, 110)))
+  body.appendChild(
+    h('div', { style: 'font-weight:700;margin:4px 0 2px' }, def.name),
+  )
+  body.appendChild(
+    h(
+      'div',
+      { class: 'row small faint', style: 'gap:5px;align-items:center' },
+      svg(iconSvg(VENUE_GLYPHS[def.venue], 14)),
+      h('span', {}, def.location),
+    ),
+  )
+  body.appendChild(h('div', { class: 'small', style: 'margin:4px 0' }, def.flavor))
+
+  body.appendChild(
+    h('div', { class: 'small faint', style: 'margin:6px 0 2px' }, '防御（条越长越好下手）'),
+  )
+  const axes: [string, number][] = [
+    ['曝光', def.defense.exposure],
+    ['戒备', def.defense.security],
+    ['出警', def.defense.response],
+  ]
+  for (const [label, value] of axes) {
+    body.appendChild(
+      h('div', { class: 'stat' }, h('span', {}, label), bar(100 - value), h('span', { class: 'num' }, String(value))),
+    )
+  }
+
+  if (def.crimes.length === 0) {
+    body.appendChild(
+      h('div', { class: 'small red', style: 'margin-top:8px' }, def.lockedNote ?? '这里做不了什么。'),
+    )
+    return panel(`地区信息 · ${VENUE_LABELS[def.venue]}`, body)
+  }
+
+  if (!ready) {
+    const wait = (record?.readyOnTurn ?? state.turn) - state.turn
+    body.appendChild(
+      h(
+        'div',
+        { class: 'small red', style: 'margin-top:8px' },
+        record && record.timesHit > 0
+          ? `刚出过事，还有人盯着。再等 ${wait} 天。`
+          : `这地方你现在还碰不了。再等 ${wait} 天。`,
+      ),
+    )
+    return panel(`地区信息 · ${VENUE_LABELS[def.venue]}`, body)
+  }
+
+  if (record && record.timesHit > 0) {
+    body.appendChild(
+      h('div', { class: 'small faint', style: 'margin-top:6px' }, `你在这儿动过 ${record.timesHit} 次手。`),
+    )
+  }
+
+  const row = h('div', { class: 'row', style: 'margin-top:8px' })
+  for (const crime of def.crimes) {
+    row.appendChild(
+      h(
+        'button',
+        {
+          class: 'act go',
+          disabled: state.ap < CRIME_AP[crime],
+          onclick: () =>
+            ui.act(() => {
+              startCrime(ui.game, id, crime)
+              play('heart')
+              ui.beats = []
+              ui.heistEnded = false
+              ui.mode = 'heist'
+            }),
+        },
+        `${CRIME_LABELS[crime]}（${CRIME_AP[crime]} 点）`,
+      ),
+    )
+  }
+  body.appendChild(row)
+  return panel(`地区信息 · ${VENUE_LABELS[def.venue]}`, body)
+}
+
 // ── centre: status strip, map, wanted level ──────────────────────────
 
 export function statusStrip(ui: Ui): HTMLElement {
@@ -374,6 +468,20 @@ export function mapPanel(ui: Ui): HTMLElement {
         : {}),
     })
   }
+  if (state.unlocked.includes('crimes')) {
+    for (const def of LOCATIONS) {
+      const ready = isReady(state, def.id)
+      pins.push({
+        id: `loc-${def.id}`,
+        kind: 'informant',
+        location: def.location,
+        photo: def.photo,
+        badge: VENUE_BADGE[def.venue],
+        label: `${def.name} · ${def.location}`,
+        ...(ready ? {} : { gone: true }),
+      })
+    }
+  }
   if (state.unlocked.includes('informants')) {
     for (const def of INFORMANTS) {
       pins.push({
@@ -392,13 +500,17 @@ export function mapPanel(ui: Ui): HTMLElement {
     selectedId: ui.selected
       ? ui.selected.kind === 'vehicle'
         ? ui.selected.id
-        : `inf-${ui.selected.id}`
+        : ui.selected.kind === 'place'
+          ? `loc-${ui.selected.id}`
+          : `inf-${ui.selected.id}`
       : null,
     heat: heatOf(state),
     onSelect: (id) => {
       ui.selected = id.startsWith('inf-')
         ? { kind: 'informant', id: id.slice(4) }
-        : { kind: 'vehicle', id }
+        : id.startsWith('loc-')
+          ? { kind: 'place', id: id.slice(4) }
+          : { kind: 'vehicle', id }
       play('tick')
       ui.render()
     },

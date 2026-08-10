@@ -171,6 +171,12 @@ export const VENUE_GLYPHS: Record<VenueKey, Glyph> = {
     lined('M3.4 3.4 h17.2 v17.2 H3.4 Z', 1.8),
     lined('M9.6 17 V7.4 h3.6 a3 3 0 0 1 0 6 H9.6', 2),
   ),
+  atm: group(
+    lined('M3.4 5.4 h17.2 v10.4 H3.4 Z', 1.8),
+    lined('M3.4 8.6 h17.2', 1.4),
+    filled('M6 11.4 h6 v2 H6 Z'),
+    lined('M8 15.8 v4.4 M16 15.8 v4.4 M6.4 20.2 h11.2', 1.6),
+  ),
   gas: group(
     lined('M3.4 21 V5.4 Q3.4 3.6 5.4 3.6 h6.4 q2 0 2 1.8 V21 Z', 1.8),
     lined('M3.4 9.4 h10.4', 1.4),

@@ -22,6 +22,7 @@ export type VenueKey =
   | 'apartment'
   | 'house'
   | 'lot'
+  | 'atm'
   | 'gas'
   | 'deck'
   | 'bar'
@@ -38,6 +39,7 @@ export const VENUE_BADGE: Record<VenueKey, string> = {
   apartment: 'house',
   house: 'house',
   lot: 'P',
+  atm: 'card',
   gas: 'fuel',
   deck: 'P',
   bar: 'glass',
@@ -55,6 +57,7 @@ export const VENUE_PHOTO: Record<VenueKey, string> = {
   apartment: 'places/residential',
   house: 'places/residential',
   lot: 'places/parking',
+  atm: 'places/atm',
   gas: 'places/gasstation',
   deck: 'places/parking',
   bar: 'places/nightclub',
@@ -71,6 +74,7 @@ export const VENUE_LABELS: Record<VenueKey, string> = {
   apartment: '公寓',
   house: '独栋',
   lot: '停车场',
+  atm: '取款机',
   gas: '加油站',
   deck: '地下车库',
   bar: '酒吧',
@@ -138,8 +142,24 @@ export interface IntelTemplate {
 
 // ── SegmentRun (§4) ────────────────────────────────────────────────────────
 
+/**
+ * A place, rather than a car, resists you along three axes.
+ * `exposure` is shared with vehicles — being seen is being seen.
+ */
+export interface LocationDefense {
+  /** 被看见的容易程度 */
+  exposure: number
+  /** 锁、警报、柜台后面那个人 */
+  security: number
+  /** 出事之后多久会有人来 */
+  response: number
+}
+
 /** Which defense dimension an option is measured against. */
-export type DefenseKey = keyof VehicleDefense | 'breachMechanical'
+export type DefenseKey =
+  | keyof VehicleDefense
+  | keyof LocationDefense
+  | 'breachMechanical'
 
 export interface VarDelta {
   var: string

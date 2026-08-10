@@ -48,7 +48,7 @@ export type Mode = 'map' | 'heist' | 'dossier' | 'ending'
 export type Tab = 'map' | 'me' | 'stuff' | 'log'
 
 export const NARROW_AT = 900
-export type Selection = { kind: 'vehicle' | 'informant'; id: string }
+export type Selection = { kind: 'vehicle' | 'informant' | 'place'; id: string }
 
 const SAVE_KEY = 'gtt.save.v1'
 

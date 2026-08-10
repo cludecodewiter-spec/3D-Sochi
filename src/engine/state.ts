@@ -78,6 +78,14 @@ export interface VehicleInstance {
   stolen: boolean
 }
 
+/** A crime spot's per-run state. The definition lives in content. */
+export interface LocationInstance {
+  id: string
+  /** Turn it can be hit again — a place that was just robbed is watched. */
+  readyOnTurn: number
+  timesHit: number
+}
+
 export interface GarageVehicle {
   instanceId: string
   defId: string
@@ -155,6 +163,8 @@ export interface GameState {
   informants: InformantState[]
   intel: IntelItem[]
   targets: VehicleInstance[]
+  /** Non-vehicle crime spots. */
+  places: LocationInstance[]
   garage: GarageVehicle[]
   /** defId → 0..0.40 saturation penalty on the fence price. §5.5 */
   marketDecay: Record<string, number>
@@ -198,6 +208,7 @@ export function createInitialState(options: NewGameOptions = {}): GameState {
     informants: [],
     intel: [],
     targets: [],
+    places: [],
     garage: [],
     marketDecay: {},
     unlocked: [],

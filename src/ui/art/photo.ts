@@ -42,6 +42,7 @@ export const BADGE_PATHS: Record<string, string> = {
   bed: 'M2 7h2v6h18v7h-2v-3H4v3H2zm6 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4 0h9a2 2 0 0 1 2 2v3h-11z',
   wrench: 'M21 5.5a5.5 5.5 0 0 1-7.6 5.1L5 19l-2-2 8.4-8.4A5.5 5.5 0 0 1 18.4 2l-3 3 1.6 1.6 3-3c.6.8 1 1.8 1 2.9z',
   car: 'M3 14 5 9h14l2 5v5h-3a2 2 0 0 1-4 0h-4a2 2 0 0 1-4 0H3z',
+  card: 'M2 5h20v4H2zm0 6h20v8H2zm2 4h6v2H4z',
   glass: 'M3 3h18l-8 9v7h4v2H7v-2h4v-7z',
   mask: 'M4 7h16l-1.2 12.2A2 2 0 0 1 16.8 21H7.2a2 2 0 0 1-2-1.8zM9 7a3 3 0 0 1 6 0',
   fist: 'M5 9c0-1 .8-2 2-2h9a4 4 0 0 1 4 4v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zm2-4h8v2H7z',
