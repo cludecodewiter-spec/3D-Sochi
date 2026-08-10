@@ -108,8 +108,13 @@ export function photoBadge(options: PhotoBadgeOptions): string {
   </svg>`
 }
 
-/** A plain framed photo for panels and slots (§2.3 sizes). */
+/**
+ * A framed photo. §2.3 gives the reference sizes, but the width is treated as
+ * an aspect ratio rather than a hard pixel count — the same panel is 224px on
+ * a desktop column and 370px on a phone, and a photo pinned to 152px leaves
+ * most of the frame empty on the phone.
+ */
 export function photoTile(key: PhotoKey, w: number, h: number): string {
-  return `<img src="${photoUrl(key)}" width="${w}" height="${h}" alt=""
-    style="display:block;width:${w}px;height:${h}px;object-fit:cover"/>`
+  return `<img src="${photoUrl(key)}" alt="" loading="lazy"
+    style="display:block;width:100%;aspect-ratio:${w}/${h};object-fit:cover"/>`
 }

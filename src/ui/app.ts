@@ -36,6 +36,18 @@ import { renderHeistPanel } from './screens/heist.js'
 import { renderDossier } from './screens/dossier.js'
 
 export type Mode = 'map' | 'heist' | 'dossier' | 'ending'
+
+/**
+ * Phone layout. The three-column desktop grid is a desktop idea — stacked on a
+ * phone it becomes one endless scroll where the map, the thing you just tapped
+ * and the buttons that act on it are never on screen together.
+ *
+ * So on narrow screens the panels regroup into tabs, and the core loop
+ * (see the map → tap a pin → read it → act on it) all lives in one of them.
+ */
+export type Tab = 'map' | 'me' | 'stuff' | 'log'
+
+export const NARROW_AT = 900
 export type Selection = { kind: 'vehicle' | 'informant'; id: string }
 
 const SAVE_KEY = 'gtt.save.v1'
@@ -55,6 +67,7 @@ export class Ui {
   /** Garage slot currently expanded for fencing. */
   fencing: string | null = null
   dossierTab = 'people'
+  tab: Tab = 'map'
   beats: HeistBeat[] = []
   heistEnded = false
   readonly rotation = new docs.FormRotation()
@@ -62,9 +75,23 @@ export class Ui {
   #root: HTMLElement
   #modals: (() => Node)[] = []
   #seenAdvisor = new Set<string>()
+  #wasNarrow = false
 
   constructor(root: HTMLElement) {
     this.#root = root
+    this.#wasNarrow = this.narrow
+    // Only redraw when the layout actually has to change shape — a rotate
+    // matters, the address bar sliding away does not.
+    window.addEventListener('resize', () => {
+      if (this.narrow !== this.#wasNarrow) {
+        this.#wasNarrow = this.narrow
+        if (this.session) this.render()
+      }
+    })
+  }
+
+  get narrow(): boolean {
+    return window.innerWidth <= NARROW_AT
   }
 
   get game(): Session {
@@ -290,16 +317,21 @@ export class Ui {
       return
     }
 
-    frame.appendChild(
-      h(
-        'div',
-        { class: 'body' },
-        h('div', { class: 'col scroll' }, characterPanel(this), contextPanel(this)),
-        h('div', { class: 'col' }, ...this.centre()),
-        h('div', { class: 'col scroll' }, garagePanel(this), informantRack(this), intelRack(this)),
-      ),
-    )
-    frame.appendChild(h('div', { class: 'footer' }, logPanel(this)))
+    if (this.narrow) {
+      frame.appendChild(this.tabBar())
+      frame.appendChild(h('div', { class: 'body mobile' }, h('div', { class: 'col scroll' }, ...this.tabContent())))
+    } else {
+      frame.appendChild(
+        h(
+          'div',
+          { class: 'body' },
+          h('div', { class: 'col scroll' }, characterPanel(this), contextPanel(this)),
+          h('div', { class: 'col' }, ...this.centre()),
+          h('div', { class: 'col scroll' }, garagePanel(this), informantRack(this), intelRack(this)),
+        ),
+      )
+      frame.appendChild(h('div', { class: 'footer' }, logPanel(this)))
+    }
     this.#root.appendChild(frame)
 
     const next = this.#modals[0]
@@ -322,6 +354,49 @@ export class Ui {
           ),
         ),
       )
+    }
+  }
+
+  private tabBar(): HTMLElement {
+    const bar = h('div', { class: 'tabbar' })
+    const tabs: [Tab, string][] = [
+      ['map', '地图'],
+      ['me', '人物'],
+      ['stuff', '物资'],
+      ['log', '消息'],
+    ]
+    for (const [id, label] of tabs) {
+      bar.appendChild(
+        h(
+          'button',
+          {
+            class: this.tab === id ? 'on' : '',
+            onclick: () => {
+              this.tab = id
+              this.render()
+            },
+          },
+          label,
+        ),
+      )
+    }
+    return bar
+  }
+
+  /** A heist or the dossier takes over the whole screen — no tabs to lose. */
+  private tabContent(): (HTMLElement | null)[] {
+    if (this.mode !== 'map') return this.centre()
+    switch (this.tab) {
+      case 'me':
+        return [characterPanel(this)]
+      case 'stuff':
+        return [garagePanel(this), informantRack(this), intelRack(this)]
+      case 'log':
+        return [logPanel(this)]
+      default:
+        // The whole loop on one screen: what's out there, what you tapped,
+        // what you can do about it, and the button that ends the day.
+        return [statusStrip(this), mapPanel(this), contextPanel(this), wantedStrip(this)]
     }
   }
 

@@ -405,10 +405,52 @@ button.opt.on { color: var(--red); font-weight: 700; }
 }
 .tabs button.on { background: var(--paper); font-weight: 700; color: var(--red); }
 
+/* ── 手机布局 ────────────────────────────────────────────────────────
+   桌面是三栏密集面板；竖屏塞不下，改成标签页。核心循环
+   （地图 → 点图标 → 读信息 → 动手）全部留在「地图」这一页里。 */
+
+.tabbar { display: none; }
+
 @media (max-width: 900px) {
-  .body { grid-template-columns: 1fr; grid-auto-rows: min-content; overflow-y: auto; }
-  .col { max-height: none; }
-  .log { height: 90px; }
+  #app { padding: 0; }
+  .window { border-width: 0; }
+
+  .tabbar {
+    display: flex;
+    gap: 2px;
+    padding: 4px 4px 0;
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--dk);
+  }
+  .tabbar button {
+    flex: 1;
+    padding: 7px 2px 6px;
+    font-size: 12px;
+    border-bottom-color: var(--paper);
+  }
+  .tabbar button.on { background: var(--paper); font-weight: bold; color: var(--red); }
+
+  .body { grid-template-columns: 1fr; gap: 4px; padding: 4px; }
+  .body.mobile { overflow: hidden; }
+  .body.mobile > .col { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .footer { display: none; }
+
+  /* 地图要够大才点得中图标，但不能大到把选中信息挤到屏幕外 */
+  .panel.mapPanel { flex: none; }
+  .panel.mapPanel > .in { height: 42vh; }
+  .log { height: auto; flex: 1; }
+
+  /* 触摸目标：11px 的桌面按钮在手机上按不中 */
+  button { min-height: 34px; padding: 6px 12px; }
+  .tabbar button { min-height: 0; }
+  button.act { min-height: 38px; }
+  .slot { min-height: 60px; }
+  .rows td { padding: 5px 4px; }
+
+  .strip { gap: 3px 12px; }
+  .doc-newspaper .body { column-count: 1; }
+  .modal { padding: 8px; }
+  .modal .win2 { max-height: 90vh; overflow-y: auto; }
 }
 
 /* §2.4 颜色编码：绿=可信 / 红=坑过你 / 默认=还没验证过 */

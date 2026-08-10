@@ -15,7 +15,7 @@ import { DIFFICULTIES } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
 import { INFORMANTS, informantDef } from '../content/informants.js'
 import { vehicleDef } from '../content/vehicles.js'
-import { VENUE_BADGE, VENUE_LABELS } from '../content/types.js'
+import { VENUE_BADGE, VENUE_LABELS, VENUE_PHOTO } from '../content/types.js'
 import { TUTORIAL_TARGET } from '../content/script.js'
 import { availableChannels, fencePrice } from '../systems/economy.js'
 import { heatOf, tierFor } from '../systems/heat.js'
@@ -33,7 +33,6 @@ import {
 import { carSvg } from './art/car.js'
 import { photoTile, portraitKey } from './art/photo.js'
 import { ROLE_GLYPHS, VENUE_GLYPHS, iconSvg } from './art/icons.js'
-import { venueScene } from './art/scene.js'
 import { buildMap } from './art/map.js'
 import type { MapPin } from './art/map.js'
 import { h, money, pct, photo, svg } from './dom.js'
@@ -152,22 +151,9 @@ export function contextPanel(ui: Ui): HTMLElement {
     const def = vehicleDef(target.defId)
     const body = h('div', {})
 
-    // §2.3 — Info 大图是 152×110 的真实照片。下面那条是地点，用画的，
-    // 因为照片库里没有「这辆车停在哪」这种镜头。
+    // §2.3 / §4 — 两张都是真实照片：车本身，和它停的那个地方。
     body.appendChild(photo(photoTile(def.photo, 152, 110)))
-    body.appendChild(
-      photo(
-        venueScene({
-          venue: def.venue,
-          car: {
-            bodyType: def.bodyType,
-            era: def.era,
-            ...(target.stolen ? { gone: true } : {}),
-          },
-          height: 52,
-        }),
-      ),
-    )
+    body.appendChild(photo(photoTile(VENUE_PHOTO[def.venue], 152, 58)))
     body.appendChild(
       h(
         'div',
@@ -272,7 +258,7 @@ export function contextPanel(ui: Ui): HTMLElement {
 
   if (memory) body.appendChild(h('div', { class: 'recall' }, memory))
   body.appendChild(photo(photoTile(def.photo, 152, 110)))
-  body.appendChild(photo(venueScene({ venue: def.venue, height: 46 })))
+  body.appendChild(photo(photoTile(VENUE_PHOTO[def.venue], 152, 58)))
   body.appendChild(
     h(
       'div',

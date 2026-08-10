@@ -20,7 +20,6 @@ import { FENCE_CHANNELS } from '../src/content/balance.js'
 import { VENUE_LABELS } from '../src/content/types.js'
 import type { BodyType, RoleKey, VenueKey } from '../src/content/types.js'
 import { ROLE_GLYPHS, VEHICLE_GLYPHS, VENUE_GLYPHS, iconSvg } from '../src/ui/art/icons.js'
-import { venueScene } from '../src/ui/art/scene.js'
 import { VENUE_BADGE, VENUE_PHOTO } from '../src/content/types.js'
 import { BADGE_PATHS, PORTRAIT_COUNT, portraitKey } from '../src/ui/art/photo.js'
 import { existsSync } from 'node:fs'
@@ -128,7 +127,7 @@ describe('heist config is well formed', () => {
 })
 
 describe('the art layer covers every content key', () => {
-  const venues = Object.keys(VENUE_LABELS) as VenueKey[]
+
 
   it('gives every vehicle a body type and a venue that both have art', () => {
     for (const v of VEHICLES) {
@@ -145,13 +144,6 @@ describe('the art layer covers every content key', () => {
     }
   })
 
-  it('draws a scene for every venue', () => {
-    for (const venue of venues) {
-      const svg = venueScene({ venue })
-      expect(svg.startsWith('<svg')).toBe(true)
-      expect(svg.length).toBeGreaterThan(200)
-    }
-  })
 })
 
 describe('no two pieces of art are the same drawing', () => {
@@ -175,18 +167,7 @@ describe('no two pieces of art are the same drawing', () => {
     expect(distinct(venues.map((v) => iconSvg(VENUE_GLYPHS[v])))).toBe(true)
   })
 
-  it('across venue scenes', () => {
-    const venues = Object.keys(VENUE_LABELS) as VenueKey[]
-    expect(distinct(venues.map((v) => venueScene({ venue: v })))).toBe(true)
-  })
 
-  it('and a scene changes when the car parked in it changes', () => {
-    const bodies = Object.keys(VEHICLE_GLYPHS) as BodyType[]
-    const scenes = bodies.map((bodyType) =>
-      venueScene({ venue: 'lot', car: { bodyType, era: 'classic' } }),
-    )
-    expect(distinct(scenes)).toBe(true)
-  })
 })
 
 describe('every photo the content asks for is actually on disk', () => {
