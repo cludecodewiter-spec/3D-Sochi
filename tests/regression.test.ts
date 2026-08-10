@@ -7,6 +7,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
+import { settleIncidents } from './helpers.js'
 import { EventLog } from '../src/engine/events.js'
 import { Rng } from '../src/engine/rng.js'
 import { createInitialState } from '../src/engine/state.js'
@@ -70,6 +71,10 @@ function play(session: Session, plan: string[]): string[] {
   for (const optionId of plan) {
     const result = chooseHeistOption(session, optionId)
     lines.push(result.text, ...result.epilogue)
+    if (session.state.incident) {
+      if (settleIncidents(session, lines)) break
+      continue
+    }
     if (result.outcome) break
   }
   return lines
@@ -89,7 +94,7 @@ describe('B1 · the dossier reports what was seen, never the hidden truth', () =
         forcedTruth: 'false',
       })
       session.state.marco.skills = {
-        stealth: 100, mechanical: 100, electronic: 100, driving: 100, nerve: 100,
+        hiding: 100, acting: 100, shooting: 100, driving: 100, locksmithing: 100, electronics: 100,
       }
       startHeist(session, TUTORIAL)
       const lines = play(session, ['patient', 'shadow', 'wire', 'calm'])
@@ -113,7 +118,7 @@ describe('B1 · the dossier reports what was seen, never the hidden truth', () =
         forcedTruth: 'false',
       })
       session.state.marco.skills.driving = 5
-      session.state.marco.skills.nerve = 5
+      session.state.marco.skills.acting = 5
       startHeist(session, TUTORIAL)
       const lines = play(session, ['patient', 'casual', 'column', 'floor'])
       if (!lines.some((l) => l.includes('本来就在等你'))) continue
@@ -342,6 +347,52 @@ describe('通缉度是双段的，不是一个数', () => {
     expect(state.wanted.locked).toBe(true)
     addHeat(state, log, -40, '风头过去了')
     expect(state.wanted.locked).toBe(false)
+  })
+
+  it('v2 存档能迁移过来：补上被发现、赃物、前科这几层', () => {
+    // 一个 v2 存档里根本没有「被发现」这一层，也没有物品级赃物。
+    // 迁移不该猜，只该把当时确实成立的事实写进去。
+    const state = createInitialState() as unknown as Record<string, unknown>
+    state['marco'] = {
+      // v2 的技能名，外加当时并不存在的 shooting
+      skills: { stealth: 51, mechanical: 70, electronic: 8, nerve: 62, driving: 40 },
+      injuryTurns: 2,
+    }
+    state['activeRun'] = {
+      configId: 'heist',
+      contextId: 't-x',
+      segmentIndex: 1,
+      vars: {},
+      history: [],
+      startedEventId: 'e1',
+      finished: null,
+    }
+    for (const key of ['stash', 'incident', 'convictions', 'jailTurns']) delete state[key]
+
+    const restored = deserialize({
+      version: 2,
+      createdAt: new Date().toISOString(),
+      rng: { seed: 1, step: 0 },
+      state,
+      log: [],
+    } as never)
+
+    expect(restored.state.marco.skills).toEqual({
+      hiding: 51,
+      locksmithing: 70,
+      electronics: 8,
+      acting: 62,
+      driving: 40,
+      shooting: 12,
+    })
+    expect(restored.state.marco.armed).toBe(false)
+    expect(restored.state.marco.health).toBe(100)
+    expect(restored.state.marco.injuryTurns).toBe(2)
+    expect(restored.state.stash).toEqual([])
+    expect(restored.state.incident).toBeNull()
+    expect(restored.state.convictions).toBe(0)
+    expect(restored.state.jailTurns).toBe(0)
+    expect(restored.state.activeRun?.loot).toEqual([])
   })
 
   it('v1 存档能迁移过来：旧的 heat 全部算作累积段', () => {

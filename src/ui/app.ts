@@ -27,6 +27,7 @@ import {
   logPanel,
   mapPanel,
   panel,
+  stashPanel,
   statusStrip,
   verifyPickerBody,
   wantedStrip,
@@ -66,6 +67,8 @@ export class Ui {
   selected: Selection | null = null
   /** Garage slot currently expanded for fencing. */
   fencing: string | null = null
+  /** 赃物袋里选中的那件。 */
+  looting: string | null = null
   dossierTab = 'people'
   tab: Tab = 'map'
   beats: HeistBeat[] = []
@@ -219,6 +222,28 @@ export class Ui {
   private presentTurn(report: TurnReport): void {
     const { state, log } = this.game
 
+    if (report.jail) {
+      const jail = report.jail
+      play(jail.released ? 'clack' : 'siren')
+      this.rotation.record(state.turn, 'casefile')
+      this.push(() =>
+        h(
+          'div',
+          { style: 'padding:8px' },
+          h(
+            'p',
+            { class: jail.released ? '' : 'red' },
+            jail.released
+              ? '门开了。外面的光比你记得的刺眼。'
+              : `又是一天。还剩 ${jail.remaining} 天。`,
+          ),
+          jail.released
+            ? h('p', { class: 'faint' }, '债照涨了这么多天，没有人替你交过一分钱。')
+            : null,
+        ),
+      )
+    }
+
     if (report.debt) {
       const debt = report.debt
       play(debt.missed ? 'fail' : 'cash')
@@ -297,7 +322,8 @@ export class Ui {
       const raw = localStorage.getItem(SAVE_KEY)
       if (!raw) return false
       this.session = fromJSON(raw)
-      this.mode = this.game.state.activeRun ? 'heist' : 'map'
+      // 有人正看着你的时候刷新页面，回来还是要面对他。
+      this.mode = this.game.state.activeRun || this.game.state.incident ? 'heist' : 'map'
       this.render()
       return true
     } catch {
@@ -327,7 +353,14 @@ export class Ui {
           { class: 'body' },
           h('div', { class: 'col scroll' }, characterPanel(this), contextPanel(this)),
           h('div', { class: 'col' }, ...this.centre()),
-          h('div', { class: 'col scroll' }, garagePanel(this), informantRack(this), intelRack(this)),
+          h(
+            'div',
+            { class: 'col scroll' },
+            garagePanel(this),
+            stashPanel(this),
+            informantRack(this),
+            intelRack(this),
+          ),
         ),
       )
       frame.appendChild(h('div', { class: 'footer' }, logPanel(this)))
@@ -390,7 +423,7 @@ export class Ui {
       case 'me':
         return [characterPanel(this)]
       case 'stuff':
-        return [garagePanel(this), informantRack(this), intelRack(this)]
+        return [garagePanel(this), stashPanel(this), informantRack(this), intelRack(this)]
       case 'log':
         return [logPanel(this)]
       default:
@@ -492,5 +525,10 @@ const FAILURE_COPY: Record<FailureKind, { stamp: string; lines: string[]; tail: 
     stamp: '结清',
     lines: ['他们不再打电话了。'],
     tail: '这件事到此为止。',
+  },
+  life: {
+    stamp: '无期',
+    lines: ['第三次。', '法官这一次没有问你任何问题。'],
+    tail: '二十年的手艺，最后值二十年。',
   },
 }

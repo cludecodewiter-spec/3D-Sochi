@@ -226,3 +226,41 @@ export function badgeGlyph(
   const body = (glyph as TwoTone)(color, background)
   return `<g transform="translate(${-12 * scale} ${-12 * scale}) scale(${scale})">${body}</g>`
 }
+
+// ── 赃物 ──────────────────────────────────────────────────────────────────
+
+/**
+ * 只有八件道具有真实照片（§4.3），剩下的靠品类图形顶上。
+ * 这里刻意不用 emoji——§8 第一条反模式就是它。
+ */
+export const LOOT_GLYPHS: Record<string, Glyph> = {
+  // 现金 — 一张钞票
+  cash: group(
+    lined('M2.6 6.4 h18.8 v11.2 H2.6 Z', 1.8),
+    lined('M12 9.2 a2.8 2.8 0 1 0 0 5.6 a2.8 2.8 0 1 0 0-5.6', 1.4),
+    lined('M5.4 9 v6 M18.6 9 v6', 1.2),
+  ),
+  // 贵重 — 戒指上的那颗石头
+  valuables: group(
+    lined('M8.4 3.4 h7.2 l3.2 4.4 L12 20.6 L5.2 7.8 Z', 1.8),
+    lined('M5.2 7.8 h13.6 M8.4 3.4 L12 7.8 L15.6 3.4 M12 7.8 V20.6', 1.2),
+  ),
+  // 电子 — 带屏幕的小盒子
+  electronics: group(
+    lined('M3.4 5.6 h17.2 v10.2 H3.4 Z', 1.8),
+    lined('M6.2 8.2 h11.6 v5 H6.2 Z', 1.2),
+    lined('M8 18.4 h8', 1.6),
+  ),
+  // 武器 — 左轮的轮廓
+  weapon: group(
+    lined('M3.2 8.6 h13.4 l3.4 2.6 h1.8 v2.2 h-4.4 l-1.4 2 h-3.6 l-1-2 H7.4 Z', 1.8),
+    lined('M7.4 13.4 L5.6 19.4 h3.6 l1.2-6', 1.6),
+    lined('M11.4 8.6 a1.8 1.8 0 1 0 0 3.6 a1.8 1.8 0 1 0 0-3.6', 1.2),
+  ),
+  // 杂物 — 一只纸箱
+  junk: group(
+    lined('M3.6 8 h16.8 v12 H3.6 Z', 1.8),
+    lined('M3.6 8 L6.4 4 h11.2 L20.4 8', 1.6),
+    lined('M12 4 v16', 1.2),
+  ),
+}

@@ -27,16 +27,22 @@ import { recall } from '../systems/dossier.js'
 import {
   VERIFY_FEE,
   buyIntel,
+  discardStashItem,
   fence,
   rest,
   scout,
+  sellStash,
+  sellStashItem,
+  stash,
+  stashValue,
   startCrime,
   startHeist,
+  startRifle,
   verify,
 } from '../systems/game.js'
 import { carSvg } from './art/car.js'
 import { photoTile, portraitKey } from './art/photo.js'
-import { ROLE_GLYPHS, VENUE_GLYPHS, iconSvg } from './art/icons.js'
+import { LOOT_GLYPHS, ROLE_GLYPHS, VENUE_GLYPHS, iconSvg } from './art/icons.js'
 import { buildMap } from './art/map.js'
 import type { MapPin } from './art/map.js'
 import { h, money, pct, photo, svg } from './dom.js'
@@ -201,6 +207,14 @@ export function contextPanel(ui: Ui): HTMLElement {
       )
     }
 
+    if (state.jailTurns > 0) {
+      body.appendChild(
+        h('div', { class: 'small red', style: 'margin-top:8px' },
+          `你在里面。还剩 ${state.jailTurns} 天。这辆车不会等你。`),
+      )
+      return panel(`目标信息 · ${VENUE_LABELS[def.venue]}`, body)
+    }
+
     if (!target.stolen && !state.activeRun) {
       // Scouting is your own eyes: costs time, never lies. It appears from
       // day two — day one is Solomon walking you through the whole thing.
@@ -225,28 +239,43 @@ export function contextPanel(ui: Ui): HTMLElement {
         body.appendChild(scoutRow)
       }
 
+      const enter = (begin: () => void): void =>
+        ui.act(() => {
+          begin()
+          play('heart')
+          ui.beats = []
+          ui.heistEnded = false
+          ui.mode = 'heist'
+        })
+
+      // 两种下手方式。开走它需要你解决点火，翻它只需要你打开门——
+      // 一辆 2014 年的车会把前一条路彻底堵死，后一条路它堵不住。
       body.appendChild(
         h(
           'div',
-          { class: 'row', style: 'margin-top:8px' },
+          { class: 'row', style: 'margin-top:8px;gap:6px' },
           h(
             'button',
             {
               class: 'act go',
               disabled: state.ap < 2,
-              onclick: () =>
-                ui.act(() => {
-                  startHeist(ui.game, target.id)
-                  play('heart')
-                  ui.beats = []
-                  ui.heistEnded = false
-                  ui.mode = 'heist'
-                }),
+              onclick: () => enter(() => startHeist(ui.game, target.id)),
             },
-            '下 手',
+            '开走它',
           ),
-          h('span', { class: 'small faint' }, '2 行动点'),
+          h(
+            'button',
+            {
+              class: 'act',
+              disabled: state.ap < 1,
+              onclick: () => enter(() => startRifle(ui.game, target.id)),
+            },
+            '只翻车里',
+          ),
         ),
+      )
+      body.appendChild(
+        h('div', { class: 'small faint', style: 'margin-top:3px' }, '2 行动点 / 1 行动点'),
       )
     }
     return panel(`目标信息 · ${VENUE_LABELS[def.venue]}`, body)
@@ -437,7 +466,10 @@ export function statusStrip(ui: Ui): HTMLElement {
       'div',
       { class: 'strip' },
       item('日', String(state.turn)),
-      item('行动点', pips),
+      state.jailTurns > 0
+        ? item('在里面', `还剩 ${state.jailTurns} 天`, 'red')
+        : item('行动点', pips),
+      state.convictions > 0 ? item('前科', `${state.convictions} / 3`, 'red') : null,
       item('现金', money(state.cash), state.cash < 500 ? 'red' : 'green'),
       item('负债', money(state.debt.principal), 'red'),
       item('下次还款', `第 ${state.debt.nextDueTurn} 天 · ${money(state.debt.minimumPayment)}`),
@@ -546,14 +578,18 @@ export function wantedStrip(ui: Ui): HTMLElement {
             state.wanted.locked ? h('span', { class: 'v red' }, '· 区域封锁') : null,
           )
         : h('div', { style: 'flex:1' }, h('span', { class: 'k' }, '本市 · 第一纪')),
-      state.ap > 0 && state.turn > 1
+      state.jailTurns === 0 && state.ap > 0 && state.turn > 1
         ? h(
             'button',
             { onclick: () => ui.act(() => { rest(ui.game); ui.endTurn() }) },
             '休息',
           )
         : null,
-      h('button', { class: 'act', onclick: () => ui.endTurn() }, '结束这一天 ▶▶'),
+      h(
+        'button',
+        { class: 'act', onclick: () => ui.endTurn() },
+        state.jailTurns > 0 ? '熬过这一天 ▶▶' : '结束这一天 ▶▶',
+      ),
     ),
   )
 }
@@ -613,6 +649,101 @@ export function garagePanel(ui: Ui): HTMLElement {
     }
   }
   return panel('停车库', body, { help: '点一辆车选中，再选销赃渠道。热度会压价。' })
+}
+
+/**
+ * 赃物袋。一次入室的产出不是一个数字，是具体的一堆东西——
+ * 这一格就是它们待的地方，直到你把它们出手。
+ */
+export function stashPanel(ui: Ui): HTMLElement | null {
+  const { state } = ui.game
+  const entries = stash(ui.game)
+  if (entries.length === 0 && state.stash.length === 0) return null
+
+  const cells = entries.map((entry) =>
+    h(
+      'div',
+      {
+        class: `slot filled ${ui.looting === entry.id ? 'on' : ''}`,
+        title: `${entry.name} · ${money(entry.payout)}`,
+        onclick: () => {
+          ui.looting = ui.looting === entry.id ? null : entry.id
+          ui.render()
+        },
+      },
+      LOOT_PHOTOS[entry.id]
+        ? photo(photoTile(LOOT_PHOTOS[entry.id]!, 56, 56))
+        : svg(iconSvg(LOOT_GLYPHS[entry.category] ?? LOOT_GLYPHS['junk']!, 34)),
+      h('span', { class: 'cap2' }, entry.count > 1 ? `${entry.name} ×${entry.count}` : entry.name),
+    ),
+  )
+
+  const body = h('div', {}, slotGrid(cells))
+  const picked = entries.find((e) => e.id === ui.looting)
+  if (picked) {
+    body.appendChild(h('div', { class: 'small', style: 'margin-top:5px' }, picked.note ?? ' '))
+    if (picked.armsYou) {
+      body.appendChild(
+        h('div', { class: 'small red', style: 'margin-top:3px' }, '带着它，你在被人撞见的时候会多两个选项。'),
+      )
+      body.appendChild(
+        h(
+          'button',
+          {
+            style: 'width:100%;margin-top:3px',
+            onclick: () => ui.act(() => { discardStashItem(ui.game, picked.id); ui.looting = null }),
+          },
+          '扔掉它',
+        ),
+      )
+    } else if (picked.value === 0) {
+      body.appendChild(h('div', { class: 'small faint', style: 'margin-top:3px' }, '没人会买。'))
+    } else {
+      body.appendChild(
+        h(
+          'button',
+          {
+            style: 'width:100%;margin-top:3px;text-align:left',
+            onclick: () =>
+              ui.act(() => {
+                sellStashItem(ui.game, picked.id)
+                if (!ui.game.state.stash.includes(picked.id)) ui.looting = null
+                play('cash')
+              }),
+          },
+          `出手 ${money(picked.payout)}`,
+        ),
+      )
+    }
+  }
+
+  const worth = stashValue(ui.game)
+  if (worth > 0) {
+    body.appendChild(
+      h(
+        'button',
+        {
+          class: 'act',
+          style: 'width:100%;margin-top:5px',
+          onclick: () => ui.act(() => { sellStash(ui.game); ui.looting = null; play('cash') }),
+        },
+        `全部出手 ${money(worth)}`,
+      ),
+    )
+  }
+
+  return panel('赃物袋', body, { help: '现金按面值，其余打六五折。枪不能这么出手。' })
+}
+
+/** §4.3 —— 只有这几件有真实照片，其余走品类图形。 */
+const LOOT_PHOTOS: Record<string, string> = {
+  phone_old: 'items/phone',
+  medkit: 'items/medkit',
+  revolver: 'items/revolver',
+  gps: 'items/scanner',
+  radio: 'items/scanner',
+  toolbag: 'items/gloves',
+  laptop: 'items/scanner',
 }
 
 export function informantRack(ui: Ui): HTMLElement | null {

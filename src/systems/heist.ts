@@ -16,12 +16,16 @@ import type { SkillKey } from '../engine/types.js'
 import type { DefenseKey } from '../content/types.js'
 import { HEAT, RUN_PENALTY } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
+import { RIFLE_CONFIG } from '../content/rifle.js'
 import { vehicleDef } from '../content/vehicles.js'
 import { BETRAYAL, TUTORIAL_TARGET } from '../content/script.js'
 import { probability, resolve } from './checks.js'
+import { failureIncident, raiseIncident } from './incident.js'
+import { stashLoot } from './stash.js'
 import { addHeat, heatOf } from './heat.js'
 import { intelEffect, resolveIntel } from './intel.js'
 import { defenseFor } from './vehicles.js'
+import type { SegmentRunConfig } from '../content/types.js'
 import type { RunContext, RunView, StepResult } from './segment-run.js'
 import { abort, segmentAt, startRun, step, view } from './segment-run.js'
 
@@ -64,11 +68,21 @@ export function buildContext(state: GameState, targetInstanceId: string): RunCon
     heat: heatOf(state),
     injured: state.marco.injuryTurns > 0,
     difficulty: state.difficulty,
-    nerve: state.marco.skills.nerve,
+    nerve: state.marco.skills.acting,
     ...(state.turn === 1 && targetInstanceId === `t-${TUTORIAL_TARGET}`
       ? { assist: { amount: TUTORIAL_ASSIST, note: '所罗门就站在你旁边，低声说着每一步。' } }
       : {}),
   }
+}
+
+/**
+ * 同一辆车有两种下手方式，跑的是同一台引擎：
+ *   heist  把车开走
+ *   rifle  只拿车里的东西
+ * 后者段更短、门槛更低，是玩家在电子防盗面前唯一还做得动的活。
+ */
+export function configFor(configId: string): SegmentRunConfig {
+  return configId === RIFLE_CONFIG.id ? RIFLE_CONFIG : HEIST_CONFIG
 }
 
 export function beginHeist(
@@ -106,9 +120,29 @@ export function beginHeist(
   return run
 }
 
+/** 翻车：不开走它，只把里面的东西拿走。 */
+export function beginRifle(
+  state: GameState,
+  log: EventLog,
+  targetInstanceId: string,
+): SegmentRunState {
+  const target = getTarget(state, targetInstanceId)
+  if (!target) throw new Error(`没有这个目标：${targetInstanceId}`)
+  if (target.stolen) throw new Error('这辆车已经没了')
+  const def = vehicleDef(target.defId)
+  return startRun(
+    state,
+    log,
+    RIFLE_CONFIG,
+    targetInstanceId,
+    `翻 ${def.name} 的车厢`,
+    [target.defId, targetInstanceId],
+  )
+}
+
 export function heistView(state: GameState): RunView {
   const run = requireRun(state)
-  return view(run, HEIST_CONFIG, buildContext(state, run.contextId), probability)
+  return view(run, configFor(run.configId), buildContext(state, run.contextId), probability)
 }
 
 function requireRun(state: GameState): SegmentRunState {
@@ -129,12 +163,13 @@ export function heistStep(
   optionId: string,
 ): HeistStepResult {
   const run = requireRun(state)
+  const config = configFor(run.configId)
   const ctx = buildContext(state, run.contextId)
-  const segment = segmentAt(HEIST_CONFIG, run.segmentIndex)
+  const segment = segmentAt(config, run.segmentIndex)
   const ambushed =
     segment.id === 'escape' && (run.vars['danger'] ?? 0) >= AMBUSH_THRESHOLD
 
-  const result = step(run, HEIST_CONFIG, ctx, optionId, rng, resolve)
+  const result = step(run, config, ctx, optionId, rng, resolve)
 
   log.append({
     turn: state.turn,
@@ -151,16 +186,31 @@ export function heistStep(
     causedBy: run.startedEventId,
   })
 
-  const epilogue: string[] = []
-  if (result.outcome) {
-    epilogue.push(...finishHeist(state, log, run, result, ambushed))
+  // 失败不再是「你走掉了」。有人看见了你，或者警察已经到了——
+  // 接下来做什么，是 `incident.ts` 那一层要问的问题。而且它可以发生在
+  // 半途：处理干净了，这一趟还能接着干下去。
+  const trigger = failureIncident(run, result, rng)
+  if (trigger) {
+    raiseIncident(
+      state,
+      log,
+      rng,
+      trigger,
+      run.configId === RIFLE_CONFIG.id ? 'lot' : 'street',
+      { atRisk: ambushed, brokeRule: result.brokeRule },
+    )
+    return { ...result, epilogue: [] }
   }
+
+  const epilogue = result.outcome
+    ? finishHeist(state, log, run, ambushed, result.brokeRule)
+    : []
   return { ...result, epilogue }
 }
 
 export function heistAbort(state: GameState, log: EventLog): string[] {
   const run = requireRun(state)
-  const { outcome, segment } = abort(run, HEIST_CONFIG)
+  const { outcome, segment } = abort(run, configFor(run.configId))
   const heat = HEAT.abortAtSegment[outcome.atSegmentIndex] ?? 0
 
   const lines = [segment.abortText]
@@ -184,24 +234,25 @@ export function heistAbort(state: GameState, log: EventLog): string[] {
   return lines
 }
 
-function finishHeist(
+export function finishHeist(
   state: GameState,
   log: EventLog,
   run: SegmentRunState,
-  result: StepResult,
   atRisk: boolean,
+  brokeRule: string | null = null,
 ): string[] {
   const target = getTarget(state, run.contextId)
   if (!target) throw new Error(`没有这个目标：${run.contextId}`)
   const def = vehicleDef(target.defId)
-  const outcome = result.outcome!
+  const outcome = run.finished!
+  if (run.configId === RIFLE_CONFIG.id) return finishRifle(state, log, run, brokeRule)
   const lines: string[] = []
   // `atRisk` only says people *were* waiting. It becomes an ambush the player
   // can see — and evidence against whoever set them up — only if the getaway
   // actually fell apart. Drive out clean and nobody ever learns a thing.
   const ambushFired = atRisk && outcome.result !== 'success'
 
-  if (result.brokeRule) lines.push(result.brokeRule)
+  if (brokeRule) lines.push(brokeRule)
 
   let resultEvent: GameEvent
 
@@ -259,7 +310,53 @@ function finishHeist(
     }
   }
 
+  lines.push(...stashLoot(state, log, run, resultEvent.id))
   settleIntel(state, log, run, outcome.result, ambushFired, resultEvent.id)
+  state.activeRun = null
+  return lines
+}
+
+/**
+ * 翻车的收场。车还停在原地——被撬开、被翻过，车主明天早上才会知道。
+ * 你走的时候手上是有东西的，哪怕这一趟并不顺利。
+ */
+function finishRifle(
+  state: GameState,
+  log: EventLog,
+  run: SegmentRunState,
+  brokeRule: string | null,
+): string[] {
+  const target = getTarget(state, run.contextId)!
+  const def = vehicleDef(target.defId)
+  const outcome = run.finished!
+  const lines: string[] = []
+  if (brokeRule) lines.push(brokeRule)
+
+  const event = log.append({
+    turn: state.turn,
+    type: 'heist_result',
+    actors: [run.contextId, target.defId],
+    summary:
+      outcome.result === 'success'
+        ? `翻了 ${def.name} 的车厢`
+        : `翻 ${def.name} 的时候出了岔子`,
+    tone: outcome.result === 'success' ? 'good' : 'bad',
+    payload: { config: 'rifle', result: outcome.result, defId: target.defId },
+    causedBy: run.startedEventId,
+  })
+
+  // 车没丢，只是被撬了。报案的分量差一个数量级。
+  addHeat(state, log, outcome.result === 'success' ? 2 : HEAT.perFailedEscape, '撬了一辆车', {
+    causedBy: event.id,
+    actors: [run.contextId],
+  })
+
+  const took = stashLoot(state, log, run, event.id)
+  if (took.length > 0) lines.push(...took)
+  else lines.push('车里什么都没有。有些人开车上班，兜里比车里还干净。')
+
+  if (outcome.result !== 'success') lines.push('你没关车门就走了。')
+
   state.activeRun = null
   return lines
 }

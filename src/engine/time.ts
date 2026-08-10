@@ -13,6 +13,8 @@ export const AP_COSTS = {
   scout: 1,
   verifyIntel: 1,
   runHeist: 2,
+  /** 只翻车厢。比整车便宜一点，因为它也确实不值那么多。 */
+  rifle: 1,
   fence: 1,
 } as const
 

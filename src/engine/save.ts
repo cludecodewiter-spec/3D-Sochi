@@ -11,7 +11,7 @@ import type { RngState } from './rng.js'
 import { Rng } from './rng.js'
 import type { GameState } from './state.js'
 
-export const SAVE_VERSION = 2
+export const SAVE_VERSION = 3
 
 export interface SaveFile {
   version: number
@@ -41,6 +41,52 @@ const migrations: Record<number, (save: SaveFile) => SaveFile> = {
     state['playerName'] ??= 'MARCO'
     return { ...save, version: 2 }
   },
+
+  // v2 有偷车和场所犯罪，但没有「被发现」这一层，也没有物品级赃物。
+  // v3 补上：身上没枪、没有前科、不在里面、赃物袋是空的——
+  // 对一个 v2 存档来说，这四条全都是事实。
+  // 技能同时改名（§3.2 的八属性口径）：老名字按语义搬过去，不猜。
+  2: (save) => {
+    const state = save.state as unknown as Record<string, unknown>
+    state['stash'] ??= []
+    state['incident'] ??= null
+    state['convictions'] ??= 0
+    state['jailTurns'] ??= 0
+    state['places'] ??= []
+
+    const marco = state['marco'] as Record<string, unknown> | undefined
+    if (marco) {
+      marco['armed'] ??= false
+      marco['health'] ??= 100
+      const skills = marco['skills'] as Record<string, number> | undefined
+      if (skills) marco['skills'] = renameSkills(skills)
+    }
+
+    const run = state['activeRun'] as Record<string, unknown> | null | undefined
+    if (run) run['loot'] ??= []
+
+    return { ...save, version: 3 }
+  },
+}
+
+/**
+ * 旧技能名 → CLAUDE.md §3.2 的口径。`shooting` 在 v2 里根本不存在，
+ * 因为那时候还没有开枪这件事；老角色从 12 起步，和新开局一样。
+ */
+const SKILL_RENAMES: Record<string, string> = {
+  stealth: 'hiding',
+  mechanical: 'locksmithing',
+  electronic: 'electronics',
+  nerve: 'acting',
+}
+
+function renameSkills(skills: Record<string, number>): Record<string, number> {
+  const out: Record<string, number> = {}
+  for (const [key, value] of Object.entries(skills)) {
+    out[SKILL_RENAMES[key] ?? key] = value
+  }
+  out['shooting'] ??= 12
+  return out
 }
 
 export function serialize(session: Session, now = new Date()): SaveFile {

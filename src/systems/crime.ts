@@ -14,10 +14,12 @@ import type { SkillKey } from '../engine/types.js'
 import type { DefenseKey } from '../content/types.js'
 import type { CrimeKey } from '../content/crimes.js'
 import { CRIME_AP, CRIME_LABELS, LEAVES_A_FACE, crimeConfig } from '../content/crimes.js'
-import { locationDef } from '../content/locations.js'
+import { locationDef, witnessPool } from '../content/locations.js'
 import { HEAT, RUN_PENALTY } from '../content/balance.js'
 import { probability, resolve } from './checks.js'
 import { addHeat, heatOf } from './heat.js'
+import { failureIncident, raiseIncident } from './incident.js'
+import { stashLoot } from './stash.js'
 import type { RunContext, RunView, StepResult } from './segment-run.js'
 import { abort, segmentAt, startRun, step, view } from './segment-run.js'
 
@@ -47,7 +49,7 @@ export function buildContext(state: GameState, locationId: string): RunContext {
     heat: heatOf(state),
     injured: state.marco.injuryTurns > 0,
     difficulty: state.difficulty,
-    nerve: state.marco.skills.nerve,
+    nerve: state.marco.skills.acting,
   }
 }
 
@@ -111,7 +113,17 @@ export function crimeStep(
     causedBy: run.startedEventId,
   })
 
-  const epilogue = result.outcome ? finish(state, log, run, crime, result) : []
+  // 失手不再等于「你走掉了」。有人看见了你，或者警察已经堵在门口——
+  // 接下来怎么办，是 `incident.ts` 那一层要问的问题。
+  const trigger = failureIncident(run, result, rng)
+  if (trigger) {
+    raiseIncident(state, log, rng, trigger, witnessPool(run.contextId), {
+      brokeRule: result.brokeRule,
+    })
+    return { ...result, epilogue: [] }
+  }
+
+  const epilogue = result.outcome ? finishCrime(state, log, run, result.brokeRule) : []
   return { ...result, epilogue }
 }
 
@@ -137,17 +149,21 @@ export function crimeAbort(state: GameState, log: EventLog): string[] {
   return [segment.abortText]
 }
 
-function finish(
+/**
+ * 收场。刻意读 `run.finished` 而不是某次 step 的返回值——因为这一步
+ * 现在可能被「被发现」环节推迟到几次交互之后才执行。
+ */
+export function finishCrime(
   state: GameState,
   log: EventLog,
   run: SegmentRunState,
-  crime: CrimeKey,
-  result: StepResult,
+  brokeRule: string | null = null,
 ): string[] {
+  const crime = run.configId as CrimeKey
   const def = locationDef(run.contextId)
-  const outcome = result.outcome!
+  const outcome = run.finished!
   const lines: string[] = []
-  if (result.brokeRule) lines.push(result.brokeRule)
+  if (brokeRule) lines.push(brokeRule)
 
   const place = placeOf(state, run.contextId)
   if (place) {
@@ -169,7 +185,8 @@ function finish(
       payload: { crime, take, locationId: run.contextId },
       causedBy: run.startedEventId,
     })
-    lines.push(take > 0 ? `到手 $${take}。` : '你什么都没拿到，但你出来了。')
+    lines.push(take > 0 ? `到手 $${take}。` : '钱柜里什么都没有。')
+    lines.push(...stashLoot(state, log, run, event.id))
   } else {
     event = log.append({
       turn: state.turn,
@@ -184,7 +201,9 @@ function finish(
       causedBy: event.id,
       actors: [run.contextId],
     })
-    lines.push('你走掉了。这次只是没拿到东西。')
+    lines.push('你走掉了。')
+    // 失手不代表两手空空——已经揣进兜里的东西，是跟着你出来的。
+    lines.push(...stashLoot(state, log, run, event.id))
   }
 
   // §3.3 — 有人看清了你的脸，那一段进底案，贿赂消不掉。

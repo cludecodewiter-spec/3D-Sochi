@@ -181,6 +181,8 @@ export interface OptionDef {
   failureText: string
   /** Failing this option ends the whole run (e.g. you never got the car open). */
   failureEndsRun?: boolean
+  /** 成功时从哪张赃物表里抽几件。抽到的是具体的东西，不是一个数字。 */
+  draws?: { table: string; count: number }
 }
 
 export interface TellDef {

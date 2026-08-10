@@ -6,6 +6,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
+import { settleIncidents } from './helpers.js'
 import type { Session } from '../src/engine/save.js'
 import {
   ActionError,
@@ -37,6 +38,11 @@ const play = (session: Session, plan: string[]): string[] => {
   for (const optionId of plan) {
     const result = chooseCrimeOption(session, optionId)
     lines.push(result.text, ...result.epilogue)
+    // 被发现的时候，这一趟还没结束——先把眼前那个人处理掉。
+    if (session.state.incident) {
+      if (settleIncidents(session, lines)) break
+      continue
+    }
     if (result.outcome) break
   }
   return lines

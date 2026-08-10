@@ -9,6 +9,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
+import { settleIncidents } from './helpers.js'
 import type { Session } from '../src/engine/save.js'
 import {
   buyIntel,
@@ -34,6 +35,10 @@ const runToEnd = (session: Session, plan: string[]): string[] => {
   for (const optionId of plan) {
     const result = chooseHeistOption(session, optionId)
     lines.push(result.text, ...result.epilogue)
+    if (session.state.incident) {
+      if (settleIncidents(session, lines)) break
+      continue
+    }
     if (result.outcome) break
   }
   return lines
@@ -221,7 +226,7 @@ describe('the betrayal is mechanical, not scripted (§4.3, VERTICAL_SLICE §3)',
     // still deposit the car in the garage.
     const session = setUpBetrayal(21)
     session.state.marco.skills.driving = 5
-    session.state.marco.skills.nerve = 5
+    session.state.marco.skills.acting = 5
     startHeist(session, `t-${TUTORIAL_TARGET}`)
     const lines = runToEnd(session, ['patient', 'casual', 'column', 'floor'])
     expect(lines.some((l) => l.includes('在你手上'))).toBe(false)
@@ -235,7 +240,7 @@ describe('the betrayal is mechanical, not scripted (§4.3, VERTICAL_SLICE §3)',
     for (let seed = 1; seed <= 60 && !hit; seed++) {
       const session = setUpBetrayal(seed)
       session.state.marco.skills.driving = 5
-      session.state.marco.skills.nerve = 5
+      session.state.marco.skills.acting = 5
       startHeist(session, `t-${TUTORIAL_TARGET}`)
       const lines = runToEnd(session, ['patient', 'casual', 'column', 'floor'])
       if (lines.some((l) => l.includes('本来就在等你'))) hit = session

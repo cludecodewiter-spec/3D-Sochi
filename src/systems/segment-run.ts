@@ -31,6 +31,7 @@ import type {
   SegmentRunConfig,
   VarDelta,
 } from '../content/types.js'
+import { LOOT_TABLES } from '../content/items.js'
 import type { IntelEffect } from './intel.js'
 import type { probability as probabilityFn, resolve as resolveFn } from './checks.js'
 
@@ -121,6 +122,7 @@ export function startRun(
     segmentIndex: 0,
     vars,
     history: [],
+    loot: [],
     startedEventId: event.id,
     finished: null,
   }
@@ -260,6 +262,12 @@ export function step(
   )
 
   applyDeltas(run, config, check.success ? option.onSuccess : option.onFailure)
+  if (check.success && option.draws) {
+    for (let i = 0; i < option.draws.count; i++) {
+      const table = LOOT_TABLES[option.draws.table]
+      if (table?.length) run.loot.push(rng.pick(table))
+    }
+  }
   run.history.push({
     segmentId: segment.id,
     optionId: option.id,

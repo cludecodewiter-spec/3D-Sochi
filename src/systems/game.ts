@@ -20,15 +20,25 @@ import { LOCATIONS } from '../content/locations.js'
 import type { CrimeKey } from '../content/crimes.js'
 import { HEAT } from '../content/balance.js'
 import { HEIST_CONFIG } from '../content/heist.js'
+import { RIFLE_CONFIG } from '../content/rifle.js'
 import { BETRAYAL, OPENING } from '../content/script.js'
 import { informantDef } from '../content/informants.js'
 import { sellVehicle } from './economy.js'
 import { addHeat } from './heat.js'
 import type { PriceBreakdown } from './economy.js'
-import { beginHeist, heistAbort, heistStep, heistView } from './heist.js'
-import { beginCrime, crimeAbort, crimeAp, crimeStep, crimeView } from './crime.js'
+import { beginHeist, beginRifle, finishHeist, heistAbort, heistStep, heistView } from './heist.js'
+import { beginCrime, crimeAbort, crimeAp, crimeStep, crimeView, finishCrime } from './crime.js'
 import type { CrimeStepResult } from './crime.js'
 import type { HeistStepResult } from './heist.js'
+import {
+  arrest,
+  clearIncident,
+  incidentView,
+  resolveIncident,
+} from './incident.js'
+import type { ArrestResult, IncidentOptionView } from './incident.js'
+import { dropLoot, sellAllLoot, sellLoot, stashView, stashWorth } from './stash.js'
+import type { StashEntry } from './stash.js'
 import { offerIntel, verifyIntel } from './intel.js'
 import type { VerifyResult } from './intel.js'
 import { processUnlocks } from './unlocks.js'
@@ -96,11 +106,25 @@ function requireUnlocked(state: GameState, systemId: string): void {
 }
 
 /**
+ * 人在里面的时候，外面的一切都不归你管。行动点归零已经拦住了大部分路，
+ * 但那是巧合而不是规则——规则写在这里。
+ */
+function requireFreeMan(state: GameState): void {
+  if (state.jailTurns > 0) {
+    throw new ActionError(`你在里面。还剩 ${state.jailTurns} 天。`)
+  }
+  if (state.incident) {
+    throw new ActionError('有人正站在那儿看着你。这件事得先解决。')
+  }
+}
+
+/**
  * Nothing else may happen while a job is in progress. The UI hides these
  * buttons, but the guard belongs here — the facade is what makes the
  * invariant structural rather than a property of one screen's markup.
  */
 function requireNoActiveRun(state: GameState): void {
+  requireFreeMan(state)
   if (state.activeRun && !state.activeRun.finished) {
     throw new ActionError('你正在动手，现在没工夫做别的。')
   }
@@ -189,6 +213,7 @@ export function verify(
 
 export function startHeist(session: Session, targetInstanceId: string): SegmentRunState {
   const { state, log } = session
+  requireNoActiveRun(state)
   requireUnlocked(state, 'heist')
   requireAp(state, 'runHeist')
   spendAp(state, 'runHeist')
@@ -203,6 +228,106 @@ export function chooseHeistOption(session: Session, optionId: string): HeistStep
 
 export function giveUpHeist(session: Session): string[] {
   return heistAbort(session.state, session.log)
+}
+
+/**
+ * 只翻车，不开走。花的行动点比偷车少一点，但它是电子防盗时代唯一
+ * 还稳定挣钱的手艺——你拿不走车，可以拿走车里的一切。
+ */
+export function startRifle(session: Session, targetInstanceId: string): SegmentRunState {
+  const { state, log } = session
+  requireNoActiveRun(state)
+  requireUnlocked(state, 'heist')
+  requireAp(state, 'rifle')
+  spendAp(state, 'rifle')
+  return beginRifle(state, log, targetInstanceId)
+}
+
+// ── 被发现之后 ────────────────────────────────────────────────────────────
+
+export interface IncidentScreen {
+  kind: 'witness' | 'camera' | 'police'
+  title: string
+  intro: string
+  options: IncidentOptionView[]
+  /** 这一趟已经黄了，处理完就直接收场 */
+  runEnded: boolean
+}
+
+export const currentIncident = (session: Session): IncidentScreen => ({
+  ...incidentView(session.state),
+  runEnded: session.state.incident?.runEnded ?? true,
+})
+
+export interface IncidentConclusion {
+  /** 处理这一步本身的结果文本 */
+  text: string
+  success: boolean
+  /** 这一趟到此为止 */
+  runOver: boolean
+  /** 收场时才说出口的话（销赃、伤势、赃物…） */
+  epilogue: string[]
+  arrest: ArrestResult | null
+}
+
+/**
+ * 处理掉眼前这个人／这个探头／这两个警察，然后决定这一趟还继不继续。
+ *
+ * 三条出路，顺序固定：
+ *   进局子   → 一切归零，前科 +1，第三次是无期
+ *   这趟黄了 → 走正常收场（赃物照样跟着你出来）
+ *   都没有   → 清掉局面，回到刚才那一段接着干
+ */
+export function handleIncident(session: Session, optionId: string): IncidentConclusion {
+  const { state, log, rng } = session
+  const incident = state.incident
+  const result = resolveIncident(session.state, log, rng, optionId)
+  const run = state.activeRun
+
+  // 被抓也要先收场：情报该记的账要记，赃物要先落到你身上——
+  // 然后才被登记收走。「人赃并获」在这套账里就是这个顺序。
+  const over = result.arrested || result.endsRun || run?.finished != null
+  const epilogue: string[] = []
+
+  if (run && over) {
+    run.finished ??= { result: 'failure', atSegmentIndex: run.segmentIndex }
+    const brokeRule = incident?.brokeRule ?? null
+    epilogue.push(
+      ...(run.configId === HEIST_CONFIG.id || run.configId === RIFLE_CONFIG.id
+        ? finishHeist(state, log, run, incident?.atRisk === true, brokeRule)
+        : finishCrime(state, log, run, brokeRule)),
+    )
+  }
+
+  if (result.arrested) {
+    const jail = arrest(state, log)
+    epilogue.push(...jail.text)
+    return { text: result.text, success: result.success, runOver: true, epilogue, arrest: jail }
+  }
+
+  clearIncident(state)
+  // 没被抓、也没被赶出来，那就接着干——这一条就是「不是一次失败就回去了」。
+  return { text: result.text, success: result.success, runOver: over, epilogue, arrest: null }
+}
+
+// ── 赃物 ──────────────────────────────────────────────────────────────────
+
+export const stash = (session: Session): StashEntry[] => stashView(session.state)
+export const stashValue = (session: Session): number => stashWorth(session.state)
+
+export function sellStashItem(session: Session, id: string): number {
+  requireNoActiveRun(session.state)
+  return sellLoot(session.state, session.log, id)
+}
+
+export function sellStash(session: Session): number {
+  requireNoActiveRun(session.state)
+  return sellAllLoot(session.state, session.log)
+}
+
+export function discardStashItem(session: Session, id: string): void {
+  requireNoActiveRun(session.state)
+  dropLoot(session.state, session.log, id)
 }
 
 // ── crimes against places ─────────────────────────────────────────────────

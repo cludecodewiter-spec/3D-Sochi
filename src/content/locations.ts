@@ -108,3 +108,19 @@ export function locationDef(id: string): LocationDef {
   if (!def) throw new Error(`未知地点：${id}`)
   return def
 }
+
+/**
+ * 在什么地方动手，就会被什么人撞见。加油站是柜台后面那个店员，
+ * 住宅区是楼上没睡的老太太——这层对应关系写在这里，不写死在判定里。
+ */
+const POOL_BY_VENUE: Partial<Record<VenueKey, string>> = {
+  house: 'house',
+  apartment: 'house',
+  store: 'counter',
+  gas: 'counter',
+  lot: 'lot',
+  deck: 'lot',
+}
+
+export const witnessPool = (id: string): string =>
+  POOL_BY_VENUE[locationDef(id).venue] ?? 'street'

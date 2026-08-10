@@ -3,17 +3,40 @@
  * This module must stay dependency-free — everything else may import it.
  */
 
-export type SkillKey = 'stealth' | 'mechanical' | 'electronic' | 'driving' | 'nerve'
+/**
+ * CLAUDE.md §3.2 的属性表。
+ *
+ * `acting` 与 `shooting` 不是装饰——被人撞见之后，你能不能把话圆过去、
+ * 要不要开枪，全靠这两项。没有它们，「失败」就只能是「你走掉了」。
+ */
+export type SkillKey =
+  | 'hiding'
+  | 'acting'
+  | 'shooting'
+  | 'driving'
+  | 'locksmithing'
+  | 'electronics'
 
 export type Skills = Record<SkillKey, number>
 
 export const SKILL_LABELS: Record<SkillKey, string> = {
-  stealth: '潜行',
-  mechanical: '机械',
-  electronic: '电子',
+  hiding: '隐匿',
+  acting: '演技',
+  shooting: '射击',
   driving: '驾驶',
-  nerve: '胆识',
+  locksmithing: '开锁',
+  electronics: '电气',
 }
+
+/** 面板顺序：先是让你不被发现的，再是被发现之后要用的。 */
+export const SKILL_ORDER: SkillKey[] = [
+  'hiding',
+  'locksmithing',
+  'electronics',
+  'driving',
+  'acting',
+  'shooting',
+]
 
 /** 车辆年代。决定 lock/ignition 的形态，是「过时」主题的数值载体。§5.2 */
 export type Era = 'classic' | 'modern' | 'contemporary'

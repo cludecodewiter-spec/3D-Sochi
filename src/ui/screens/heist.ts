@@ -5,6 +5,7 @@
  */
 
 import { HEIST_CONFIG } from '../../content/heist.js'
+import { RIFLE_CONFIG } from '../../content/rifle.js'
 import { crimeConfig } from '../../content/crimes.js'
 import type { CrimeKey } from '../../content/crimes.js'
 import { vehicleDef } from '../../content/vehicles.js'
@@ -20,6 +21,7 @@ import {
 import { h, pct } from '../dom.js'
 import { play } from '../audio.js'
 import { panel } from '../panels.js'
+import { incidentBody } from './incident.js'
 import type { Ui } from '../app.js'
 
 const SOUND: Record<string, Parameters<typeof play>[0]> = {
@@ -27,24 +29,34 @@ const SOUND: Record<string, Parameters<typeof play>[0]> = {
   approach: 'heart',
   breach: 'pick',
   escape: 'engine',
+  pop: 'pick',
+  sweep: 'clack',
 }
 
 export function renderHeistPanel(ui: Ui): HTMLElement {
   const { state } = ui.game
   const run = state.activeRun
   const done = !run || ui.heistEnded
+  // 有人正看着你的时候，这一段的选项不该还摆在那儿。
+  const interrupted = state.incident !== null && !ui.heistEnded
 
-  // One screen, two kinds of job. Which config is running decides everything
-  // else — that is the payoff of putting car theft on the generic engine.
-  const isHeist = !run || run.configId === HEIST_CONFIG.id
-  const config = isHeist ? HEIST_CONFIG : crimeConfig(run.configId as CrimeKey)
+  // One screen, three kinds of job. What decides the layout is not which
+  // config is running but *what the run is about* — a car or a place. Get
+  // that wrong and the screen asks `locationDef` for a vehicle id.
+  const onACar = !run || run.configId === HEIST_CONFIG.id || run.configId === RIFLE_CONFIG.id
+  const config = !run
+    ? HEIST_CONFIG
+    : run.configId === HEIST_CONFIG.id
+      ? HEIST_CONFIG
+      : run.configId === RIFLE_CONFIG.id
+        ? RIFLE_CONFIG
+        : crimeConfig(run.configId as CrimeKey)
 
+  const target = run ? state.targets.find((t) => t.id === run.contextId) : undefined
   const title = !run
     ? ''
-    : isHeist
-      ? (state.targets.find((t) => t.id === run.contextId)
-          ? vehicleDef(state.targets.find((t) => t.id === run.contextId)!.defId).name
-          : '')
+    : onACar
+      ? (target ? vehicleDef(target.defId).name : '')
       : locationDef(run.contextId).name
 
   const stage = h('div', { class: 'stagebar' })
@@ -62,8 +74,11 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
     script.appendChild(h('p', { class: beat.failed ? 'lose' : 'win' }, beat.text))
   }
 
-  if (!done) {
-    const view = isHeist ? currentHeist(ui.game) : currentCrime(ui.game)
+  if (interrupted) {
+    body.appendChild(script)
+    body.appendChild(incidentBody(ui))
+  } else if (!done) {
+    const view = onACar ? currentHeist(ui.game) : currentCrime(ui.game)
     script.appendChild(h('p', { class: 'sys' }, view.intro))
     script.appendChild(h('p', { class: 'tell' }, view.tell))
     if (view.nerveHint) script.appendChild(h('p', { class: 'hint' }, view.nerveHint))
@@ -77,7 +92,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
       acts.appendChild(
         h(
           'button',
-          { class: 'act-row', onclick: () => choose(ui, option.id, view.segmentId, isHeist) },
+          { class: 'act-row', onclick: () => choose(ui, option.id, view.segmentId, onACar) },
           h('span', { class: 'ic' }, `${i + 1}`),
           h(
             'span',
@@ -113,7 +128,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
       )
     }
     vars.appendChild(h('span', { style: 'flex:1' }))
-    vars.appendChild(h('button', { onclick: () => giveUp(ui, isHeist) }, '放下手里的东西，走开'))
+    vars.appendChild(h('button', { onclick: () => giveUp(ui, onACar) }, '放下手里的东西，走开'))
     body.appendChild(vars)
   } else {
     script.appendChild(h('p', { class: 'sys' }, '── 结束 ──'))
@@ -139,20 +154,26 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
     )
   }
 
-  const section = panel(`作案现场 · ${title}`, body, { flex: true })
+  const section = panel(
+    interrupted ? `${state.incident!.who} · ${title}` : `作案现场 · ${title}`,
+    body,
+    { flex: true },
+  )
   queueMicrotask(() => {
     script.scrollTop = script.scrollHeight
   })
   return section
 }
 
-function choose(ui: Ui, optionId: string, segmentId: string, isHeist: boolean): void {
+function choose(ui: Ui, optionId: string, segmentId: string, onACar: boolean): void {
   play(SOUND[segmentId] ?? 'tick')
-  const result = isHeist ? chooseHeistOption(ui.game, optionId) : chooseCrimeOption(ui.game, optionId)
+  const result = onACar ? chooseHeistOption(ui.game, optionId) : chooseCrimeOption(ui.game, optionId)
   ui.beats.push({ text: result.text, failed: !result.success })
   if (!result.success) play('fail')
 
-  if (result.outcome) {
+  // 被人撞见的时候这一趟还没完，哪怕这一步已经判了失败——
+  // 收场的话要等你先把眼前那个人处理掉才说得出口。
+  if (result.outcome && !ui.game.state.incident) {
     for (const line of result.epilogue) {
       ui.beats.push({ text: line, failed: result.outcome.result !== 'success' })
     }
@@ -163,8 +184,8 @@ function choose(ui: Ui, optionId: string, segmentId: string, isHeist: boolean): 
   ui.render()
 }
 
-function giveUp(ui: Ui, isHeist: boolean): void {
-  const lines = isHeist ? giveUpHeist(ui.game) : giveUpCrime(ui.game)
+function giveUp(ui: Ui, onACar: boolean): void {
+  const lines = onACar ? giveUpHeist(ui.game) : giveUpCrime(ui.game)
   for (const line of lines) ui.beats.push({ text: line, failed: false })
   ui.heistEnded = true
   ui.autosave()
