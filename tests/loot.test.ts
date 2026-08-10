@@ -24,7 +24,7 @@ import {
 } from '../src/systems/game.js'
 import { assertLootTablesResolve, payoutOf, stashWorth } from '../src/systems/stash.js'
 import { finishCrime } from '../src/systems/crime.js'
-import { LOOT, LOOT_BY_ID, LOOT_TABLES, lootValue } from '../src/content/items.js'
+import { ARMED_TABLES, LOOT, LOOT_BY_ID, LOOT_TABLES, lootValue } from '../src/content/items.js'
 import { RIFLE_CONFIG } from '../src/content/rifle.js'
 import { CRIME_CONFIGS } from '../src/content/crimes.js'
 import { VEHICLES } from '../src/content/vehicles.js'
@@ -56,15 +56,32 @@ describe('the loot catalogue', () => {
     expect(LOOT.filter((i) => i.value < 0)).toEqual([])
   })
 
-  it('names exactly one thing that puts a gun in his hand', () => {
-    expect(LOOT.filter((i) => i.armsYou).map((i) => i.id)).toEqual(['revolver'])
+  it('keeps every gun behind a door you had to walk through', () => {
+    // 这是整个「灭口 / 交火」分支的准入条件：街上和口袋里永远摸不到枪，
+    // 想要那两个选项，你得先进别人家、赌厅后厅、或者帮派的账房。
+    const guns = LOOT.filter((i) => i.armsYou).map((i) => i.id)
+    expect(guns.length).toBeGreaterThan(0)
+    for (const [table, ids] of Object.entries(LOOT_TABLES)) {
+      const armed = ids.filter((id) => guns.includes(id))
+      if (armed.length > 0) expect(ARMED_TABLES).toContain(table)
+    }
+    for (const open of ['vehicle', 'pocket', 'counter']) {
+      expect(LOOT_TABLES[open]!.filter((id) => guns.includes(id))).toEqual([])
+    }
   })
 
-  it('keeps that gun somewhere you have to go inside to find it', () => {
-    // 车里摸不到枪。要拿到它，你得进别人家。
+  it('puts one in the first place the player can reach', () => {
+    // 住宅是最早解锁的「要走进去」的地方，那把左轮就在那儿。
     expect(LOOT_TABLES['house']).toContain('revolver')
-    expect(LOOT_TABLES['vehicle']).not.toContain('revolver')
-    expect(LOOT_TABLES['pocket']).not.toContain('revolver')
+  })
+
+  it('is a catalogue, not a handful — 上百个物品', () => {
+    expect(LOOT.length).toBeGreaterThanOrEqual(100)
+    for (const [table, ids] of Object.entries(LOOT_TABLES)) {
+      expect(ids.length, table).toBeGreaterThanOrEqual(10)
+      // 每张表都要有几件卖不掉的东西——落空是这个玩法的一部分。
+      expect(ids.some((id) => LOOT_BY_ID[id]!.value === 0), table).toBe(true)
+    }
   })
 
   it('pays face value for cash and a haircut for everything else', () => {

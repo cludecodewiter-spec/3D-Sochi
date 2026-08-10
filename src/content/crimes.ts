@@ -17,7 +17,7 @@
 
 import type { SegmentRunConfig } from './types.js'
 
-export type CrimeKey = 'pickpocket' | 'atm' | 'burgle' | 'holdup'
+export type CrimeKey = 'pickpocket' | 'atm' | 'burgle' | 'holdup' | 'casino' | 'den'
 
 const VARS = {
   noise: { init: 0, min: 0, max: 100, label: '动静' },
@@ -26,6 +26,15 @@ const VARS = {
 } as const
 
 const BLOWN = [{ var: 'noise', atLeast: 100, text: '有人在喊。整条街都朝这边看。' }]
+
+/**
+ * 赌厅是唯一一个 `take` 可以为负的地方——为了不被认出来，
+ * 你得真的坐下来输几把。这笔钱是货真价实地从口袋里出去的。
+ */
+const CASINO_VARS = {
+  ...VARS,
+  take: { init: 0, min: -2_000, max: 100_000, label: '到手' },
+} as const
 
 export const CRIME_CONFIGS: Record<CrimeKey, SegmentRunConfig> = {
   // ── 扒窃：本钱最小的活，也是唯一一件失手了还能笑着走开的 ──────────
@@ -705,6 +714,382 @@ export const CRIME_CONFIGS: Record<CrimeKey, SegmentRunConfig> = {
       },
     ],
   },
+
+  // ── 赌场后厅：钱最多的地方，也是唯一一个自己养保安的地方 ──────────
+  casino: {
+    id: 'casino',
+    title: '洗劫赌厅',
+    vars: CASINO_VARS,
+    failWhen: BLOWN,
+    segments: [
+      {
+        id: 'blend',
+        title: '混进去',
+        intro: '门口那两个人不看脸，只看你走路的样子。',
+        tell: {
+          accurate: '换班在十一点四十。那八分钟门口只有一个人。',
+          vague: '你不知道他们什么时候换班。',
+          misleading: '这种地方只认穿着，穿对了没人拦你。',
+          nerveHint: '……说这话的人，多半没被拦下来过。',
+        },
+        abortHeat: 4,
+        abortText: '你在门口点了根烟，然后往回走了。',
+        options: [
+          {
+            id: 'suit',
+            label: '穿得像个客人',
+            hint: '最稳，但你得先花钱',
+            skill: 'acting',
+            defense: 'exposure',
+            modifier: 0.12,
+            onSuccess: [{ var: 'time', amount: 3 }],
+            onFailure: [
+              { var: 'time', amount: 3 },
+              { var: 'noise', amount: 14 },
+            ],
+            successText: '他们朝你点了下头。你也点了下头。就这样。',
+            failureText: '其中一个多看了你两眼，然后拿起了对讲机。',
+          },
+          {
+            id: 'staff',
+            label: '走员工通道',
+            hint: '快，但那条道上全是人',
+            skill: 'hiding',
+            defense: 'exposure',
+            modifier: 0.02,
+            onSuccess: [{ var: 'time', amount: 1 }],
+            onFailure: [{ var: 'noise', amount: 22 }],
+            successText: '厨房、洗碗间、一段没有灯的走廊。没有一个人抬头。',
+            failureText: '一个端着托盘的人在走廊上和你迎面撞上。',
+          },
+          {
+            id: 'play',
+            label: '真的坐下来赌两把',
+            hint: '最不像贼，但要输钱和时间',
+            skill: 'acting',
+            defense: 'security',
+            modifier: 0.16,
+            onSuccess: [
+              { var: 'time', amount: 8 },
+              { var: 'take', amount: -120 },
+            ],
+            onFailure: [
+              { var: 'time', amount: 8 },
+              { var: 'take', amount: -300 },
+              { var: 'noise', amount: 8 },
+            ],
+            successText: '你输了一百二。荷官记住了你的脸，但记住的是一张客人的脸。',
+            failureText: '你输得太快也太不在乎。这在赌桌上比赢钱更显眼。',
+          },
+        ],
+      },
+      {
+        id: 'cage',
+        title: '出纳台',
+        intro: '钱在那扇门后面。门上有锁，锁后面有人，人后面有摄像头。',
+        tell: {
+          accurate: '出纳台的门是电子锁，主机在配电间，配电间没锁。',
+          vague: '你看不清那扇门是怎么开的。',
+          misleading: '这种老赌厅的后门都是机械锁，一根铁丝的事。',
+          nerveHint: '……可这地方去年才翻修过。',
+        },
+        abortHeat: 14,
+        abortText: '你在配电间站了一会儿，什么也没做，然后从后门出去了。',
+        options: [
+          {
+            id: 'wire_door',
+            label: '撬那扇门',
+            hint: '你的老本行——如果它真是机械锁',
+            skill: 'locksmithing',
+            defense: 'security',
+            modifier: 0.04,
+            onSuccess: [
+              { var: 'time', amount: 4 },
+              { var: 'noise', amount: 8 },
+            ],
+            onFailure: [{ var: 'noise', amount: 34 }],
+            successText: '弹子一个一个落位。三十年前的手感，一点都没变。',
+            failureText: '锁芯里什么都没有。你手里握着的是一块塑料面板。',
+            draws: { table: 'casino', count: 2 },
+          },
+          {
+            id: 'panel',
+            label: '从配电间断门禁',
+            hint: '干净，但你不擅长电',
+            skill: 'electronics',
+            defense: 'security',
+            modifier: -0.08,
+            onSuccess: [
+              { var: 'time', amount: 5 },
+              { var: 'take', amount: 900 },
+            ],
+            onFailure: [
+              { var: 'time', amount: 5 },
+              { var: 'noise', amount: 40 },
+            ],
+            successText: '一声轻响，走廊尽头所有的门同时松了。',
+            failureText: '你拔错了一根。整层楼的灯都灭了——包括应急灯。',
+            draws: { table: 'casino', count: 3 },
+          },
+          {
+            id: 'walk_in',
+            label: '跟着送钱的人一起进去',
+            hint: '不用开锁，但你得跟一个人说话',
+            skill: 'acting',
+            defense: 'security',
+            modifier: -0.02,
+            onSuccess: [
+              { var: 'time', amount: 3 },
+              { var: 'take', amount: 400 },
+            ],
+            onFailure: [{ var: 'noise', amount: 28 }],
+            successText: '"帮我按一下。" 他真的帮你按了。',
+            failureText: '"你哪个部门的？" 他问这句话的时候手已经在按钮上了。',
+            draws: { table: 'casino', count: 2 },
+          },
+        ],
+      },
+      {
+        id: 'out',
+        title: '带着钱出去',
+        intro: '进来的时候你是客人。现在你手上拿着一个不该拿的袋子。',
+        tell: {
+          accurate: '装货的卷帘门十二点开，那条道上没有探头。',
+          vague: '你不确定哪个出口没有人。',
+          misleading: '正门永远是最安全的——没人会想到有人敢走正门。',
+          nerveHint: '……这句话听上去很聪明，聪明得可疑。',
+        },
+        abortHeat: 30,
+        abortText: '你把袋子留在了走廊的垃圾桶旁边，空着手走了出去。',
+        options: [
+          {
+            id: 'front',
+            label: '走正门',
+            hint: '最快，也最需要你面不改色',
+            skill: 'acting',
+            defense: 'response',
+            modifier: 0.02,
+            onSuccess: [{ var: 'time', amount: 1 }],
+            onFailure: [{ var: 'noise', amount: 30 }],
+            successText: '你朝门口那两个人点了下头。他们也点了下头。',
+            failureText: '"先生——" 你听见身后有人开始跑。',
+          },
+          {
+            id: 'dock',
+            label: '走卸货口',
+            hint: '没有人，但要绕很久',
+            skill: 'hiding',
+            defense: 'response',
+            modifier: 0.14,
+            onSuccess: [{ var: 'time', amount: 6 }],
+            onFailure: [{ var: 'noise', amount: 20 }],
+            successText: '卷帘门下面那道缝刚好够一个人和一个袋子。',
+            failureText: '卷帘门是锁着的。你在那儿站了两分钟。',
+          },
+          {
+            id: 'alarm',
+            label: '拉响火警，跟人群一起走',
+            hint: '所有人都在跑，包括你',
+            skill: 'driving',
+            defense: 'response',
+            modifier: 0.1,
+            onSuccess: [{ var: 'noise', amount: 34 }],
+            onFailure: [{ var: 'noise', amount: 46 }],
+            successText: '两百个人同时往外走。没有人会去看其中一个。',
+            failureText: '警报响了，但门全部自动锁死了。你没想到这一层。',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── 帮派账房：报警的不是警察，是别人 ──────────────────────────────
+  den: {
+    id: 'den',
+    title: '挑帮派的账房',
+    vars: VARS,
+    failWhen: BLOWN,
+    segments: [
+      {
+        id: 'watchers',
+        title: '门口那两个人',
+        intro: '汽车旅馆的第七号房。灯亮着，门口的塑料椅上坐着人。',
+        tell: {
+          accurate: '两点半他们换人。中间有六分钟门口是空的。',
+          vague: '你不知道里面有几个人。',
+          misleading: '这个点他们都在楼下喝酒，楼上没人。',
+          nerveHint: '……可是七号房的灯是亮的。',
+        },
+        abortHeat: 6,
+        abortText: '你在停车场坐了半小时，然后开走了。',
+        options: [
+          {
+            id: 'wait_shift',
+            label: '等换班',
+            hint: '最稳，但你要在车里坐很久',
+            skill: 'hiding',
+            defense: 'exposure',
+            modifier: 0.14,
+            onSuccess: [{ var: 'time', amount: 9 }],
+            onFailure: [
+              { var: 'time', amount: 9 },
+              { var: 'noise', amount: 16 },
+            ],
+            successText: '两点三十一分，椅子空了。',
+            failureText: '有人绕到停车场来抽烟，绕到了你的车边上。',
+          },
+          {
+            id: 'back_stairs',
+            label: '走后面的铁楼梯',
+            hint: '没人看得见，但那楼梯会响',
+            skill: 'hiding',
+            defense: 'exposure',
+            modifier: 0.02,
+            onSuccess: [
+              { var: 'time', amount: 3 },
+              { var: 'noise', amount: 10 },
+            ],
+            onFailure: [{ var: 'noise', amount: 30 }],
+            successText: '你踩着边缘上去。铁板只响了一声。',
+            failureText: '第四级踏板整个塌下去半寸，声音在停车场里荡了一圈。',
+          },
+          {
+            id: 'be_customer',
+            label: '装成来开房的',
+            hint: '直接走到门口，代价是你被看清了',
+            skill: 'acting',
+            defense: 'exposure',
+            modifier: 0.1,
+            onSuccess: [
+              { var: 'time', amount: 2 },
+              { var: 'noise', amount: 4 },
+            ],
+            onFailure: [{ var: 'noise', amount: 26 }],
+            successText: '"十二号。" 你说了个号，他们让开了。',
+            failureText: '"十二号住着人。" 其中一个站了起来。',
+          },
+        ],
+      },
+      {
+        id: 'room',
+        title: '房间里',
+        intro: '桌上摊着钱、秤、和一本写满名字的本子。',
+        tell: {
+          accurate: '钱在床底下的帆布袋里，本子在桌上，保险柜是空的。',
+          vague: '东西可能在任何一个地方。',
+          misleading: '这种地方的钱都锁在保险柜里，别的都是幌子。',
+          nerveHint: '……幌子这个词，是你自己想出来的还是听来的？',
+        },
+        abortHeat: 20,
+        abortText: '你退了出来，把门轻轻带上。他们不会知道你来过。',
+        options: [
+          {
+            id: 'bag_only',
+            label: '只拿床底下那个袋子',
+            hint: '最快，拿了就走',
+            skill: 'hiding',
+            defense: 'response',
+            modifier: 0.12,
+            onSuccess: [{ var: 'time', amount: 2 }],
+            onFailure: [{ var: 'noise', amount: 24 }],
+            successText: '袋子比你想的沉。你没有打开它。',
+            failureText: '床架在你拽袋子的时候整个挪了一下。',
+            draws: { table: 'den', count: 2 },
+          },
+          {
+            id: 'sweep_room',
+            label: '整个房间翻一遍',
+            hint: '什么都不放过，包括那本本子',
+            skill: 'hiding',
+            defense: 'response',
+            modifier: -0.1,
+            onSuccess: [
+              { var: 'time', amount: 6 },
+              { var: 'noise', amount: 12 },
+            ],
+            onFailure: [
+              { var: 'time', amount: 6 },
+              { var: 'noise', amount: 34 },
+            ],
+            successText: '床底、抽屉、马桶水箱。这一行的人藏东西的地方都一样。',
+            failureText: '你在拉第三个抽屉的时候，隔壁房间的电视关了。',
+            draws: { table: 'den', count: 4 },
+          },
+          {
+            id: 'crack_safe',
+            label: '开那个保险柜',
+            hint: '要么最多，要么白费八分钟',
+            skill: 'locksmithing',
+            defense: 'security',
+            modifier: -0.06,
+            onSuccess: [
+              { var: 'time', amount: 8 },
+              { var: 'noise', amount: 10 },
+              { var: 'take', amount: 600 },
+            ],
+            onFailure: [
+              { var: 'time', amount: 8 },
+              { var: 'noise', amount: 30 },
+            ],
+            successText: '八分钟。你听着那声轻响，忽然想起自己今年四十七。',
+            failureText: '柜门开了。里面是一双鞋。',
+            draws: { table: 'den', count: 3 },
+          },
+        ],
+      },
+      {
+        id: 'gone',
+        title: '走人',
+        intro: '你手上拿着他们的钱和他们的名字。从这一刻起，找你的不只是警察。',
+        tell: {
+          accurate: '停车场后面有条小路通到河滨路，那儿没有灯。',
+          vague: '你不确定这个点路上有没有车。',
+          misleading: '往北环走，他们的人都在南边。',
+          nerveHint: '……你怎么知道他们的人在哪儿？',
+        },
+        abortHeat: 40,
+        abortText: '你把袋子扔在停车场，空着手跑了。他们会知道有人来过。',
+        options: [
+          {
+            id: 'slow',
+            label: '按限速开走',
+            hint: '不引人注意',
+            skill: 'acting',
+            defense: 'response',
+            modifier: 0.04,
+            onSuccess: [{ var: 'time', amount: 2 }],
+            onFailure: [{ var: 'noise', amount: 18 }],
+            successText: '你在路口等了红灯。手在方向盘上，稳得不像刚才那个人。',
+            failureText: '后视镜里有一辆车跟着你出了停车场。',
+          },
+          {
+            id: 'river_road',
+            label: '走后面那条没灯的路',
+            hint: '没人看得见，但也没人能看见他们',
+            skill: 'driving',
+            defense: 'response',
+            modifier: 0.08,
+            onSuccess: [{ var: 'time', amount: 4 }],
+            onFailure: [{ var: 'noise', amount: 26 }],
+            successText: '两公里没有一盏灯。你把车灯也关了。',
+            failureText: '路的尽头停着一辆车，车头朝着你。',
+          },
+          {
+            id: 'dump_it',
+            label: '把车丢了，走着回去',
+            hint: '最保险，但你少一辆车',
+            skill: 'hiding',
+            defense: 'response',
+            modifier: 0.18,
+            onSuccess: [{ var: 'time', amount: 8 }],
+            onFailure: [{ var: 'noise', amount: 22 }],
+            successText: '你走了五公里。天亮之前到的家。',
+            failureText: '你下车的时候，对面楼上有一扇窗是亮的。',
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const crimeConfig = (key: CrimeKey): SegmentRunConfig => CRIME_CONFIGS[key]
@@ -714,14 +1099,31 @@ export const CRIME_LABELS: Record<CrimeKey, string> = {
   atm: '撬取款机',
   burgle: '入室行窃',
   holdup: '持械抢劫',
+  casino: '洗劫赌厅',
+  den: '挑帮派的账房',
 }
 
-/** §3.3 — 持械抢劫会让人记住你的脸，那一段进底案，贿赂消不掉。 */
+/** 记住你的人是谁。这句话不能写死成「店员」——挑帮派的账房，记住你的是别人。 */
+export const FACE_LINE: Record<CrimeKey, string> = {
+  pickpocket: '',
+  atm: '',
+  burgle: '',
+  holdup: '店员会记得你的样子。那份记忆不会随时间变淡。',
+  casino: '赌厅的录像今晚就会送到警局。那盘带子不会被洗掉。',
+  den: '那本本子上的人从此认得你。找你的不再只是警察。',
+}
+
+/** §3.3 — 有人记住了你的脸，那一段进底案，贿赂消不掉。 */
 export const LEAVES_A_FACE: Record<CrimeKey, number> = {
   pickpocket: 0,
   atm: 0,
   burgle: 0,
   holdup: 10,
+  // 赌厅有自己的录像，而且他们会主动把带子交给警察。
+  casino: 14,
+  // 帮派不报警。这一段进底案的原因不是警察记住了你——
+  // 是那本本子上的人从此认得你。
+  den: 20,
 }
 
 /** 行动点消耗。扒窃最便宜，入室最贵。 */
@@ -730,4 +1132,6 @@ export const CRIME_AP: Record<CrimeKey, number> = {
   atm: 2,
   burgle: 2,
   holdup: 2,
+  casino: 3,
+  den: 3,
 }

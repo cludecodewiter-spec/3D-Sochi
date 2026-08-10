@@ -35,7 +35,8 @@ const SOUND: Record<string, Parameters<typeof play>[0]> = {
 
 export function renderHeistPanel(ui: Ui): HTMLElement {
   const { state } = ui.game
-  const run = state.activeRun
+  // 收场之后 activeRun 就没了，但这一页还要接着显示它的段名和标题。
+  const run = state.activeRun ?? (ui.runRef as { configId: string; contextId: string } | null)
   const done = !run || ui.heistEnded
   // 有人正看着你的时候，这一段的选项不该还摆在那儿。
   const interrupted = state.incident !== null && !ui.heistEnded
@@ -60,7 +61,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
       : locationDef(run.contextId).name
 
   const stage = h('div', { class: 'stagebar' })
-  const index = done ? config.segments.length : (run?.segmentIndex ?? 0)
+  const index = done ? config.segments.length : (state.activeRun?.segmentIndex ?? 0)
   config.segments.forEach((segment, i) => {
     stage.appendChild(
       h('span', { class: i < index ? 'done' : i === index ? 'active' : '' }, segment.title),
@@ -144,6 +145,7 @@ export function renderHeistPanel(ui: Ui): HTMLElement {
             onclick: () => {
               ui.beats = []
               ui.heistEnded = false
+              ui.runRef = null
               ui.mode = 'map'
               ui.render()
             },

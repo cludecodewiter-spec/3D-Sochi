@@ -84,6 +84,32 @@ export const LOCATIONS: LocationDef[] = [
     cooldown: 4,
   },
   {
+    id: 'casino_river',
+    name: '河滨赛马场 · 后厅',
+    location: '河滨路 · 看台底下那扇没有招牌的门',
+    venue: 'casino',
+    photo: 'places/racetrack',
+    flavor:
+      '白天卖马票，晚上后厅开桌。这里的钱不进银行——每天凌晨有人开车拉走。',
+    defense: { exposure: 62, security: 70, response: 66 },
+    crimes: ['casino', 'pickpocket'],
+    unlockTurn: 12,
+    cooldown: 12,
+  },
+  {
+    id: 'den_north',
+    name: '北环汽车旅馆 · 七号房',
+    location: '北环 · 停车场只停三辆车的那家',
+    venue: 'den',
+    photo: 'places/motel',
+    flavor:
+      '科尔曼家收数的地方。门口永远坐着两个人，他们不看电视，也不说话。',
+    defense: { exposure: 58, security: 52, response: 80 },
+    crimes: ['den'],
+    unlockTurn: 14,
+    cooldown: 15,
+  },
+  {
     id: 'bank_midtown',
     name: '中城银行',
     location: '中城 · 十字路口那栋石头房子',
@@ -120,6 +146,8 @@ const POOL_BY_VENUE: Partial<Record<VenueKey, string>> = {
   gas: 'counter',
   lot: 'lot',
   deck: 'lot',
+  casino: 'casino',
+  den: 'den',
 }
 
 export const witnessPool = (id: string): string =>

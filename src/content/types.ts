@@ -29,6 +29,8 @@ export type VenueKey =
   | 'diner'
   | 'shop'
   | 'cafe'
+  | 'casino'
+  | 'den'
 
 /** §2.4 地图角标：照片说明是哪一个，角标说明是哪一类。 */
 export const VENUE_BADGE: Record<VenueKey, string> = {
@@ -46,6 +48,9 @@ export const VENUE_BADGE: Record<VenueKey, string> = {
   diner: 'fork',
   shop: 'wrench',
   cafe: 'fork',
+  casino: 'glass',
+  // §2.4 敌对帮派用红色角标，图形是拳头
+  den: 'fist',
 }
 
 /** 场所照片。素材有限，几处复用是有意的。 */
@@ -64,6 +69,8 @@ export const VENUE_PHOTO: Record<VenueKey, string> = {
   diner: 'places/diner',
   shop: 'places/junkyard',
   cafe: 'places/diner',
+  casino: 'places/racetrack',
+  den: 'places/motel',
 }
 
 export const VENUE_LABELS: Record<VenueKey, string> = {
@@ -81,6 +88,8 @@ export const VENUE_LABELS: Record<VenueKey, string> = {
   diner: '快餐店',
   shop: '修车铺',
   cafe: '咖啡馆',
+  casino: '赌厅',
+  den: '帮派据点',
 }
 
 export interface VehicleDef {

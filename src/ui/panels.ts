@@ -8,6 +8,7 @@
  */
 
 import type { GameEvent } from '../engine/events.js'
+import type { SegmentRunState } from '../engine/state.js'
 import { getInformant } from '../engine/state.js'
 import { ERA_LABELS, SKILL_LABELS } from '../engine/types.js'
 import type { SkillKey } from '../engine/types.js'
@@ -239,9 +240,10 @@ export function contextPanel(ui: Ui): HTMLElement {
         body.appendChild(scoutRow)
       }
 
-      const enter = (begin: () => void): void =>
+      const enter = (begin: () => SegmentRunState): void =>
         ui.act(() => {
-          begin()
+          const run = begin()
+          ui.runRef = { configId: run.configId, contextId: run.contextId }
           play('heart')
           ui.beats = []
           ui.heistEnded = false
@@ -434,7 +436,8 @@ function placePanel(ui: Ui, id: string): HTMLElement {
           disabled: state.ap < CRIME_AP[crime],
           onclick: () =>
             ui.act(() => {
-              startCrime(ui.game, id, crime)
+              const run = startCrime(ui.game, id, crime)
+              ui.runRef = { configId: run.configId, contextId: run.contextId }
               play('heart')
               ui.beats = []
               ui.heistEnded = false

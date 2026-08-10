@@ -13,7 +13,7 @@ import type { Rng } from '../engine/rng.js'
 import type { SkillKey } from '../engine/types.js'
 import type { DefenseKey } from '../content/types.js'
 import type { CrimeKey } from '../content/crimes.js'
-import { CRIME_AP, CRIME_LABELS, LEAVES_A_FACE, crimeConfig } from '../content/crimes.js'
+import { CRIME_AP, CRIME_LABELS, FACE_LINE, LEAVES_A_FACE, crimeConfig } from '../content/crimes.js'
 import { locationDef, witnessPool } from '../content/locations.js'
 import { HEAT, RUN_PENALTY } from '../content/balance.js'
 import { probability, resolve } from './checks.js'
@@ -185,7 +185,13 @@ export function finishCrime(
       payload: { crime, take, locationId: run.contextId },
       causedBy: run.startedEventId,
     })
-    lines.push(take > 0 ? `到手 $${take}。` : '钱柜里什么都没有。')
+    lines.push(
+      take > 0
+        ? `到手 $${take}。`
+        : take < 0
+          ? `你在桌上留下了 $${-take}。那是入场费。`
+          : '现钞一分都没有。',
+    )
     lines.push(...stashLoot(state, log, run, event.id))
   } else {
     event = log.append({
@@ -209,12 +215,13 @@ export function finishCrime(
   // §3.3 — 有人看清了你的脸，那一段进底案，贿赂消不掉。
   const face = LEAVES_A_FACE[crime]
   if (face > 0) {
-    addHeat(state, log, face, `${CRIME_LABELS[crime]}——有人看清了你`, {
+    addHeat(state, log, face, `${CRIME_LABELS[crime]}——有人记住了你`, {
       causedBy: event.id,
       actors: [run.contextId],
       permanent: true,
     })
-    lines.push('店员会记得你的样子。那份记忆不会随时间变淡。')
+    const said = FACE_LINE[crime]
+    if (said) lines.push(said)
   }
 
   const noise = run.vars['noise'] ?? 0

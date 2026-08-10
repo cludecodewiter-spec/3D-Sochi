@@ -73,6 +73,11 @@ export class Ui {
   tab: Tab = 'map'
   beats: HeistBeat[] = []
   heistEnded = false
+  /**
+   * 这一趟是什么、对着谁。行动结束之后 `state.activeRun` 就没了，
+   * 但收场页还要接着显示段名和标题——那些信息只能从这里来。
+   */
+  runRef: { configId: string; contextId: string } | null = null
   readonly rotation = new docs.FormRotation()
 
   #root: HTMLElement

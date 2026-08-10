@@ -17,10 +17,11 @@ import {
   startCrime,
 } from '../src/systems/game.js'
 import { isReady, placeOf } from '../src/systems/crime.js'
+import { WITNESSES } from '../src/content/incidents.js'
 import { heatOf } from '../src/systems/heat.js'
-import { CRIME_CONFIGS, CRIME_AP, LEAVES_A_FACE } from '../src/content/crimes.js'
+import { CRIME_CONFIGS, CRIME_AP, FACE_LINE, LEAVES_A_FACE } from '../src/content/crimes.js'
 import type { CrimeKey } from '../src/content/crimes.js'
-import { LOCATIONS, locationDef } from '../src/content/locations.js'
+import { LOCATIONS, locationDef, witnessPool } from '../src/content/locations.js'
 import { DISTRICTS, districtOf } from '../src/ui/art/map.js'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
@@ -181,6 +182,51 @@ describe('armed robbery is the one that costs you a face (§3.3)', () => {
 
     expect(session.state.wanted.base).toBe(0)
     expect(heatOf(session.state)).toBeGreaterThanOrEqual(0)
+  })
+})
+
+describe('the two places that are not the state\'s problem', () => {
+  it('赌厅与帮派据点都在地图上，并且各有自己的活', () => {
+    const casino = locationDef('casino_river')
+    const den = locationDef('den_north')
+    expect(casino.crimes).toContain('casino')
+    expect(den.crimes).toContain('den')
+    // 两处都会让人记住你的脸，而帮派记得更牢。
+    expect(LEAVES_A_FACE.den).toBeGreaterThan(LEAVES_A_FACE.casino)
+    expect(LEAVES_A_FACE.casino).toBeGreaterThan(LEAVES_A_FACE.holdup)
+  })
+
+  it('撞见你的是这个地方的人，不是路过的行人', () => {
+    expect(witnessPool('den_north')).toBe('den')
+    expect(witnessPool('casino_river')).toBe('casino')
+    expect(WITNESSES['den']?.length).toBeGreaterThan(0)
+    expect(WITNESSES['casino']?.length).toBeGreaterThan(0)
+  })
+
+  it('赌厅是唯一一个会先花你钱的活', () => {
+    const session = ready(5)
+    session.state.turn = 30
+    session.state.ap = 3
+    session.state.cash = 5_000
+    startCrime(session, 'casino_river', 'casino')
+    // 坐下来赌两把——为了不被认出来，这笔钱真的从口袋里出去。
+    const view = currentCrime(session)
+    expect(view.options.map((o) => o.id)).toContain('play')
+    const config = CRIME_CONFIGS.casino
+    expect(config.vars['take']!.min).toBeLessThan(0)
+  })
+
+  it('记住你的人是谁，说法要对得上地方', () => {
+    // 挑帮派的账房，记住你的不是店员。
+    for (const crime of Object.keys(LEAVES_A_FACE) as CrimeKey[]) {
+      expect(FACE_LINE[crime].length > 0).toBe(LEAVES_A_FACE[crime] > 0)
+    }
+    expect(FACE_LINE.den).not.toContain('店员')
+  })
+
+  it('这两处都比别的活贵一个行动点', () => {
+    expect(CRIME_AP.casino).toBeGreaterThan(CRIME_AP.burgle)
+    expect(CRIME_AP.den).toBeGreaterThan(CRIME_AP.burgle)
   })
 })
 

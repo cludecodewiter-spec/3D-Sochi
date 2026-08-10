@@ -57,6 +57,9 @@ export const WITNESSES: Record<string, string[]> = {
   house: ['楼上没睡的老太太', '回来拿东西的房主', '隔壁探头出来的邻居'],
   counter: ['柜台后面那个店员', '正在加油的司机'],
   lot: ['停车场的收费员', '一个等人的出租车司机'],
+  casino: ['出纳台后面的女人', '走廊尽头那个保安', '一个不该在这层的荷官'],
+  // 帮派据点撞见你的从来不是路人。这也是这一处最贵的原因。
+  den: ['门口那两个人里的一个', '从七号房出来的那个矮个子', '停车场里刚下车的人'],
 }
 
 export const INCIDENTS: Record<IncidentKind, IncidentDef> = {
