@@ -88,4 +88,5 @@ jobs:
       - name: commit data
         if: always()
         continue-on-error: true
-        run: bash tools/commit-data.sh "data: import scanned FE past exams as cropped images"
+        run: |
+          bash tools/commit-data.sh "data: import scanned FE past exams as cropped images"

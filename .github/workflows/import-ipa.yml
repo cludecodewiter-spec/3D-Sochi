@@ -84,4 +84,5 @@ jobs:
       - name: commit data
         if: always()
         continue-on-error: true
-        run: bash tools/commit-data.sh "data: import IPA past exam questions"
+        run: |
+          bash tools/commit-data.sh "data: import IPA past exam questions"
