@@ -111,6 +111,10 @@ export interface ExamResult {
   elapsedSec: number;
   questionIds: string[];
   answers: Record<string, ChoiceKey | undefined>;
+  /** 不正解・未解答だった問題 ID（復習モードの元データ） */
+  wrongIds: string[];
+  /** 分野別の正解数 / 出題数 */
+  byCategory: Record<string, { correct: number; total: number }>;
   correctCount: number;
   total: number;
 }

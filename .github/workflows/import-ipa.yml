@@ -44,6 +44,9 @@ jobs:
       - name: probe — 代表 PDF の構造をダンプ（解析器の設計用）
         run: npm run probe
 
+      - name: scan-text — 全 PDF のテキスト有無を判定（text経路 / image経路の確定）
+        run: node tools/scan-text.mjs
+
       - name: upload discovery output
         if: always()
         uses: actions/upload-artifact@v4
