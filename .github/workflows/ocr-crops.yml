@@ -1,0 +1,114 @@
+name: ocr-crops
+
+# 画像経路の問題に OCR テキストを付け、名寄せ（重複統合）を動かすためのワークフロー。
+#
+# OCR 結果は名寄せ・検索・解説作成にだけ使い、出題時には表示しない。
+# 切り出し画像 1 枚あたり 1〜2 秒なので、6 並列で 4,800 枚を 20〜30 分で処理できる。
+on:
+  push:
+    branches: [claude/jpfetest-exam-simulator-wp0b38]
+    paths:
+      - 'tools/ocr-crops.mjs'
+      - 'tools/lib/ocr.mjs'
+      - '.github/workflows/ocr-crops.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ocr-crops
+  cancel-in-progress: false
+
+jobs:
+  ocr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        index: [0, 1, 2, 3, 4, 5]
+    env:
+      SHARD_INDEX: ${{ matrix.index }}
+      SHARD_TOTAL: '6'
+      TIME_BUDGET_SEC: '12000'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: install tesseract 日本語
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-jpn
+
+      - name: install
+        run: npm ci
+
+      - name: test
+        run: npm test
+
+      - name: ocr-crops — 切り出し画像から OCR テキストを付ける
+        run: |
+          mkdir -p data/probe
+          set -o pipefail
+          node tools/ocr-crops.mjs 2>&1 | tee data/probe/ocr-crops-log-${{ matrix.index }}.txt
+
+      - name: upload shard output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocr-shard-${{ matrix.index }}
+          path: |
+            data/questions/*.json
+            data/probe/ocr-crops-log-${{ matrix.index }}.txt
+          if-no-files-found: warn
+          retention-days: 3
+
+  consolidate:
+    needs: ocr
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: collect shard outputs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: ocr-shard-*
+          merge-multiple: true
+          path: collected
+
+      - name: merge into data/
+        run: |
+          # 各シャードは担当した回のファイルだけを書き換えている。
+          # 派生ファイル（index / dedup）はこのあと作り直すので上書きしない。
+          find collected -name '*.json' -path '*questions*' \
+            ! -name 'index.json' ! -name 'dedup.json' ! -name 'manifest.json' \
+            -exec cp {} data/questions/ \;
+          find collected -name 'ocr-crops-log-*.txt' -exec cp {} data/probe/ \; || true
+          echo "OCR テキストを持つ問題: $(grep -l '"ocrText"' data/questions/*.json | wc -l) ファイル"
+
+      - name: dedup / validate / report
+        run: |
+          node tools/dedup.mjs
+          node tools/validate.mjs
+          node tools/report.mjs > /dev/null
+
+      - name: commit data
+        if: always()
+        continue-on-error: true
+        run: |
+          bash tools/commit-data.sh "data: add OCR text to scanned questions and merge duplicates"

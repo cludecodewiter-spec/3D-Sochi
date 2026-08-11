@@ -145,6 +145,17 @@ async function main() {
     });
   }
 
+  // 比較ロジックが壊れると「全部同じ問題」と判定して題庫を半分に削りかねない。
+  // そうなったら書き出さずに失敗させる。
+  const mergeRatio = all.length ? duplicates / all.length : 0;
+  if (mergeRatio > 0.6) {
+    console.error(
+      `統合しすぎです: ${duplicates}/${all.length} 問 (${Math.round(mergeRatio * 100)}%)。` +
+        '比較ロジックを確認してください。dedup.json は更新しません。',
+    );
+    process.exit(1);
+  }
+
   await writeFile(`${DIR}/dedup.json`, JSON.stringify(dedup, null, 1));
   console.log(`完全一致＋類似で ${dedup.groups.length} グループ、重複 ${duplicates} 問`);
   console.log(`類似判定による統合: ${fuzzyPairs} 組（閾値 ${FUZZY_THRESHOLD}）`);
