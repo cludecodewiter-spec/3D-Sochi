@@ -191,7 +191,7 @@ async function main() {
       const meta = await sharp(png).metadata();
       const words = await ocrPage(png);
       const anchors = findAnchorsOnPage(words, meta.width ?? 1);
-      pageAnchors.push({ png, page: pageNoOf(png), height: meta.height ?? 0, width: meta.width ?? 0, anchors });
+      pageAnchors.push({ png, page: pageNoOf(png), height: meta.height ?? 0, width: meta.width ?? 0, anchors, words });
     }
     const flat = pageAnchors.flatMap((p) => p.anchors.map((x) => ({ ...x, page: p.page, pageInfo: p })));
     const sanity = anchorsAreSane(flat, expectedCount);
@@ -241,6 +241,20 @@ async function main() {
         pieces.push(`figures/${examKey}/${file}`);
       }
 
+      // 重複判定・検索のために OCR テキストも残す。
+      // 誤読を含むので出題時には表示しない（表示するのは切り出した原本画像だけ）。
+      const ocrParts = [];
+      for (let p = startPage; p <= endPage; p++) {
+        const info = pageAnchors.find((x) => x.page === p);
+        if (!info) continue;
+        const top = p === startPage ? cur.y - 2 : 0;
+        const bottom = next && p === endPage ? next.y - 2 : info.height;
+        for (const w of info.words) {
+          if (w.y >= top && w.y < bottom && w.conf >= 40) ocrParts.push(w.text);
+        }
+      }
+      const ocrText = ocrParts.join('').replace(/\s+/g, ' ').trim();
+
       const key = answers.get(cur.no);
       if (!key || pieces.length === 0) {
         quarantined.push({ pdf: q.url, no: cur.no, reason: !key ? 'no answer' : 'empty crop' });
@@ -260,6 +274,7 @@ async function main() {
         no: cur.no,
         format: 'image',
         images: pieces,
+        ...(ocrText.length > 20 ? { ocrText } : {}),
         ...(key.field && FIELD_LABEL[key.field] ? { category: FIELD_LABEL[key.field] } : {}),
         answer: key.answer,
         source: {
