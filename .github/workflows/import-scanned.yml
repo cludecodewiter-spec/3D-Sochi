@@ -24,8 +24,9 @@ jobs:
     timeout-minutes: 180
     env:
       # 段階的に増やす。まずは少数で OCR のアンカー検出精度を確かめる
-      MAX_EXAMS: ${{ vars.MAX_EXAMS || '2' }}
+      MAX_EXAMS: ${{ vars.MAX_EXAMS || '1' }}
       RENDER_DPI: '300'
+      DEBUG_OCR: '1'
     steps:
       - uses: actions/checkout@v4
 
@@ -81,6 +82,7 @@ jobs:
           name: scanned-output
           path: |
             data/probe/image-route-report.json
+            data/probe/ocr-words-sample.json
             data/quarantine/**
             data/questions/**
           if-no-files-found: warn

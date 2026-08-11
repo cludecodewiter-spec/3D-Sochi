@@ -39,6 +39,8 @@ const LEFT_STRIP_RATIO = Number(process.env.LEFT_STRIP_RATIO ?? 0.3);
 /** 取り込む回数の上限（0 = 制限なし）。段階的に増やすための安全弁 */
 const MAX_EXAMS = Number(process.env.MAX_EXAMS ?? 0);
 const ONLY = process.env.ONLY ?? '';
+/** OCR の生出力を data/probe に残す（検出不良の原因調査用） */
+const DEBUG_OCR = process.env.DEBUG_OCR === '1';
 
 /** ページを PNG に描画する（poppler-utils はランナーに入っている） */
 async function renderPages(pdfPath, outPrefix) {
@@ -118,6 +120,7 @@ async function main() {
   const shards = [];
   const quarantined = [];
   const report = [];
+  const ocrSamples = [];
 
   for (const [i, q] of targets.entries()) {
     const qName = q.url.split('/').pop();
@@ -167,6 +170,19 @@ async function main() {
       await sharp(png).extract({ left: 0, top: 0, width: stripWidth, height }).normalize().toFile(stripPath);
       const stripWords = await ocrImage(stripPath);
       const anchors = anchorsFromWords(stripWords, stripWidth);
+
+      // 検出できない原因を推測で潰さないよう、最初の数ページの生の OCR 出力を残す
+      if (DEBUG_OCR && ocrSamples.length < 3) {
+        ocrSamples.push({
+          pdf: qName,
+          page: pageNoOf(png),
+          pageWidth: width,
+          stripWidth,
+          wordCount: stripWords.length,
+          words: stripWords.slice(0, 40),
+          anchors,
+        });
+      }
 
       pageAnchors.push({ png, page: pageNoOf(png), height, width, anchors, words: [] });
     }
@@ -279,6 +295,10 @@ async function main() {
   }
 
   await writeFile(`${QUARANTINE_DIR}/image-route.json`, JSON.stringify(quarantined, null, 1));
+  if (DEBUG_OCR) {
+    await writeFile('data/probe/ocr-words-sample.json', JSON.stringify(ocrSamples, null, 1));
+    console.log(`OCR の生出力を data/probe/ocr-words-sample.json に保存（${ocrSamples.length} ページぶん）`);
+  }
   await writeFile('data/probe/image-route-report.json', JSON.stringify(report, null, 1));
 
   // index.json を既存分とマージして更新
