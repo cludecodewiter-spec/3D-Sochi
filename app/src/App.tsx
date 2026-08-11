@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { EXAM_MODES, type ExamMode, type ExamResult, type Question } from './types';
-import { loadIndex, loadQuestions, saveResult, reviewQuestionIds } from './data/store';
+import { loadTotalQuestions, loadQuestions, saveResult, reviewQuestionIds } from './data/store';
 import { ExamScreen } from './features/exam/ExamScreen';
 import { ResultScreen } from './features/result/ResultScreen';
 
@@ -16,8 +16,8 @@ export function App() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    loadIndex()
-      .then((idx) => setTotal(idx.totalQuestions))
+    loadTotalQuestions()
+      .then(setTotal)
       .catch(() => setTotal(0));
   }, []);
 

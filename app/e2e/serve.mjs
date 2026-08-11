@@ -20,24 +20,16 @@ const TYPES = {
   '.png': 'image/png',
 };
 
-const INDEX = {
-  generatedAt: new Date().toISOString(),
-  totalQuestions: 3,
-  shards: [{ file: 'fixture.json', pool: 'fe-koukai', examKey: 'fixture', label: 'テスト用ダミー', count: 3 }],
-};
+// アプリは名寄せ済みの bank.json 1 本だけを読む
 
 const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? '/', 'http://localhost');
   let path = decodeURIComponent(url.pathname);
 
-  if (path === '/data/questions/index.json') {
+  if (path === '/data/questions/bank.json') {
+    const questions = JSON.parse(await readFile(join(fixtures, 'questions.json'), 'utf8'));
     res.writeHead(200, { 'content-type': 'application/json' });
-    res.end(JSON.stringify(INDEX));
-    return;
-  }
-  if (path === '/data/questions/fixture.json') {
-    res.writeHead(200, { 'content-type': 'application/json' });
-    res.end(await readFile(join(fixtures, 'questions.json')));
+    res.end(JSON.stringify({ generatedAt: '', total: questions.length, questions }));
     return;
   }
   if (path === '/data/explanations/index.json') {

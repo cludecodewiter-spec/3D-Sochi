@@ -1,80 +1,46 @@
-import type { ExamResult, Explanation, ExplanationIndex, Question, QuestionIndex } from '../types';
+import type { ExamResult, Explanation, ExplanationIndex, Question } from '../types';
 
 const BASE = import.meta.env.BASE_URL;
 
-let indexCache: QuestionIndex | null = null;
-const shardCache = new Map<string, Question[]>();
-
-export async function loadIndex(): Promise<QuestionIndex> {
-  if (indexCache) return indexCache;
-  const res = await fetch(`${BASE}data/questions/index.json`);
-  if (!res.ok) {
-    // 取り込み前は空の題庫として扱う（勝手に問題を作らない）
-    indexCache = { generatedAt: '', totalQuestions: 0, shards: [] };
-    return indexCache;
-  }
-  indexCache = (await res.json()) as QuestionIndex;
-  return indexCache;
-}
-
-export async function loadShard(file: string): Promise<Question[]> {
-  const cached = shardCache.get(file);
-  if (cached) return cached;
-  const res = await fetch(`${BASE}data/questions/${file}`);
-  if (!res.ok) throw new Error(`問題ファイルを読み込めません: ${file}`);
-  const data = (await res.json()) as Question[];
-  shardCache.set(file, data);
-  return data;
-}
-
-interface DedupData {
-  groups: {
-    canonical: string;
-    frequency: number;
-    duplicates: { id: string; label: string; questionPdf: string; page: number }[];
-  }[];
-}
-
-let dedupCache: DedupData | null = null;
-
-async function loadDedup(): Promise<DedupData> {
-  if (dedupCache) return dedupCache;
-  const res = await fetch(`${BASE}data/questions/dedup.json`);
-  dedupCache = res.ok ? ((await res.json()) as DedupData) : { groups: [] };
-  return dedupCache;
-}
-
 /**
- * 指定プール・科目の問題をすべて集める。
- * 修了試験には本試験と同じ問題が多数含まれるので、名寄せ結果を使って
- * 重複を落とし、代表問題に「過去に何回出題されたか」を持たせる。
+ * 題庫は名寄せ済みの一意な問題だけをまとめた bank.json 1 本から読む。
+ *
+ * 回ごとのシャードは出典を追いやすく、取り込み側ではそちらが正しい形だが、
+ * 出題のたびに 100 本近いファイルを順に取りに行くと開始が遅い。
+ * bank.json は gzip で 130KB 程度なので、1 回の取得で済む。
+ * （bank.json は配信用に app/scripts/copy-data.mjs が組み立てる）
  */
+interface Bank {
+  generatedAt: string;
+  total: number;
+  questions: Question[];
+}
+
+let bankPromise: Promise<Bank> | null = null;
+
+export function loadBank(): Promise<Bank> {
+  // 同時に呼ばれても取得は 1 回で済ませる
+  if (!bankPromise) {
+    bankPromise = fetch(`${BASE}data/questions/bank.json`)
+      .then((res) => {
+        // 取り込み前は空の題庫として扱う（勝手に問題を作らない）
+        if (!res.ok) return { generatedAt: '', total: 0, questions: [] } as Bank;
+        return res.json() as Promise<Bank>;
+      })
+      .catch(() => ({ generatedAt: '', total: 0, questions: [] }) as Bank);
+  }
+  return bankPromise;
+}
+
+/** ホーム画面に出す収録数（名寄せ後の一意な問題数） */
+export async function loadTotalQuestions(): Promise<number> {
+  return (await loadBank()).total;
+}
+
+/** 指定プール・科目の問題を集める */
 export async function loadQuestions(pools: string[], subject: string): Promise<Question[]> {
-  const index = await loadIndex();
-  const shards = index.shards.filter((s) => pools.includes(s.pool));
-  const all: Question[] = [];
-  for (const shard of shards) {
-    const qs = await loadShard(shard.file);
-    all.push(...qs.filter((q) => q.exam.subject === subject));
-  }
-
-  const dedup = await loadDedup();
-  const duplicateIds = new Set<string>();
-  const extra = new Map<string, { frequency: number; appearances: Question['appearances'] }>();
-  for (const g of dedup.groups) {
-    for (const d of g.duplicates) duplicateIds.add(d.id);
-    extra.set(g.canonical, {
-      frequency: g.frequency,
-      appearances: g.duplicates.map((d) => ({ label: d.label, questionPdf: d.questionPdf, page: d.page })),
-    });
-  }
-
-  return all
-    .filter((q) => !duplicateIds.has(q.id))
-    .map((q) => {
-      const e = extra.get(q.id);
-      return e ? { ...q, frequency: e.frequency, appearances: e.appearances } : q;
-    });
+  const bank = await loadBank();
+  return bank.questions.filter((q) => pools.includes(q.pool) && q.exam.subject === subject);
 }
 
 // ------------------------------------------------------------ 履歴（端末内のみ）
