@@ -8,7 +8,7 @@
  *  - 正解は必ず公式「解答例」PDF 由来。推測しない。
  *  - 検証に通らなかった問題は data/quarantine/ に隔離し、本題庫には入れない。
  */
-import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
 import { findAnchors, splitQuestion, parseAnswers, questionDefects, FIELD_LABEL } from './lib/segment.mjs';
@@ -114,6 +114,9 @@ async function main() {
     console.log(`  問アンカー: ${anchors.length} 件 (${anchors.map((x) => x.no).join(',').slice(0, 60)}…)`);
 
     const examKey = examKeyOf(q);
+    // 前回の生成物を先に消す。隔離すべき回の古い JSON が残ると、
+    // 検証ゲートをすり抜けて出題されてしまう
+    await rm(`${OUT_DIR}/${examKey}.json`, { force: true });
     const questions = [];
     const rejects = [];
 

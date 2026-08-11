@@ -136,7 +136,11 @@ async function main() {
   if (ONLY) targets = targets.filter((s) => s.url.includes(ONLY));
   if (MAX_EXAMS) targets = targets.slice(0, MAX_EXAMS);
 
-  console.log(`画像経路の対象: ${targets.length} 回 (全 ${questionsSrc.length} 回中)`);
+  console.log(`画像経路の対象: ${targets.length} 回 (画像経路の科目A問題 PDF は全 ${questionsSrc.length} 本)`);
+  for (const t of targets) console.log(`  - ${t.url.split('/').pop()} (${t.pool}, ${t.legacySection ?? '-'})`);
+  if (targets.length === 0) {
+    console.log('対象が 0 件です。text-scan.json の route 判定を確認してください。');
+  }
 
   await mkdir(OUT_DIR, { recursive: true });
   await mkdir(QUARANTINE_DIR, { recursive: true });
@@ -177,6 +181,7 @@ async function main() {
     const workDir = `${WORK}/${examKey}`;
     await rm(workDir, { recursive: true, force: true });
     await mkdir(workDir, { recursive: true });
+    await rm(`${OUT_DIR}/${examKey}.json`, { force: true });
     const pngs = await renderPages(`data/pdf-cache/${qName}`, `${workDir}/p`);
     console.log(`  描画: ${pngs.length} ページ @${DPI}dpi`);
 
@@ -191,6 +196,10 @@ async function main() {
     const flat = pageAnchors.flatMap((p) => p.anchors.map((x) => ({ ...x, page: p.page, pageInfo: p })));
     const sanity = anchorsAreSane(flat, expectedCount);
     console.log(`  OCR アンカー: ${flat.length} 件 → ${sanity.ok ? 'OK' : '不採用: ' + sanity.why}`);
+    console.log(`    検出した問番号: ${flat.map((x) => x.no).join(',').slice(0, 300)}`);
+    const missing = [];
+    for (let n = 1; n <= expectedCount; n++) if (!flat.some((x) => x.no === n)) missing.push(n);
+    if (missing.length) console.log(`    見つからなかった問番号: ${missing.join(',').slice(0, 200)}`);
     report.push({ exam: examKey, pages: pngs.length, anchors: flat.length, expected: expectedCount, ok: sanity.ok, why: sanity.why });
 
     if (!sanity.ok) {
