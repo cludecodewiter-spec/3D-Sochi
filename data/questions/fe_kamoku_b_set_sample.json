@@ -1,0 +1,292 @@
+[
+ {
+  "id": "fe-kamoku-b-set-sample-q02",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "次のプログラム中の a ～ cに入れる正しい答えの組合せを，解答群の中から選べ。関数 fizzBuzz は，引数で与えられた値が，3 で割り切れて 5 で割り切れない場合は“3 で割り切れる”を，5 で割り切れて 3 で割り切れない場合は“5 で割り切れる”を，3 と 5 で割り切れる場合は“3 と 5 で割り切れる”を返す。それ以外の場合は“3 でも 5 でも割り切れない”を返す。〔プログラム〕○文字列型: fizzBuzz(整数型: num)文字列型: result if (num が aで割り切れる)result ← \" aで割り切れる\"elseif (num が bで割り切れる)result ← \" bで割り切れる\"elseif (num が cで割り切れる)result ← \" cで割り切れる\"else result ← \"3 でも 5 でも割り切れない\"endif return result解答群a b c",
+  "choices": {
+   "ア": "3 3 と 5 5",
+   "イ": "3 5 3 と 5",
+   "ウ": "3 と 5 3 5",
+   "エ": "5 3 3 と 5オ 5 3 と 5 3"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 5,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q04",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "次のプログラム中の a～ cに入れる正しい答えの組合せを，解答群の中から選べ。関数 gcd は，引数で与えられた二つの正の整数 num1 と num2 の最大公約数を，次の(1)～(3) の性質を利用して求める。(1) num1 と num2 が等しいとき，num1 と num2 の最大公約数は num1 である。(2) num1 が num2 より大きいとき，num1 と num2 の最大公約数は，(num1 － num2)と num2 の最大公約数と等しい。(3) num2 が num1 より大きいとき，num1 と num2 の最大公約数は，(num2 － num1)と num1 の最大公約数と等しい。〔プログラム〕○整数型: gcd(整数型: num1, 整数型: num2)整数型: x ← num1整数型: y ← num2 a if ( b)x ← x － y else y ← y － x endif c return x解答群a b c",
+  "choices": {
+   "ア": "if (x ≠ y) x ＜ y endif",
+   "イ": "if (x ≠ y) x ＞ y endif",
+   "ウ": "while (x ≠ y) x ＜ y endwhile",
+   "エ": "while (x ≠ y) x ＞ y endwhile"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 7,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q06",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 6,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。関数 rev は 8 ビット型の引数 byte を受け取り，ビットの並びを逆にした値を返す。例えば，関数 rev を rev(01001011) として呼び出すと，戻り値は 11010010 となる。なお，演算子 ∧ はビット単位の論理積，演算子 ∨ はビット単位の論理和，演算子 >> は論理右シフト，演算子 << は論理左シフトを表す。例えば，value >> n はvalue の値を n ビットだけ右に論理シフトし，value << n は value の値を n ビットだけ左に論理シフトする。〔プログラム〕○8 ビット型: rev(8 ビット型: byte)8 ビット型: rbyte ← byte 8 ビット型: r ← 00000000整数型: i for (i を 1 から 8 まで 1 ずつ増やす)endfor return r解答群",
+  "choices": {
+   "ア": "r ← (r << 1) ∨ (rbyte ∧ 00000001)rbyte ← rbyte >> 1",
+   "イ": "r ← (r << 7) ∨ (rbyte ∧ 00000001)rbyte ← rbyte >> 7",
+   "ウ": "r ← (rbyte << 1) ∨ (rbyte >> 7)rbyte ← r",
+   "エ": "r ← (rbyte >> 1) ∨ (rbyte << 7)rbyte ← r"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問6",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 9,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q08",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 8,
+  "format": "text",
+  "body": "次の記述中の に入れる正しい答えを，解答群の中から選べ。優先度付きキューを操作するプログラムである。優先度付きキューとは扱う要素に優先度を付けたキューであり，要素を取り出す際には優先度の高いものから順番に取り出される。クラス PrioQueue は優先度付きキューを表すクラスである。クラス PrioQueue の説明を図に示す。ここで，優先度は整数型の値 1，2，3 のいずれかであり，小さい値ほど優先度が高いものとする。手続 prioSched を呼び出したとき，出力は の順となる。コンストラクタ 説明PrioQueue() 空の優先度付きキューを生成する。メソッド 戻り値 説明enqueue(文字列型: s,なし 優先度付きキューに，文字列 s を要素と整数型: prio)して，優先度 prio で追加する。dequeue() 文字列型 優先度付きキューからキュー内で最も優先度の高い要素を取り出して返す。最も優先度の高い要素が複数あるときは，そのうちの最初に追加された要素を一つ取り出して返す。size() 整数型 優先度付きキューに格納されている要素の個数を返す。図 クラス PrioQueue の説明〔プログラム〕○prioSched()PrioQueue: prioQueue ← PrioQueue()prioQueue.enqueue(\"A\", 1)prioQueue.enqueue(\"B\", 2)prioQueue.enqueue(\"C\", 2)prioQueue.enqueue(\"D\", 3)prioQueue.dequeue() /* 戻り値は使用しない */prioQueue.dequeue() /* 戻り値は使用しない */prioQueue.enqueue(\"D\", 3)prioQueue.enqueue(\"B\", 2)prioQueue.dequeue() /* 戻り値は使用しない */prioQueue.dequeue() /* 戻り値は使用しない */prioQueue.enqueue(\"C\", 2)prioQueue.enqueue(\"A\", 1)while (prioQueue.size() が 0 と等しくない)prioQueue.dequeue() の戻り値を出力endwhile解答群",
+  "choices": {
+   "ア": "“A”，“B”，“C”，“D”",
+   "イ": "“A”，“B”，“D”，“D”",
+   "ウ": "“A”，“C”，“C”，“D”",
+   "エ": "“A”，“C”，“D”，“D”"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 12,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q09",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 9,
+  "format": "text",
+  "body": "次の記述中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。手続 order は，図の 2 分木の，引数で指定した節を根とする部分木をたどりながら，全ての節番号を出力する。大域の配列 tree が図の 2 分木を表している。配列tree の要素は，対応する節の子の節番号を，左の子，右の子の順に格納した配列である。例えば，配列 tree の要素番号 1 の要素は，節番号 1 の子の節番号から成る配列であり，左の子の節番号 2，右の子の節番号 3 を配列｛2，3｝として格納する。手続 order を order(1)として呼び出すと， の順に出力される。1 2 3 4567 8 9 10 11 12 13 14注記 1 ○の中の値は節番号である。注記 2 子の節が一つの場合は，左の子の節とする。図 プログラムが扱う 2 分木〔プログラム〕大域: 整数型配列の配列: tree ← {{2, 3}, {4, 5}, {6, 7}, {8, 9},{10, 11}, {12, 13}, {14}, {}, {}, {},{}, {}, {}, {}} // {}は要素数0の配列○order(整数型: n)if (tree[n]の要素数 が 2 と等しい)order(tree[n][1])nを出力order(tree[n][2])elseif (tree[n]の要素数 が 1 と等しい)order(tree[n][1])nを出力else nを出力endif解答群",
+  "choices": {
+   "ア": "1，2，3，4，5，6，7，8，9，10，11，12，13，14",
+   "イ": "1，2，4，8，9，5，10，11，3，6，12，13，7，14",
+   "ウ": "8，4，9，2，10，5，11，1，12，6，13，3，14，7",
+   "エ": "8，9，4，10，11，5，2，12，13，6，14，7，3，1"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問9",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 14,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q12",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 12,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。関数 simRatio は，引数として与えられた要素数 1 以上の二つの文字型の配列 s1と s2 を比較し，要素数が等しい場合は，配列の並びがどの程度似ているかの指標として，（要素番号が同じ要素の文字同士が一致する要素の組みの個数 ÷ s1の要素数）を実数型で返す。例えば，配列の全ての要素が一致する場合の戻り値は 1，いずれの要素も一致しない場合の戻り値は 0 である。なお，二つの配列の要素数が等しくない場合は，－1 を返す。関数 simRatio に与える s1，s2 及び戻り値の例を表に示す。プログラムでは，配列の領域外を参照してはならないものとする。表 関数 simRatio に与える s1，s2 及び戻り値の例s1 s2 戻り値{\"a\", \"p\", \"p\", \"l\", \"e\"} {\"a\", \"p\", \"p\", \"l\", \"e\"} 1{\"a\", \"p\", \"p\", \"l\", \"e\"} {\"a\", \"p\", \"r\", \"i\", \"l\"} 0.4{\"a\", \"p\", \"p\", \"l\", \"e\"} {\"m\", \"e\", \"l\", \"o\", \"n\"} 0{\"a\", \"p\", \"p\", \"l\", \"e\"} {\"p\", \"e\", \"n\"} －1〔プログラム〕○実数型: simRatio(文字型の配列: s1, 文字型の配列: s2)整数型: i, cnt ← 0 if (s1の要素数 ≠ s2の要素数)return －1 endif for (i を 1 から s1の要素数 まで 1 ずつ増やす)if ( )cnt ← cnt ＋ 1 endif endfor return cnt ÷ s1の要素数 /* 実数として計算する */解答群",
+  "choices": {
+   "ア": "s1[i] ≠ s2[cnt]",
+   "イ": "s1[i] ≠ s2[i]",
+   "ウ": "s1[i] ＝ s2[cnt]",
+   "エ": "s1[i] ＝ s2[i]"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 20,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q13",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 13,
+  "format": "text",
+  "body": "次の記述中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。関数 search は，引数 data で指定された配列に，引数 target で指定された値が含まれていればその要素番号を返し，含まれていなければ －1 を返す。data は昇順に整列されており，値に重複はない。関数 search には不具合がある。例えば，data の 場合は，無限ループになる。〔プログラム〕○整数型: search(整数型の配列: data, 整数型: target)整数型: low, high, middle low ← 1 high ← dataの要素数while (low ≦ high)middle ← (low ＋ high) ÷ 2 の商if (data[middle] ＜ target)low ← middle elseif (data[middle] ＞ target)high ← middle else return middle endif endwhile return －1解答群",
+  "choices": {
+   "ア": "要素数が 1 で，target がその要素の値と等しい",
+   "イ": "要素数が 2 で，target が data の先頭要素の値と等しい",
+   "ウ": "要素数が 2 で，target が data の末尾要素の値と等しい",
+   "エ": "要素に－1 が含まれている"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 22,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q15",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 15,
+  "format": "text",
+  "body": "次の記述中の a と bに入れる正しい答えの組合せを，解答群の中から選べ。三目並べにおいて自分が勝利する可能性が最も高い手を決定する。次の手順で，ゲームの状態遷移を木構造として表現し，根以外の各節の評価値を求める。その結果，根の子の中で最も評価値が高い手を，最も勝利する可能性が高い手とする。自分が選択した手を○で表し，相手が選択した手を×で表す。〔手順〕(1) 現在の盤面の状態を根とし，勝敗がつくか，引き分けとなるまでの考えられる全ての手を木構造で表現する。(2) 葉の状態を次のように評価する。① 自分が勝ちの場合は 10② 自分が負けの場合は－10③ 引き分けの場合は 0(3) 葉以外の節の評価値は，その節の全ての子の評価値を基に決定する。① 自分の手番の節である場合，子の評価値で最大の評価値を節の評価値とする。② 相手の手番の節である場合，子の評価値で最小の評価値を節の評価値とする。ゲームが図の最上部にある根の状態のとき，自分が選択できる手は三つある。そのうち A が指す子の評価値は a であり，B が指す子の評価値はbである。根の状態× ××自分の手番A B× ×× ×× ××××相手の手番勝ち 評価値 10× ×× ×× ×× ×××××自分の手番××××負け 評価値 －10× ×× ×× ×××××××引き分け 評価値 0勝ち 評価値 10 引き分け 評価値 0図 三目並べの状態遷移解答群a b",
+  "choices": {
+   "ア": "0 －10",
+   "イ": "0 0",
+   "ウ": "10 －10",
+   "エ": "10 0"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 24,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q18",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 18,
+  "format": "text",
+  "body": "A 社は IT 開発を行っている従業員 1,000 名の企業である。総務部 50 名，営業部50 名で，ほかは開発部に所属している。開発部員の 9 割は客先に常駐している。現在，A 社における PC の利用状況は図 1 のとおりである。1 A 社の PC・総務部員，営業部員及び A 社オフィスに勤務する開発部員には，会社が用意した PC（以下，A 社 PC という）を一人 1 台ずつ貸与している。・客先常駐開発部員には，A 社 PC を貸与していないが，代わりに客先常駐開発部員が A 社オフィスに出社したときに利用するための共用 PC を用意している。2 客先常駐開発部員の業務システム利用・客先常駐開発部員が休暇申請，経費精算などで業務システムを利用するためには共用 PCを使う必要がある。3 A 社の VPN 利用・A 社には，VPN サーバが設置されており，営業部員が出張時に A 社 PC からインターネット経由で社内ネットワークに VPN 接続し，業務システムを利用できるようになっている。規則で，VPN 接続には A 社 PC を利用すると定められている。図 1 A 社における PC の利用状況A 社では，客先常駐開発部員が業務システムを使うためだけに A 社オフィスに出社するのは非効率的であると考え，客先常駐開発部員に対して個人所有 PC の業務利用（BYOD）と VPN 接続の許可を検討することにした。設問 客先常駐開発部員に，個人所有 PC からの VPN 接続を許可した場合に，増加する又は新たに生じると考えられるリスクを二つ挙げた組合せは，次のうちどれか。解答群のうち，最も適切なものを選べ。(一) VPN 接続が増加し，可用性が損なわれるリスク(二) 客先常駐開発部員が A 社 PC を紛失するリスク(三) 客先常駐開発部員がフィッシングメールの URL をクリックして個人所有 PCがマルウェアに感染するリスク(四) 総務部員が個人所有 PC を VPN 接続するリスク(五) マルウェアに感染した個人所有 PC が社内ネットワークに VPN 接続され，マルウェアが社内ネットワークに拡散するリスク解答群",
+  "choices": {
+   "ア": "(一)，(二)",
+   "イ": "(一)，(三)",
+   "ウ": "(一)，(四)",
+   "エ": "(一)，(五) オ (二)，(三) カ (二)，(四)キ (二)，(五) ク (三)，(四) ケ (三)，(五)コ (四)，(五)"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 30,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-b-set-sample-q19",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuB",
+   "legacySection": "サンプル問題"
+  },
+  "no": 19,
+  "format": "text",
+  "body": "A 社は従業員 200 名の通信販売業者である。一般消費者向けに生活雑貨，ギフト商品などの販売を手掛けている。取扱商品の一つである商品 Z は，Z 販売課が担当している。〔Z 販売課の業務〕現在，Z 販売課の要員は，商品 Z についての受注管理業務及び問合せ対応業務を行っている。商品 Z についての受注管理業務の手順を図 1 に示す。商品 Z の顧客からの注文は電子メールで届く。(1) 入力販売担当者は，届いた注文（変更，キャンセルを含む）の内容を受注管理システム 1）（以下，J システムという）に入力し，販売責任者 2）に承認を依頼する。(2) 承認販売責任者は，注文の内容と J システムへの入力結果を突き合わせて確認し，問題がなければ承認する。問題があれば差し戻す。注 A 社情報システム部が運用している。利用者は，販売責任者，販売担当者などである。注 Z 販売課の課長 1 名だけである。図 1 受注管理業務の手順〔J システムの操作権限〕Z 販売課では，J システムについて，次の利用方針を定めている。［方針 1］ ある利用者が入力した情報は，別の利用者が承認する。［方針 2］ 販売責任者は，Z 販売課の全業務の情報を閲覧できる。J システムでは，業務上必要な操作権限を利用者に与える機能が実装されている。この度，商品 Z の受注管理業務が受注増によって増えていることから，B 社に一部を委託することにした（以下，商品 Z の受注管理業務の入力作業を行う B 社従業員を商品 Z の B 社販売担当者といい，商品 Z の B 社販売担当者の入力結果を閲覧して，不備があれば A 社に口頭で差戻しを依頼する B 社従業員を商品 Z の B 社販売責任者という）。委託に当たって，Z 販売課は情報システム部に J システムに関する次の要求事項を伝えた。［要求 1］ B 社が入力した場合は，A 社が承認する。［要求 2］ A 社の販売担当者が入力した場合は，現状どおりに A 社の販売責任者が承認する。上記を踏まえ，情報システム部は今後の各利用者に付与される操作権限を表 1 にまとめ，Z 販売課の情報セキュリティリーダーである C さんに確認をしてもらった。表 1 操作権限案付与される操作権限J システム利用者閲覧 入力 承認（省略） ○ ○Z 販売課の販売担当者 （省略） （省略） （省略）a1〇a2〇 〇注記 ○は，操作権限が付与されることを示す。設問 表 1 中の a 1 ，， a 2に入れる字句の適切な組合せを，a に関する解答群の中から選べ。a に関する解答群a 1 a 2",
+  "choices": {
+   "ア": "Z 販売課の販売責任者 商品 Z の B 社販売責任者",
+   "イ": "Z 販売課の販売責任者 商品 Z の B 社販売担当者",
+   "ウ": "商品 Z の B 社販売責任者 Z 販売課の販売責任者",
+   "エ": "商品 Z の B 社販売責任者 商品 Z の B 社販売担当者オ 商品 Z の B 社販売担当者 商品 Z の B 社販売責任者"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目B 問19",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf",
+   "page": 32,
+   "sha256": "54e16b636f3c69fc30cd92dbbbcb1b0e0acbb1e64bbd5066e971dce954d7dd11"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

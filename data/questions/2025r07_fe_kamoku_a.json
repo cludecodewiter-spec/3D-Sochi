@@ -1,0 +1,582 @@
+[
+ {
+  "id": "2025r07-fe-kamoku-a-q01",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 1,
+  "format": "text",
+  "body": "大規模言語モデルを用いた自然言語処理において，事前学習済みのモデルに対して行う，ファインチューニングに関する記述として，最も適切なものはどれか。",
+  "choices": {
+   "ア": "強化学習を行い，最適な結果が得られるようにする。",
+   "イ": "事前学習と同じデータを繰り返し用いて学習を行い，モデルの精度を高めるようにする。",
+   "ウ": "大量のテキストデータを用いて学習を行い，モデルの精度を高めるようにする。",
+   "エ": "特定のデータを用いて追加で学習を行い，目的とするタスクに適用できるようにする。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 2,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q02",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "浮動小数点形式で表現された数値の演算結果における丸め誤差の説明はどれか。",
+  "choices": {
+   "ア": "演算結果がコンピュータの扱える最大値を超えることによって生じる誤差である。",
+   "イ": "数表現のけた数に限度があるので，最下位けたより小さい部分について四捨五入や切上げ，切捨てを行うことによって生じる誤差である。",
+   "ウ": "乗除算において，指数部が小さい方の数値の仮数部の下位部分が失われることによって生じる誤差である。",
+   "エ": "絶対値がほぼ等しい数値の加減算において，上位の有効数字が失われることによって生じる誤差である。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 2,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q03",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "図の木構造は 2 分探索木である。a～g の値の大小関係として，適切なものはどれか。ここで，a～g の値は重複しないものとする。a b c d e f g",
+  "choices": {
+   "ア": "a ＜ b ＜ d ＜ e ＜ c ＜ f ＜ g",
+   "イ": "d ＜ b ＜ e ＜ a ＜ f ＜ c ＜ g",
+   "ウ": "d ＜ e ＜ f ＜ g ＜ b ＜ c ＜ a",
+   "エ": "g ＜ f ＜ c ＜ e ＜ d ＜ b ＜ a"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 3,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q04",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "MTBF は 4,000 時間，MTTR は 1,000 時間の装置がある。今後の 6 年間は，予防保守によって MTBF を前年に比べて毎年 100 時間ずつ改善し，遠隔保守によって MTTR を前年に比べて毎年 100 時間ずつ改善していく計画である。6 年経過後の稼働率は幾らか。",
+  "choices": {
+   "ア": "0.88",
+   "イ": "0.90",
+   "ウ": "0.92",
+   "エ": "0.94"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 3,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q05",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 5,
+  "format": "text",
+  "body": "ローコード開発ツールを用いたソフトウェア開発の説明はどれか。",
+  "choices": {
+   "ア": "アプリケーションソフトウェアの開発基盤の上で，用意された部品やテンプレートを GUI を用いた操作で組み合わせたり，必要に応じて一部の処理のソースコードを記述したりすることによって，アプリケーションソフトウェアを作成する。",
+   "イ": "アプリケーションソフトウェアの開発基盤の上で，用意された部品やテンプレートを GUI を用いた操作で組み合わせるだけで，ソースコードを記述せずに，アプリケーションソフトウェアを作成する。",
+   "ウ": "アプリケーションソフトウェアの定型的な枠組みを参照して，独自の処理のソースコードを記述することによって，アプリケーションソフトウェアを作成する。",
+   "エ": "利用者がシステムを利用して行う作業を自動化ツールに代行させるために，利用者によるシステムの操作手順をツールに登録する。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問5",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 4,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q06",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 6,
+  "format": "text",
+  "body": "“商品”表に対する SQL 文と同じ結果が得られる SELECT 文はどれか。商品商品 ID 商品名称 仕入先 ID 単価S001 冷蔵庫 M001 155,000 S002 食器洗い機 M002 85,000 S003 電子レンジ M003 78,000 S004 炊飯器 M003 32,000 S005 コーヒーメーカー M004 15,000 S006 ホットプレート M004 12,000〔SQL 文〕SELECT * FROM 商品 WHERE 仕入先 ID IN ('M002', 'M004')",
+  "choices": {
+   "ア": "SELECT * FROM 商品 WHERE 仕入先 ID = 'M002' AND 仕入先 ID = 'M004'",
+   "イ": "SELECT * FROM 商品 WHERE 仕入先 ID = 'M002'INTERSECT SELECT * FROM 商品 WHERE 仕入先 ID = 'M004'",
+   "ウ": "SELECT * FROM 商品 WHERE 仕入先 ID = 'M002' OR 仕入先 ID = 'M004'",
+   "エ": "SELECT * FROM 商品 WHERE 仕入先 ID BETWEEN 'M002' AND 'M004'"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問6",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 5,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q07",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 7,
+  "format": "text",
+  "body": "1G バイトの動画データを 40M ビット／秒の回線を使用してダウンロードしたところ，5 分掛かった。このときの回線利用率はおよそ何％か。ここで，ダウンロード時には動画データに 20％の制御情報が付加されるものとする。",
+  "choices": {
+   "ア": "10",
+   "イ": "53",
+   "ウ": "67",
+   "エ": "80"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問7",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 5,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q08",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 8,
+  "format": "text",
+  "body": "HTTP と HTTPS を比較した場合において，HTTPS だけがもつ特徴を示したものはどれか。",
+  "choices": {
+   "ア": "cookie に保存されている情報を用いたセッション管理が可能である。",
+   "イ": "ID とパスワードによって利用者の認証を行うことが可能である。",
+   "ウ": "Web ブラウザでキャッシュさせることによって通信量を減らすことが可能である。",
+   "エ": "通信相手先サーバをサーバ証明書によって確認することが可能である。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 6,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q09",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 9,
+  "format": "text",
+  "body": "暗号の危殆化に該当するものはどれか。",
+  "choices": {
+   "ア": "ある CA でデジタル証明書の署名に使っている公開鍵のデジタル証明書の有効期限が切れた。",
+   "イ": "ある暗号アルゴリズムの秘密鍵が不正アクセスによって漏えいした。",
+   "ウ": "あるハッシュ関数においてハッシュ値が同じになるデータの組みを現実的な時間内で発見する方法が見つかった。",
+   "エ": "あるランサムウェアの一種で暗号化されたファイルの復号鍵が公開された。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問9",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 6,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q10",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 10,
+  "format": "text",
+  "body": "WAF の説明はどれか。",
+  "choices": {
+   "ア": "Web サイトに対するアクセス内容を監視し，攻撃とみなされるパターンを検知したときに当該アクセスを遮断する。",
+   "イ": "Wi-Fi アライアンスが認定した無線 LAN の暗号化方式の規格であり，AES 暗号に対応している。",
+   "ウ": "様々なシステムの動作ログを一元的に蓄積，管理し，セキュリティ上の脅威となる事象をいち早く検知，分析する。",
+   "エ": "ファイアウォール機能を有し，マルウェア対策機能，侵入検知機能などの複数のセキュリティ機能を連携させ，統合的に管理する。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問10",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 6,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q11",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 11,
+  "format": "text",
+  "body": "E-R モデルにおけるエンティティの特徴はどれか。",
+  "choices": {
+   "ア": "エンティティとインスタンスとは，1 対 1 の対応関係をとる。",
+   "イ": "エンティティとなり得るものは，物的に実現するものである。",
+   "ウ": "エンティティは，特性を表すための属性（アトリビュート）をもつ。",
+   "エ": "異なった種類のエンティティ間の関係は，主として状態遷移として表現される。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 7,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q12",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 12,
+  "format": "text",
+  "body": "オブジェクト指向プログラミングの特徴のうち，異なるクラスのオブジェクトを同一のインタフェースで操作したときに，操作対象クラスに応じた異なる動作を可能にすることを何と呼ぶか。",
+  "choices": {
+   "ア": "委譲",
+   "イ": "継承",
+   "ウ": "コンポジション",
+   "エ": "多相性"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 7,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q13",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 13,
+  "format": "text",
+  "body": "アジャイル開発手法の一つであるスクラムにおいて，プロダクトバックログアイテムの内容や並び順を決定する役割をもつのは誰か。",
+  "choices": {
+   "ア": "開発者",
+   "イ": "顧客",
+   "ウ": "スクラムマスタ",
+   "エ": "プロダクトオーナ"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 7,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q14",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 14,
+  "format": "text",
+  "body": "図は，あるプロジェクトの作業 A ～ I とその作業日数を表している。このプロジェクトの最短所要日数は何日か。F 14 G 11 AB CDI 3 6865開始 E終了5 H 15凡例作業名作業日数：ダミー作業",
+  "choices": {
+   "ア": "27",
+   "イ": "28",
+   "ウ": "29",
+   "エ": "31"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 8,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q15",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 15,
+  "format": "text",
+  "body": "サーバ室の物理的な安全対策の状況について，情報セキュリティ管理基準（平成28 年）に照らして，情報セキュリティ監査を行って判明した状況のうち，監査人が，指摘事項として監査報告書に記載すべきものはどれか。",
+  "choices": {
+   "ア": "サーバが設置されている施設の無人領域では，営業時間中でも，警報装置が作動するようになっている。",
+   "イ": "サーバ室に非常口，避難器具，誘導灯などを設置している。",
+   "ウ": "社外からサーバ室へ直接出入りするドアを設置しているが，出入りを考慮して常時施錠していない。",
+   "エ": "場所が分からないように，サーバ室の所在を室外に表示していない。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 8,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q16",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 16,
+  "format": "text",
+  "body": "データマイニングの手法の一つであって，POS などの蓄積データから“一緒に買われる商品”の組合せを発見する分析手法はどれか。",
+  "choices": {
+   "ア": "3C 分析",
+   "イ": "ABC 分析",
+   "ウ": "コンジョイント分析",
+   "エ": "マーケットバスケット分析"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 9,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q17",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 17,
+  "format": "text",
+  "body": "インターネット上の生成 AI サービスを利用する際に，オプトアウトを設定することはどのような場合に有効か。",
+  "choices": {
+   "ア": "個々の利用者が，自身が生成 AI から得た情報に対して，著作権を主張したい場合",
+   "イ": "個々の利用者が入力した情報を，生成 AI の学習に利用させたくない場合",
+   "ウ": "個々の利用者が入力した情報を，生成 AI を通じて，他の利用者にも知ってほしい場合",
+   "エ": "生成 AI から得た情報の信ぴょう性を高めたい場合"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 9,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q18",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 18,
+  "format": "text",
+  "body": "物販事業において，ロングテールをビジネスとして成功させるために必要な施策はどれか。",
+  "choices": {
+   "ア": "多くの有名ブランド店が出店するショッピングモールの構築",
+   "イ": "交通の利便性が高い地域に対する，生活必需品を広く浅く取りそろえた出店計画",
+   "ウ": "店舗で購入した商品を近隣地域に無償で配送するサービスの実施",
+   "エ": "豊富な品ぞろえと，在庫コストや配送費用を抑えるための大規模な物流センタの構築や活用"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 9,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q19",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 19,
+  "format": "text",
+  "body": "表の条件で喫茶店を開業したい。月 10 万円の利益を出すためには，1 客席当たり 1日平均何人の客が必要か。客 1 人当たりの売上高 500 円客 1 人当たりの変動費 100 円固定費 300,000 円／月1 か月の営業日数 20 日客席数 10 席",
+  "choices": {
+   "ア": "3.75",
+   "イ": "4",
+   "ウ": "4.2",
+   "エ": "5"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問19",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 10,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-a-q20",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 20,
+  "format": "text",
+  "body": "カーボンフットプリントの説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "温室効果ガスの排出量から吸収量と除去量を差し引いた合計をゼロにする取組",
+   "イ": "原材料調達から廃棄・リサイクルに至るまでのライフサイクル全体を通して排出される温室効果ガスの排出量を，CO2 量に換算して，その値を商品やサービスに表示すること",
+   "ウ": "自動車のエンジンから排出される一酸化炭素，窒素酸化物や炭化水素類などの大気汚染物質の排出量の定め",
+   "エ": "商品がどのような場所で作られて，流通し，販売されているかを把握するための仕組み〔 メ モ 用 紙 〕試験問題に記載されている会社名又は製品名は，それぞれ各社の商標又は登録商標です。TM ®なお，試験問題では，及び を明記していません。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目A 問20",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+   "page": 10,
+   "sha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

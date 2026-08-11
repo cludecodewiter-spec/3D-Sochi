@@ -1,0 +1,147 @@
+[
+ {
+  "id": "2024r06-fe-kamoku-b-q01",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 1,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。関数 maximum は，異なる三つの整数を引数で受け取り，そのうちの最大値を返す。〔プログラム〕○整数型: maximum(整数型: x, 整数型: y, 整数型: z)if ( )return x elseif (y ＞ z)return y else return z endif解答群",
+  "choices": {
+   "ア": "x ＞ y",
+   "イ": "x ＞ y and x ＞ z",
+   "ウ": "x ＞ y and y ＞ z",
+   "エ": "x ＞ zオ x ＞ z and z ＞ y カ z ＞ y"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目B 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_ans.pdf",
+   "page": 4,
+   "sha256": "c82b9e6a84707d163b15a0073533bf615e6eaed36e65123ed13a4ff80a1cddd4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-b-q02",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。関数 convDecimal は，引数として与えられた，“0”と“1”だけから成る，1 文字以上の文字列を，符号なしの 2 進数と解釈したときの整数値を返す。例えば，引数として“10010”を与えると 18 が返る。関数 convDecimal が利用する関数 int は，引数で与えられた文字が“0”なら整数値 0 を返し，“1”なら整数値 1 を返す。〔プログラム〕○整数型: convDecimal(文字列型: binary)整数型: i, length, result ← 0 length ← binaryの文字数for (i を 1 から length まで 1 ずつ増やす)result ←endfor return result解答群",
+  "choices": {
+   "ア": "result ＋ int(binary の (length － i ＋ 1)文字目の文字)",
+   "イ": "result ＋ int(binary の i文字目の文字)",
+   "ウ": "result × 2 ＋ int(binary の (length － i ＋ 1)文字目の文字)",
+   "エ": "result × 2 ＋ int(binary の i文字目の文字)"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目B 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_ans.pdf",
+   "page": 5,
+   "sha256": "c82b9e6a84707d163b15a0073533bf615e6eaed36e65123ed13a4ff80a1cddd4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-b-q03",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。図 1 に示すグラフの頂点には，1 から順に整数で番号が付けられている。グラフは無向グラフであり，各頂点間には高々一つの辺がある。一つの辺は両端の頂点の番号を要素にもつ要素数 2 の整数型の配列で表現できる。例えば，{1，3} は頂点 1 と頂点 3 を端点とする辺を表す。グラフ全体は，グラフに含まれる辺を表す要素数 2 の配列を全て格納した配列（以下，辺の配列という）で表現できる。辺の配列の要素数はグラフの辺の個数と等しい。図 1 のグラフは整数型配列の配列{{1, 3}, {1, 4}, {3,4}, {2, 4}, {4, 5}}と表現できる。3 1 4 25図 1 グラフの例関数 edgesToMatrix は，辺の配列を隣接行列に変換する。隣接行列とは，グラフに含まれる頂点の個数と等しい行数及び列数の正方行列で，i 行 j 列の成分は頂点 i と頂点 j を結ぶ辺があるときに 1 となり，それ以外は 0 となる。行列の対角成分は全て0 で，無向グラフの場合は対称行列になる。図 1 のグラフを表現する隣接行列を図 2に示す。0 0 1 1 0 0 0 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 1 0図 2 図 1 のグラフを表現する隣接行列関数 edgesToMatrix は，引数 edgeList で辺の配列を，引数 nodeNum でグラフの頂点の個数をそれぞれ受け取り，隣接行列を表す整数型の二次元配列を返す。〔プログラム〕○整数型の二次元配列: edgesToMatrix(整数型配列の配列: edgeList,整数型: nodeNum)整数型の二次元配列: adjMatrix ← {nodeNum行nodeNum列の 0}整数型: i, u, v for (i を 1 から edgeListの要素数 まで 1 ずつ増やす)u ← edgeList[i][1]v ← edgeList[i][2]endfor return adjMatrix解答群",
+  "choices": {
+   "ア": "adjMatrix[u, u] ← 1",
+   "イ": "adjMatrix[u, u] ← 1 adjMatrix[v, v] ← 1",
+   "ウ": "adjMatrix[u, v] ← 1",
+   "エ": "adjMatrix[u, v] ← 1 adjMatrix[v, u] ← 1オ adjMatrix[v, u] ← 1カ adjMatrix[v, v] ← 1"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目B 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_ans.pdf",
+   "page": 6,
+   "sha256": "c82b9e6a84707d163b15a0073533bf615e6eaed36e65123ed13a4ff80a1cddd4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-b-q04",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "次の記述中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。関数 merge は，昇順に整列された整数型の配列 data1 及び data2 を受け取り，これらを併合してできる昇順に整列された整数型の配列を返す。関数 merge を merge({2, 3}, {1, 4}) として呼び出すと，/*** α ***/ の行は。〔プログラム〕○整数型の配列: merge(整数型の配列: data1, 整数型の配列: data2)整数型: n1 ← data1の要素数整数型: n2 ← data2の要素数整数型の配列: work ← {(n1 ＋ n2)個の 未定義の値}整数型: i ← 1整数型: j ← 1整数型: k ← 1 while ((i ≦ n1) and (j ≦ n2))if (data1[i] ≦ data2[j])work[k] ← data1[i]i ← i ＋ 1 else work[k] ← data2[j]j ← j ＋ 1 endif k ← k ＋ 1 endwhile while (i ≦ n1)work[k] ← data1[i]i ← i ＋ 1 k ← k ＋ 1 endwhile while (j ≦ n2)work[k] ← data2[j] /*** α ***/j ← j ＋ 1 k ← k ＋ 1 endwhile return work解答群",
+  "choices": {
+   "ア": "実行されない",
+   "イ": "1 回実行される",
+   "ウ": "2 回実行される",
+   "エ": "3 回実行される"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目B 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_ans.pdf",
+   "page": 8,
+   "sha256": "c82b9e6a84707d163b15a0073533bf615e6eaed36e65123ed13a4ff80a1cddd4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-b-q06",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 6,
+  "format": "text",
+  "body": "A 社は従業員 450 名の商社であり，昨年から働き方改革の一環として，在宅でのテレワークを推進している。A 社のシステム環境を図 1 に示す。・従業員には，一人に 1 台デスクトップ PC（以下，社内 PC という）を貸与している。・従業員が利用するシステムには，自社で開発し A 社に設置している業務システムのほかに，次の二つの SaaS（以下，二つの SaaS を A 社利用クラウドサービスという）がある。1. メール機能，チャット機能及びクラウドストレージ機能をもつグループウェア（以下，A 社利用グループウェアという）2. オンライン会議サービス・テレワークでは，従業員の個人所有 PC（以下，私有 PC という）の業務利用（BYOD）を許可している。・テレワークでは，社内 PC 及び私有 PC のそれぞれに専用のアプリケーションソフトウェア（以下，専用アプリという）を導入し，社内 PC のデスクトップから私有 PC に画面転送を行うリモートデスクトップ方式を採用している。・専用アプリには，リモートデスクトップから PC へのファイルのダウンロード及びファイル，文字列，画像などのコピー＆ペーストを禁止する機能（以下，保存禁止機能という）があり，A 社では私有 PC に対して当該機能を有効にしている。・業務システムには，社内 PC のデスクトップから利用者 ID 及びパスワードを入力してログインしている。・A 社利用クラウドサービスへのログインは，A 社利用クラウドサービス側の設定によって A 社の社内ネットワークからだけ可能になるように制限している。ログインには利用者 ID 及びパスワードを用いている。図 1 A 社のシステム環境（抜粋）テレワークの定着が進むにつれて，社内 PC からインターネットへの接続が極端に遅くなり，業務に支障をきたしているので改善できないかと，従業員から問合せがあった。A 社の社内ネットワークとインターネットとの間の通信量を調査したところ，テレワーク導入前に比べ，業務時間帯で顕著に増加していることが判明した。そのため，情報システム部では，テレワークで A 社利用クラウドサービスに接続する場合には，A 社の社内ネットワークも社内 PC も介さずに直接接続することを可能にするネットワークの設定変更を実施することにした。設定変更に当たり，情報セキュリティ上の問題がないかを A 社の情報セキュリティリーダーである B さんが検討したところ，幾つか問題があることが分かった。その一つは，A 社利用クラウドサービスへの不正アクセスのリスクが増加することである。そこで B さんは，リスクを低減するために，情報システム部に対策を依頼することにした。設問 次の対策のうち，情報システム部に依頼することにしたものはどれか。解答群のうち，最も適切なものを選べ。解答群",
+  "choices": {
+   "ア": "A 社の社内ネットワークから A 社利用クラウドサービスへの通信を監視する。",
+   "イ": "A 社の社内ネットワークと A 社利用クラウドサービスとの間の通信速度を制限する。",
+   "ウ": "A 社利用クラウドサービスに A 社外から接続する際の認証に 2 要素認証を導入する。",
+   "エ": "A 社利用クラウドサービスのうち，A 社利用グループウェアだけを直接接続の対象とする。オ 専用アプリの保存禁止機能を無効にする。〔 メ モ 用 紙 〕〔 メ モ 用 紙 〕〔 メ モ 用 紙 〕〔 メ モ 用 紙 〕試験問題に記載されている会社名又は製品名は，それぞれ各社の商標又は登録商標です。TM ®なお，試験問題では，及び を明記していません。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目B 問6",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_ans.pdf",
+   "page": 14,
+   "sha256": "c82b9e6a84707d163b15a0073533bf615e6eaed36e65123ed13a4ff80a1cddd4"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "2026r08-fe-kamoku-b-q01",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2026,
+   "era": "2026年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 1,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。次のプログラムは，整数型の配列 data の末尾の要素の値を先頭の要素に移動する。この際，末尾以外の各要素の値は，一つずつ後ろの要素に移動する。〔プログラム〕整数型の配列: data ← {1, 2, 3, 4, 5, 6, 7, 8, 9}整数型: top, i整数型: len ← dataの要素数top ← data[len]for (i を )data[i] ← data[i － 1]endfor data[1] ← top解答群",
+  "choices": {
+   "ア": "2 から len － 1 まで 1 ずつ増やす",
+   "イ": "2 から len まで 1 ずつ増やす",
+   "ウ": "len － 1 から 2 まで 1 ずつ減らす",
+   "エ": "len から 2 まで 1 ずつ減らす"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2026年度 基本情報技術者試験 公開問題 科目B 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_ans.pdf",
+   "page": 4,
+   "sha256": "3995e35d9ca102e9363ac049303e65b936a860ef6377ffbbcbc0620484a6bbb2"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2026r08-fe-kamoku-b-q03",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2026,
+   "era": "2026年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。関数 func1 に与える引数と，関数 func2 に与える引数とが同じとき，二つの関数は同じ値を返す。プログラムでは，配列の領域外を参照してはならないものとする。〔プログラム〕○整数型: func1(整数型: n)if (nが2以下)return 1 endif return 2 × func1(n － 2) ＋ func1(n － 1)○整数型: func2(整数型: n)整数型の配列: data ← {1, 1, 1}整数型: i/* nが3より小さいときは繰返し処理を実行しない */for (iを3からnまで1ずつ増やす)data[1] ← data[2]data[2] ← data[3]data[3] ←endfor return data[3]解答群",
+  "choices": {
+   "ア": "2 × data[1] ＋ data[2]",
+   "イ": "2 × data[2] ＋ data[1]",
+   "ウ": "2 × data[i － 1] ＋ data[i － 2]",
+   "エ": "2 × data[i － 2] ＋ data[i － 1]オ data[3] ＋ 2 × data[1] ＋ data[2]カ data[3] ＋ 2 × data[2] ＋ data[1]キ data[3] ＋ 2 × data[i － 1] ＋ data[i － 2]ク data[3] ＋ 2 × data[i － 2] ＋ data[i － 1]〔 メ モ 用 紙 〕"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2026年度 基本情報技術者試験 公開問題 科目B 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_ans.pdf",
+   "page": 6,
+   "sha256": "3995e35d9ca102e9363ac049303e65b936a860ef6377ffbbcbc0620484a6bbb2"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2026r08-fe-kamoku-b-q04",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2026,
+   "era": "2026年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "次のプログラム中の aと bに入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。単方向リストを，配列 dataList と配列 pointerList の二つの配列で表現する。dataList にリストの要素の値を格納し，pointerList にリストの次の要素に対応するdataList の 要 素 番 号 を 格 納 す る 。 単 方 向 リ ス ト の 先 頭 は ， dataList[1] 及 びpointerList[1] の組みである。単方向リストの末尾に対応する pointerList の要素は未定義である。dataList のうち単方向リストの要素の値を格納していない要素と，対応する pointerList の要素は未定義である。プログラムが扱う dataList 及び pointerList の内容を図 1 に示す。先頭の次の要素の要素番号は，pointerList[1] に格納された 3 であり，値は dataList[3] に格納された 20 である。その次の要素の要素番号は pointerList[3] に格納された 2 であり，値は dataList[2] に格納された 30 である。要素番号 1 2 3 4 5 dataList 10 30 20 40要素番号 1 2 3 4 5 pointerList 3 4 2注記 網掛けはその要素が未定義であることを示す。図 1 dataList 及び pointerList の内容関数 orderList は，図 1 の dataList 及び pointerList で表現した単方向リストの値を，単方向リストの先頭からたどって順番に格納した配列を返す。関数 orderListが返す配列を図 2 に示す。要素番号 1 2 3 4 10 20 30 40図 2 関数 orderList が返す配列〔プログラム〕大域: 整数型の配列: dataList ← {10, 30, 20, 40, 未定義の値}大域: 整数型の配列: pointerList ← {3, 4, 2, 未定義の値, 未定義の値}○整数型の配列: orderList()整数型: i, p ← 1整数型の配列: linearList ← {} // 要素数0の配列for (i を 1 から dataListの要素数 まで 1 ずつ増やす)linearListの末尾 に dataList[p]の値 を追加するif ( aが 未定義)繰返し処理を終了するendif p ←b endfor return linearList解答群a b",
+  "choices": {
+   "ア": "dataList[p] i",
+   "イ": "dataList[p] pointerList[p]",
+   "ウ": "pointerList[p] i",
+   "エ": "pointerList[p] pointerList[p]"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2026年度 基本情報技術者試験 公開問題 科目B 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_ans.pdf",
+   "page": 8,
+   "sha256": "3995e35d9ca102e9363ac049303e65b936a860ef6377ffbbcbc0620484a6bbb2"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2026r08-fe-kamoku-b-q05",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2026,
+   "era": "2026年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 5,
+  "format": "text",
+  "body": "次のプログラム中の aと bに入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。一つの要素だけが 1 で他の要素が 0 であるような整数型の配列による表現を，本問では One-Hot 表現という。関数 oneHotEncoding は，図のように，色の名前が格納されている要素数 1 以上の文字列型の配列を引数として受け取り，配列に含まれる色の名前（図の例では 3 種類）に基づいて，各要素を One-Hot 表現に変換し，整数型配列の配列に格納して返す。関数 oneHotEncoding における変換の例を図に示す。引数の例： {\"Red\", \"Green\", \"Blue\", \"Red\"}↓\"Red\"の One-Hot 表現 ： {1, 0, 0}\"Green\"の One-Hot 表現： {0, 1, 0}\"Blue\"の One-Hot 表現 ： {0, 0, 1}↓引数の例に対応する戻り値： {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 0, 0}}図 関数 oneHotEncoding における変換の例〔プログラム〕○整数型配列の配列: oneHotEncoding(文字列型の配列: colors)整数型: i, j, k文字列型の配列: colorVector ← {} // 要素数0の配列整数型の配列: tempVector整数型配列の配列: oneHotVector ← {} // 要素数0の配列/* 名前一覧の作成 */for (i を 1 から colorsの要素数 まで 1 ずつ増やす)if (colorVector の要素のいずれにも colors[i]の値 が格納されていない)colorVectorの末尾 に aを追加するendif endfor/* One-Hot表現への変換 */for (j を 1 から colorsの要素数 まで 1 ずつ増やす)tempVector ← {} // 要素数0の配列for (k を 1 から colorVectorの要素数 まで 1 ずつ増やす)if ( b)tempVectorの末尾 に 1 を追加するelse tempVectorの末尾 に 0 を追加するendif endfor oneHotVectorの末尾 に tempVector を追加するendfor return oneHotVector解答群a b colors の要素のいずれかに colorVector[k]の値 が格",
+  "choices": {
+   "ア": "colors[i]の値納されている",
+   "イ": "colors[i]の値 colors[j] が colorVector[k] と等しいcolors の要素のいずれかに colorVector[k]の値 が格",
+   "ウ": "未定義の値納されている",
+   "エ": "未定義の値 colors[j] が colorVector[k] と等しい"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2026年度 基本情報技術者試験 公開問題 科目B 問5",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_ans.pdf",
+   "page": 10,
+   "sha256": "3995e35d9ca102e9363ac049303e65b936a860ef6377ffbbcbc0620484a6bbb2"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

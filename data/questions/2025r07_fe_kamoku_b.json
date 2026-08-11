@@ -1,0 +1,60 @@
+[
+ {
+  "id": "2025r07-fe-kamoku-b-q02",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "次のプログラム中の に入れる正しい答えを，解答群の中から選べ。関数 change は，10 より大きい整数を引数 n で受け取り，1 円玉，5 円玉，10 円玉を使ってちょうど n 円にする組合せの総数を返す。例えば，12 円にする組合せは，次のように数えられる。10 円玉を使わない場合には，1 円玉と 5 円玉だけでちょうど 12 円にすることになる。その組合せは，使える 5円玉の枚数が 0 以上 (12 ÷ 5 の商) 以下なので，(12 ÷ 5 の商) ＋ 1 ＝ 3 通りある。同様に，10 円玉を 1 枚使う場合には，1 円玉と 5 円玉だけでちょうど 2 円にすることになり，その組合せは (2 ÷ 5 の商) ＋ 1 ＝ 1 通りある。10 円玉を 2 枚以上使う組合せはない。よって，1 円玉，5 円玉，10 円玉を使ってちょうど 12 円にする組合せは，3 ＋ 1 ＝ 4 通りである。〔プログラム〕○整数型: change(整数型: n)整数型: count ← 0整数型: rest ← n while ( )count ← count ＋ (rest ÷ 5 の商) ＋ 1 rest ← rest － 10 endwhile return count解答群",
+  "choices": {
+   "ア": "rest ≧ 0",
+   "イ": "rest ≧ 5",
+   "ウ": "rest ≧ 10",
+   "エ": "rest ＞ 0オ rest ＞ 5カ rest ＞ 10〔 メ モ 用 紙 〕"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目B 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_ans.pdf",
+   "page": 6,
+   "sha256": "18c43738820a136adf48a1990aaf571fa4203e1f1a162d51322d29d319da67d9"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2025r07-fe-kamoku-b-q03",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2025,
+   "era": "2025年度",
+   "subject": "kamokuB",
+   "legacySection": "公開問題"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "次のプログラム中の aと bに入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。関数 push は，引数で与えられた整数をスタックに格納する。格納できた場合はtrue を返し，格納できなかった場合は false を返す。関数 pop は，スタックから値を取り出して返す。スタックが空のときは未定義の値を返す。スタックを，要素数が 4 である大域の整数型の配列 stack，及び次に値を格納する位置を示す大域の変数 stackPos で表現する。スタックの初期状態を図に示す。プログラムでは，配列の領域外を参照してはならないものとする。要素番号 1 2 3 4 stack 4 3↑stackPos注記 網掛けはその要素が未定義であることを示す。図 スタックの初期状態〔プログラム〕大域: 整数型: stackPos ← 3大域: 整数型の配列: stack ← {4, 3, 未定義の値, 未定義の値}○論理型: push(整数型: inputData)if (stackPos ≦ stackの要素数)stack[ a] ← inputData stackPos ← stackPos ＋ 1 return true else return false endif○整数型: pop()整数型: popData ← 未定義の値if (stackPos ＞ 1)stackPos ←b popData ← stack[stackPos]stack[stackPos] ← 未定義の値endif return popData解答群a b",
+  "choices": {
+   "ア": "stackPos stackPos ＋ 1",
+   "イ": "stackPos stackPos － 1",
+   "ウ": "stackPos － 1 stackPos ＋ 1",
+   "エ": "stackPos － 1 stackPos － 1"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目B 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_ans.pdf",
+   "page": 8,
+   "sha256": "18c43738820a136adf48a1990aaf571fa4203e1f1a162d51322d29d319da67d9"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

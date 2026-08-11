@@ -1,32 +1,41 @@
 # 取り込みレポート
 
-生成: 2026-08-11T03:20:06.956Z
+生成: 2026-08-11T03:20:29.108Z
 
 ## 収録数
 
 | 指標 | 値 |
 |---|---|
-| 収録問題数（名寄せ前） | 171 |
-| 重複として統合された問題 | 1 |
-| **出題される一意な問題数** | **170** |
-| 取り込んだ回数 | 3 |
+| 収録問題数（名寄せ前） | 314 |
+| 重複として統合された問題 | 0 |
+| **出題される一意な問題数** | **314** |
+| 取り込んだ回数 | 12 |
 
-プール別: fe-menjo=171
-形式別: text=171
+プール別: fe-koukai=94 / fe-sample=69 / fe-menjo=151
+形式別: text=314
 
 ## 回ごとの取り込み状況
 
 | 回 | プール | 取り込み |
 |---|---|---|
-| tokurei_Mondai_200906_FE | fe-menjo | 76 問 |
-| tokurei_Mondai_200907_FE | fe-menjo | 77 問 |
-| tokurei_Mondai_20111218_FE | fe-menjo | 18 問 |
+| 2023r05_fe_kamoku_a | fe-koukai | 20 問 |
+| 2023r05_fe_kamoku_b | fe-koukai | 5 問 |
+| 2024r06_fe_kamoku_a | fe-koukai | 19 問 |
+| 2024r06_fe_kamoku_b | fe-koukai | 5 問 |
+| 2025r07_fe_kamoku_a | fe-koukai | 20 問 |
+| 2025r07_fe_kamoku_b | fe-koukai | 2 問 |
+| 2026r08_fe_kamoku_a | fe-koukai | 19 問 |
+| 2026r08_fe_kamoku_b | fe-koukai | 4 問 |
+| fe_kamoku_a_set_sample | fe-sample | 59 問 |
+| fe_kamoku_b_set_sample | fe-sample | 10 問 |
+| tokurei_Mondai_200906_FE | fe-menjo | 75 問 |
+| tokurei_Mondai_200907_FE | fe-menjo | 76 問 |
 
 ## 隔離（出題しなかったもの）
 
-- スキャン PDF（画像経路）の問題冊子: 0 本
+- スキャン PDF（画像経路）の問題冊子: 110 本
 - 画像経路で不採用になった回: 0 / 0
-- テキスト経路の隔離レコード: 0
+- テキスト経路の隔離レコード: 14
 - 画像経路の隔離レコード: 0
 - 検証ゲートで除外した問題: 0
 
@@ -35,152 +44,152 @@
 以下の問題を IPA 公式 PDF の該当ページと突き合わせてください。
 自動検証は「形が整っているか」しか見ていないので、内容が本物かの確認はここで行います。
 
-### tokurei-mondai-200906-fe-q01
+### 2023r05-fe-kamoku-a-q01
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問1
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **3 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
-- 正解: **イ**
-
-```
-次の式は，何進法で成立するか。1015÷5＝131 （余り 0）
-ア 6
-イ 7
-ウ 8
-エ 9
-```
-
-### tokurei-mondai-200906-fe-q19
-
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問19
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **11 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
+- 出典：2023年度 基本情報技術者試験 公開問題 科目A 問1
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_qs.pdf の **2 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_ans.pdf
 - 正解: **ウ**
 
 ```
-スプーリング機能を使用してプリンタ出力を行うシステムがある。次の条件を満たすためには，スプーリングファイルは少なくとも何 M バイト必要か。〔条件〕(1) 1 ジョブ当たりの印刷データ量は，2M バイトである。(2) スプーリングファイルでは，データが 50％に圧縮される。(3) 1 時間当たり 100 ジョブを処理する。(4) 最大 5 時間はプリンタの停止に耐えられる。
-ア 100
-イ 250
-ウ 500
-エ 1000
+16 進小数 0.C を 10 進小数に変換したものはどれか。
+ア 0.12
+イ 0.55
+ウ 0.75
+エ 0.84
 ```
 
-### tokurei-mondai-200906-fe-q37
+### 2024r06-fe-kamoku-a-q07
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問37
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **17 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
-- 正解: **イ**
-
-```
-LAN 間接続装置のうち，MAC アドレスを使ってデータリンク層の中継を行うものはどれか。
-ア ゲートウェ
-イ イ ブリッジ
-ウ リピータ
-エ ルータ
-```
-
-### tokurei-mondai-200906-fe-q55
-
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問55
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **25 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
+- 出典：2024年度 基本情報技術者試験 公開問題 科目A 問7
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf の **4 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf
 - 正解: **ウ**
 
 ```
-システムの開発部門と運用部門が別々に組織化されているとき，開発から運用への移行を円滑かつ効果的に進めるための方法のうち，適切なものはどれか。
-ア 運用テストの完了後に，開発部門がシステム仕様と運用方法を運用部門に説明する。
-イ 運用テストを効率良く行うために，開発部門の支援を受けずに，運用部門だけで実施する。
-ウ 運用部門からもシステム開発に積極的に参加し，運用性の観点から助言する。
-エ 開発部門は，運用テストを実施して運用マニュアルを作成し，運用部門に引き渡す。
+DBMS に実装すべき原子性（atomicity）を説明したものはどれか。
+ア 同一データベースに対する同一処理は，何度実行しても結果は同じである。
+イ トランザクション完了後にハードウェア障害が発生しても，更新されたデータベースの内容は保証される。
+ウ トランザクション内の処理は，全てが実行されるか，全てが取り消されるかのいずれかである。
+エ 一つのトランザクションの処理結果は，他のトランザクション処理の影響を受けない。
 ```
 
-### tokurei-mondai-200906-fe-q73
+### 2025r07-fe-kamoku-a-q14
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問73
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **33 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
-- 正解: **ウ**
-
-```
-インターネット上で，一般消費者が買いたい品物とその購入条件を提示し，単一又は複数の売り手がそれに応じる取引形態はどれか。
-ア B to B
-イ G to C
-ウ 逆オークション
-エ バーチャルモール
-```
-
-### tokurei-mondai-200907-fe-q12
-
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問12
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **6 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
-- 正解: **ア**
-
-```
-ポートの空きがないパソコンに，RS-232C インタフェースのモデムを追加接続するときに用いる適切な方法はどれか。
-ア シリアルインタフェースボードを拡張スロットに装着する。
-イ パラレルインタフェースボードを拡張スロットに装着する。
-ウ ピン配列を変換するコネクタを介してシリアルポートに接続する。
-エ 分岐用のコネクタを介してパラレルポートに接続する。
-```
-
-### tokurei-mondai-200907-fe-q29
-
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問29
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **13 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
+- 出典：2025年度 基本情報技術者試験 公開問題 科目A 問14
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf の **8 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf
 - 正解: **エ**
 
 ```
-1.5 M ビット／秒程度の転送速度で映像再生が可能な動画の符号化方式はどれか。
-ア BMP
-イ JPEG
-ウ MP3
-エ MPEG-1
+図は，あるプロジェクトの作業 A ～ I とその作業日数を表している。このプロジェクトの最短所要日数は何日か。F 14 G 11 AB CDI 3 6865開始 E終了5 H 15凡例作業名作業日数：ダミー作業
+ア 27
+イ 28
+ウ 29
+エ 31
 ```
 
-### tokurei-mondai-200907-fe-q46
+### fe-kamoku-a-set-sample-q01
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問46
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **19 ページ**
+- 出典：基本情報技術者試験 サンプル問題 科目A 問1
+- 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **4 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf
+- 正解: **エ**
+
+```
+負数を 2 の補数で表すとき，8 ビットの 2 進正数 n に対し－n を求める式はどれか。ここで，＋は加算を表し，OR はビットごとの論理和，XOR はビットごとの排他的論理和を表す。
+ア (n OR 10000000) ＋ 00000001
+イ (n OR 11111110) ＋ 11111111
+ウ (n XOR 10000000) ＋ 11111111
+エ (n XOR 11111111) ＋ 00000001
+```
+
+### fe-kamoku-a-set-sample-q33
+
+- 出典：基本情報技術者試験 サンプル問題 科目A 問33
+- 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **18 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf
+- 正解: **ウ**
+
+```
+UPS の導入によって期待できる情報セキュリティ対策としての効果はどれか。
+ア PC が電力線通信（PLC）からマルウェアに感染することを防ぐ。
+イ サーバと端末間の通信における情報漏えいを防ぐ。
+ウ 電源の瞬断に起因するデータの破損を防ぐ。
+エ 電子メールの内容が改ざんされることを防ぐ。
+```
+
+### fe-kamoku-b-set-sample-q09
+
+- 出典：基本情報技術者試験 サンプル問題 科目B 問9
+- 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf の **14 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf
+- 正解: **ウ**
+
+```
+次の記述中の に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。手続 order は，図の 2 分木の，引数で指定した節を根とする部分木をたどりながら，全ての節番号を出力する。大域の配列 tree が図の 2 分木を表している。配列tree の要素は，対応する節の子の節番号を，左の子，右の子の順に格納した配列である。例えば，配列 tree の要素番号 1 の要素は，節番号 1 の子の節番号から成る配列であり，左の子の節番号 2，右の子の節番号 3 を配列｛2，3｝として格納する。手続 order を order(1)として呼び出すと， の順に出力される。1 2 3 4567 8 9 10 11 12 13 14注記 1 ○の中の値は節番号である。注記 2 子の節が一つの場合は，左の子の節とする。図 プログラムが扱う 2 分木〔プログラム〕大域: 整数型配列の配列: tree ← {{2, 3}, {4, 5}, {6, 7}, {8, 9},{10, 11}, {12, 13}, {14}, {}, {}, {},{}, {}, {}, {}} // {}は要素数0の配列○order(整数型: n)if (tree[n]の要素数 が 2 と等しい)order(tree[n][1])nを出力order(tree[n][2])elseif (tree[n]の要素数 が 1 と等しい)order(tree[n][1])nを出力else nを出力endif解答群
+ア 1，2，3，4，5，6，7，8，9，10，11，12，13，14
+イ 1，2，4，8，9，5，10，11，3，6，12，13，7，14
+ウ 8，4，9，2，10，5，11，1，12，6，13，3，14，7
+エ 8，9，4，10，11，5，2，12，13，6，14，7，3，1
+```
+
+### tokurei-mondai-200906-fe-q27
+
+- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問27
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **14 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
+- 正解: **イ**
+
+```
+コード設計の作業の中で，最初に行うべき作業はどれか。
+ア コード化作業とコード表作成
+イ コード化対象の選定
+ウ コードファイルの作成
+エ 使用期間とデータ量の予測
+```
+
+### tokurei-mondai-200906-fe-q61
+
+- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問61
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **28 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
+- 正解: **イ**
+
+```
+業務のあるべき姿を表す論理モデルを説明したものはどれか。
+ア 企業における主要機能を明確にして，現状の業務機能を分析し，体系化したもの
+イ 経営目標の達成に必要な業務機能を定義し，体系化したもの
+ウ 現状の業務機能と情報システムでの処理を分析し，相互の関係を明確化したもの
+エ 本来あるべき業務機能と現状を比較・分析し，評価したもの
+```
+
+### tokurei-mondai-200907-fe-q16
+
+- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問16
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **8 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
 - 正解: **ウ**
 
 ```
-オブジェクト指向プログラミングの基本概念に関する記述のうち，適切なものはどれか。
-ア part-of 関係は，オブジェクト間の概念的な包含関係を表しており，子は親の性質を引き継ぎ，更に自分独自の性質をもつことができる。
-イ インヘリタンスとは，上位のオブジェクトが下位のオブジェクトの性質を引き継ぐことで，上位オブジェクトは下位オブジェクトに存在しない新たな性質を追加できる。
-ウ カプセル化とは，データと関連する処理を一つにまとめ，外部にはそのインタフェースだけを公開することである。
-エ ポリモーフィズムとは，行いたい処理を直接実行するのではなく，その処理を内部にもつ別のオブジェクトに処理の実行を依頼することである。
+あるハードウェア製品の故障率は時間とともに変化して，図のようなバスタブ曲線となった。この製品の偶発故障期間は約何年か。故障率01 7 10経過年数
+ア 1
+イ 3
+ウ 6
+エ 7
 ```
 
-### tokurei-mondai-200907-fe-q63
+### tokurei-mondai-200907-fe-q47
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問63
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **26 ページ**
+- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問47
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **19 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
 - 正解: **ア**
 
 ```
-情報戦略の策定における経営戦略との関係のうち，適切なものはどれか。
-ア 経営戦略との整合性を図りながら策定すべきである。
-イ 経営戦略とは独立に策定すべきである。
-ウ 経営戦略に影響を与えないように策定すべきである。
-エ 経営戦略に優先して策定すべきである。
-```
-
-### tokurei-mondai-20111218-fe-q04
-
-- 出典：2011（平成23）年度 基本情報技術者試験 修了試験 科目A 問4
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20111218_FE.pdf の **4 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20111218_FE.pdf
-- 正解: **ア**
-
-```
-通信回線の伝送誤りに対処するパリティチェック方式（垂直パリティ）の記述として，適切なものはどれか。
-ア １ ビ ッ ト の 誤 り を 検 出 で き る 。イ１ビットの誤りを訂正でき，２ビットの誤りを検出できる。ウ奇数パリティならば１ビットの誤りを検出できるが，偶数パリティは１ビットの誤りも検出できない。エ奇数パリティならば奇数個のビット誤りを，偶数パリティならば偶数個のビット誤りを検出できる。首'５次の２分探索木から要素１２を削除したとき，その位置に別の要素を移動するだけで２分探索木を再構成するには，削除された要素の位置にどの要素を移動すればよいか。ア ９
-イ １ ０
-ウ １ ３
-エ １ ４
+プログラムの誤りの一つに，繰返し処理の判定条件として A ≧ a とすべきところを A ＞ a とコーディングすることがある。このような誤りを見つけ出すために有効なテストケース設計技法はどれか。ここで，A は変数，a は定数とする。
+ア 限界値分析
+イ 条件網羅
+ウ 同値分割
+エ 分岐網羅
 ```

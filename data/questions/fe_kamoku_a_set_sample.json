@@ -1,1 +1,1713 @@
-[]
+[
+ {
+  "id": "fe-kamoku-a-set-sample-q01",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 1,
+  "format": "text",
+  "body": "負数を 2 の補数で表すとき，8 ビットの 2 進正数 n に対し－n を求める式はどれか。ここで，＋は加算を表し，OR はビットごとの論理和，XOR はビットごとの排他的論理和を表す。",
+  "choices": {
+   "ア": "(n OR 10000000) ＋ 00000001",
+   "イ": "(n OR 11111110) ＋ 11111111",
+   "ウ": "(n XOR 10000000) ＋ 11111111",
+   "エ": "(n XOR 11111111) ＋ 00000001"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 4,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q02",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "次の流れ図は，10 進整数 j（0 ＜ j ＜ 100）を 8 桁の 2 進数に変換する処理を表している。2 進数は下位桁から順に，配列の要素 NISHIN (1) から NISHIN (8) に格納される。流れ図の a 及び b に入れる処理はどれか。ここで，j div 2 は j を 2 で割った商の整数部分を，j mod 2 は j を 2 で割った余りを表す。開始j を入力変換k：1，1，8（注）a b（注）ループ端の繰返し指定は，変換変数名：初期値，増分，終値を示す。終了a b",
+  "choices": {
+   "ア": "j ← j div 2 NISHIN (k) ← j mod 2",
+   "イ": "j ← j mod 2 NISHIN (k) ← j div 2",
+   "ウ": "NISHIN (k) ← j div 2 j ← j mod 2",
+   "エ": "NISHIN (k) ← j mod 2 j ← j div 2"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 4,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q03",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "P，Q，R はいずれも命題である。命題 P の真理値は真であり，命題 (not P ) or Q及び命題 (not Q ) or R のいずれの真理値も真であることが分かっている。Q，R の真理値はどれか。ここで，X or Y は X と Y の論理和，not X は X の否定を表す。Q R",
+  "choices": {
+   "ア": "偽 偽",
+   "イ": "偽 真",
+   "ウ": "真 偽",
+   "エ": "真 真"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 5,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q04",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "入力記号，出力記号の集合が｛0，1｝であり，状態遷移図で示されるオートマトンがある。0011001110 を入力記号とした場合の出力記号はどれか。ここで，入力記号は左から順に読み込まれるものとする。また，S1 は初期状態を表し，遷移の矢印のラベルは，入力／出力を表している。〔状態遷移図〕0／0 1／1 1／01／1 S 1 S2 S3 0／0 0／0",
+  "choices": {
+   "ア": "0001000110",
+   "イ": "0001001110",
+   "ウ": "0010001000",
+   "エ": "0011111110"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 5,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q06",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 6,
+  "format": "text",
+  "body": "配列 A が図 2 の状態のとき，図 1 の流れ図を実行すると，配列 B が図 3 の状態になった。図 1 の a に入れる操作はどれか。ここで，配列 A，B の要素をそれぞれA (i，j ) ，B (i，j ) とする。開始jj 01 2 3 4 5 6 701 2 3 4 5 6 7ループ 1 0＊ ＊ ＊ ＊ ＊ ＊0 i：0,1,7（注）1＊1＊ ＊＊ ＊ ＊ ＊ ＊＊2＊2＊＊ループ 23＊＊ ＊ ＊3＊＊j：0,1,7（注）ii 4＊4＊＊5＊5＊a6＊6＊7＊7ループ 2図２ 配列Ａの状態図３ 実行後の配列Ｂ の状態ループ 1（注）ループ端の繰返し指定は，変数名：初期値，増分，終値を示す。終了図１ 流れ図",
+  "choices": {
+   "ア": "B (7－i，7－j ) ← A (i，j )",
+   "イ": "B (7－j，i ) ← A (i，j )",
+   "ウ": "B (i，7－j ) ← A (i，j )",
+   "エ": "B ( j，7－i ) ← A (i，j )"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問6",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 7,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q07",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 7,
+  "format": "text",
+  "body": "10 進法で 5 桁の数 a 1 a 2 a 3 a 4 a 5 を，ハッシュ法を用いて配列に格納したい。ハッシュ関数を mod ( a 1＋a 2＋a 3＋a 4＋a 5 ，13 ) とし，求めたハッシュ値に対応する位置の配列要素に格納する場合， 54321 は配列のどの位置に入るか。ここで，mod ( x ，13 ) は，x を 13 で割った余りとする。位置 配列0 1 2……11 12",
+  "choices": {
+   "ア": "1",
+   "イ": "2",
+   "ウ": "7",
+   "エ": "11"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問7",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 8,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q08",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 8,
+  "format": "text",
+  "body": "自然数 n に対して，次のとおり再帰的に定義される関数 f (n) を考える。f (5) の値はどれか。f (n)： if n≦1 then return 1 else return n ＋ f (n－1)",
+  "choices": {
+   "ア": "6",
+   "イ": "9",
+   "ウ": "15",
+   "エ": "25"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 8,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q09",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 9,
+  "format": "text",
+  "body": "プログラムのコーディング規約に規定する事項のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "局所変数は，用途が異なる場合でもデータ型が同じならば，できるだけ同一の変数を使うようにする。",
+   "イ": "処理性能を向上させるために，ループの制御変数には浮動小数点型変数を使用する。",
+   "ウ": "同様の計算を何度も繰り返すときは，関数の再帰呼出しを用いる。",
+   "エ": "領域割付け関数を使用するときは，割付けができなかったときの処理を記述する。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問9",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 9,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q10",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 10,
+  "format": "text",
+  "body": "外部割込みの原因となるものはどれか。",
+  "choices": {
+   "ア": "ゼロによる除算命令の実行",
+   "イ": "存在しない命令コードの実行",
+   "ウ": "タイマーによる時間経過の通知",
+   "エ": "ページフォールトの発生"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問10",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 9,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q11",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 11,
+  "format": "text",
+  "body": "メモリのエラー検出及び訂正に ECC を利用している。データバス幅 2ビットに対して冗長ビットが n ＋ 2 ビット必要なとき，128 ビットのデータバス幅に必要な冗長ビットは何ビットか。",
+  "choices": {
+   "ア": "7",
+   "イ": "8",
+   "ウ": "9",
+   "エ": "10"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 9,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q12",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 12,
+  "format": "text",
+  "body": "A ～ D を，主記憶の実効アクセス時間が短い順に並べたものはどれか。キャッシュメモリ 主記憶アクセス時間ヒット率アクセス時間有無（ナノ秒）（％）（ナノ秒）A なし － － 15 B なし － － 30 C あり 20 60 70 D あり 10 90 80",
+  "choices": {
+   "ア": "A，B，C，D",
+   "イ": "A，D，B，C",
+   "ウ": "C，D，A，B",
+   "エ": "D，C，A，B"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 10,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q13",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 13,
+  "format": "text",
+  "body": "仮想化マシン環境を物理マシン 20 台で運用しているシステムがある。次の運用条件のとき，物理マシンが最低何台停止すると縮退運転になるか。〔運用条件〕(1) 物理マシンが停止すると，そこで稼働していた仮想マシンは他の全ての物理マシンで均等に稼働させ，使用していた資源も同様に配分する。(2) 物理マシンが 20 台のときに使用する資源は，全ての物理マシンにおいて 70％である。(3) 1 台の物理マシンで使用している資源が 90％を超えた場合，システム全体が縮退運転となる。(4) (1) ～ (3) 以外の条件は考慮しなくてよい。",
+  "choices": {
+   "ア": "2",
+   "イ": "3",
+   "ウ": "4",
+   "エ": "5"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 10,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q14",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 14,
+  "format": "text",
+  "body": "図のように，1 台のサーバ，3 台のクライアント及び 2 台のプリンタが LAN で接続されている。このシステムはクライアントからの指示に基づいて，サーバにあるデータをプリンタに出力する。各装置の稼働率が表のとおりであるとき，このシステムの稼働率を表す計算式はどれか。ここで，クライアントは 3 台のうちどれか 1 台が稼働していればよく，プリンタは 2 台のうちどちらかが稼働していればよい。サーバプリンタプリンタクライアントクライアントクライアント装置 稼働率サーバ aクライアント bプリンタ c LAN 1",
+  "choices": {
+   "ア": "abc",
+   "イ": "a (1 － b) (1 － c)",
+   "ウ": "a (1 － b)(1 － c)",
+   "エ": "a (1 － (1 － b)) (1 － (1 － c))"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 11,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q15",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 15,
+  "format": "text",
+  "body": "図の送信タスクから受信タスクに T 秒間連続してデータを送信する。1 秒当たりの送信量を S，1 秒当たりの受信量を R としたとき，バッファがオーバフローしないバッファサイズ L を表す関係式として適切なものはどれか。ここで，受信タスクよりも送信タスクの方が転送速度は速く，次の転送開始までの時間間隔は十分にあるものとする。バッファ送信タスク 受信タスクS サイズ：L R",
+  "choices": {
+   "ア": "L ＜（ R － S ）× T",
+   "イ": "L ＜（ S － R ）× T",
+   "ウ": "L ≧（ R － S ）× T",
+   "エ": "L ≧（ S － R ）× T"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 12,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q16",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 16,
+  "format": "text",
+  "body": "インタプリタの説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "原始プログラムを，解釈しながら実行するプログラムである。",
+   "イ": "原始プログラムを，推論しながら翻訳するプログラムである。",
+   "ウ": "原始プログラムを，目的プログラムに翻訳するプログラムである。",
+   "エ": "実行可能なプログラムを，主記憶装置にロードするプログラムである。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 12,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q17",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 17,
+  "format": "text",
+  "body": "三つの媒体 A ～ C に次の条件でファイル領域を割り当てた場合，割り当てた領域の総量が大きい順に媒体を並べたものはどれか。〔条件〕(1) ファイル領域を割り当てる際の媒体選択アルゴリズムとして，空き領域が最大の媒体を選択する方式を採用する。(2) 割当て要求されるファイル領域の大きさは，順に 90，30，40，40，70，30（M バイト）であり，割り当てられたファイル領域は，途中で解放されない。(3) 各媒体は容量が同一であり，割当て要求に対して十分な大きさをもち，初めは全て空きの状態である。(4) 空き領域の大きさが等しい場合には，A，B，C の順に選択する。",
+  "choices": {
+   "ア": "A，B，C",
+   "イ": "A，C，B",
+   "ウ": "B，A，C",
+   "エ": "C，B，A"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 13,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q18",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 18,
+  "format": "text",
+  "body": "ファイルシステムの絶対パス名を説明したものはどれか。",
+  "choices": {
+   "ア": "あるディレクトリから対象ファイルに至る幾つかのパス名のうち，最短のパス名",
+   "イ": "カレントディレクトリから対象ファイルに至るパス名",
+   "ウ": "ホームディレクトリから対象ファイルに至るパス名",
+   "エ": "ルートディレクトリから対象ファイルに至るパス名"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 13,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q19",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 19,
+  "format": "text",
+  "body": "DRAM の特徴はどれか。",
+  "choices": {
+   "ア": "書込み及び消去を一括又はブロック単位で行う。",
+   "イ": "データを保持するためのリフレッシュ操作又はアクセス操作が不要である。",
+   "ウ": "電源が遮断された状態でも，記憶した情報を保持することができる。",
+   "エ": "メモリセル構造が単純なので高集積化することができ，ビット単価を安くできる。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問19",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 13,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q20",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 20,
+  "format": "text",
+  "body": "次のような注文データが入力されたとき，注文日が入力日以前の営業日かどうかを検査するチェックはどれか。注文データ伝票番号注文日商品コード数量顧客コード（文字）（文字）（文字）（数値）（文字）",
+  "choices": {
+   "ア": "シーケンスチェック",
+   "イ": "重複チェック",
+   "ウ": "フォーマットチェック",
+   "エ": "論理チェック"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問20",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 14,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q21",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 21,
+  "format": "text",
+  "body": "RDBMS におけるビューに関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "ビューとは，名前を付けた導出表のことである。",
+   "イ": "ビューに対して，ビューを定義することはできない。",
+   "ウ": "ビューの定義を行ってから，必要があれば，その基底表を定義する。",
+   "エ": "ビューは一つの基底表に対して一つだけ定義できる。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問21",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 14,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q22",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 22,
+  "format": "text",
+  "body": "UML を用いて表した図の概念データモデルの解釈として，適切なものはどれか。所属する部署 従業員1..＊0..＊",
+  "choices": {
+   "ア": "従業員の総数と部署の総数は一致する。",
+   "イ": "従業員は，同時に複数の部署に所属してもよい。",
+   "ウ": "所属する従業員がいない部署の存在は許されない。",
+   "エ": "どの部署にも所属しない従業員が存在してもよい。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問22",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 14,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q23",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 23,
+  "format": "text",
+  "body": "ビッグデータのデータ貯蔵場所であるデータレイクの特徴として，適切なものはどれか。",
+  "choices": {
+   "ア": "あらゆるデータをそのままの形式や構造で格納しておく。",
+   "イ": "データ量を抑えるために，データの記述情報であるメタデータは格納しない。",
+   "ウ": "データを格納する前にデータ利用方法を設計し，それに沿ってスキーマをあらかじめ定義しておく。",
+   "エ": "テキストファイルやバイナリデータなど，格納するデータの形式に応じてリポジトリを使い分ける。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問23",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 15,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q24",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 24,
+  "format": "text",
+  "body": "関係モデルにおいて表 X から表 Y を得る関係演算はどれか。X Y商品番号 商品名 価格 数量 商品番号 数量A01 カメラ 13,000 20 A01 20 A02 テレビ 58,000 15 A02 15 B01 冷蔵庫 65,000 8 B01 8 B05 洗濯機 48,000 10 B05 10 B06 乾燥機 35,000 5 B06 5",
+  "choices": {
+   "ア": "結合（join）",
+   "イ": "射影（projection）",
+   "ウ": "選択（selection）",
+   "エ": "併合（merge）"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問24",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 15,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q25",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 25,
+  "format": "text",
+  "body": "IoT で用いられる無線通信技術であり，近距離の IT 機器同士が通信する無線 PAN（Personal Area Network）と呼ばれるネットワークに利用されるものはどれか。",
+  "choices": {
+   "ア": "BLE（Bluetooth Low Energy）",
+   "イ": "LTE（Long Term Evolution）",
+   "ウ": "PLC（Power Line Communication）",
+   "エ": "PPP（Point-to-Point Protocol）"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問25",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 16,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q26",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 26,
+  "format": "text",
+  "body": "1.5 M ビット／秒の伝送路を用いて 12 M バイトのデータを転送するのに必要な伝送時間は何秒か。ここで，伝送路の伝送効率を 50％とする。",
+  "choices": {
+   "ア": "16",
+   "イ": "32",
+   "ウ": "64",
+   "エ": "128"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問26",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 16,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q27",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 27,
+  "format": "text",
+  "body": "TCP/IP を利用している環境で，電子メールに画像データなどを添付するための規格はどれか。",
+  "choices": {
+   "ア": "JPEG",
+   "イ": "MIME",
+   "ウ": "MPEG",
+   "エ": "SMTP"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問27",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 16,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q28",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 28,
+  "format": "text",
+  "body": "トランスポート層のプロトコルであり，信頼性よりもリアルタイム性が重視される場合に用いられるものはどれか。",
+  "choices": {
+   "ア": "HTTP",
+   "イ": "IP",
+   "ウ": "TCP",
+   "エ": "UDP"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問28",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 16,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q29",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 29,
+  "format": "text",
+  "body": "PC と Web サーバが HTTP で通信している。PC から Web サーバ宛てのパケットでは，送信元ポート番号は PC 側で割り当てた 50001，宛先ポート番号は 80 であった。Webサーバから PC への戻りのパケットでのポート番号の組合せはどれか。宛先（PC）の送信元（Web サーバ）のポート番号ポート番号",
+  "choices": {
+   "ア": "80 50001",
+   "イ": "50001 80",
+   "ウ": "80 と 50001 以外からサーバ側で割り当てた番号 80",
+   "エ": "80 と 50001 以外からサーバ側で割り当てた番号 50001"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問29",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 17,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q30",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 30,
+  "format": "text",
+  "body": "緊急事態を装って組織内部の人間からパスワードや機密情報を入手する不正な行為は，どれに分類されるか。",
+  "choices": {
+   "ア": "ソーシャルエンジニアリング",
+   "イ": "トロイの木馬",
+   "ウ": "踏み台攻撃",
+   "エ": "ブルートフォース攻撃"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問30",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 17,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q31",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 31,
+  "format": "text",
+  "body": "ボットネットにおける C&C サーバの役割として，適切なものはどれか。",
+  "choices": {
+   "ア": "Web サイトのコンテンツをキャッシュし，本来のサーバに代わってコンテンツを利用者に配信することによって，ネットワークやサーバの負荷を軽減する。",
+   "イ": "外部からインターネットを経由して社内ネットワークにアクセスする際に，CHAPなどのプロトコルを中継することによって，利用者認証時のパスワードの盗聴を防止する。",
+   "ウ": "外部からインターネットを経由して社内ネットワークにアクセスする際に，時刻同期方式を採用したワンタイムパスワードを発行することによって，利用者認証時のパスワードの盗聴を防止する。",
+   "エ": "侵入して乗っ取ったコンピュータに対して，他のコンピュータへの攻撃などの不正な操作をするよう，外部から命令を出したり応答を受け取ったりする。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問31",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 18,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q32",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 32,
+  "format": "text",
+  "body": "メッセージ認証符号の利用目的に該当するものはどれか。",
+  "choices": {
+   "ア": "メッセージが改ざんされていないことを確認する。",
+   "イ": "メッセージの暗号化方式を確認する。",
+   "ウ": "メッセージの概要を確認する。",
+   "エ": "メッセージの秘匿性を確保する。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問32",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 18,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q33",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 33,
+  "format": "text",
+  "body": "UPS の導入によって期待できる情報セキュリティ対策としての効果はどれか。",
+  "choices": {
+   "ア": "PC が電力線通信（PLC）からマルウェアに感染することを防ぐ。",
+   "イ": "サーバと端末間の通信における情報漏えいを防ぐ。",
+   "ウ": "電源の瞬断に起因するデータの破損を防ぐ。",
+   "エ": "電子メールの内容が改ざんされることを防ぐ。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問33",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 18,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q34",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 34,
+  "format": "text",
+  "body": "ファジングに該当するものはどれか。",
+  "choices": {
+   "ア": "サーバに FIN パケットを送信し，サーバからの応答を観測して，稼働しているサービスを見つけ出す。",
+   "イ": "サーバの OS やアプリケーションソフトウェアが生成したログやコマンド履歴などを解析して，ファイルサーバに保存されているファイルの改ざんを検知する。",
+   "ウ": "ソフトウェアに，問題を引き起こしそうな多様なデータを入力し，挙動を監視して，脆弱性を見つけ出す。",
+   "エ": "ネットワーク上を流れるパケットを収集し，そのプロトコルヘッダやペイロードを解析して，あらかじめ登録された攻撃パターンと一致するものを検出する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問34",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 19,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q35",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 35,
+  "format": "text",
+  "body": "マルウェアの動的解析に該当するものはどれか。",
+  "choices": {
+   "ア": "検体のハッシュ値を計算し，オンラインデータベースに登録された既知のマルウェアのハッシュ値のリストと照合してマルウェアを特定する。",
+   "イ": "検体をサンドボックス上で実行し，その動作や外部との通信を観測する。",
+   "ウ": "検体をネットワーク上の通信データから抽出し，さらに，逆コンパイルして取得したコードから検体の機能を調べる。",
+   "エ": "ハードディスク内のファイルの拡張子とファイルヘッダの内容を基に，拡張子が偽装された不正なプログラムファイルを検出する。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問35",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 19,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q36",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 36,
+  "format": "text",
+  "body": "SQL インジェクション攻撃による被害を防ぐ方法はどれか。",
+  "choices": {
+   "ア": "入力された文字が，データベースへの問合せや操作において，特別な意味をもつ文字として解釈されないようにする。",
+   "イ": "入力に HTML タグが含まれていたら，HTML タグとして解釈されない他の文字列に置き換える。",
+   "ウ": "入力に上位ディレクトリを指定する文字列（ . . / ）が含まれているときは受け付けない。",
+   "エ": "入力の全体の長さが制限を超えているときは受け付けない。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問36",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 20,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q37",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 37,
+  "format": "text",
+  "body": "電子メールをドメイン A の送信者がドメイン B の宛先に送信するとき，送信者をドメイン A のメールサーバで認証するためのものはどれか。",
+  "choices": {
+   "ア": "APOP",
+   "イ": "POP3S",
+   "ウ": "S/MIME",
+   "エ": "SMTP-AUTH"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問37",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 20,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q38",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 38,
+  "format": "text",
+  "body": "オブジェクト指向プログラムにおいて，データとメソッドを一つにまとめ，オブジェクトの実装の詳細をユーザから見えなくすることを何と呼ぶか。",
+  "choices": {
+   "ア": "インスタンス",
+   "イ": "カプセル化",
+   "ウ": "クラスタ化",
+   "エ": "抽象化"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問38",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 20,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q39",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 39,
+  "format": "text",
+  "body": "モジュール結合度が最も弱くなるものはどれか。",
+  "choices": {
+   "ア": "一つのモジュールで，できるだけ多くの機能を実現する。",
+   "イ": "二つのモジュール間で必要なデータ項目だけを引数として渡す。",
+   "ウ": "他のモジュールとデータ項目を共有するためにグローバルな領域を使用する。",
+   "エ": "他のモジュールを呼び出すときに，呼び出したモジュールの論理を制御するための引数を渡す。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問39",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 20,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q40",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 40,
+  "format": "text",
+  "body": "モジュールの内部構造を考慮することなく，仕様書どおりに機能するかどうかをテストする手法はどれか。",
+  "choices": {
+   "ア": "トップダウンテスト",
+   "イ": "ブラックボックステスト",
+   "ウ": "ボトムアップテスト",
+   "エ": "ホワイトボックステスト"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問40",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 21,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q41",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 41,
+  "format": "text",
+  "body": "アジャイル開発のスクラムにおけるスプリントのルールのうち，適切なものはどれか。",
+  "choices": {
+   "ア": "スプリントの期間を決定したら，スプリントの 1 回目には要件定義工程を，2 回目には設計工程を，3 回目にはコード作成工程を，4 回目にはテスト工程をそれぞれ割り当てる。",
+   "イ": "成果物の内容を確認するスプリントレビューを，スプリントの期間の中間時点で実施する。",
+   "ウ": "プロジェクトで設定したスプリントの期間でリリース判断が可能なプロダクトインクリメントができるように，スプリントゴールを設定する。",
+   "エ": "毎回のスプリントプランニングにおいて，スプリントの期間をゴールの難易度に応じて，1 週間から 1 か月までの範囲に設定する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問41",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 21,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q42",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 42,
+  "format": "text",
+  "body": "プロジェクトライフサイクルの一般的な特性はどれか。",
+  "choices": {
+   "ア": "開発要員数は，プロジェクト開始時が最多であり，プロジェクトが進むにつれて減少し，完了に近づくと再度増加する。",
+   "イ": "ステークホルダがコストを変えずにプロジェクトの成果物に対して及ぼすことができる影響の度合いは，プロジェクト完了直前が最も大きくなる。",
+   "ウ": "プロジェクトが完了に近づくほど，変更やエラーの修正がプロジェクトに影響する度合いは小さくなる。",
+   "エ": "リスクは，プロジェクトが完了に近づくにつれて減少する。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問42",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 21,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q43",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 43,
+  "format": "text",
+  "body": "ソフトウェア開発の見積方法の一つであるファンクションポイント法の説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "開発規模が分かっていることを前提として，工数と工期を見積もる方法である。ビジネス分野に限らず，全分野に適用可能である。",
+   "イ": "過去に経験した類似のソフトウェアについてのデータを基にして，ソフトウェアの相違点を調べ，同じ部分については過去のデータを使い，異なった部分は経験に基づいて，規模と工数を見積もる方法である。",
+   "ウ": "ソフトウェアの機能を入出力データ数やファイル数などによって定量的に計測し，複雑さによる調整を行って，ソフトウェア規模を見積もる方法である。",
+   "エ": "単位作業項目に適用する作業量の基準値を決めておき，作業項目を単位作業項目まで分解し，基準値を適用して算出した作業量の積算で全体の作業量を見積もる方法である。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問43",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 22,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q44",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 44,
+  "format": "text",
+  "body": "アローダイアグラムの日程計画をもつプロジェクトの，開始から終了までの最少所要日数は何日か。E 2凡例BH作業名22所要日数ACFI 2131 DJ 44 G 3",
+  "choices": {
+   "ア": "9",
+   "イ": "10",
+   "ウ": "11",
+   "エ": "12"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問44",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 22,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q45",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 45,
+  "format": "text",
+  "body": "サービスマネジメントのプロセス改善におけるベンチマーキングはどれか。",
+  "choices": {
+   "ア": "IT サービスのパフォーマンスを財務，顧客，内部プロセス，学習と成長の観点から測定し，戦略的な活動をサポートする。",
+   "イ": "業界内外の優れた業務方法（ベストプラクティス）と比較して，サービス品質及びパフォーマンスのレベルを評価する。",
+   "ウ": "サービスのレベルで可用性，信頼性，パフォーマンスを測定し，顧客に報告する。",
+   "エ": "強み，弱み，機会，脅威の観点から IT サービスマネジメントの現状を分析する。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問45",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 23,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q46",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 46,
+  "format": "text",
+  "body": "ディスク障害時に，フルバックアップを取得してあるテープからディスクにデータを復元した後，フルバックアップ取得時以降の更新後コピーをログから反映させてデータベースを回復する方法はどれか。",
+  "choices": {
+   "ア": "チェックポイントリスタート",
+   "イ": "リブート",
+   "ウ": "ロールバック",
+   "エ": "ロールフォワード"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問46",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 23,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q47",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 47,
+  "format": "text",
+  "body": "経営者が社内のシステム監査人の外観上の独立性を担保するために講じる措置として，最も適切なものはどれか。",
+  "choices": {
+   "ア": "システム監査人に IT に関する継続的学習を義務付ける。",
+   "イ": "システム監査人に必要な知識や経験を定めて公表する。",
+   "ウ": "システム監査人の監査技法研修制度を設ける。",
+   "エ": "システム監査人の所属部署を内部監査部門とする。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問47",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 23,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q48",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 48,
+  "format": "text",
+  "body": "情報セキュリティ監査において，可用性を確認するチェック項目はどれか。",
+  "choices": {
+   "ア": "外部記憶媒体の無断持出しが禁止されていること",
+   "イ": "中断時間を定めた SLA の水準が保たれるように管理されていること",
+   "ウ": "データ入力時のエラーチェックが適切に行われていること",
+   "エ": "データベースが暗号化されていること"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問48",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 24,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q49",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 49,
+  "format": "text",
+  "body": "テレワークで活用している VDI に関する記述として，適切なものはどれか。",
+  "choices": {
+   "ア": "PC 環境を仮想化してサーバ上に置くことで，社外から端末の種類を選ばず自分のデスクトップ PC 環境として利用できるシステム",
+   "イ": "インターネット上に仮想の専用線を設定し，特定の人だけが利用できる専用ネットワーク",
+   "ウ": "紙で保管されている資料を，ネットワークを介して遠隔地からでも参照可能な電子書類に変換・保存することができるツール",
+   "エ": "対面での会議開催が困難な場合に，ネットワークを介して対面と同じようなコミュニケーションができるツール"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問49",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 24,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q50",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 50,
+  "format": "text",
+  "body": "投資案件において，5 年間の投資効果を ROI（Return On Investment）で評価した場合，四つの案件 a～d のうち，最も ROI が高いものはどれか。ここで，割引率は考慮しなくてもよいものとする。a 年目 1 2 3 4 5利益 15 30 45 30 15投資額 100 b 年目 1 2 3 4 5利益 105 75 45 15 0投資額 200 c 年目 1 2 3 4 5利益 60 75 90 75 60投資額 300 d 年目 1 2 3 4 5利益 105 105 105 105 105投資額 400",
+  "choices": {
+   "ア": "a",
+   "イ": "b",
+   "ウ": "c",
+   "エ": "d"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問50",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 25,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q51",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 51,
+  "format": "text",
+  "body": "国や地方公共団体が，環境への配慮を積極的に行っていると評価されている製品・サービスを選んでいる。この取組を何というか。",
+  "choices": {
+   "ア": "CSR",
+   "イ": "エコマーク認定",
+   "ウ": "環境アセスメント",
+   "エ": "グリーン購入"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問51",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 25,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q52",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 52,
+  "format": "text",
+  "body": "コアコンピタンスの説明はどれか。",
+  "choices": {
+   "ア": "競合他社にはまねのできない自社ならではの卓越した能力",
+   "イ": "経営を行う上で法令や各種規制，社会的規範などを遵守する企業活動",
+   "ウ": "市場・技術・商品（サービス）の観点から設定した，事業の展開領域",
+   "エ": "組織活動の目的を達成するために行う，業務とシステムの全体最適化手法"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問52",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 26,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q53",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 53,
+  "format": "text",
+  "body": "新しい事業に取り組む際の手法として，E.リースが提唱したリーンスタートアップの説明はどれか。",
+  "choices": {
+   "ア": "国・地方公共団体など，公共機関の補助金・助成金の交付を前提とし，事前に詳細な事業計画を検討・立案した上で，公共性のある事業を立ち上げる手法",
+   "イ": "市場環境の変化によって競争力を喪失した事業分野に対して，経営資源を大規模に追加投入し，リニューアルすることによって，基幹事業として再出発を期す手法",
+   "ウ": "持続可能な事業を迅速に構築し，展開するために，あらかじめ詳細に立案された事業計画を厳格に遂行して，成果の検証や計画の変更を最小限にとどめる手法",
+   "エ": "実用最小限の製品・サービスを短期間で作り，構築・計測・学習というフィードバックループで改良や方向転換をして，継続的にイノベーションを行う手法"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問53",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 26,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q54",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 54,
+  "format": "text",
+  "body": "IoT の応用事例のうち，HEMS の説明はどれか。",
+  "choices": {
+   "ア": "工場内の機械に取り付けたセンサで振動，温度，音などを常時計測し，収集したデータを基に機械の劣化状態を分析して，適切なタイミングで部品を交換する。",
+   "イ": "自動車に取り付けたセンサで車両の状態，路面状況などのデータを計測し，ネットワークを介して保存し分析することによって，効率的な運転を支援する。",
+   "ウ": "情報通信技術や環境技術を駆使して，街灯などの公共設備や交通システムをはじめとする都市基盤のエネルギーの可視化と消費の最適制御を行う。",
+   "エ": "太陽光発電装置などのエネルギー機器，家電機器，センサ類などを家庭内通信ネットワークに接続して，エネルギーの可視化と消費の最適制御を行う。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問54",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 27,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q55",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 55,
+  "format": "text",
+  "body": "ロングテールの説明はどれか。",
+  "choices": {
+   "ア": "Web コンテンツを構成するテキストや画像などのデジタルコンテンツに，統合的・体系的な管理，配信などの必要な処理を行うこと",
+   "イ": "インターネットショッピングで，売上の全体に対して，あまり売れない商品群の売上合計が無視できない割合になっていること",
+   "ウ": "自分の Web サイトやブログに企業へのリンクを掲載し，他者がこれらのリンクを経由して商品を購入したときに，企業が紹介料を支払うこと",
+   "エ": "メーカや卸売業者から商品を直接発送することによって，在庫リスクを負うことなく自分の Web サイトで商品が販売できること"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問55",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 27,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q56",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 56,
+  "format": "text",
+  "body": "CGM（Consumer Generated Media）の例はどれか。",
+  "choices": {
+   "ア": "企業が，経営状況や財務状況，業績動向に関する情報を，個人投資家向けに公開する自社の Web サイト",
+   "イ": "企業が，自社の商品の特徴や使用方法に関する情報を，一般消費者向けに発信する自社の Web サイト",
+   "ウ": "行政機関が，政策，行政サービスに関する情報を，一般市民向けに公開する自組織の Web サイト",
+   "エ": "個人が，自らが使用した商品などの評価に関する情報を，不特定多数に向けて発信するブログや SNS などの Web サイト"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問56",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 28,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q57",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 57,
+  "format": "text",
+  "body": "製品 X 及び Y を生産するために 2 種類の原料 A，B が必要である。製品 1 個の生産に必要となる原料の量と調達可能量は表に示すとおりである。製品 X と Y の 1 個当たりの販売利益が，それぞれ 100 円，150 円であるとき，最大利益は何円か。製品 X の 1 個製品 Y の 1 個原料 調達可能量当たりの必要量当たりの必要量A 2 1 100 B 1 2 80",
+  "choices": {
+   "ア": "5,000",
+   "イ": "6,000",
+   "ウ": "7,000",
+   "エ": "8,000"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問57",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 28,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q58",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 58,
+  "format": "text",
+  "body": "令和 2 年 4 月に 30 万円で購入した PC を 3 年後に 1 万円で売却するとき，固定資産売却損は何万円か。ここで，耐用年数は 4 年，減価償却は定額法，定額法の償却率は0.250，残存価額は 0 円とする。",
+  "choices": {
+   "ア": "6.0",
+   "イ": "6.5",
+   "ウ": "7.0",
+   "エ": "7.5"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問58",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 28,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q59",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 59,
+  "format": "text",
+  "body": "売上高が 100 百万円のとき，変動費が 60 百万円，固定費が 30 百万円掛かる。変動費率，固定費は変わらないものとして，目標利益 18 百万円を達成するのに必要な売上高は何百万円か。",
+  "choices": {
+   "ア": "108",
+   "イ": "120",
+   "ウ": "156",
+   "エ": "180"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問59",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 29,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fe-kamoku-a-set-sample-q60",
+  "pool": "fe-sample",
+  "exam": {
+   "year": 2022,
+   "era": "2022年度",
+   "subject": "kamokuA",
+   "legacySection": "サンプル問題"
+  },
+  "no": 60,
+  "format": "text",
+  "body": "労働者派遣法に基づく，派遣先企業と労働者との関係（図の太線部分）はどれか。派遣元企業派遣先企業労働者",
+  "choices": {
+   "ア": "請負契約関係",
+   "イ": "雇用契約関係",
+   "ウ": "指揮命令関係",
+   "エ": "労働者派遣契約関係〔 メ モ 用 紙 〕〔 メ モ 用 紙 〕試験問題に記載されている会社名又は製品名は，それぞれ各社の商標又は登録商標です。TM ®なお，試験問題では，及び を明記していません。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：基本情報技術者試験 サンプル問題 科目A 問60",
+   "questionPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf",
+   "page": 29,
+   "sha256": "5a95b05825d1bae7c5fac7e17b0d102e5559530869b9c281d1292d0ff5dd610e"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

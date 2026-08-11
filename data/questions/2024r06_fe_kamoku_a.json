@@ -1,0 +1,553 @@
+[
+ {
+  "id": "2024r06-fe-kamoku-a-q01",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 1,
+  "format": "text",
+  "body": "X 及び Y はそれぞれ 0 又は 1 の値をとる変数である。X □Y を X と Y の論理演算としたとき，次の真理値表が得られた。X □Y の真理値表はどれか。X Y X AND ( X □Y ) X OR ( X □Y )0 0 0 1 0 1 0 1 1 0 0 1 1 1 1 1",
+  "choices": {
+   "ア": "X Y X □Y",
+   "イ": "X Y X □Y 0 0 0 0 0 0 0 1 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1",
+   "ウ": "X Y X □Y",
+   "エ": "X Y X □Y 0 0 1 0 0 1 0 1 1 0 1 1 1 0 0 1 0 1 1 1 1 1 1 0"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 2,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q02",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "キーが小文字のアルファベット 1 文字（a，b，…，z のいずれか）であるデータを，大きさが 10 のハッシュ表に格納する。ハッシュ関数として，アルファベットのASCII コードを 10 進表記法で表したときの 1 の位の数を用いることにする。衝突が起こるキーの組合せはどれか。ASCII コードでは，昇順に連続した 2 進数が，アルファベット順にコードとして割り当てられている。",
+  "choices": {
+   "ア": "a と i",
+   "イ": "b と r",
+   "ウ": "c と l",
+   "エ": "d と x"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 2,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q03",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "図に示す構成で，表に示すようにキャッシュメモリと主記憶のアクセス時間だけが異なり，他の条件は同じ 2 種類の CPU X と Y がある。あるプログラムを CPU X と Y とでそれぞれ実行したところ，両者の処理時間が等しかった。このとき，キャッシュメモリのヒット率は幾らか。ここで，CPU 以外の処理による影響はないものとする。CPU表 アクセス時間キャッシュ主記憶単位 ナノ秒メモリCPU X CPU Y 256kバイト256Mバイトキャッシュメモリ4020主記憶400580図 構成",
+  "choices": {
+   "ア": "0.75",
+   "イ": "0.90",
+   "ウ": "0.95",
+   "エ": "0.96"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 3,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q04",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "あるシステムの今年度の MTBF は 3,000 時間，MTTR は 1,000 時間である。翌年度はMTBF について今年度の 20％分の改善，MTTR について今年度の 10％分の改善を図ると，翌年度の稼働率は何％になるか。",
+  "choices": {
+   "ア": "69",
+   "イ": "73",
+   "ウ": "77",
+   "エ": "80"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 3,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q05",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 5,
+  "format": "text",
+  "body": "複数の Web サービスの入出力処理を連結させて新たなサービスを提供する，“ロジックマッシュアップ”の例はどれか。",
+  "choices": {
+   "ア": "利用者が選択した飲食店情報のページを表示する際に，他の Web サービスが提供する地図コンテンツをアクセスマップとして表示する。",
+   "イ": "利用者が選択した投資商品の情報を表示する際に，関連する経済指標のデータを複数の Web サービスから取得し，グラフに加工して表示する。",
+   "ウ": "利用者が入力した予算の範囲で宿泊可能な施設のリストを他の Web サービスから取得し，それらの宿泊施設の空室状況を別の Web サービスから取得して表示する。",
+   "エ": "利用者がマウスのドラッグで地図を操作した際に，Web ページ全体ではなく一部を読み直すことによって地図をスクロールして表示する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問5",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 4,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q06",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 6,
+  "format": "text",
+  "body": "液晶ディスプレイなどの表示装置において，傾いた直線の境界を滑らかに表示する手法はどれか。",
+  "choices": {
+   "ア": "アンチエイリアシング",
+   "イ": "シェーディング",
+   "ウ": "テクスチャマッピング",
+   "エ": "バンプマッピング"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問6",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 4,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q07",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 7,
+  "format": "text",
+  "body": "DBMS に実装すべき原子性（atomicity）を説明したものはどれか。",
+  "choices": {
+   "ア": "同一データベースに対する同一処理は，何度実行しても結果は同じである。",
+   "イ": "トランザクション完了後にハードウェア障害が発生しても，更新されたデータベースの内容は保証される。",
+   "ウ": "トランザクション内の処理は，全てが実行されるか，全てが取り消されるかのいずれかである。",
+   "エ": "一つのトランザクションの処理結果は，他のトランザクション処理の影響を受けない。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問7",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 4,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q08",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 8,
+  "format": "text",
+  "body": "LAN 間接続装置に関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "ゲートウェイは，OSI 基本参照モデルにおける第 1 ～ 3 層だけのプロトコルを変換する。",
+   "イ": "ブリッジは，IP アドレスを基にしてフレームを中継する。",
+   "ウ": "リピータは，同種のセグメント間で信号を増幅することによって伝送距離を延長する。",
+   "エ": "ルータは，MAC アドレスを基にしてフレームを中継する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 5,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q09",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 9,
+  "format": "text",
+  "body": "ペネトレーションテストに該当するものはどれか。",
+  "choices": {
+   "ア": "検査対象の実行プログラムの設計書，ソースコードに着目し，開発プロセスの各工程にセキュリティ上の問題がないかどうかをツールや目視で確認する。",
+   "イ": "公開 Web サーバの各コンテンツファイルのハッシュ値を管理し，定期的に各ファイルから生成したハッシュ値と一致するかどうかを確認する。",
+   "ウ": "公開 Web サーバや組織のネットワークの脆弱性を探索し，サーバに実際に侵入できるかどうかを確認する。",
+   "エ": "内部ネットワークのサーバやネットワーク機器の IPFIX 情報から，各 PC の通信に異常な振る舞いがないかどうかを確認する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問9",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 5,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q10",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 10,
+  "format": "text",
+  "body": "SQL インジェクションの対策として，有効なものはどれか。",
+  "choices": {
+   "ア": "URL を Web ページに出力するときは，“http://”や“https://”で始まる URL だけを許可する。",
+   "イ": "外部からのパラメータで Web サーバ内のファイル名を直接指定しない。",
+   "ウ": "スタイルシートを任意の Web サイトから取り込めるようにしない。",
+   "エ": "プレースホルダを使って命令文を組み立てる。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問10",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 5,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q11",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 11,
+  "format": "text",
+  "body": "階層構造のモジュール群から成るソフトウェアの結合テストを，上位のモジュールから行う。この場合に使用する，下位のモジュールの代替となるテスト用のモジュールはどれか。",
+  "choices": {
+   "ア": "エミュレータ",
+   "イ": "シミュレータ",
+   "ウ": "スタブ",
+   "エ": "ドライバ"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 6,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q12",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 12,
+  "format": "text",
+  "body": "アジャイル開発手法の一つであるスクラムで定義され，スプリントで実施するイベントのうち，毎日決まった時間に決まった場所で行い，開発チームの全員が前回からの進捗状況や今後の作業計画を共有するものはどれか。",
+  "choices": {
+   "ア": "スプリントプランニング",
+   "イ": "スプリントレトロスペクティブ",
+   "ウ": "スプリントレビュー",
+   "エ": "デイリースクラム"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 6,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q13",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 13,
+  "format": "text",
+  "body": "アローダイアグラムで表されるプロジェクトは，完了までに最少で何日を要するか。E B 540 ACFH 30302530 DG 2030凡例作業名所要日数：ダミー作業",
+  "choices": {
+   "ア": "105",
+   "イ": "115",
+   "ウ": "120",
+   "エ": "125"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 6,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q14",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 14,
+  "format": "text",
+  "body": "システムの開発部門と運用部門が別々に組織化されているとき，システム開発を伴う新規サービスの設計及び移行を円滑かつ効果的に進めるための方法のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "運用テストの完了後に，開発部門がシステム仕様と運用方法を運用部門に説明する。",
+   "イ": "運用テストは，開発部門の支援を受けずに，運用部門だけで実施する。",
+   "ウ": "運用部門からもシステムの運用に関わる要件の抽出に積極的に参加する。",
+   "エ": "開発部門は運用テストを実施して，運用マニュアルを作成し，運用部門に引き渡す。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 7,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q15",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 15,
+  "format": "text",
+  "body": "ビッグデータ分析の前段階として，非構造化データを構造化データに加工する処理を記述している事例はどれか。",
+  "choices": {
+   "ア": "関係データベースに蓄積された大量の財務データから必要な条件に合致するデータを抽出し，利用者が扱いやすい表計算ソフトウェアデータに加工する。",
+   "イ": "個人情報を含むビッグデータを更に利活用するために，特定の個人を識別することができないように匿名化加工する。",
+   "ウ": "住所データ項目の中にある，“ヶ”と“が”の混在や，丁番地の表記不統一を，標準化された表記へ統一するために加工する。",
+   "エ": "ソーシャルメディアの口コミを機械学習によって単語ごとに分解し，要約を作り，分析可能なデータに加工し，関係データベースに保管する。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 7,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q16",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 16,
+  "format": "text",
+  "body": "コアコンピタンスを説明したものはどれか。",
+  "choices": {
+   "ア": "経営活動における基本精神や行動指針",
+   "イ": "事業戦略の遂行によって達成すべき到達目標",
+   "ウ": "自社を取り巻く環境に関するビジネス上の機会と脅威",
+   "エ": "他社との競争優位の源泉となる経営資源及び企業能力"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 8,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q17",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 17,
+  "format": "text",
+  "body": "マーケティング戦略におけるブルーオーシャンの説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "競争が存在していない未知の市場",
+   "イ": "コモディティ化が進んだ既存の市場",
+   "ウ": "新事業のアイディアを実際のビジネスに育成するまでの期間",
+   "エ": "製品開発したものを市場化する過程に横たわっている障壁"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 8,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q18",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 18,
+  "format": "text",
+  "body": "HR テックの説明はどれか。",
+  "choices": {
+   "ア": "ICT を活用して，住宅内のエネルギー使用状況の監視，機器の遠隔操作や自動制御などを可能にし，家庭におけるエネルギー管理を支援するソリューション",
+   "イ": "既存のビジネスモデルによる業界秩序や既得権益を破壊してしまうほど大きな影響を与える新しい ICT やビジネスモデル",
+   "ウ": "個人の資金に関わる情報を統合的に管理するサービスやマーケットプレイス・レンディングなどの金融サービスを実現するための新しい情報技術",
+   "エ": "採用，育成，評価，配属などの人事領域の業務を対象に，ビッグデータ解析やAI などの最新 ICT を活用して，業務改善と社員満足度向上を図るソリューション"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 8,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2024r06-fe-kamoku-a-q20",
+  "pool": "fe-koukai",
+  "exam": {
+   "year": 2024,
+   "era": "2024年度",
+   "subject": "kamokuA",
+   "legacySection": "公開問題"
+  },
+  "no": 20,
+  "format": "text",
+  "body": "日本において，産業財産権と総称される四つの権利はどれか。",
+  "choices": {
+   "ア": "意匠権，実用新案権，商標権，特許権",
+   "イ": "意匠権，実用新案権，著作権，特許権",
+   "ウ": "意匠権，商標権，著作権，特許権",
+   "エ": "実用新案権，商標権，著作権，特許権〔 メ モ 用 紙 〕〔 メ モ 用 紙 〕試験問題に記載されている会社名又は製品名は，それぞれ各社の商標又は登録商標です。TM ®なお，試験問題では，及び を明記していません。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2024年度 基本情報技術者試験 公開問題 科目A 問20",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf",
+   "page": 9,
+   "sha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789"
+  },
+  "verified": true,
+  "modified": false
+ }
+]
