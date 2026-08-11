@@ -33,7 +33,9 @@ const WORK = '.cache/render';
 // 保存する切り出し画像だけ縮小する。
 const DPI = Number(process.env.RENDER_DPI ?? 300);
 /** 保存する切り出し画像の最大幅（ピクセル） */
-const OUT_MAX_WIDTH = Number(process.env.OUT_MAX_WIDTH ?? 1400);
+const OUT_MAX_WIDTH = Number(process.env.OUT_MAX_WIDTH ?? 1150);
+/** WebP の品質。文字が潰れない範囲で小さくする */
+const WEBP_QUALITY = Number(process.env.WEBP_QUALITY ?? 70);
 /** 「問N」を探すためだけに OCR する左端の帯の幅（ページ幅に対する比） */
 const LEFT_STRIP_RATIO = Number(process.env.LEFT_STRIP_RATIO ?? 0.3);
 /** 取り込む回数の上限（0 = 制限なし）。段階的に増やすための安全弁 */
@@ -41,6 +43,11 @@ const MAX_EXAMS = Number(process.env.MAX_EXAMS ?? 0);
 const ONLY = process.env.ONLY ?? '';
 /** OCR の生出力を data/probe に残す（検出不良の原因調査用） */
 const DEBUG_OCR = process.env.DEBUG_OCR === '1';
+/** 並列実行のための分割。SHARD_TOTAL 個に分けたうちの SHARD_INDEX 番目だけを処理する */
+const SHARD_INDEX = Number(process.env.SHARD_INDEX ?? 0);
+const SHARD_TOTAL = Number(process.env.SHARD_TOTAL ?? 1);
+/** すでに取り込んだ回をやり直すか */
+const FORCE = process.env.FORCE === '1';
 /** 1 回ぶんの処理にかける時間の上限（秒）。0 で無制限 */
 const TIME_BUDGET_SEC = Number(process.env.TIME_BUDGET_SEC ?? 0);
 
@@ -86,6 +93,17 @@ async function ocrImage(pngPath, psm = '6') {
   return words;
 }
 
+/** 回を一意に表すキー。ファイル名から機械的に作る */
+function examKeyOf(src) {
+  return src.url
+    .split('/')
+    .pop()
+    .replace(/\.pdf$/i, '')
+    .replace(/_qs$/, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-');
+}
+
 function sourceLabel(src, no) {
   const resolved = resolveEra(src);
   const era = resolved?.era ?? '';
@@ -107,6 +125,33 @@ async function main() {
 
   let targets = questionsSrc;
   if (ONLY) targets = targets.filter((s) => s.url.includes(ONLY));
+  if (SHARD_TOTAL > 1) targets = targets.filter((_, i) => i % SHARD_TOTAL === SHARD_INDEX);
+
+  // すでに取り込み済みの回は飛ばす。1 回の実行で終わらない量なので、
+  // 実行を重ねるたびに前へ進めるようにしておく
+  if (!FORCE) {
+    const before = targets.length;
+    const kept = [];
+    for (const t of targets) {
+      const key = examKeyOf(t);
+      try {
+        await readFile(`${OUT_DIR}/${key}.json`, 'utf8');
+      } catch {
+        kept.push(t);
+        continue;
+      }
+      // 出力があっても図が無ければやり直す
+      try {
+        const files = await readdir(`${IMG_DIR}/${key}`);
+        if (files.length === 0) kept.push(t);
+      } catch {
+        kept.push(t);
+      }
+    }
+    if (before !== kept.length) console.log(`取り込み済みのため ${before - kept.length} 回をスキップ`);
+    targets = kept;
+  }
+
   if (MAX_EXAMS) targets = targets.slice(0, MAX_EXAMS);
 
   console.log(`画像経路の対象: ${targets.length} 回 (画像経路の科目A問題 PDF は全 ${questionsSrc.length} 本)`);
@@ -156,7 +201,7 @@ async function main() {
       continue;
     }
 
-    const examKey = qName.replace(/\.pdf$/i, '').replace(/_qs$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const examKey = examKeyOf(q);
     const workDir = `${WORK}/${examKey}`;
     await rm(workDir, { recursive: true, force: true });
     await mkdir(workDir, { recursive: true });
@@ -257,7 +302,7 @@ async function main() {
         const write = (pipeline) =>
           pipeline
             .resize({ width: Math.min(info.width, OUT_MAX_WIDTH), withoutEnlargement: true })
-            .webp({ quality: 78 })
+            .webp({ quality: WEBP_QUALITY })
             .toFile(outPath);
 
         try {

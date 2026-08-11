@@ -2,7 +2,10 @@ name: import-scanned
 
 # スキャン PDF（本試験 午前・修了試験）の取り込み。
 # OCR は「問N」の位置特定にだけ使い、出題は原本の切り出し画像で行う。
-# 重いので、tools/build-image.mjs を触ったときだけ走らせる。
+#
+# 1 回あたり数分かかるので 6 並列に分割し、最後に 1 つのジョブでまとめてコミットする
+# （各ジョブが個別に push すると派生ファイルで衝突し続けるため）。
+# 取り込み済みの回は飛ばすので、実行を重ねるたびに前へ進む。
 on:
   push:
     branches: [claude/jpfetest-exam-simulator-wp0b38]
@@ -20,14 +23,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scanned:
+  shard:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        index: [0, 1, 2, 3, 4, 5]
     env:
-      # 段階的に増やす。まずは少数で OCR のアンカー検出精度を確かめる
-      MAX_EXAMS: ${{ vars.MAX_EXAMS || '1' }}
+      SHARD_INDEX: ${{ matrix.index }}
+      SHARD_TOTAL: '6'
+      MAX_EXAMS: ${{ vars.MAX_EXAMS || '0' }}
       RENDER_DPI: '300'
-      DEBUG_OCR: '1'
+      # ジョブのタイムアウトで丸ごと失うより、途中で切り上げて成果を残す
+      TIME_BUDGET_SEC: '12000'
     steps:
       - uses: actions/checkout@v4
 
@@ -40,13 +49,10 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-jpn
-          pdftoppm -v || true
-          tesseract --version | head -2
 
       - name: install
         run: npm ci
 
-      # ネットワークを使う前に、解析ロジックの回帰テストを通す
       - name: test
         run: npm test
 
@@ -54,39 +60,69 @@ jobs:
         uses: actions/cache@v4
         with:
           path: data/pdf-cache
-          key: ipa-pdf-cache-v1-${{ github.run_id }}
+          key: ipa-pdf-cache-v1-${{ github.run_id }}-${{ matrix.index }}
           restore-keys: |
             ipa-pdf-cache-v1-
 
       - name: build-image — スキャン PDF から問題を切り出す
-        # ログをリポジトリに残す。Actions のログは後から機械的に読みにくいため
         run: |
           mkdir -p data/probe
           set -o pipefail
-          node tools/build-image.mjs 2>&1 | tee data/probe/image-route-log.txt
+          node tools/build-image.mjs 2>&1 | tee data/probe/image-route-log-${{ matrix.index }}.txt
 
-      - name: dedup — 同一問題の名寄せ
-        run: node tools/dedup.mjs
-
-      - name: validate
-        run: npm run validate
-
-      - name: report — 人間向けの取り込みレポート
-        if: always()
-        continue-on-error: true
-        run: node tools/report.mjs > /dev/null
-
-      - name: upload outputs
+      - name: upload shard output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: scanned-output
+          name: scanned-shard-${{ matrix.index }}
           path: |
+            data/questions/*.json
+            data/figures/**
+            data/quarantine/image-route.json
+            data/probe/image-route-log-${{ matrix.index }}.txt
             data/probe/image-route-report.json
-            data/probe/ocr-words-sample.json
-            data/quarantine/**
-            data/questions/**
           if-no-files-found: warn
+          retention-days: 3
+
+  consolidate:
+    needs: shard
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: collect shard outputs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: scanned-shard-*
+          merge-multiple: true
+          path: collected
+
+      - name: merge into data/
+        run: |
+          # 各シャードは自分が担当した回のファイルだけを出す。
+          # index.json のような派生ファイルはこのあと作り直すので上書きしない。
+          mkdir -p data/questions data/figures data/probe
+          find collected -name '*.json' -path '*questions*' \
+            ! -name 'index.json' ! -name 'dedup.json' -exec cp {} data/questions/ \;
+          if [ -d collected/figures ]; then cp -r collected/figures/. data/figures/; fi
+          find collected -name 'image-route-log-*.txt' -exec cp {} data/probe/ \; || true
+          echo "問題ファイル: $(ls data/questions/*.json | wc -l) / 図: $(find data/figures -name '*.webp' | wc -l)"
+
+      - name: dedup / validate / report
+        run: |
+          node tools/dedup.mjs
+          node tools/validate.mjs
+          node tools/report.mjs > /dev/null
 
       - name: commit data
         if: always()
