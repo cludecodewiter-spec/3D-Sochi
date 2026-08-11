@@ -27,7 +27,13 @@ const IMG_DIR = 'data/figures';
 const QUARANTINE_DIR = 'data/quarantine';
 const WORK = '.cache/render';
 
-const DPI = Number(process.env.RENDER_DPI ?? 150);
+// 日本語 OCR は 150dpi では読み落としが多い。300dpi で描画し、
+// 保存する切り出し画像だけ縮小する。
+const DPI = Number(process.env.RENDER_DPI ?? 300);
+/** 保存する切り出し画像の最大幅（ピクセル） */
+const OUT_MAX_WIDTH = Number(process.env.OUT_MAX_WIDTH ?? 1400);
+/** 「問N」を探すためだけに OCR する左端の帯の幅（ページ幅に対する比） */
+const LEFT_STRIP_RATIO = Number(process.env.LEFT_STRIP_RATIO ?? 0.3);
 /** 取り込む回数の上限（0 = 制限なし）。段階的に増やすための安全弁 */
 const MAX_EXAMS = Number(process.env.MAX_EXAMS ?? 0);
 const ONLY = process.env.ONLY ?? '';
@@ -48,10 +54,10 @@ async function renderPages(pdfPath, outPrefix) {
 const pageNoOf = (f) => Number(f.match(/-(\d+)\.png$/)?.[1] ?? 0);
 
 /** tesseract の TSV から単語ボックスを得る */
-async function ocrPage(pngPath) {
+async function ocrImage(pngPath, psm = '6') {
   const { stdout } = await run(
     'tesseract',
-    [pngPath, 'stdout', '-l', 'jpn', '--psm', '6', '--dpi', String(DPI), 'tsv'],
+    [pngPath, 'stdout', '-l', 'jpn', '--oem', '1', '--psm', psm, '--dpi', String(DPI), 'tsv'],
     { maxBuffer: 1024 * 1024 * 64 },
   );
   const rows = stdout.split('\n').slice(1);
@@ -75,15 +81,17 @@ async function ocrPage(pngPath) {
 }
 
 /**
- * 「問N」を左マージン付近から探す。
- * OCR は「問 1」と分かち書きしたり「間1」と誤読したりするので、
- * 同じ行の先頭 2 語をつないで判定し、誤読しやすい字も許容する。
+ * 「問N」を探す。
+ *
+ * 問題番号は必ず左マージンに置かれるので、ページ全体ではなく左端の帯だけを
+ * OCR する。文字数が少ないぶん誤読が減り、速度も上がる。
+ * OCR は「問 1」と分かち書きしたり「問」を「間」「悶」と誤読したりするので、
+ * 行頭の数語をつないで判定し、紛らわしい字も受け入れる。
  */
-function findAnchorsOnPage(words, pageWidth) {
-  const leftZone = pageWidth * 0.28;
+function anchorsFromWords(words, stripWidth) {
   const byLine = new Map();
   for (const w of words) {
-    const lineKey = Math.round(w.y / 12);
+    const lineKey = Math.round(w.y / 20);
     if (!byLine.has(lineKey)) byLine.set(lineKey, []);
     byLine.get(lineKey).push(w);
   }
@@ -91,16 +99,17 @@ function findAnchorsOnPage(words, pageWidth) {
   for (const line of byLine.values()) {
     line.sort((a, b) => a.x - b.x);
     const head = line[0];
-    if (!head || head.x > leftZone) continue;
-    const joined = normalizeDigits(line.slice(0, 2).map((w) => w.text).join('')).replace(/\s/g, '');
-    const m = joined.match(/^[問問間間]\s*(\d{1,3})/);
+    if (!head || head.x > stripWidth * 0.5) continue;
+    const joined = normalizeDigits(line.slice(0, 3).map((w) => w.text).join('')).replace(/[\s.．,，]/g, '');
+    const m = joined.match(/^[問間悶闇門]\s*(\d{1,3})(?!\d)/);
     if (!m) continue;
     const no = Number(m[1]);
     if (no < 1 || no > 100) continue;
     anchors.push({ no, x: head.x, y: head.y, conf: head.conf });
   }
   anchors.sort((a, b) => a.y - b.y);
-  return anchors;
+  // 同じ行が二重に拾われることがあるので、近接する同番号をまとめる
+  return anchors.filter((a, i, arr) => i === 0 || !(arr[i - 1].no === a.no && Math.abs(arr[i - 1].y - a.y) < 30));
 }
 
 /**
@@ -213,9 +222,17 @@ async function main() {
     const pageAnchors = [];
     for (const png of pngs) {
       const meta = await sharp(png).metadata();
-      const words = await ocrPage(png);
-      const anchors = findAnchorsOnPage(words, meta.width ?? 1);
-      pageAnchors.push({ png, page: pageNoOf(png), height: meta.height ?? 0, width: meta.width ?? 0, anchors, words });
+      const width = meta.width ?? 1;
+      const height = meta.height ?? 1;
+
+      // 左端の帯だけを OCR して「問N」を拾う
+      const stripWidth = Math.round(width * LEFT_STRIP_RATIO);
+      const stripPath = png.replace(/\.png$/, '-strip.png');
+      await sharp(png).extract({ left: 0, top: 0, width: stripWidth, height }).normalize().toFile(stripPath);
+      const stripWords = await ocrImage(stripPath);
+      const anchors = anchorsFromWords(stripWords, stripWidth);
+
+      pageAnchors.push({ png, page: pageNoOf(png), height, width, anchors, words: [] });
     }
     const flat = pageAnchors.flatMap((p) => p.anchors.map((x) => ({ ...x, page: p.page, pageInfo: p })));
     const sanity = usableAnchors(flat, expectedCount);
@@ -240,6 +257,11 @@ async function main() {
       quarantined.push({ pdf: q.url, reason: sanity.why, anchors: flat.map((x) => ({ no: x.no, page: x.page })) });
       await rm(workDir, { recursive: true, force: true });
       continue;
+    }
+
+    // 採用が決まった回だけ、重複判定用にページ全体を OCR する
+    for (const info of pageAnchors) {
+      info.words = await ocrImage(info.png, '4');
     }
 
     // アンカー間を切り出す
@@ -269,6 +291,7 @@ async function main() {
         await sharp(info.png)
           .extract({ left: 0, top, width: info.width, height })
           .trim({ threshold: 12 })
+          .resize({ width: Math.min(info.width, OUT_MAX_WIDTH), withoutEnlargement: true })
           .webp({ quality: 78 })
           .toFile(`${outImgDir}/${file}`);
         pieces.push(`figures/${examKey}/${file}`);

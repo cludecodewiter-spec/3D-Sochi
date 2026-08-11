@@ -25,7 +25,7 @@ jobs:
     env:
       # 段階的に増やす。まずは少数で OCR のアンカー検出精度を確かめる
       MAX_EXAMS: ${{ vars.MAX_EXAMS || '2' }}
-      RENDER_DPI: '150'
+      RENDER_DPI: '300'
     steps:
       - uses: actions/checkout@v4
 
