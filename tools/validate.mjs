@@ -7,7 +7,7 @@
  * 「リポジトリに置いてある題庫は常に検証済み」という状態を保つためで、
  * 検出があった場合は終了コードを 1 にして CI を赤くする。
  */
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile, access } from 'node:fs/promises';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 
@@ -15,6 +15,20 @@ const OUT_DIR = 'data/questions';
 const CHECK_ONLY = process.argv.includes('--check');
 /** 隔離が発生したときに終了コード 1 にする（ローカルで気づくため） */
 const STRICT = process.argv.includes('--strict') || CHECK_ONLY;
+
+/** 参照している画像が実在するか。存在しない画像を配ると空欄が出題される */
+async function missingImages(q) {
+  if (q.format !== 'image') return [];
+  const missing = [];
+  for (const rel of q.images ?? []) {
+    try {
+      await access(`data/${rel}`);
+    } catch {
+      missing.push(rel);
+    }
+  }
+  return missing;
+}
 
 /** 1 問ぶんの検査。問題があれば理由の配列を返す */
 function inspect(q, validate, ajv, seenIds, seenNos, file) {
@@ -80,6 +94,8 @@ async function main() {
     for (const q of questions) {
       total++;
       const problems = inspect(q, validate, ajv, seenIds, seenNos, file);
+      const lost = await missingImages(q);
+      if (lost.length) problems.push(`切り出し画像が見つからない: ${lost.join(', ').slice(0, 120)}`);
       if (problems.length) {
         rejected.push({ file, id: q.id ?? null, no: q.no ?? null, problems });
         continue;
