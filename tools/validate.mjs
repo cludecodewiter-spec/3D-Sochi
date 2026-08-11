@@ -13,6 +13,8 @@ import addFormats from 'ajv-formats';
 
 const OUT_DIR = 'data/questions';
 const CHECK_ONLY = process.argv.includes('--check');
+/** 隔離が発生したときに終了コード 1 にする（ローカルで気づくため） */
+const STRICT = process.argv.includes('--strict') || CHECK_ONLY;
 
 /** 1 問ぶんの検査。問題があれば理由の配列を返す */
 function inspect(q, validate, ajv, seenIds, seenNos, file) {
@@ -125,7 +127,10 @@ async function main() {
       console.error(`  ${n} 問: ${reason}`);
     }
     console.error('\n除外した問題の詳細は data/quarantine/validate-rejected.json を参照');
-    process.exit(1);
+    // 隔離は想定内の動作で、リポジトリに残るデータは検証済みの状態になっている。
+    // 取り込みを止めたくないので、既定では成功として扱う（--strict で失敗にできる）。
+    if (STRICT) process.exit(1);
+    return;
   }
   console.log('すべての問題が検証を通過しました。');
 }
