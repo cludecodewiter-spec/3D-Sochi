@@ -1,0 +1,2235 @@
+[
+ {
+  "id": "tokurei-mondai-200906-fe-q01",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 1,
+  "format": "text",
+  "body": "次の式は，何進法で成立するか。1015÷5＝131 （余り 0）",
+  "choices": {
+   "ア": "6",
+   "イ": "7",
+   "ウ": "8",
+   "エ": "9"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 3,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q02",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 2,
+  "format": "text",
+  "body": "次の図は，ある地方の日単位の天気の移り変わりを示したものであり，数値は翌日の天気の変化の確率を表している。ある日の天気が雨のとき，2 日後の天気が晴れになる確率は幾らか。0.4晴れ0.20.3 0.3 0.4 0.3 0.2 雨曇り0.4 0.5",
+  "choices": {
+   "ア": "0.15",
+   "イ": "0.27",
+   "ウ": "0.3",
+   "エ": "0.33"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 3,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q03",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 3,
+  "format": "text",
+  "body": "後置表記法（逆ポーランド表記法）では，例えば，式 Y ＝ ( A－B)×C をYAB－C×＝と表現する。次の式を後置表記法で表現したものはどれか。Y ＝ ( A＋B)×(C－(D÷E))",
+  "choices": {
+   "ア": "YAB＋C－DE÷×＝",
+   "イ": "YAB＋CDE÷－×＝",
+   "ウ": "YAB＋EDC÷－×＝",
+   "エ": "YBA＋CD－E÷×＝"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 4,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q04",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 4,
+  "format": "text",
+  "body": "次の表は，文字列を検査するための状態遷移表である。検査では，初期状態を aとし，文字列の検査中に状態が e になれば不合格とする。解答群で示される文字列のうち，不合格となるものはどれか。ここで，文字列は左端から検査し，解答群中の△は空白を表す。文字空白 数字 符号 小数点 その他現在の状態aabcde babede cebede daeeee",
+  "choices": {
+   "ア": "＋0010",
+   "イ": "－1",
+   "ウ": "12.2",
+   "エ": "9.△"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 4,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q05",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 5,
+  "format": "text",
+  "body": "葉以外の節点はすべて二つの子をもち，根から葉までの深さがすべて等しい木を考える。この木に関する記述のうち，適切なものはどれか。ここで，深さとは根から葉に至るまでの枝の個数を表す。",
+  "choices": {
+   "ア": "枝の個数が n ならば，葉を含む節点の個数も n である。",
+   "イ": "木の深さが n ならば，葉の個数は 2である。",
+   "ウ": "節点の個数が n ならば，深さは log 2 n である。",
+   "エ": "葉の個数が n ならば，葉以外の節点の個数は n－1 である。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問5",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 5,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q07",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 7,
+  "format": "text",
+  "body": "CGI（Common Gateway Interface）の機能と仕組みに関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "CGI が提供する機能は，HTML のフォームで代替できる。",
+   "イ": "CGI は，それ自身で言語仕様を提供する。",
+   "ウ": "CGI は，ブラウザと一体になりクライアント側で動作する。",
+   "エ": "CGI プログラムの処理をするために，プロセスが生成される。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問7",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 6,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q08",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 8,
+  "format": "text",
+  "body": "次のような機能をもつ文書の構造を記述するための言語はどれか。文書のタイトルや注釈，又は重要な箇所などにタグと呼ぶマークを付けることによって，複数の文書からタイトル一覧を作ったり，長い文書の中の重要箇所だけを検索したりすることができる。",
+  "choices": {
+   "ア": "DAL",
+   "イ": "IDL",
+   "ウ": "SGML",
+   "エ": "SQL"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 6,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q09",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 9,
+  "format": "text",
+  "body": "クロック周波数が 1 GHz の CPU がある。この CPU の命令種別が，表に示す二つから成っているとき，処理能力は約何 MIPS か。命令種別 実行時間（クロック） 出現頻度（％）命令 1 10 60命令 2 5 40",
+  "choices": {
+   "ア": "34",
+   "イ": "100",
+   "ウ": "125",
+   "エ": "133"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問9",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 6,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q10",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 10,
+  "format": "text",
+  "body": "割込みに関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "CPU は割込みを受け付けると実行中のプログラムを中断し，プログラムの再開に必要な情報を磁気ディスクの特定の領域に格納する。",
+   "イ": "アプリケーションは，常に割込みの発生を感知する必要がある。",
+   "ウ": "入出力装置からの動作完了の通知は，内部割込みに分類される。",
+   "エ": "複数の割込みの発生に備え，個々の割込み原因には優先順位が付けられる。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問10",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 7,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q11",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 11,
+  "format": "text",
+  "body": "主記憶のアクセス時間 60 ナノ秒，キャッシュメモリのアクセス時間 10 ナノ秒のシステムがある。キャッシュメモリを介して主記憶にアクセスする場合の実効アクセス時間が 15 ナノ秒であるとき，キャッシュメモリのヒット率は幾らか。",
+  "choices": {
+   "ア": "0.1",
+   "イ": "0.17",
+   "ウ": "0.83",
+   "エ": "0.9"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 7,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q12",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 12,
+  "format": "text",
+  "body": "USB 2.0 に関する記述として，適切なものはどれか。",
+  "choices": {
+   "ア": "PC と周辺機器を接続する ATA 仕様をシリアル転送方式に変更したもので，磁気ディスクや CD-ROM などの接続に採用されているシリアルインタフェースである。",
+   "イ": "音声や映像などに適したアイソクロナス転送を採用しているほか，ブロードキャスト転送などがあるシリアルインタフェースであり，FireWire とも呼ばれている。",
+   "ウ": "周辺機器と PC との間の接続に用いられ，クロスやストレートのケーブルを使ってつなぐシリアルインタフェースである。",
+   "エ": "データ転送にアイソクロナス，バルク，インタラプトなどの転送プロトコルがあり，拡張機能として周辺機器同士が直接接続できる On-The-Go をサポートしたシリアルインタフェースである。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 7,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q13",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 13,
+  "format": "text",
+  "body": "RAID の利用目的として，適切なものはどれか。",
+  "choices": {
+   "ア": "キャッシュメモリを使って，複数の磁気ディスクの読出しと書込みを高速にする。",
+   "イ": "複数の磁気ディスクを使って，実効容量を向上させる。",
+   "ウ": "複数の磁気ディスクを使って，障害時の被害を最小限に抑える。",
+   "エ": "複数の磁気ディスクを同一 筐 体に収納する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 8,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q14",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 14,
+  "format": "text",
+  "body": "レコード長が 1,000 バイト，レコード件数が 2,000 件のファイルをデータ記録密度250 バイト／ミリメートル，ブロック間隔 20 ミリメートルの磁気テープに書き込む。このとき，ブロック化因数を 1 とすると，ブロック化因数を 20 としたときに比べて，必要な磁気テープの長さは約何倍になるか。",
+  "choices": {
+   "ア": "4.8",
+   "イ": "5.75",
+   "ウ": "6",
+   "エ": "20"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 8,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q15",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 15,
+  "format": "text",
+  "body": "フェールセーフ設計の考え方として，適切なものはどれか。",
+  "choices": {
+   "ア": "安全で信頼できる部品だけを用いて，想定期間中に故障が発生しないようにする。",
+   "イ": "機器が故障したり人間が操作の間違いを犯したりしても，安全だけは確保する。",
+   "ウ": "障害発生後に機能が低下するにしても，まずはシステムの運転を継続させる。",
+   "エ": "定期的な点検によって，機器の正常な機能を維持し，連続稼働時間を延ばす。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 8,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q16",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 16,
+  "format": "text",
+  "body": "図のように，1 台のサーバ，3 台のクライアント及び 2 台のプリンタが LAN で接続されている。このシステムはクライアントからの指示に基づいて，サーバにあるデータをプリンタに出力する。各装置の稼働率が表のとおりであるならば，このシステムの稼働率を表す計算式はどれか。ここで，クライアントは 3 台のうち 1 台でも稼働していれば正常とみなし，プリンタは 2 台のうちどちらかが稼働していれば正常とみなす。サーバプリンタプリンタクライアントクライアントクライアント装置 稼働率サーバ aクライアント bプリンタ c LAN 1",
+  "choices": {
+   "ア": "abc",
+   "イ": "a (1 － b) (1 － c)",
+   "ウ": "a (1 － b) (1 － c)",
+   "エ": "a (1 － (1 － b) ) (1 － (1 － c) )"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 9,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q17",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 17,
+  "format": "text",
+  "body": "ある装置の 5 か月間における各月の稼働時間と修理時間は表のとおりである。この装置の MTBF，MTTR 及び稼働率の組合せとして，適切なものはどれか。ここで，稼働率は小数第 3 位を四捨五入した値とする。月 稼働時間 修理時間 故障回数1 100 1 1 2 200 1 1 3 200 2 1 4 100 2 1 5 200 2 1 MTBF MTTR 稼働率",
+  "choices": {
+   "ア": "1.6 160.0 0.99",
+   "イ": "8.0 160.0 0.95",
+   "ウ": "160.0 1.6 0.99",
+   "エ": "160.0 8.0 0.95"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 10,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q18",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 18,
+  "format": "text",
+  "body": "アプリケーションの変更をしていないにもかかわらず，サーバのデータベース応答性能が悪化してきたので，表のような調査を行うことにした。調査項目 3 の作業として，適切なものはどれか。調査項目 想定原因・同一マシンにほかのシステムを共存させたことによる負荷の増加1・接続クライアント数の増加によるデータ量の増加2 ・自由度の高い非定型検索による膨大な処理時間を要する SQL 文を発行3 ・フラグメンテーションによるディスク I/O の増加4 ・データベースバッファのメモリ量の不足",
+  "choices": {
+   "ア": "遅い処理の特定",
+   "イ": "外的要因の変化の確認",
+   "ウ": "キャッシュのヒット率の調査",
+   "エ": "データの格納状況の確認"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 10,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q19",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 19,
+  "format": "text",
+  "body": "スプーリング機能を使用してプリンタ出力を行うシステムがある。次の条件を満たすためには，スプーリングファイルは少なくとも何 M バイト必要か。〔条件〕(1) 1 ジョブ当たりの印刷データ量は，2M バイトである。(2) スプーリングファイルでは，データが 50％に圧縮される。(3) 1 時間当たり 100 ジョブを処理する。(4) 最大 5 時間はプリンタの停止に耐えられる。",
+  "choices": {
+   "ア": "100",
+   "イ": "250",
+   "ウ": "500",
+   "エ": "1000"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問19",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 11,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q20",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 20,
+  "format": "text",
+  "body": "仮想記憶におけるページ置換えアルゴリズムとして FIFO 方式を採用する。主記憶のページ枠が 3 で，プログラムが参照するページ番号の順序が，4，3，2，1，3，5，2 のとき，ページインは何回行われるか。ここで，初期状態では主記憶にどのページも存在しないものとする。",
+  "choices": {
+   "ア": "2",
+   "イ": "3",
+   "ウ": "5",
+   "エ": "6"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問20",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 11,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q21",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 21,
+  "format": "text",
+  "body": "表計算ソフトを使って，元金千円当たりの複利による利息早見表を作成する。セル B4 に入れる式はどれか。ここで，セル B4 の式は，B4～F13 の範囲の各セルに複写される。A B C D E F 1 元金 1,000 2 利率 0.02 0.025 0.03 0.035 0.04 3 年数4 1 5 2 6 3…………………13 10",
+  "choices": {
+   "ア": "$B$1＊((1＋$B2)^$A4－1)",
+   "イ": "$B$1＊((1＋$B2)^A$4－1)",
+   "ウ": "$B$1＊((1＋B$2)^$A4－1)",
+   "エ": "$B$1＊((1＋B$2)^A$4－1)"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問21",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 12,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q22",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 22,
+  "format": "text",
+  "body": "オープンソースに関する記述として，適切なものはどれか。",
+  "choices": {
+   "ア": "一定の条件の下で，ソースコードの変更を許している。",
+   "イ": "使用分野とユーザを制限して再配布できる。",
+   "ウ": "著作権は，放棄されている。",
+   "エ": "無償で配布されなければならない。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問22",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 12,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q23",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 23,
+  "format": "text",
+  "body": "フリップフロップ回路を利用した高速なメモリはどれか。",
+  "choices": {
+   "ア": "DRAM",
+   "イ": "RDRAM",
+   "ウ": "SDRAM",
+   "エ": "SRAM"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問23",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 12,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q24",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 24,
+  "format": "text",
+  "body": "大容量化を実現しやすく，プリンタの漢字フォントデータの格納，携帯型ゲーム機器のカートリッジ式ソフトなどに用いられているメモリはどれか。",
+  "choices": {
+   "ア": "DRAM",
+   "イ": "EPROM",
+   "ウ": "SRAM",
+   "エ": "マスク ROM――――"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問24",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 13,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q25",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 25,
+  "format": "text",
+  "body": "論理式 X ＝ A ・B ＋ A・B ＋ A ・B と同じ結果が得られる論理回路はどれか。ここで， は論理積（AND）， は論理和（OR）， は否定論理積（NAND）， は否定論理和（NOR）を表す。AA",
+  "choices": {
+   "ア": "X",
+   "イ": "X B B AA",
+   "ウ": "X",
+   "エ": "X B B"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問25",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 13,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q26",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 26,
+  "format": "text",
+  "body": "窓口に来る顧客への対応時間を短くする方法はどれか。ここで，操作は専任の担当者が行うものとする。",
+  "choices": {
+   "ア": "GUI を多用した入力画面とし，項目ごとのガイドに従って入力する。",
+   "イ": "かな漢字変換・入力をタッチパネルで行う。",
+   "ウ": "項目を絞り込み，専用の端末で入力する。",
+   "エ": "入力画面の階層を増やし，階層ごとの入力項目数を少なくする。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問26",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 13,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q27",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 27,
+  "format": "text",
+  "body": "コード設計の作業の中で，最初に行うべき作業はどれか。",
+  "choices": {
+   "ア": "コード化作業とコード表作成",
+   "イ": "コード化対象の選定",
+   "ウ": "コードファイルの作成",
+   "エ": "使用期間とデータ量の予測"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問27",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 14,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q29",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 29,
+  "format": "text",
+  "body": "動画符号化の国際規格である MPEG-1 に関する記述として，最も適切なものはどれか。",
+  "choices": {
+   "ア": "CD-ROM などを蓄積メディアとして想定した動画像圧縮符号化の規格である。",
+   "イ": "DVD-Video やディジタル衛星放送で使用される高品質の動画像圧縮符号化の規格である。",
+   "ウ": "携帯端末などに用いられる低速回線用の動画像圧縮符号化の規格である。",
+   "エ": "複数の JPEG 画像の連続表示で動画を実現するための規格である。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問29",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 15,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q30",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 30,
+  "format": "text",
+  "body": "ストアドプロシージャの利点はどれか。",
+  "choices": {
+   "ア": "応用プログラムからネットワークを介して DBMS にアクセスする場合，両者間の通信量を減少させる。",
+   "イ": "応用プログラムからの一連の要求を一括して処理することによって，DBMS 内のアクセスパスの数を減少させる。",
+   "ウ": "応用プログラムからの一連の要求を一括して処理することによって，DBMS 内の必要バッファ数を減少させる。",
+   "エ": "データが格納されているディスク装置への I/O 回数を減少させる。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問30",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 15,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q31",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 31,
+  "format": "text",
+  "body": "関係データベースで用いられる用語であるドメイン（定義域）の説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "基本関係から関係演算を使用して導出される関係",
+   "イ": "現実世界をデータベースに写し取るための仕様",
+   "ウ": "属性が取り得る値の集合",
+   "エ": "データベースへのデータの挿入，更新，削除，検索の総称"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問31",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 15,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q32",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 32,
+  "format": "text",
+  "body": "企業のデータベースを構築するためのデータ分析に関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "効率を考えて，データを物理的にどう格納するかに重点をおく。",
+   "イ": "早い段階で，分析対象データを絞り込んで，検討範囲を拡散させないようにする。",
+   "ウ": "分析の初期段階から，部門の管理者や業務担当者が検討に参加する。",
+   "エ": "分析を終えて作成したデータモデルは，変更できないようにする。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問32",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 16,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q33",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 33,
+  "format": "text",
+  "body": "分散データベースシステムにおいて，一連のトランザクション処理を行う複数サイトに更新可能かどうかを問い合わせ，すべてのサイトが更新可能であることを確認した後，データベースの更新処理を行う方式はどれか。",
+  "choices": {
+   "ア": "2 相コミット",
+   "イ": "排他制御",
+   "ウ": "ロールバック",
+   "エ": "ロールフォワード"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問33",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 16,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q34",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 34,
+  "format": "text",
+  "body": "DBMS におけるログファイルの説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "システムダウンが発生したときにデータベースの回復処理時間を短縮するため，主記憶上の更新データを定期的にディスクに書き出したものである。",
+   "イ": "ディスク障害があってもシステムをすぐに復旧させるため，常に同一データのコピーを別ディスクや別サイトのデータベースに書き出したものである。",
+   "ウ": "ディスク障害からデータベースを回復するため，データベースの内容をディスク単位で複写したものである。",
+   "エ": "データベースの回復処理のため，データの更新前後の値を書き出してデータベースの更新記録を取ったものである。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問34",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 16,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q35",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 35,
+  "format": "text",
+  "body": "トランザクションの ACID 特性のうち，耐久性（durability）に関する記述として，適切なものはどれか。",
+  "choices": {
+   "ア": "正常に終了したトランザクションの更新結果は，障害が発生してもデータベースから消失しないこと",
+   "イ": "データベースの内容が矛盾のない状態であること",
+   "ウ": "トランザクションの処理がすべて実行されるか，全く実行されないかのいずれかで終了すること",
+   "エ": "複数のトランザクションを同時に実行した場合と，順番に実行した場合の処理結果が一致すること"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問35",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 17,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q36",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 36,
+  "format": "text",
+  "body": "CSMA/CD 方式による 10 M ビット／秒の LAN の特徴として，適切なものはどれか。",
+  "choices": {
+   "ア": "送信フレームの衝突が生じたときは，送信端末は送出を中断し，乱数に従った待ち時間の後に再送する。",
+   "イ": "多数の端末が同時にデータを送出する場合は，伝送路が時分割多重化されるので，10 M ビット／秒の伝送速度は保証されない。",
+   "ウ": "端末がデータの送信権を確保するためには，トークンを獲得する必要がある。",
+   "エ": "端末ごとにタイムスロットが決められるので，必ずそのタイミングでデータを送信する必要がある。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問36",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 17,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q37",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 37,
+  "format": "text",
+  "body": "LAN 間接続装置のうち，MAC アドレスを使ってデータリンク層の中継を行うものはどれか。",
+  "choices": {
+   "ア": "ゲートウェ",
+   "イ": "イ ブリッジ",
+   "ウ": "リピータ",
+   "エ": "ルータ"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問37",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 17,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q38",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 38,
+  "format": "text",
+  "body": "SMTP の説明として，適切なものはどれか。",
+  "choices": {
+   "ア": "Web サーバに格納されている情報をアクセスするためのプロトコルである。",
+   "イ": "電子化された文字，図形，イメージが混在した文書の作成や編集を行うシステムである。",
+   "ウ": "電子メールを転送するためのプロトコルである。",
+   "エ": "文書の構造表現が可能な文書記述用言語の一つである。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問38",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 18,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q39",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 39,
+  "format": "text",
+  "body": "CATV 回線を用いたデータ伝送（インターネット接続サービスなど）の特徴に関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "回線によって各端末がセンタとスター型に接続されているので，端末同士の接続サービスが容易に実現できる。",
+   "イ": "ケーブルモデムを利用することによって，下り方向については数 M ビット／秒を超える高速伝送が可能である。",
+   "ウ": "データ伝送を行うためには，回線に光ファイバケーブルを使用しなければならない。",
+   "エ": "上り方向・下り方向とも回線速度が同じであり，双方向通信に最適である。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問39",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 18,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q40",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 40,
+  "format": "text",
+  "body": "セキュリティ対策で利用するリスト CRL に記載される情報はどれか。",
+  "choices": {
+   "ア": "スパムメールの発信元及びメールの不正中継を行うドメインの名前",
+   "イ": "ディジタル証明書の有効期間内に認証局の廃止などによって失効した自己署名と相互認証の両証明書",
+   "ウ": "有効期間内に無効となったディジタル証明書のシリアル番号",
+   "エ": "利用者に対して与えられた情報資源へのアクセス権限"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問40",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 18,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q41",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 41,
+  "format": "text",
+  "body": "メッセージの漏えいを防止するために，公開かぎ暗号方式を用いて電文を送受信する手順はどれか。",
+  "choices": {
+   "ア": "送信者の公開かぎで暗号化し，受信者の秘密かぎで復号する。",
+   "イ": "送信者の秘密かぎで暗号化し，受信者は送信者の公開かぎで復号する。",
+   "ウ": "送信者は受信者の公開かぎで暗号化し，受信者の秘密かぎで復号する。",
+   "エ": "送信者は受信者の秘密かぎで暗号化し，受信者の公開かぎで復号する。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問41",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 19,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q42",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 42,
+  "format": "text",
+  "body": "フィッシング（phishing）による被害はどれか。",
+  "choices": {
+   "ア": "インターネットからソフトウェアをダウンロードしてインストールしたところ，設定したはずのない広告がデスクトップ上に表示されるようになった。",
+   "イ": "インターネット上の多数のコンピュータから公開しているサーバに一斉にパケットが送り込まれたので，当該サーバが一時使用不能になった。",
+   "ウ": "知人から送信されてきた電子メールに添付されていたファイルを実行したところ，ハードディスク上に存在するすべてのファイルを消失してしまった。",
+   "エ": "“本人情報の再確認が必要なので入力してください”という電子メールで示された URL にアクセスし，個人情報を入力したところ，詐取された。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問42",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 19,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q43",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 43,
+  "format": "text",
+  "body": "コンピュータウイルス対策のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "ウイルスに感染したことが分かったら，直近のバックアップファイルからシステムディスクを復元する。",
+   "イ": "ウイルスに感染したことが分かったら，被害の拡大を防ぐためにも直ちにディスクの初期化を行い，その後に必ずシステム管理者に連絡する。",
+   "ウ": "ソフトウェアの導入はウイルス感染の糸口となり得るので，コンピュータにソフトウェアを導入する場合はウイルス検査を行う。",
+   "エ": "プログラム中のデバッグ機能は，ウイルス防止のために開発終了後も取り除かないようにする。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問43",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 20,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q44",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 44,
+  "format": "text",
+  "body": "プロセスモデルの表現に DFD が使用される。DFD の要素でないものはどれか。",
+  "choices": {
+   "ア": "エンティティ",
+   "イ": "外部（データの発生源／行先）",
+   "ウ": "処理",
+   "エ": "データストア"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問44",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 20,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q45",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 45,
+  "format": "text",
+  "body": "オブジェクト指向の特徴はどれか。",
+  "choices": {
+   "ア": "オブジェクト指向モデルでは，抽象化の対象となるオブジェクトに対する操作をあらかじめ指定しなければならない。",
+   "イ": "カプセル化によって，オブジェクト間の相互依存性を高めることができる。",
+   "ウ": "クラスの変更を行う場合には，そのクラスの上位にあるすべてのクラスの変更が必要となる。",
+   "エ": "継承という概念によって，モデルの拡張や変更の際に変更部分を局所化できる。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問45",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 20,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q46",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 46,
+  "format": "text",
+  "body": "モジュールの独立性の尺度であるモジュール結合度は，弱いほど独立性が高くなる。次のうち，モジュールの独立性が最も高い結合はどれか。",
+  "choices": {
+   "ア": "外部結合",
+   "イ": "共通結合",
+   "ウ": "スタンプ結合",
+   "エ": "データ結合"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問46",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 21,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q47",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 47,
+  "format": "text",
+  "body": "プログラムのテストに関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "内部構造のテストにはブラックボックステストを用い，外部仕様のテストにはホワイトボックステストを用いる。",
+   "イ": "プログラムに残っているエラーの個数は，既に見つかったエラーの個数とは無関係である。",
+   "ウ": "プログラムの完全性を証明することがテストの目的であり，エラーはすべて検出できるという仮説の下にテスト計画を立てるべきである。",
+   "エ": "プログラムのテストでは，正常なケースで正しく動作するかどうかだけではなく，誤った入力があった場合にも意図した動作をするかどうかを調べる必要がある。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問47",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 21,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q48",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 48,
+  "format": "text",
+  "body": "ホワイトボックステスト法によってプログラムをテストする。テストの網羅性の低いものから順に並べたものはどれか。条件 A プログラム中のすべての経路が，少なくとも一回は実行される。条件 B プログラム中のすべての実行文が，少なくとも一回は実行される。条件 C プログラム中のすべての分岐点におけるそれぞれの分岐方向が，少なくとも一回は実行される。",
+  "choices": {
+   "ア": "A，B，C",
+   "イ": "A，C，B",
+   "ウ": "B，A，C",
+   "エ": "B，C，A"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問48",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 21,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q49",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 49,
+  "format": "text",
+  "body": "稼働中のシステムにおいて，ソフトウェアのバグによる障害が発生した。障害原因となったプログラムを修正した後，今まで正常に動作していた部分に影響がないかどうかを検証するために行うテストはどれか。",
+  "choices": {
+   "ア": "運用テスト",
+   "イ": "機能テスト",
+   "ウ": "総合テスト",
+   "エ": "退行テスト"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問49",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 22,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q50",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 50,
+  "format": "text",
+  "body": "ソフトウェアの開発手法であるプロトタイピングに関する記述として，適切なものはどれか。",
+  "choices": {
+   "ア": "最終的な製造に入る前に，要求や設計上の重要な部分の試作を検証することによって，ユーザの要求仕様に合ったソフトウェアを実現しようとする手法である。",
+   "イ": "数学的な仕様・設計記述法に沿ってプログラムを記述する。そのプログラムの仕様・設計の厳密なチェックを行うことによって，ソフトウェア開発の初期段階における誤りを除去してエラーの発生を防止する手法である。",
+   "ウ": "ソフトウェアの開発から保守までの一連の流れを設計の質に応じて工程別に分解し，各工程で実施される作業の質が必要十分であるかを常に確認しながら工程を進める手法である。",
+   "エ": "問題を分析して複雑な問題をより簡単な問題に置き換えていく工程を繰り返すことによって，複雑な仕様を誤りなく実現する手法である。問 51 から問 60 までは，マネジメント系の問題です。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問50",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 22,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q51",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 51,
+  "format": "text",
+  "body": "システム監査を受ける際のプロジェクトマネージャの姿勢として，適切なものはどれか。",
+  "choices": {
+   "ア": "システム監査人が同じ企業組織体のメンバの場合，独立性が保てないので，プロジェクトマネージャはその監査人の変更を求める。",
+   "イ": "システム監査では，情報システムの問題対処の判断について評価や助言をしてくれるので，検討内容，決定手続などの情報をきちんと整理しておく。",
+   "ウ": "システム監査は，情報システムの信頼性，安全性を高めることを目的としているので，コストパフォーマンスについては対象外である旨を説明する。",
+   "エ": "プロジェクトマネージャは，情報システムに関して自ら評価し，システム監査での評価と異なる場合には，自らの評価を採用する。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問51",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 23,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q52",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 52,
+  "format": "text",
+  "body": "ソフトウェア開発において WBS（Work Breakdown Structure）を使用する目的として，適切なものはどれか。",
+  "choices": {
+   "ア": "開発の所要日数と費用がトレードオフの関係にある場合に，総費用の最適化を図る。",
+   "イ": "作業の順序関係を明確にして，重点管理すべきクリティカルパスを把握する。",
+   "ウ": "作業の日程を横棒（バー）で表して，作業の開始や終了時点，現時点の進捗を明確にする。",
+   "エ": "作業を階層に分解して，管理可能な大きさに細分化する。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問52",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 23,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q54",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 54,
+  "format": "text",
+  "body": "コンピュータシステムの稼働状況に関する指標のうち，その測定のためにソフトウェアモニタが必要となるのはどれか。",
+  "choices": {
+   "ア": "キャッシュメモリのヒット率",
+   "イ": "主記憶のアドレスごとのアクセスの頻度",
+   "ウ": "タスク（プロセス）ごとの CPU 使用時間",
+   "エ": "分岐命令の実行頻度"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問54",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 24,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q55",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 55,
+  "format": "text",
+  "body": "システムの開発部門と運用部門が別々に組織化されているとき，開発から運用への移行を円滑かつ効果的に進めるための方法のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "運用テストの完了後に，開発部門がシステム仕様と運用方法を運用部門に説明する。",
+   "イ": "運用テストを効率良く行うために，開発部門の支援を受けずに，運用部門だけで実施する。",
+   "ウ": "運用部門からもシステム開発に積極的に参加し，運用性の観点から助言する。",
+   "エ": "開発部門は，運用テストを実施して運用マニュアルを作成し，運用部門に引き渡す。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問55",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 25,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q56",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 56,
+  "format": "text",
+  "body": "システム障害が発生したときにシステムを初期状態に戻して再開する方法で，イニシャルプログラムロードとも呼ばれるものはどれか。",
+  "choices": {
+   "ア": "ウォームスタート",
+   "イ": "コールドスタート",
+   "ウ": "ロールバック",
+   "エ": "ロールフォワード"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問56",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 25,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q57",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 57,
+  "format": "text",
+  "body": "システム監査におけるヒアリングを実施する際に，システム監査人の対処として，適切なものはどれか。",
+  "choices": {
+   "ア": "ヒアリングの結果，調査対象の現状に問題があると判断した場合は，その調査対象のあるべき姿について被監査部門の専門的な相談に応じる。",
+   "イ": "ヒアリングの結果，問題と思われる事項を発見した場合は，その裏付けとなる記録の入手や現場確認を行う。",
+   "ウ": "ヒアリングを行っている際に，被監査部門との間で見解の相違が生じた場合は，相手が納得するまで十分に議論を行う。",
+   "エ": "被監査部門のヒアリング対象者が複数の場合は，職制上の上位者から集中的に話を聞く。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問57",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 26,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q58",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 58,
+  "format": "text",
+  "body": "複数の業務システムがある場合のアクセス管理の方法として，最も適切なものはどれか。",
+  "choices": {
+   "ア": "業務の担当変更に迅速に対応するために，業務グループごとに共通の利用者 IDを使用する。",
+   "イ": "人事異動が頻繁に発生する場合には，年初にまとめてアクセス権限の変更を行う。",
+   "ウ": "新入社員の名簿に基づいて，あらかじめ全業務システムに全員の利用者登録を実施しておく。",
+   "エ": "利用者の職位権限にかかわらず，業務システムごとに適切なアクセス権限の設定を行う。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問58",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 26,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q59",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 59,
+  "format": "text",
+  "body": "“システム監査基準”の定める予備調査に関する記述のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "個別計画書を作成するために行う予備的な調査である。",
+   "イ": "本調査に先立って，監査対象業務の実態を把握するために行う調査である。",
+   "ウ": "本調査に先立って，被監査部門と監査計画を調整するために行う調査である。",
+   "エ": "本調査を補完する目的で，本調査と並行して行う調査である。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問59",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 27,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q60",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 60,
+  "format": "text",
+  "body": "監査調書はどれか。",
+  "choices": {
+   "ア": "監査人が行った監査手続の実施記録であり，監査意見の根拠となるもの",
+   "イ": "監査人が監査実施に当たり，被監査部門などへ提出する監査人自身のセキュリティ誓約書をまとめたもの",
+   "ウ": "監査人が検討に利用した基準書，ガイドラインをまとめたもの",
+   "エ": "監査人が判断根拠とする資料であり，監査報告書とともに公表するよう義務付けられたもの問 61 から問 80 までは，ストラテジ系の問題です。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問60",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 27,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q61",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 61,
+  "format": "text",
+  "body": "業務のあるべき姿を表す論理モデルを説明したものはどれか。",
+  "choices": {
+   "ア": "企業における主要機能を明確にして，現状の業務機能を分析し，体系化したもの",
+   "イ": "経営目標の達成に必要な業務機能を定義し，体系化したもの",
+   "ウ": "現状の業務機能と情報システムでの処理を分析し，相互の関係を明確化したもの",
+   "エ": "本来あるべき業務機能と現状を比較・分析し，評価したもの"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問61",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 28,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q62",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 62,
+  "format": "text",
+  "body": "業務改革を目的とした情報システムの導入に当たり，複数の計画案を作成した。最適案を選択する評価方針のうち，適切なものはどれか。",
+  "choices": {
+   "ア": "効用が異なる場合は，コストが最小となる案を選択する。",
+   "イ": "効用だけでなく，リスク要因も評価対象とする。",
+   "ウ": "定量化できない項目は，評価項目として好ましくない。",
+   "エ": "評価項目及び評価基準は，システム提案者が決定する。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問62",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 28,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q63",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 63,
+  "format": "text",
+  "body": "全社的な業務プロセスの見直しと再設計を行う場合の留意事項として，最も適切なものはどれか。",
+  "choices": {
+   "ア": "多くの部門にかかわる業務プロセスについては，関係者間の利害調整をしなければならないので，当該業務の再設計は最後に行うべきである。",
+   "イ": "業務プロセスの把握が困難な部門間や会社間にまたがる業務プロセスは，見直しの対象から除外すべきである。",
+   "ウ": "業務プロセスを，関連する業務別に分類し，優先順位に従って見直しを実行することが重要である。",
+   "エ": "見直しの対象になったすべての業務プロセスについて，最初に現行業務プロセスを分析し，詳細なドキュメント作成を優先して行うことが必要である。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問63",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 29,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q64",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 64,
+  "format": "text",
+  "body": "システム運用をアウトソーシングする利点として，適切なものはどれか。",
+  "choices": {
+   "ア": "いつでも元のように自社の運用に戻すことができる。",
+   "イ": "自社の情報システム部門を企画や開発などの業務に専念させることができる。",
+   "ウ": "情報システムの問題点の把握が容易になる。",
+   "エ": "トラブルに対して自社で対応しやすくなる。"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問64",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 29,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q65",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 65,
+  "format": "text",
+  "body": "情報化の検討に際し，留意すべき点として，適切なものはどれか。",
+  "choices": {
+   "ア": "業務の現状把握に当たっては，外部の第三者の意見を重視する。",
+   "イ": "情報化案の策定に当たっては，“何をするか”よりも“どのようにするか”という点に重点をおく。",
+   "ウ": "情報システムのハードウェア構成を決定してから，その構成にふさわしい情報化の方法を検討する。",
+   "エ": "立案した情報化案の評価に当たっては，投資対効果や実現の可能性だけでなく，新たな問題点の発生も観点に入れておく。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問65",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 29,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q66",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 66,
+  "format": "text",
+  "body": "共通フレーム 2007 によれば，要件定義プロセスで行うべき作業はどれか。",
+  "choices": {
+   "ア": "新しい業務のあり方や運用をまとめた上で，業務上実現すべき要件を定義する。",
+   "イ": "企業で将来的に必要となる最上位の業務機能と組織モデルを検討する。",
+   "ウ": "システム化機能の整理とネットワーク構成などのシステム方式を策定する。",
+   "エ": "システムが提供する信頼性，性能，セキュリティなどのサービスレベルを定義する。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問66",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 30,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q67",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 67,
+  "format": "text",
+  "body": "アンゾフの成長マトリクスを説明したものはどれか。",
+  "choices": {
+   "ア": "外部環境と内部環境の観点から，強み，弱み，機会及び脅威の四つの要因について情報を整理し，企業を取り巻く環境を分析する手法である。",
+   "イ": "企業のビジョンと戦略を実現するために，財務，顧客，内部ビジネスプロセス及び学習と成長の四つの視点から事業活動を検討し，アクションプランまで具体化していくマネジメント手法である。",
+   "ウ": "事業を，市場浸透，市場拡大，新製品開発及び多角化の四つのタイプに分類し，事業の方向性を分析する手法である。",
+   "エ": "製品を，導入期，成長期，成熟期及び衰退期の四つの段階に分類し，企業にとって最適な戦略を分析する手法である。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問67",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 30,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q68",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 68,
+  "format": "text",
+  "body": "事業を図の a ～ d に分類した場合，a に該当する事業の特徴はどれか。高市場成長率ab cd低小 大市場占有率",
+  "choices": {
+   "ア": "現在は大きな資金の流入をもたらしているが，同時に将来にわたって資金の投下も必要である。",
+   "イ": "現在は資金の主たる供給源の役割を果たしており，新たに資金を投下すべきではない。",
+   "ウ": "事業としての魅力はあり，資金投下を行えば，将来の資金供給源になる可能性がある。",
+   "エ": "事業を継続させていくための資金投下の必要性は低く，将来的には撤退を考えざるを得ない。"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問68",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 31,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q69",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 69,
+  "format": "text",
+  "body": "ジェームス L.へスケットによるサービスプロフィットチェーンを示した図の a ～d に入るもののうち，c に該当するものはどれか。a従業員満足度bの向上従業員の生産性向上c d 売上拡大",
+  "choices": {
+   "ア": "顧客サービスの向上",
+   "イ": "顧客満足度の向上",
+   "ウ": "顧客ロイヤルティの向上",
+   "エ": "従業員の定着率向上"
+  },
+  "answer": "イ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問69",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 32,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q70",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 70,
+  "format": "text",
+  "body": "電子政府におけるワンストップサービスの実現と普及のための要件はどれか。",
+  "choices": {
+   "ア": "PC やインターネットを利用することが前提となるので，ディジタルディバイドに対する施策が必要になる。",
+   "イ": "一般市民に的を絞ったサービスなので，生活上の各種イベントを想定して，ワンストップ化を実現することが求められる。",
+   "ウ": "一つのポータルサイトにアクセスすることで様々な情報やサービスを得られるように，実際のサービス提供者も統合されている必要がある。",
+   "エ": "ワンストップ化を実現するためには，個人情報を集約し，それらの情報をいろいろな目的に利用することが求められる。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問70",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 32,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q71",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 71,
+  "format": "text",
+  "body": "製造業の A 社では，NC 工作機械を用いて，四つの仕事 a～d を行っている。各仕事間の段取り時間は表のとおりである。合計の段取り時間が最小になるように仕事を行った場合の合計段取り時間は何時間か。ここで，仕事はどの順序で行ってもよいものとし，FROM から TO への段取り時間で検討する。単位 時間TO仕事 a 仕事 b 仕事 c 仕事 d FROM仕事 a 2 1 2仕事 b 1 1 2仕事 c 3 2 2仕事 d 4 3 2",
+  "choices": {
+   "ア": "4",
+   "イ": "5",
+   "ウ": "6",
+   "エ": "7"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問71",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 33,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q72",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 72,
+  "format": "text",
+  "body": "EDI を実施するための情報表現規約で規定されるべきものはどれか。",
+  "choices": {
+   "ア": "企業間の取引の契約内容",
+   "イ": "システムの運用時間",
+   "ウ": "伝送制御手順",
+   "エ": "メッセージの形式"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問72",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 33,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q73",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 73,
+  "format": "text",
+  "body": "インターネット上で，一般消費者が買いたい品物とその購入条件を提示し，単一又は複数の売り手がそれに応じる取引形態はどれか。",
+  "choices": {
+   "ア": "B to B",
+   "イ": "G to C",
+   "ウ": "逆オークション",
+   "エ": "バーチャルモール"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問73",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 33,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q74",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 74,
+  "format": "text",
+  "body": "QC ストーリを次のように定義し，テーマを“電気料金の低減”として QC サークルを実施した。この成果を発表するときのプレゼンテーションの記述で，（5）に相当するものはどれか。〔QC ストーリ〕(1) テーマ（目標を立てる）(2) テーマを取り上げた理由(3) 現状の把握(4) 対策を考え，実行する(5) 効果の確認(6) 標準化，再発防止(7) 反省，残った問題(8) 今後の計画",
+  "choices": {
+   "ア": "活動計画が最後まで立てられなかった。次回は計画を立てることにする。",
+   "イ": "現状の曜日別電力使用量をチェックし，棒グラフを作成した。",
+   "ウ": "常時点灯の照明はブレーカと直に結線し，毎日ブレーカの入力時に点灯状態となるようにした。",
+   "エ": "電力使用量が現状より 20％低減した。"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問74",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 34,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q75",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 75,
+  "format": "text",
+  "body": "アローダイアグラムのクリティカルパスでの総所要日数は何日か。ここで，矢印に示す数字は各作業の所要日数を表す。2 AE 55 BDF 145 7 422 CG 35 36：ダミー作業",
+  "choices": {
+   "ア": "7",
+   "イ": "8",
+   "ウ": "10",
+   "エ": "11"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問75",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 35,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q76",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 76,
+  "format": "text",
+  "body": "分析対象としている問題に数多くの要因が関係し，それらが相互に絡みあっているとき，原因と結果，目的と手段といった関係を追求していくことによって，因果関係を明らかにし，解決の糸口をつかむための図はどれか。",
+  "choices": {
+   "ア": "アローダイアグラム",
+   "イ": "パレート図",
+   "ウ": "マトリックス図",
+   "エ": "連関図"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問76",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 35,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q77",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 77,
+  "format": "text",
+  "body": "T 商店では毎日 K と L という菓子を作り，これを組み合わせて箱詰めした商品 Mと N を販売している。箱詰めの組合せと 1 商品当たりの利益は表に示すとおりである。K の 1 日の最大製造能力は 360 個であり，L の 1 日の最大製造能力は 240 個である。1 日の販売利益を最大にするように，商品 M と N を製造し，すべて販売したときの利益は何円か。K（個） L（個） 販売利益（円）商品 M 6 2 600商品 N 3 4 400",
+  "choices": {
+   "ア": "24,000",
+   "イ": "36,000",
+   "ウ": "40,000",
+   "エ": "48,000"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問77",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 36,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q78",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 78,
+  "format": "text",
+  "body": "CORBA を説明したものはどれか。",
+  "choices": {
+   "ア": "ORB（Object Request Broker）同士を相互に接続するためのプロトコル",
+   "イ": "オブジェクト指向の概念と手続指向の性質をもつ言語仕様とライブラリ",
+   "ウ": "分散オブジェクト環境で，オブジェクト間の通信をつかさどるソフトウェア",
+   "エ": "分散オブジェクト環境で，オブジェクト同士が通信するための共通仕様"
+  },
+  "answer": "エ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問78",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 36,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q79",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 79,
+  "format": "text",
+  "body": "EDI に関して，JIS X 7011（EDIFACT）で規定されている事項はどれか。",
+  "choices": {
+   "ア": "EDI における業務やシステムの運用に関する取決め",
+   "イ": "EDI におけるネットワーク回線の種類や伝送手順などに関する取決め",
+   "ウ": "EDI における標準メッセージなど，対象となる情報データをお互いのコンピュータで理解できるようにするための取決め",
+   "エ": "取引の法的有効性を確立するための契約書に関する取決め"
+  },
+  "answer": "ウ",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問79",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 37,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-200906-fe-q80",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2009,
+   "era": "2009（平成21）年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 80,
+  "format": "text",
+  "body": "OMG が標準化した UML はどれか。",
+  "choices": {
+   "ア": "オブジェクト指向を用いたソフトウェア開発で使用されるモデリング言語",
+   "イ": "オブジェクトをほかのプログラムから利用するためのインタフェースの記述言語",
+   "ウ": "表の定義やデータ操作などを行う関係データベースの操作言語",
+   "エ": "文書やデータの意味や構造を記述するためのマークアップ言語表計算ソフトの機能・用語表計算ソフトの機能，用語などは，原則として次による。1. ワークシート表計算ソフトの作業領域をワークシートという。ワークシートの大きさは 256 列（列 A から列Z ，列 AA から列 AZ ，さらに列 BA から列 BZ と続き，列 IV まで続く），10,000 行（行 1 から行10,000 まで）とする。2. セル(1) ワークシートを縦・横に分割したときの一つのます目をセルという。列 A 行 1 のセルは A1 と表す。(2) 長方形の形をしたセルの集まりを範囲として指定することができる。範囲の指定は A1 ～ B3のように表す。(3) 範囲に名前を付けることができる。範囲名は [ ] を用いて，“セル A1 ～ B3 に [ 金額 ] と名前を付ける”などと表す。(4) データが入力されていないセルを，空白セルという。3. セルへの入力(1) セルに数値，文字列，計算式を入力できる。(2) セルを保護すると，そのセルへの入力を不可能にすることができる。セルの保護を解除すると，そのセルへの入力が再び可能になる。(3) セル A1 に数値 5 を入力するときは，“セル A1 に 5 を入力”と表す。(4) セル B2 に，文字列 ABC を入力するときは，“セル B2 に ’ABC ’ を入力”と表す。(5) セル C3 に，セル A1 とセル B2 の和を求める計算式を入力するときは，“セル C3 に計算式 A1＋B2 を入力”などと表す。4. セルの内容の表示(1) セルに数値を入力すると，右詰めで表示される。(2) セルに文字列を入力すると，左詰めで表示される。(3) セルに計算式を入力すると，計算結果が数値ならば右詰めで，文字列ならば左詰めで表示される。(4) セルの内容の表示については，左詰め，中央揃え，右詰めに変更できる。5. 計算式(1) 計算式には，数学で用いられる数式が利用できる。(2) 計算式で使用する算術演算子は，“＋”（加算），“－”（減算），“＊”（乗算），“／”（除算）及び“＾”（べき算）とする。(3) 算術演算子による計算の優先順位は，数学での優先順位と同じである。6. 再計算(1) セルに計算式を入力すると，直ちに計算結果を表示する。(2) セルの数値が変化すると，そのセルを参照しているセルも自動的に再計算される。この再計算は A1，A2，A3，…，B1，B2，B3，… の順に 1 回だけ行われる。7. 関数(1) 計算式には次の表で定義する関数を利用することができる。関数名と使用例 解 説合計 ( A1 ～ A5 ) セル A1 からセル A5 までの範囲のすべての数値の合計を求める。平均 ( B2 ～ F2 ) セル B2 からセル F2 までの範囲のすべての数値の平均を求める。平方根 ( I6 ) セル I6 の値（正の数値でなければならない）の正の平方根を求める。標準偏差 ( D5 ～セル D5 からセル D19 までの範囲のすべての数値の標準偏差を求める。D19 )最大 ( C3 ～ E7 ) セル C3 からセル E7 までの範囲のすべての数値のうちの最大値を求める。最小 ( [ 得点 ] ) [ 得点 ] と名前を付けた範囲のすべての数値のうちの最小値を求める。第 1 引数に指定された論理式が真（成立する）ならば第 2 引数が，偽（成立しない）ならば第 3 引数が求める値となる。左の例では，セル B3 が A4 より大きIF ( B3 ＞ A4， ’北ければ文字列 ’北海道 ’ が，それ以外の場合には文字列 ’九州 ’ が求める値とな海道 ’ ， ’九州 ’ )る。論理式中では，比較演算子として，＝，≠，＞，＜，≦，≧を利用することができる。第 2 引数，第 3 引数に，更に IF 関数を利用して，IF 関数を入れ子にすることができる。個数 ( G1 ～ G5) セル G1 から G5 までの範囲のうち，空白セルでないセルの個数を求める。第 1 引数に指定された範囲のうち，第 2 引数に指定された条件を満たすセル条件付個数 ( H5 ～の個数を求める。左の例では，セル H5 から H9 までの範囲のうち，値としてH9， ’ ＞25 ’ )25より大きな数値を格納しているセルの個数を求める。セル A3 の値（数値でなければならない）を超えない最大の整数を求める。例えば，整数部 ( A3 )整数部 ( 3.9 ) ＝ 3整数部 ( －3.9 ) ＝ －4となる。セル C4 の値を被除数，D4 の値を除数とし，被除数を除数で割ったときの剰余を求める。剰余の値は常に除数と同じ符号をもつ。“剰余”関数と“整数剰余 ( C4，D4 )部”関数は，次の関係を満たしている。剰余 ( x，y ) ＝ x － y ＊ 整数部 ( x／y )引数として指定された論理式がすべて真であれば，真を返す。引数のうち一論理積 ( 論理式 1 ，つでも偽のものがあれば，偽を返す。引数として指定できる論理式の数は任論理式 2，…)意である。引数として指定された論理式がすべて偽であれば，偽を返す。引数のうち一論理和 ( 論理式 1 ，つでも真のものがあれば，真を返す。引数として指定できる論理式の数は任論理式 2，…)意である。否定 ( 論理式 ) 引数として指定された論理式が真であれば偽を，偽であれば真を返す。注 “合計”，“平均”，“標準偏差”，“最大”，“最小”は，引数で指定された範囲のセルのうち，値として数値以外を格納しているものは無視する。(2) 関数の引数には，セルを用いた計算式，範囲，範囲名，論理式を指定することができる。8. セルの複写(1) セルに入力された数値，文字列，計算式を他のセルに複写することができる。(2) セルに入力された計算式が他のセルを参照している場合は，複写先のセルでは相対的にセルが自動的に変更される。例えば，セル A6 に合計 ( A1 ～ A5 ) を入力した場合，セル A6 をセルB7 に複写すると，セル B7 の計算式は合計 ( B2 ～ B6 ) となる。9. 絶対参照(1) 計算式を複写しても参照したセルが変わらない参照を絶対参照といい，記号 $ を用いて $A $1などと表す。例えば，セル B1 に計算式 $A $1＋5 を入力した場合，セル B1 をセル C4 に複写してもセル C4 の計算式は $A $1＋5 のままである。(2) 絶対参照は行と列の一方だけについても指定可能であり，$A 1，A $1 などと表す。例えば，セル D2 に計算式 $ C1－3 を入力した場合，セル D2 をセル E3 に複写すると，セル E3 の計算式は $ C2－3 となる。また，セル G3 に計算式 F $2－3 を入力した場合，セル G3 を H4 に複写すると，セル H4 の計算式は G $2－3 となる。10. マクロ(1) ワークシートには幾つかのマクロを保存できる。マクロはマクロ P，マクロ Q などと表す。(2) マクロについては“マクロ P を実行するとワークシートを保存する。”，“セル A1 からセル A10までを昇順に並べ替える手続をマクロ Q に登録する。”，“マクロ R ：数値を入力。”，“C 列のデータがその数値以下のものを抽出する。”などと記述する。11. その他ワークシートの“保存”，“読出し”，“印刷”や，罫線機能，グラフ化機能など市販されている多くの表計算ソフトに備わっている機能は使用できるものとする。〔 メ モ 用 紙 〕試験問題に記載されている会社名又は製品名は，それぞれ各社の商標又は登録商標です。なお，試験問題では，® 及び TM を明記していません。"
+  },
+  "answer": "ア",
+  "source": {
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問80",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
+   "page": 37,
+   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
+  },
+  "verified": true,
+  "modified": false
+ }
+]
