@@ -8,6 +8,7 @@ on:
     branches: [claude/jpfetest-exam-simulator-wp0b38]
     paths:
       - 'tools/build-image.mjs'
+      - 'tools/lib/anchors.mjs'
       - '.github/workflows/import-scanned.yml'
   workflow_dispatch:
 
