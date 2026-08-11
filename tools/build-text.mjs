@@ -1,0 +1,189 @@
+#!/usr/bin/env node
+/**
+ * テキストが取り出せる PDF（CBT 公開問題・サンプル問題）を構造化して
+ * data/questions/*.json を作る。
+ *
+ * 原則:
+ *  - 問題文・選択肢は PDF のテキストをそのまま使う。要約も補完もしない。
+ *  - 正解は必ず公式「解答例」PDF 由来。推測しない。
+ *  - 検証に通らなかった問題は data/quarantine/ に隔離し、本題庫には入れない。
+ */
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { getCached, sha256 } from './lib/http.mjs';
+import { extractPdf } from './lib/pdf.mjs';
+import { bodyLines, findAnchors, splitQuestion, parseAnswers, FIELD_LABEL } from './lib/segment.mjs';
+
+const OUT_DIR = 'data/questions';
+const QUARANTINE_DIR = 'data/quarantine';
+
+/** 解答例 PDF を、対応する問題 PDF に結び付ける */
+function pairSources(sources) {
+  const questions = sources.filter((s) => s.role === 'questions');
+  const answers = sources.filter((s) => s.role === 'answers');
+  const pairs = [];
+  for (const q of questions) {
+    const qName = q.url.split('/').pop();
+    const expected = qName
+      .replace(/_qs\.pdf$/i, '_ans.pdf')
+      .replace(/^tokurei_Mondai_/i, 'tokurei_ans_')
+      .replace(/_sample\.pdf$/i, '_sample_ans.pdf');
+    const a = answers.find((x) => x.url.split('/').pop() === expected);
+    pairs.push({ q, a: a ?? null, qName, expected });
+  }
+  return pairs;
+}
+
+/** 出典ラベル: 出典：令和5年度 基本情報技術者試験 公開問題 科目A 問1 */
+function sourceLabel(src, no) {
+  const parts = ['出典：'];
+  if (src.era) parts.push(`${src.era} `);
+  else if (src.year) parts.push(`${src.year}年度 `);
+  parts.push('基本情報技術者試験 ');
+  if (src.legacySection) parts.push(`${src.legacySection} `);
+  if (src.subject === 'kamokuA') parts.push('科目A ');
+  else if (src.subject === 'kamokuB') parts.push('科目B ');
+  parts.push(`問${no}`);
+  return parts.join('').replace(/\s+/g, ' ').replace('出典： ', '出典：');
+}
+
+function examKeyOf(src) {
+  return src.url.split('/').pop().replace(/\.pdf$/i, '').replace(/_qs$/, '');
+}
+
+async function main() {
+  const { sources } = JSON.parse(await readFile('data/sources.json', 'utf8'));
+  let scan = [];
+  try {
+    scan = JSON.parse(await readFile('data/probe/text-scan.json', 'utf8'));
+  } catch {
+    console.error('data/probe/text-scan.json がありません。先に scan-text を実行してください。');
+    process.exit(1);
+  }
+  const routeOf = new Map(scan.filter((s) => s.ok).map((s) => [s.url, s.route]));
+
+  const textQuestionUrls = new Set(
+    scan.filter((s) => s.ok && s.role === 'questions' && s.route === 'text').map((s) => s.url),
+  );
+  const pairs = pairSources(sources).filter((p) => textQuestionUrls.has(p.q.url));
+
+  await mkdir(OUT_DIR, { recursive: true });
+  await mkdir(QUARANTINE_DIR, { recursive: true });
+
+  const shards = [];
+  const quarantined = [];
+  let totalQuestions = 0;
+
+  for (const { q, a, qName, expected } of pairs) {
+    console.log(`\n=== ${qName}`);
+    if (!a) {
+      console.log(`  ! 解答例 PDF が見つからない (期待: ${expected}) → 取り込まない`);
+      quarantined.push({ pdf: q.url, reason: `answer pdf not found: ${expected}` });
+      continue;
+    }
+    if (routeOf.get(a.url) !== 'text') {
+      console.log(`  ! 解答例 PDF からテキストが取れない → 取り込まない`);
+      quarantined.push({ pdf: q.url, reason: 'answer pdf has no text layer' });
+      continue;
+    }
+
+    const qFile = await getCached(q.url, `data/pdf-cache/${qName}`);
+    const aFile = await getCached(a.url, `data/pdf-cache/${expected}`);
+    if (!qFile.body || !aFile.body) {
+      quarantined.push({ pdf: q.url, reason: 'download failed' });
+      continue;
+    }
+
+    const qDoc = await extractPdf(qFile.body);
+    const aDoc = await extractPdf(aFile.body);
+    const answers = parseAnswers(aDoc.pages);
+    console.log(`  解答例: ${answers.size} 問ぶん`);
+
+    const { lines, anchors } = findAnchors(qDoc.pages);
+    console.log(`  問アンカー: ${anchors.length} 件 (${anchors.map((x) => x.no).join(',').slice(0, 60)}…)`);
+
+    const examKey = examKeyOf(q);
+    const questions = [];
+    const rejects = [];
+
+    for (let i = 0; i < anchors.length; i++) {
+      const from = anchors[i].lineIndex;
+      const to = i + 1 < anchors.length ? anchors[i + 1].lineIndex : lines.length;
+      const span = lines.slice(from, to);
+      const no = anchors[i].no;
+      const key = answers.get(no);
+      const split = splitQuestion(span);
+
+      const reject = (reason) => rejects.push({ no, reason, preview: span.map((l) => l.text).join(' ').slice(0, 120) });
+
+      if (!split) {
+        reject('選択肢ア〜エを検出できない');
+        continue;
+      }
+      if (!key) {
+        reject('解答例に該当する問番号がない');
+        continue;
+      }
+
+      questions.push({
+        id: `${examKey}-q${String(no).padStart(2, '0')}`.toLowerCase().replace(/[^a-z0-9-]/g, '-'),
+        pool: q.pool,
+        exam: {
+          year: q.year ?? 0,
+          era: q.era ?? String(q.year ?? ''),
+          ...(q.season ? { season: q.season } : {}),
+          subject: q.subject,
+          ...(q.legacySection ? { legacySection: q.legacySection } : {}),
+        },
+        no,
+        format: 'text',
+        ...(key.field && FIELD_LABEL[key.field] ? { category: FIELD_LABEL[key.field] } : {}),
+        body: split.body,
+        choices: split.choices,
+        answer: key.answer,
+        source: {
+          label: sourceLabel(q, no),
+          questionPdf: q.url,
+          answerPdf: a.url,
+          page: anchors[i].page,
+          sha256: qFile.sha256 ?? sha256(qFile.body),
+        },
+        verified: true,
+        modified: false,
+      });
+    }
+
+    console.log(`  構造化できた問題: ${questions.length} / アンカー ${anchors.length}`);
+    if (rejects.length) {
+      console.log(`  隔離: ${rejects.length} 問`);
+      for (const r of rejects.slice(0, 5)) console.log(`    問${r.no}: ${r.reason} | ${r.preview}`);
+      quarantined.push({ pdf: q.url, rejects });
+    }
+
+    if (questions.length === 0) continue;
+
+    const file = `${examKey}.json`;
+    await writeFile(`${OUT_DIR}/${file}`, JSON.stringify(questions, null, 1));
+    shards.push({
+      file,
+      pool: q.pool,
+      examKey,
+      label: sourceLabel(q, 1).replace(/ 問1$/, ''),
+      count: questions.length,
+    });
+    totalQuestions += questions.length;
+  }
+
+  await writeFile(
+    `${OUT_DIR}/index.json`,
+    JSON.stringify({ generatedAt: new Date().toISOString(), totalQuestions, shards }, null, 1),
+  );
+  await writeFile(`${QUARANTINE_DIR}/text-route.json`, JSON.stringify(quarantined, null, 1));
+
+  console.log(`\n=== 合計 ${totalQuestions} 問 / ${shards.length} ファイル`);
+  for (const s of shards) console.log(`  ${s.count.toString().padStart(3)} 問  ${s.file}`);
+}
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

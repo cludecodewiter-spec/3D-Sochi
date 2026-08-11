@@ -25,9 +25,17 @@ export interface Question {
   };
   no: number;
   category?: string;
-  body: string;
+  /**
+   * text : PDF からテキストを構造化できた問題
+   * image: スキャン PDF のため、原本の該当領域を切り出した画像で出題する問題
+   *        （転記による誤りを完全に排除するための経路）
+   */
+  format: 'text' | 'image';
+  /** format=image のときの切り出し PNG */
+  image?: string;
+  body?: string;
   figures?: string[];
-  choices: Record<ChoiceKey, string>;
+  choices?: Record<ChoiceKey, string>;
   choiceFigures?: Partial<Record<ChoiceKey, string>>;
   answer: ChoiceKey;
   source: Source;

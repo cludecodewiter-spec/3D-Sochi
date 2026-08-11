@@ -5,8 +5,27 @@
   "description": "1問＝1オブジェクト。出典情報は必須。問題文は IPA 公式 PDF から一切改変せず取り込む。",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "pool", "exam", "no", "body", "choices", "answer", "source", "verified", "modified"],
+  "required": ["id", "pool", "exam", "no", "format", "answer", "source", "verified", "modified"],
+  "allOf": [
+    {
+      "if": { "properties": { "format": { "const": "text" } } },
+      "then": { "required": ["body", "choices"] }
+    },
+    {
+      "if": { "properties": { "format": { "const": "image" } } },
+      "then": { "required": ["image"] }
+    }
+  ],
   "properties": {
+    "format": {
+      "type": "string",
+      "enum": ["text", "image"],
+      "description": "text: PDF からテキストを構造化できた問題。image: スキャン PDF のため原本の該当領域を切り出して原寸表示する問題（転記による誤りを完全に排除するための経路）"
+    },
+    "image": {
+      "type": "string",
+      "description": "format=image のときの、問題本文＋選択肢を含む切り出し PNG の相対パス"
+    },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
@@ -31,7 +50,7 @@
     },
     "no": { "type": "integer", "minimum": 1, "maximum": 100 },
     "category": { "type": "string", "description": "分野（弱点分析用）例: テクノロジ系 > ネットワーク" },
-    "body": { "type": "string", "minLength": 5, "description": "問題文（日本語原文・改変禁止）" },
+    "body": { "type": "string", "minLength": 5, "description": "問題文（日本語原文・改変禁止）。format=image では省略" },
     "figures": {
       "type": "array",
       "items": { "type": "string" },

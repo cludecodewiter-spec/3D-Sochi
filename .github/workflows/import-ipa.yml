@@ -10,11 +10,6 @@ on:
       - 'schema/**'
       - '.github/workflows/import-ipa.yml'
   workflow_dispatch:
-    inputs:
-      step:
-        description: '実行するステップ (discover / all)'
-        required: false
-        default: 'discover'
 
 permissions:
   contents: write
@@ -26,7 +21,7 @@ concurrency:
 jobs:
   import:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -38,36 +33,50 @@ jobs:
       - name: install
         run: npm ci
 
+      # PDF は毎回 IPA から取り直さない（相手サーバへの負荷と実行時間の両方を減らす）
+      - name: restore PDF cache
+        uses: actions/cache@v4
+        with:
+          path: data/pdf-cache
+          key: ipa-pdf-cache-v1-${{ github.run_id }}
+          restore-keys: |
+            ipa-pdf-cache-v1-
+
       - name: discover — IPA 公開 PDF を全件列挙
         run: npm run discover
 
-      - name: probe — 代表 PDF の構造をダンプ（解析器の設計用）
-        run: npm run probe
-
-      - name: scan-text — 全 PDF のテキスト有無を判定（text経路 / image経路の確定）
+      - name: scan-text — テキスト経路 / 画像経路の判定
         run: node tools/scan-text.mjs
 
-      - name: upload discovery output
+      - name: build-text — テキスト経路の問題を構造化
+        run: node tools/build-text.mjs
+
+      - name: validate — 出典・選択肢・解答の検証ゲート
+        run: npm run validate
+
+      - name: upload outputs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: discovery
+          name: import-output
           path: |
-            data/discovery-raw.json
             data/sources.json
             data/probe/**
+            data/questions/**
+            data/quarantine/**
           if-no-files-found: warn
 
-      - name: commit discovery output
+      - name: commit data
         if: always()
         continue-on-error: true
         run: |
           git config user.name  "jpfetest-importer"
           git config user.email "noreply@github.com"
-          git add data/discovery-raw.json data/sources.json data/probe 2>/dev/null || true
+          git add data/discovery-raw.json data/sources.json data/probe data/questions data/quarantine 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no data changes"
           else
-            git commit -m "data: refresh IPA source discovery [skip ci]"
+            git commit -m "data: import IPA past exam questions [skip ci]"
+            git pull --rebase origin ${GITHUB_REF_NAME} || true
             git push origin HEAD:${GITHUB_REF_NAME}
           fi

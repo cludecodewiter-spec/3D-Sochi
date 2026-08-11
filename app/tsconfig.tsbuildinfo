@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/data/store.ts","./src/features/exam/ExamScreen.tsx","./src/features/exam/Markable.tsx","./src/features/exam/useExam.ts","./src/features/result/ResultScreen.tsx"],"version":"5.9.3"}

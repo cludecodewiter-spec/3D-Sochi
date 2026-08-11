@@ -1,0 +1,50 @@
+[
+  {
+    "key": "honshiken-2019r01a-am-qs",
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_am_qs.pdf",
+    "ok": true,
+    "numPages": 40,
+    "anchorCount": 0,
+    "choiceCount": 0
+  },
+  {
+    "key": "honshiken-2019r01a-am-ans",
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_am_ans.pdf",
+    "ok": true,
+    "numPages": 1,
+    "anchorCount": 20,
+    "choiceCount": 0
+  },
+  {
+    "key": "menjo-20240728-qs",
+    "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20240728_FE.pdf",
+    "ok": true,
+    "numPages": 32,
+    "anchorCount": 0,
+    "choiceCount": 0
+  },
+  {
+    "key": "menjo-20240728-ans",
+    "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20240728_FE.pdf",
+    "ok": true,
+    "numPages": 2,
+    "anchorCount": 15,
+    "choiceCount": 0
+  },
+  {
+    "key": "koukai-2023r05-a-qs",
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_qs.pdf",
+    "ok": true,
+    "numPages": 16,
+    "anchorCount": 11,
+    "choiceCount": 58
+  },
+  {
+    "key": "koukai-2023r05-a-ans",
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_ans.pdf",
+    "ok": true,
+    "numPages": 1,
+    "anchorCount": 10,
+    "choiceCount": 0
+  }
+]
