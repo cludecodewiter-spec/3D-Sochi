@@ -39,6 +39,72 @@ test('ワークフロー YAML に、マッピングと誤解される値が無�
   }
 });
 
+/**
+ * upload-artifact の `path:` に書かれたパスを列挙する。
+ * `path: staged/` と、ブロックスカラーで複数行並べる書き方の両方を拾う。
+ */
+export function uploadArtifactPaths(text) {
+  const lines = text.split('\n');
+  const found = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    if (!/uses:\s*actions\/upload-artifact@/.test(lines[i])) continue;
+
+    for (let j = i + 1; j < lines.length; j++) {
+      // 次のステップ（`- name:` / `- uses:`）に入ったら、このアップロードは終わり
+      if (/^\s*-\s+(name|uses):/.test(lines[j])) break;
+
+      const m = lines[j].match(/^(\s*)path:\s*(.*)$/);
+      if (!m) continue;
+      const [, indent, value] = m;
+
+      if (value.trim() && value.trim() !== '|' && value.trim() !== '>') {
+        found.push(value.trim().replace(/^['"]|['"]$/g, ''));
+        break;
+      }
+      // ブロックスカラー: path: より深くインデントされた行がすべて値
+      for (let k = j + 1; k < lines.length; k++) {
+        if (!lines[k].trim()) continue;
+        const lead = lines[k].match(/^\s*/)[0];
+        if (lead.length <= indent.length) break;
+        found.push(lines[k].trim().replace(/^-\s*/, ''));
+      }
+      break;
+    }
+  }
+  return found;
+}
+
+/**
+ * 実際に踏んだ事故:
+ *   各シャードが `data/questions/*.json`（＝チェックアウトしたままの分も含む全 98 件）を
+ *   アップロードし、download-artifact の merge-multiple が同名ファイルを後勝ちで
+ *   上書きしたため、他シャードが OCR した結果が未変更の副本で潰された。
+ *   4,868 問中 4,086 問を失ったのに、ワークフローは緑のまま完走した。
+ *
+ * 対策は「自分が変更したファイルだけを staged/ に集めて上げる」こと。
+ * merge-multiple を使うジョブが生のパスを上げていないかをここで見張る。
+ */
+test('シャードのアップロードが merge-multiple と衝突しない', async () => {
+  const files = (await readdir(DIR)).filter((f) => f.endsWith('.yml') || f.endsWith('.yaml'));
+
+  for (const file of files) {
+    const text = await readFile(`${DIR}/${file}`, 'utf8');
+    if (!text.includes('merge-multiple: true')) continue;
+
+    const paths = uploadArtifactPaths(text);
+    assert.ok(paths.length > 0, `${file} は merge-multiple を使うのに upload-artifact の path が読めない`);
+
+    for (const p of paths) {
+      assert.ok(
+        p.startsWith('staged'),
+        `${file}: merge-multiple を使うので、アップロードは変更ファイルだけを集めた staged/ にしてください（今は ${p}）。` +
+          '生のパスを上げると、他シャードの成果が未変更の副本で上書きされます。',
+      );
+    }
+  }
+});
+
 test('取り込みワークフローが同じ並行グループを共有していない', async () => {
   const groups = new Map();
   for (const file of ['import-ipa.yml', 'import-scanned.yml']) {

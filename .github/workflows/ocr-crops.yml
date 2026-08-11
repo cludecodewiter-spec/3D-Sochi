@@ -57,14 +57,26 @@ jobs:
           set -o pipefail
           node tools/ocr-crops.mjs 2>&1 | tee data/probe/ocr-crops-log-${{ matrix.index }}.txt
 
+      # このシャードが実際に書き換えたファイルだけをまとめる。
+      # チェックアウトしたままの 97 ファイルまで上げると、merge-multiple の
+      # 上書きで他シャードの成果が消える（実際に 4,868 問中 4,086 問を失った）。
+      - name: stage only this shard's changes
+        if: always()
+        run: |
+          mkdir -p staged
+          git ls-files -mo --exclude-standard -- data | while read -r f; do
+            [ -f "$f" ] || continue
+            mkdir -p "staged/$(dirname "$f")"
+            cp "$f" "staged/$f"
+          done
+          echo "このシャードの変更ファイル: $(find staged -type f | wc -l) 件"
+
       - name: upload shard output
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ocr-shard-${{ matrix.index }}
-          path: |
-            data/questions/*.json
-            data/probe/ocr-crops-log-${{ matrix.index }}.txt
+          path: staged/
           if-no-files-found: warn
           retention-days: 3
 
@@ -93,13 +105,18 @@ jobs:
 
       - name: merge into data/
         run: |
-          # 各シャードは担当した回のファイルだけを書き換えている。
-          # 派生ファイル（index / dedup）はこのあと作り直すので上書きしない。
+          # 各シャードは自分が書き換えたファイルだけを上げている（回ごとに分担）ので、
+          # 名前が衝突することはなく、そのまま上書きしてよい。
+          # 派生ファイル（index / dedup）はこのあと作り直すので触らない。
+          mkdir -p data/questions data/probe
           find collected -name '*.json' -path '*questions*' \
             ! -name 'index.json' ! -name 'dedup.json' ! -name 'manifest.json' \
             -exec cp {} data/questions/ \;
           find collected -name 'ocr-crops-log-*.txt' -exec cp {} data/probe/ \; || true
-          echo "OCR テキストを持つ問題: $(grep -l '"ocrText"' data/questions/*.json | wc -l) ファイル"
+
+      # 静かにデータを失う事故は目視では気付けないので、ここで機械的に止める。
+      - name: assert OCR coverage
+        run: node tools/check-ocr-coverage.mjs
 
       - name: dedup / validate / report
         run: |

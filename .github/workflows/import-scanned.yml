@@ -70,17 +70,27 @@ jobs:
           set -o pipefail
           node tools/build-image.mjs 2>&1 | tee data/probe/image-route-log-${{ matrix.index }}.txt
 
+      # このシャードが実際に作った・書き換えたファイルだけをまとめる。
+      # チェックアウトしたままのファイルまで上げると、merge-multiple の上書きで
+      # 他シャードの成果が消える。
+      - name: stage only this shard's changes
+        if: always()
+        run: |
+          mkdir -p staged
+          git ls-files -mo --exclude-standard -- data | while read -r f; do
+            [ -f "$f" ] || continue
+            case "$f" in data/pdf-cache/*) continue ;; esac
+            mkdir -p "staged/$(dirname "$f")"
+            cp "$f" "staged/$f"
+          done
+          echo "このシャードの変更ファイル: $(find staged -type f | wc -l) 件"
+
       - name: upload shard output
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: scanned-shard-${{ matrix.index }}
-          path: |
-            data/questions/*.json
-            data/figures/**
-            data/quarantine/image-route.json
-            data/probe/image-route-log-${{ matrix.index }}.txt
-            data/probe/image-route-report.json
+          path: staged/
           if-no-files-found: warn
           retention-days: 3
 
