@@ -8,46 +8,27 @@
  * 方針:
  *   - 問題ファイルは書き換えない。名寄せ結果は data/questions/dedup.json に出す。
  *     （元データの出典をそのまま残しておきたいため）
- *   - 正規化テキストが完全一致 → 同一問題
- *   - 3-gram の Jaccard 係数が高く、かつ正解が同じ → 同一問題
- *   - 画像経路の問題は OCR テキストで比較する。OCR は誤読するので閾値は高めにする。
- *     迷ったら「別問題」に倒す（重複が残るのは実害が小さいが、誤った統合は問題を消してしまう）
+ *   - 同一判定そのものは tools/lib/similarity.mjs に置き、
+ *     人手でラベル付けした実データ（tools/fixtures/dedup-pairs.json）で
+ *     しきい値を検証している。tools/dedup.test.mjs 参照。
+ *   - 画像経路の問題は OCR テキストで比較する。
+ *   - 迷ったら「別問題」に倒す。重複が残るのは実害が小さいが、
+ *     誤った統合は本物の問題を練習から消してしまう。
  */
 import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { isSamePrepared, prepare, DEFAULT_THRESHOLDS } from './lib/similarity.mjs';
 
 const DIR = 'data/questions';
-const EXACT_THRESHOLD = 1;
-const FUZZY_THRESHOLD = Number(process.env.DEDUP_THRESHOLD ?? 0.9);
 
-/** 比較用に、表記ゆれ・OCR が壊しやすい要素を落とす */
-export function normalizeForCompare(s) {
-  return s
-    .replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
-    .replace(/[Ａ-Ｚａ-ｚ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
-    .toLowerCase()
-    .replace(/[\s　]/g, '')
-    .replace(/[，、,．。.・:：;；()（）「」『』【】\[\]{}"'’”“?？!！~〜ー\-—–_/／\\|]/g, '');
-}
-
-export function trigrams(s) {
-  const out = new Set();
-  for (let i = 0; i + 3 <= s.length; i++) out.add(s.slice(i, i + 3));
-  return out;
-}
-
-export function jaccard(a, b) {
-  if (a.size === 0 || b.size === 0) return 0;
-  let inter = 0;
-  const [small, large] = a.size < b.size ? [a, b] : [b, a];
-  for (const g of small) if (large.has(g)) inter++;
-  return inter / (a.size + b.size - inter);
-}
-
+/**
+ * 比較に使う原文。正規化はしない
+ * （問題文と選択肢の切り分けに改行が要るため、similarity.mjs 側で行う）
+ */
 function comparableText(q) {
   if (q.format === 'text') {
-    return normalizeForCompare(q.body + Object.values(q.choices ?? {}).join(''));
+    return [q.body, ...Object.entries(q.choices ?? {}).map(([k, v]) => `${k}${v}`)].join('\n');
   }
-  return normalizeForCompare(q.ocrText ?? '');
+  return q.ocrText ?? '';
 }
 
 async function main() {
@@ -58,9 +39,11 @@ async function main() {
   }
   console.log(`対象: ${all.length} 問`);
 
+  // 比較材料は 1 問につき一度だけ作る（総当たりは 100 万組を超える）
   const items = all.map((q) => {
     const text = comparableText(q);
-    return { q, text, grams: trigrams(text), len: text.length };
+    const prep = prepare(text);
+    return { q, text, prep, len: prep.full.length };
   });
 
   // 比較回数を抑えるため、正解と長さでバケット分けする
@@ -92,9 +75,10 @@ async function main() {
   const exactMap = new Map();
   for (const it of items) {
     if (it.len < 20) continue;
-    const prev = exactMap.get(it.text);
+    const norm = it.prep.full;
+    const prev = exactMap.get(norm);
     if (prev) union(prev, it.q.id);
-    else exactMap.set(it.text, it.q.id);
+    else exactMap.set(norm, it.q.id);
   }
 
   let fuzzyPairs = 0;
@@ -109,9 +93,9 @@ async function main() {
         if (seenPair.has(pairKey)) continue;
         seenPair.add(pairKey);
         if (find(a.q.id) === find(b.q.id)) continue;
+        // 正解が違えば別問題。ここで落としておくと比較回数もかなり減る
         if (a.q.answer !== b.q.answer) continue;
-        const sim = jaccard(a.grams, b.grams);
-        if (sim >= FUZZY_THRESHOLD && sim < EXACT_THRESHOLD + 1) {
+        if (isSamePrepared(a.prep, b.prep)) {
           union(a.q.id, b.q.id);
           fuzzyPairs++;
         }
@@ -158,7 +142,7 @@ async function main() {
 
   await writeFile(`${DIR}/dedup.json`, JSON.stringify(dedup, null, 1));
   console.log(`完全一致＋類似で ${dedup.groups.length} グループ、重複 ${duplicates} 問`);
-  console.log(`類似判定による統合: ${fuzzyPairs} 組（閾値 ${FUZZY_THRESHOLD}）`);
+  console.log(`類似判定による統合: ${fuzzyPairs} 組（${JSON.stringify(DEFAULT_THRESHOLDS)}）`);
   console.log(`名寄せ後の一意な問題数: ${all.length - duplicates} 問`);
 }
 
