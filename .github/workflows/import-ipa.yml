@@ -51,6 +51,9 @@ jobs:
       - name: build-text — テキスト経路の問題を構造化
         run: node tools/build-text.mjs
 
+      - name: dedup — 同一問題の名寄せ
+        run: node tools/dedup.mjs
+
       - name: validate — 出典・選択肢・解答の検証ゲート
         run: npm run validate
 

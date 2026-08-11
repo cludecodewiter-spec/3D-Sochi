@@ -55,6 +55,9 @@ jobs:
       - name: build-image — スキャン PDF から問題を切り出す
         run: node tools/build-image.mjs
 
+      - name: dedup — 同一問題の名寄せ
+        run: node tools/dedup.mjs
+
       - name: validate
         run: npm run validate
 

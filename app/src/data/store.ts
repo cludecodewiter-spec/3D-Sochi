@@ -27,7 +27,28 @@ export async function loadShard(file: string): Promise<Question[]> {
   return data;
 }
 
-/** 指定プール・科目の問題をすべて集める */
+interface DedupData {
+  groups: {
+    canonical: string;
+    frequency: number;
+    duplicates: { id: string; label: string; questionPdf: string; page: number }[];
+  }[];
+}
+
+let dedupCache: DedupData | null = null;
+
+async function loadDedup(): Promise<DedupData> {
+  if (dedupCache) return dedupCache;
+  const res = await fetch(`${BASE}data/questions/dedup.json`);
+  dedupCache = res.ok ? ((await res.json()) as DedupData) : { groups: [] };
+  return dedupCache;
+}
+
+/**
+ * 指定プール・科目の問題をすべて集める。
+ * 修了試験には本試験と同じ問題が多数含まれるので、名寄せ結果を使って
+ * 重複を落とし、代表問題に「過去に何回出題されたか」を持たせる。
+ */
 export async function loadQuestions(pools: string[], subject: string): Promise<Question[]> {
   const index = await loadIndex();
   const shards = index.shards.filter((s) => pools.includes(s.pool));
@@ -36,7 +57,24 @@ export async function loadQuestions(pools: string[], subject: string): Promise<Q
     const qs = await loadShard(shard.file);
     all.push(...qs.filter((q) => q.exam.subject === subject));
   }
-  return all;
+
+  const dedup = await loadDedup();
+  const duplicateIds = new Set<string>();
+  const extra = new Map<string, { frequency: number; appearances: Question['appearances'] }>();
+  for (const g of dedup.groups) {
+    for (const d of g.duplicates) duplicateIds.add(d.id);
+    extra.set(g.canonical, {
+      frequency: g.frequency,
+      appearances: g.duplicates.map((d) => ({ label: d.label, questionPdf: d.questionPdf, page: d.page })),
+    });
+  }
+
+  return all
+    .filter((q) => !duplicateIds.has(q.id))
+    .map((q) => {
+      const e = extra.get(q.id);
+      return e ? { ...q, frequency: e.frequency, appearances: e.appearances } : q;
+    });
 }
 
 // ------------------------------------------------------------ 履歴（端末内のみ）
