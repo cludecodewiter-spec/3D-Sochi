@@ -58,7 +58,7 @@ async function main() {
       summary.push({ ...t, ok: false, status });
       continue;
     }
-    const doc = await extractPdf(body);
+    const doc = await extractPdf(body, { detectGraphics: true });
     console.log(`    ページ数: ${doc.numPages}`);
 
     const dump = [];

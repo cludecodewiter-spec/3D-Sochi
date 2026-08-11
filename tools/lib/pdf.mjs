@@ -19,7 +19,7 @@ export async function loadPdfjs() {
  * PDF から座標つきテキスト片を取り出す。
  * 座標を保持するのは、問題番号「問1」の位置や図の領域を判定するため。
  */
-export async function extractPdf(buffer) {
+export async function extractPdf(buffer, { detectGraphics = false } = {}) {
   const { pdfjs, cMapUrl, standardFontDataUrl } = await loadPdfjs();
   const doc = await pdfjs.getDocument({
     data: new Uint8Array(buffer),
@@ -48,9 +48,10 @@ export async function extractPdf(buffer) {
         eol: !!it.hasEOL,
       }));
 
-    // 図形（罫線・図）の有無を知るために演算子も見る
+    // 図形（罫線・図）の有無。スキャン PDF では演算子リストの取得が画像デコードを伴い
+    // 非常に重いので、必要なときだけ調べる
     let hasGraphics = false;
-    try {
+    if (detectGraphics) try {
       const ops = await page.getOperatorList();
       const OPS = pdfjs.OPS;
       const drawOps = new Set([OPS.fill, OPS.stroke, OPS.eoFill, OPS.fillStroke, OPS.paintImageXObject, OPS.paintInlineImageXObject]);
