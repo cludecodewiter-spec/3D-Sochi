@@ -1,0 +1,9 @@
+name: probe
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: reach IPA
+        run: curl -sS -o /dev/null -w "%{http_code}\n" https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html
