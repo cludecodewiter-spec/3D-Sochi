@@ -165,10 +165,14 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 0 1 auto;
 }
 
 .cbt-timer {
   margin-left: auto;
+  flex: 0 0 auto;
+  white-space: nowrap;
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -194,6 +198,8 @@ button {
 }
 
 .btn-finish {
+  flex: 0 0 auto;
+  white-space: nowrap;
   background: #fff;
   color: var(--navy);
   border: none;
@@ -776,12 +782,34 @@ img.scan {
     --footer-h: 62px;
   }
 
+  .cbt-header {
+    height: auto;
+    min-height: var(--header-h);
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
   .cbt-title {
-    font-size: 13px;
+    font-size: 12px;
+    max-width: 38%;
+  }
+
+  .cbt-timer {
+    gap: 5px;
+    padding: 3px 8px;
+  }
+
+  .cbt-timer .label {
+    font-size: 10px;
   }
 
   .cbt-timer .value {
-    font-size: 17px;
+    font-size: 16px;
+  }
+
+  .btn-finish {
+    padding: 6px 10px;
+    font-size: 13px;
   }
 
   .cbt-subbar {

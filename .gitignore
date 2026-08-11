@@ -3,3 +3,6 @@ node_modules/
 dist/
 data/pdf-cache/
 *.log
+app/test-results/
+app/playwright-report/
+app/public/data/

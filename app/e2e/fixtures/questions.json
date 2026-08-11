@@ -1,0 +1,56 @@
+[
+ {
+  "id": "fixture-q01",
+  "pool": "fe-koukai",
+  "exam": { "year": 2099, "era": "テスト用ダミー年度", "subject": "kamokuA", "legacySection": "公開問題" },
+  "no": 1,
+  "format": "text",
+  "category": "テクノロジ系",
+  "body": "これは UI の自動テスト専用のダミー問題です。実際の試験問題ではありません。1 + 1 はいくつか。",
+  "choices": { "ア": "1", "イ": "2", "ウ": "3", "エ": "4" },
+  "answer": "イ",
+  "source": {
+   "label": "出典：テスト用ダミー（IPA 公開問題ではありません）",
+   "questionPdf": "https://www.ipa.go.jp/fixture-not-a-real-source.pdf",
+   "page": 1
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fixture-q02",
+  "pool": "fe-koukai",
+  "exam": { "year": 2099, "era": "テスト用ダミー年度", "subject": "kamokuA", "legacySection": "公開問題" },
+  "no": 2,
+  "format": "text",
+  "category": "マネジメント系",
+  "body": "これは UI の自動テスト専用のダミー問題です。実際の試験問題ではありません。最も大きい数はどれか。",
+  "choices": { "ア": "10", "イ": "20", "ウ": "30", "エ": "40" },
+  "answer": "エ",
+  "source": {
+   "label": "出典：テスト用ダミー（IPA 公開問題ではありません）",
+   "questionPdf": "https://www.ipa.go.jp/fixture-not-a-real-source.pdf",
+   "page": 1
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "fixture-q03",
+  "pool": "fe-koukai",
+  "exam": { "year": 2099, "era": "テスト用ダミー年度", "subject": "kamokuA", "legacySection": "公開問題" },
+  "no": 3,
+  "format": "text",
+  "category": "ストラテジ系",
+  "body": "これは UI の自動テスト専用のダミー問題です。実際の試験問題ではありません。マーカーを引く操作の確認に使う、少し長めの問題文です。ここをドラッグして選択するとハイライトされることを確認します。",
+  "choices": { "ア": "選択肢アの本文", "イ": "選択肢イの本文", "ウ": "選択肢ウの本文", "エ": "選択肢エの本文" },
+  "answer": "ア",
+  "source": {
+   "label": "出典：テスト用ダミー（IPA 公開問題ではありません）",
+   "questionPdf": "https://www.ipa.go.jp/fixture-not-a-real-source.pdf",
+   "page": 2
+  },
+  "verified": true,
+  "modified": false
+ }
+]
