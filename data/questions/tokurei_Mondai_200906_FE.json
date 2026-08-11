@@ -1624,35 +1624,6 @@
   "modified": false
  },
  {
-  "id": "tokurei-mondai-200906-fe-q60",
-  "pool": "fe-menjo",
-  "exam": {
-   "year": 2009,
-   "era": "2009（平成21）年度",
-   "subject": "kamokuA",
-   "legacySection": "修了試験"
-  },
-  "no": 60,
-  "format": "text",
-  "body": "監査調書はどれか。",
-  "choices": {
-   "ア": "監査人が行った監査手続の実施記録であり，監査意見の根拠となるもの",
-   "イ": "監査人が監査実施に当たり，被監査部門などへ提出する監査人自身のセキュリティ誓約書をまとめたもの",
-   "ウ": "監査人が検討に利用した基準書，ガイドラインをまとめたもの",
-   "エ": "監査人が判断根拠とする資料であり，監査報告書とともに公表するよう義務付けられたもの問 61 から問 80 までは，ストラテジ系の問題です。"
-  },
-  "answer": "ア",
-  "source": {
-   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問60",
-   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf",
-   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf",
-   "page": 27,
-   "sha256": "550dd9510102d5de915c6295b35d8dafb78926b26748d78d1f23d59b9ef418db"
-  },
-  "verified": true,
-  "modified": false
- },
- {
   "id": "tokurei-mondai-200906-fe-q61",
   "pool": "fe-menjo",
   "exam": {

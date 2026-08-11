@@ -232,35 +232,6 @@
   "modified": false
  },
  {
-  "id": "tokurei-mondai-20111218-fe-q04",
-  "pool": "fe-menjo",
-  "exam": {
-   "year": 2011,
-   "era": "2011（平成23）年度",
-   "subject": "kamokuA",
-   "legacySection": "修了試験"
-  },
-  "no": 4,
-  "format": "text",
-  "body": "２ Ｘ さ ん は ， Ｙ さ ん に イ ン タ ー ネ ッ ト を 使 っ て 電 子 メ ー ル を 送 ろ う と し て い る 。 電 子メールの内容を秘密にする必要があるので，公開鍵暗号方式を使って暗号化して送信したい。電子メールの内容を暗号化するのに使用する鍵はどれか。",
-  "choices": {
-   "ア": "Ｘ さ ん の 公 開 鍵",
-   "イ": "Ｘ さ ん の 秘 密 鍵",
-   "ウ": "Ｙ さ ん の 公 開 鍵",
-   "エ": "Ｙ さ ん の 秘 密 鍵"
-  },
-  "answer": "ア",
-  "source": {
-   "label": "出典：2011（平成23）年度 基本情報技術者試験 修了試験 科目A 問4",
-   "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20111218_FE.pdf",
-   "answerPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20111218_FE.pdf",
-   "page": 18,
-   "sha256": "ae543a5d7705015fda61fe19ff4792b16cc2be110413730cc40c956da32f8233"
-  },
-  "verified": true,
-  "modified": false
- },
- {
   "id": "tokurei-mondai-20111218-fe-q46",
   "pool": "fe-menjo",
   "exam": {

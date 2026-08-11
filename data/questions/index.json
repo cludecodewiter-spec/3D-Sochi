@@ -1,13 +1,13 @@
 {
- "generatedAt": "2026-08-11T03:03:59.502Z",
- "totalQuestions": 232,
+ "generatedAt": "2026-08-11T03:10:28.653Z",
+ "totalQuestions": 171,
  "shards": [
   {
-   "file": "tokurei_Mondai_20111218_FE.json",
+   "file": "tokurei_Mondai_200906_FE.json",
    "pool": "fe-menjo",
-   "examKey": "tokurei_Mondai_20111218_FE",
-   "label": "出典：2011（平成23）年度 基本情報技術者試験 修了試験 科目A",
-   "count": 19
+   "examKey": "tokurei_Mondai_200906_FE",
+   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A",
+   "count": 76
   },
   {
    "file": "tokurei_Mondai_200907_FE.json",
@@ -17,18 +17,11 @@
    "count": 77
   },
   {
-   "file": "tokurei_Mondai_200906_FE.json",
+   "file": "tokurei_Mondai_20111218_FE.json",
    "pool": "fe-menjo",
-   "examKey": "tokurei_Mondai_200906_FE",
-   "label": "出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A",
-   "count": 77
-  },
-  {
-   "file": "fe_kamoku_a_set_sample.json",
-   "pool": "fe-sample",
-   "examKey": "fe_kamoku_a_set_sample",
-   "label": "出典：基本情報技術者試験 サンプル問題 科目A",
-   "count": 59
+   "examKey": "tokurei_Mondai_20111218_FE",
+   "label": "出典：2011（平成23）年度 基本情報技術者試験 修了試験 科目A",
+   "count": 18
   }
  ]
 }
