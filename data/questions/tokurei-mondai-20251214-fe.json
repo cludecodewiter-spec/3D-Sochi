@@ -1,0 +1,992 @@
+[
+ {
+  "id": "tokurei-mondai-20251214-fe-q01",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 1,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q01.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 4,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q02",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 2,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q02.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 4,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q03",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 3,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q03.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 4,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q04",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 4,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q04.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q04-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 4,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q11",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 11,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q11.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 7,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q12",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 12,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q12.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q12-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 7,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q13",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 13,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q13.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 8,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q14",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 14,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q14.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 8,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q15",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 15,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q15.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q15-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 8,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q16",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 16,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q16.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 9,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q17",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 17,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q17.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 9,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q21",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 21,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q21.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問21",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 11,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q22",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 22,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q22.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問22",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 11,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q23",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 23,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q23.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q23-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問23",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 11,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q24",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 24,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q24.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問24",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 12,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q25",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 25,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q25.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q25-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問25",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 12,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q26",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 26,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q26.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問26",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 13,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q29",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 29,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q29.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q29-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問29",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 14,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q30",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 30,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q30.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問30",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 15,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q31",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 31,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q31.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q31-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問31",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 15,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q32",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 32,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q32.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問32",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 16,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q33",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 33,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q33.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問33",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 16,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q36",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 36,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q36.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問36",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 17,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q37",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 37,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q37.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問37",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 17,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q38",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 38,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q38.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q38-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問38",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 17,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q41",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 41,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q41.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問41",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 19,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q42",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 42,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q42.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問42",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 19,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q43",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 43,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q43.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q43-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問43",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 19,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q44",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 44,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q44.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q44-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問44",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 20,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q45",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 45,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q45.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問45",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 21,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q48",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 48,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q48.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q48-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問48",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 22,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q51",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 51,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q51.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問51",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 24,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q52",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 52,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q52.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q52-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問52",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 24,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q53",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 53,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q53.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問53",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 25,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q54",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 54,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q54.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q54-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問54",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 25,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q55",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 55,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q55.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問55",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 26,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q56",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 56,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q56.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q56-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問56",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 26,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q57",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 57,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q57.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問57",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 27,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "tokurei-mondai-20251214-fe-q58",
+  "pool": "fe-menjo",
+  "exam": {
+   "year": 2025,
+   "era": "令和7年度",
+   "subject": "kamokuA",
+   "legacySection": "修了試験"
+  },
+  "no": 58,
+  "format": "image",
+  "images": [
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q58.webp",
+   "figures/tokurei-mondai-20251214-fe/tokurei-mondai-20251214-fe-q58-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施） 問58",
+   "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf",
+   "page": 27,
+   "sha256": "e48c91dd128546d39f0c11f6b251c2e3b39c15298048b2d0e8e32188fbdf936b"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

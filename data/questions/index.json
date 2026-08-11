@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-11T04:06:03.611Z",
- "totalQuestions": 439,
+ "generatedAt": "2026-08-11T04:21:32.180Z",
+ "totalQuestions": 5182,
  "shards": [
   {
    "file": "2009h21a-fe-am.json",
@@ -15,6 +15,146 @@
    "examKey": "2009h21h-fe-am",
    "label": "出典：平成21年度 春期 基本情報技術者試験 午前",
    "count": 70
+  },
+  {
+   "file": "2010h22a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2010h22a-fe-am",
+   "label": "出典：平成22年度 秋期 基本情報技術者試験 午前",
+   "count": 60
+  },
+  {
+   "file": "2010h22h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2010h22h-fe-am",
+   "label": "出典：平成22年度 春期 基本情報技術者試験 午前",
+   "count": 63
+  },
+  {
+   "file": "2011h23a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2011h23a-fe-am",
+   "label": "出典：平成23年度 秋期 基本情報技術者試験 午前",
+   "count": 72
+  },
+  {
+   "file": "2011h23tokubetsu-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2011h23tokubetsu-fe-am",
+   "label": "出典：平成23年度 基本情報技術者試験 午前",
+   "count": 72
+  },
+  {
+   "file": "2012h24a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2012h24a-fe-am",
+   "label": "出典：平成24年度 秋期 基本情報技術者試験 午前",
+   "count": 68
+  },
+  {
+   "file": "2012h24h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2012h24h-fe-am",
+   "label": "出典：平成24年度 春期 基本情報技術者試験 午前",
+   "count": 66
+  },
+  {
+   "file": "2013h25a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2013h25a-fe-am",
+   "label": "出典：平成25年度 秋期 基本情報技術者試験 午前",
+   "count": 65
+  },
+  {
+   "file": "2013h25h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2013h25h-fe-am",
+   "label": "出典：平成25年度 春期 基本情報技術者試験 午前",
+   "count": 62
+  },
+  {
+   "file": "2014h26a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2014h26a-fe-am",
+   "label": "出典：平成26年度 秋期 基本情報技術者試験 午前",
+   "count": 57
+  },
+  {
+   "file": "2014h26h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2014h26h-fe-am",
+   "label": "出典：平成26年度 春期 基本情報技術者試験 午前",
+   "count": 62
+  },
+  {
+   "file": "2015h27a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2015h27a-fe-am",
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前",
+   "count": 53
+  },
+  {
+   "file": "2015h27h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2015h27h-fe-am",
+   "label": "出典：平成27年度 春期 基本情報技術者試験 午前",
+   "count": 60
+  },
+  {
+   "file": "2016h28a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2016h28a-fe-am",
+   "label": "出典：平成28年度 秋期 基本情報技術者試験 午前",
+   "count": 48
+  },
+  {
+   "file": "2016h28h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2016h28h-fe-am",
+   "label": "出典：平成28年度 春期 基本情報技術者試験 午前",
+   "count": 59
+  },
+  {
+   "file": "2017h29a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2017h29a-fe-am",
+   "label": "出典：平成29年度 秋期 基本情報技術者試験 午前",
+   "count": 61
+  },
+  {
+   "file": "2017h29h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2017h29h-fe-am",
+   "label": "出典：平成29年度 春期 基本情報技術者試験 午前",
+   "count": 55
+  },
+  {
+   "file": "2018h30a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2018h30a-fe-am",
+   "label": "出典：平成30年度 秋期 基本情報技術者試験 午前",
+   "count": 55
+  },
+  {
+   "file": "2018h30h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2018h30h-fe-am",
+   "label": "出典：平成30年度 春期 基本情報技術者試験 午前",
+   "count": 42
+  },
+  {
+   "file": "2019h31h-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2019h31h-fe-am",
+   "label": "出典：平成31年度 春期 基本情報技術者試験 午前",
+   "count": 42
+  },
+  {
+   "file": "2019r01a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2019r01a-fe-am",
+   "label": "出典：令和元年度 秋期 基本情報技術者試験 午前",
+   "count": 52
   },
   {
    "file": "2023r05_fe_kamoku_a.json",
@@ -85,6 +225,454 @@
    "examKey": "fe_kamoku_b_set_sample",
    "label": "出典：2022年公開 基本情報技術者試験 サンプル問題 科目B",
    "count": 10
+  },
+  {
+   "file": "tokurei-mondai-200912-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-200912-fe",
+   "label": "出典：平成21年度 基本情報技術者試験 修了試験（2009-12 実施）",
+   "count": 70
+  },
+  {
+   "file": "tokurei-mondai-201001-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-201001-fe",
+   "label": "出典：平成21年度 基本情報技術者試験 修了試験（2010-01 実施）",
+   "count": 64
+  },
+  {
+   "file": "tokurei-mondai-201006-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-201006-fe",
+   "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-06 実施）",
+   "count": 74
+  },
+  {
+   "file": "tokurei-mondai-201007-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-201007-fe",
+   "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-07 実施）",
+   "count": 58
+  },
+  {
+   "file": "tokurei-mondai-201012-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-201012-fe",
+   "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-12 実施）",
+   "count": 64
+  },
+  {
+   "file": "tokurei-mondai-201101-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-201101-fe",
+   "label": "出典：平成22年度 基本情報技術者試験 修了試験（2011-01 実施）",
+   "count": 70
+  },
+  {
+   "file": "tokurei-mondai-20110724-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20110724-fe",
+   "label": "出典：平成23年度 基本情報技術者試験 修了試験（2011-07-24 実施）",
+   "count": 68
+  },
+  {
+   "file": "tokurei-mondai-20120122-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20120122-fe",
+   "label": "出典：平成23年度 基本情報技術者試験 修了試験（2012-01-22 実施）",
+   "count": 70
+  },
+  {
+   "file": "tokurei-mondai-20120624-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20120624-fe",
+   "label": "出典：平成24年度 基本情報技術者試験 修了試験（2012-06-24 実施）",
+   "count": 74
+  },
+  {
+   "file": "tokurei-mondai-20120722-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20120722-fe",
+   "label": "出典：平成24年度 基本情報技術者試験 修了試験（2012-07-22 実施）",
+   "count": 65
+  },
+  {
+   "file": "tokurei-mondai-20121216-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20121216-fe",
+   "label": "出典：平成24年度 基本情報技術者試験 修了試験（2012-12-16 実施）",
+   "count": 64
+  },
+  {
+   "file": "tokurei-mondai-20130127-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20130127-fe",
+   "label": "出典：平成24年度 基本情報技術者試験 修了試験（2013-01-27 実施）",
+   "count": 66
+  },
+  {
+   "file": "tokurei-mondai-20130623-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20130623-fe",
+   "label": "出典：平成25年度 基本情報技術者試験 修了試験（2013-06-23 実施）",
+   "count": 51
+  },
+  {
+   "file": "tokurei-mondai-20130728-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20130728-fe",
+   "label": "出典：平成25年度 基本情報技術者試験 修了試験（2013-07-28 実施）",
+   "count": 70
+  },
+  {
+   "file": "tokurei-mondai-20131215-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20131215-fe",
+   "label": "出典：平成25年度 基本情報技術者試験 修了試験（2013-12-15 実施）",
+   "count": 68
+  },
+  {
+   "file": "tokurei-mondai-20140126-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20140126-fe",
+   "label": "出典：平成25年度 基本情報技術者試験 修了試験（2014-01-26 実施）",
+   "count": 66
+  },
+  {
+   "file": "tokurei-mondai-20140622-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20140622-fe",
+   "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-06-22 実施）",
+   "count": 66
+  },
+  {
+   "file": "tokurei-mondai-20140727-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20140727-fe",
+   "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-07-27 実施）",
+   "count": 70
+  },
+  {
+   "file": "tokurei-mondai-20141221-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20141221-fe",
+   "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-12-21 実施）",
+   "count": 56
+  },
+  {
+   "file": "tokurei-mondai-20150125-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20150125-fe",
+   "label": "出典：平成26年度 基本情報技術者試験 修了試験（2015-01-25 実施）",
+   "count": 66
+  },
+  {
+   "file": "tokurei-mondai-20150628-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20150628-fe",
+   "label": "出典：平成27年度 基本情報技術者試験 修了試験（2015-06-28 実施）",
+   "count": 66
+  },
+  {
+   "file": "tokurei-mondai-20150726-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20150726-fe",
+   "label": "出典：平成27年度 基本情報技術者試験 修了試験（2015-07-26 実施）",
+   "count": 68
+  },
+  {
+   "file": "tokurei-mondai-20151220-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20151220-fe",
+   "label": "出典：平成27年度 基本情報技術者試験 修了試験（2015-12-20 実施）",
+   "count": 54
+  },
+  {
+   "file": "tokurei-mondai-20160124-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20160124-fe",
+   "label": "出典：平成27年度 基本情報技術者試験 修了試験（2016-01-24 実施）",
+   "count": 56
+  },
+  {
+   "file": "tokurei-mondai-20160612-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20160612-fe",
+   "label": "出典：平成28年度 基本情報技術者試験 修了試験（2016-06-12 実施）",
+   "count": 55
+  },
+  {
+   "file": "tokurei-mondai-20160724-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20160724-fe",
+   "label": "出典：平成28年度 基本情報技術者試験 修了試験（2016-07-24 実施）",
+   "count": 52
+  },
+  {
+   "file": "tokurei-mondai-20161211-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20161211-fe",
+   "label": "出典：平成28年度 基本情報技術者試験 修了試験（2016-12-11 実施）",
+   "count": 60
+  },
+  {
+   "file": "tokurei-mondai-20170122-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20170122-fe",
+   "label": "出典：平成28年度 基本情報技術者試験 修了試験（2017-01-22 実施）",
+   "count": 47
+  },
+  {
+   "file": "tokurei-mondai-20170611-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20170611-fe",
+   "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施）",
+   "count": 57
+  },
+  {
+   "file": "tokurei-mondai-20170723-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20170723-fe",
+   "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-07-23 実施）",
+   "count": 62
+  },
+  {
+   "file": "tokurei-mondai-20171210-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20171210-fe",
+   "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-12-10 実施）",
+   "count": 54
+  },
+  {
+   "file": "tokurei-mondai-20180128-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20180128-fe",
+   "label": "出典：平成29年度 基本情報技術者試験 修了試験（2018-01-28 実施）",
+   "count": 58
+  },
+  {
+   "file": "tokurei-mondai-20180610-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20180610-fe",
+   "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-06-10 実施）",
+   "count": 43
+  },
+  {
+   "file": "tokurei-mondai-20180722-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20180722-fe",
+   "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-07-22 実施）",
+   "count": 53
+  },
+  {
+   "file": "tokurei-mondai-20181209-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20181209-fe",
+   "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-12-09 実施）",
+   "count": 58
+  },
+  {
+   "file": "tokurei-mondai-20190127-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20190127-fe",
+   "label": "出典：平成30年度 基本情報技術者試験 修了試験（2019-01-27 実施）",
+   "count": 59
+  },
+  {
+   "file": "tokurei-mondai-20190609-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20190609-fe",
+   "label": "出典：令和元年度 基本情報技術者試験 修了試験（2019-06-09 実施）",
+   "count": 59
+  },
+  {
+   "file": "tokurei-mondai-20190728-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20190728-fe",
+   "label": "出典：令和元年度 基本情報技術者試験 修了試験（2019-07-28 実施）",
+   "count": 53
+  },
+  {
+   "file": "tokurei-mondai-20191208-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20191208-fe",
+   "label": "出典：令和元年度 基本情報技術者試験 修了試験（2019-12-08 実施）",
+   "count": 47
+  },
+  {
+   "file": "tokurei-mondai-20200126-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20200126-fe",
+   "label": "出典：令和元年度 基本情報技術者試験 修了試験（2020-01-26 実施）",
+   "count": 55
+  },
+  {
+   "file": "tokurei-mondai-20200614-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20200614-fe",
+   "label": "出典：令和2年度 基本情報技術者試験 修了試験（2020-06-14 実施）",
+   "count": 52
+  },
+  {
+   "file": "tokurei-mondai-20200726-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20200726-fe",
+   "label": "出典：令和2年度 基本情報技術者試験 修了試験（2020-07-26 実施）",
+   "count": 58
+  },
+  {
+   "file": "tokurei-mondai-20201213-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20201213-fe",
+   "label": "出典：令和2年度 基本情報技術者試験 修了試験（2020-12-13 実施）",
+   "count": 57
+  },
+  {
+   "file": "tokurei-mondai-20210124-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20210124-fe",
+   "label": "出典：令和2年度 基本情報技術者試験 修了試験（2021-01-24 実施）",
+   "count": 56
+  },
+  {
+   "file": "tokurei-mondai-20210613-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20210613-fe",
+   "label": "出典：令和3年度 基本情報技術者試験 修了試験（2021-06-13 実施）",
+   "count": 56
+  },
+  {
+   "file": "tokurei-mondai-20210725-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20210725-fe",
+   "label": "出典：令和3年度 基本情報技術者試験 修了試験（2021-07-25 実施）",
+   "count": 50
+  },
+  {
+   "file": "tokurei-mondai-20211212-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20211212-fe",
+   "label": "出典：令和3年度 基本情報技術者試験 修了試験（2021-12-12 実施）",
+   "count": 57
+  },
+  {
+   "file": "tokurei-mondai-20220123-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20220123-fe",
+   "label": "出典：令和3年度 基本情報技術者試験 修了試験（2022-01-23 実施）",
+   "count": 57
+  },
+  {
+   "file": "tokurei-mondai-20221211-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20221211-fe",
+   "label": "出典：令和4年度 基本情報技術者試験 修了試験（2022-12-11 実施）",
+   "count": 65
+  },
+  {
+   "file": "tokurei-mondai-20230122-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20230122-fe",
+   "label": "出典：令和4年度 基本情報技術者試験 修了試験（2023-01-22 実施）",
+   "count": 64
+  },
+  {
+   "file": "tokurei-mondai-20230611-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20230611-fe",
+   "label": "出典：令和5年度 基本情報技術者試験 修了試験（2023-06-11 実施）",
+   "count": 36
+  },
+  {
+   "file": "tokurei-mondai-20230723-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20230723-fe",
+   "label": "出典：令和5年度 基本情報技術者試験 修了試験（2023-07-23 実施）",
+   "count": 46
+  },
+  {
+   "file": "tokurei-mondai-20231210-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20231210-fe",
+   "label": "出典：令和5年度 基本情報技術者試験 修了試験（2023-12-10 実施）",
+   "count": 35
+  },
+  {
+   "file": "tokurei-mondai-20240128-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20240128-fe",
+   "label": "出典：令和5年度 基本情報技術者試験 修了試験（2024-01-28 実施）",
+   "count": 41
+  },
+  {
+   "file": "tokurei-mondai-20240609-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20240609-fe",
+   "label": "出典：令和6年度 基本情報技術者試験 修了試験（2024-06-09 実施）",
+   "count": 31
+  },
+  {
+   "file": "tokurei-mondai-20240728-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20240728-fe",
+   "label": "出典：令和6年度 基本情報技術者試験 修了試験（2024-07-28 実施）",
+   "count": 40
+  },
+  {
+   "file": "tokurei-mondai-20241208-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20241208-fe",
+   "label": "出典：令和6年度 基本情報技術者試験 修了試験（2024-12-08 実施）",
+   "count": 44
+  },
+  {
+   "file": "tokurei-mondai-20250126-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20250126-fe",
+   "label": "出典：令和6年度 基本情報技術者試験 修了試験（2025-01-26 実施）",
+   "count": 40
+  },
+  {
+   "file": "tokurei-mondai-20250608-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20250608-fe",
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-06-08 実施）",
+   "count": 44
+  },
+  {
+   "file": "tokurei-mondai-20250727-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20250727-fe",
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-07-27 実施）",
+   "count": 46
+  },
+  {
+   "file": "tokurei-mondai-20251214-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20251214-fe",
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2025-12-14 実施）",
+   "count": 39
+  },
+  {
+   "file": "tokurei-mondai-20260125-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20260125-fe",
+   "label": "出典：令和7年度 基本情報技術者試験 修了試験（2026-01-25 実施）",
+   "count": 45
+  },
+  {
+   "file": "tokurei-mondai-20260614-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20260614-fe",
+   "label": "出典：令和8年度 基本情報技術者試験 修了試験（2026-06-14 実施）",
+   "count": 40
+  },
+  {
+   "file": "tokurei-mondai-20260726-fe.json",
+   "pool": "fe-menjo",
+   "examKey": "tokurei-mondai-20260726-fe",
+   "label": "出典：令和8年度 基本情報技術者試験 修了試験（2026-07-26 実施）",
+   "count": 34
   },
   {
    "file": "tokurei_Mondai_200906_FE.json",

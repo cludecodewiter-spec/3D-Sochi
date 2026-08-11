@@ -1,0 +1,1394 @@
+[
+ {
+  "id": "2015h27a-fe-am-q01",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 1,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q01.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 4,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q02",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 2,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q02.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 4,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q03",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 3,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q03.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q03-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 4,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q07",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 7,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q07.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問7",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 7,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q08",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 8,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q08.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 7,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q11",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 11,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q11.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 8,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q12",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 12,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q12.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q12-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 8,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q13",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 13,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q13.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 9,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q14",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 14,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q14.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 9,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q15",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 15,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q15.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q15-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 9,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q16",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 16,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q16.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 10,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q17",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 17,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q17.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 10,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q18",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 18,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q18.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q18-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 10,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q21",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 21,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q21.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問21",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 11,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q22",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 22,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q22.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問22",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 12,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q23",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 23,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q23.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問23",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 12,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q24",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 24,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q24.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問24",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 12,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q28",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 28,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q28.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問28",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 14,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q31",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 31,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q31.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問31",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 15,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q32",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 32,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q32.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問32",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 15,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q33",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 33,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q33.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問33",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 15,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q34",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 34,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q34.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問34",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 16,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q35",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 35,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q35.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q35-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問35",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 16,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q36",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 36,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q36.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問36",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 17,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q37",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 37,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q37.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q37-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問37",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 17,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q38",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 38,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q38.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問38",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 18,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q42",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 42,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q42.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問42",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 19,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q43",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 43,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q43.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問43",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 20,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q44",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 44,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q44.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q44-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問44",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 20,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q47",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 47,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q47.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q47-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問47",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 21,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q48",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 48,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q48.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問48",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 22,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q53",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 53,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q53.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問53",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 24,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q54",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 54,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q54.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問54",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 24,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q55",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 55,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q55.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q55-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問55",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 24,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q56",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 56,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q56.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問56",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 25,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q57",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 57,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q57.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問57",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 25,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q58",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 58,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q58.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問58",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 26,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q61",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 61,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q61.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問61",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 27,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q62",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 62,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q62.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問62",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 27,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q63",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 63,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q63.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問63",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 28,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q64",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 64,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q64.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q64-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問64",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 28,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q65",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 65,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q65.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q65-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問65",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 29,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q66",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 66,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q66.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問66",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 30,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q67",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 67,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q67.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q67-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問67",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 30,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q68",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 68,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q68.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問68",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 31,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q71",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 71,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q71.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問71",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 32,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q72",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 72,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q72.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q72-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問72",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 32,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q73",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 73,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q73.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問73",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 33,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q74",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 74,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q74.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問74",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 33,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q75",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 75,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q75.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問75",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 33,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q76",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 76,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q76.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問76",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 34,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q77",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 77,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q77.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問77",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 34,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2015h27a-fe-am-q78",
+  "pool": "fe-honshiken",
+  "exam": {
+   "year": 2015,
+   "era": "平成27年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 78,
+  "format": "image",
+  "images": [
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q78.webp",
+   "figures/2015h27a-fe-am/2015h27a-fe-am-q78-2.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問78",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf",
+   "page": 34,
+   "sha256": "d9e1e4ae74f5d1736ab67339637c6ce32a3f50ec7cced76b532489a48e5a0df5"
+  },
+  "verified": true,
+  "modified": false
+ }
+]
