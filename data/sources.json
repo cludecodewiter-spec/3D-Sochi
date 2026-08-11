@@ -1,5 +1,5 @@
 {
-  "crawledAt": "2026-08-11T02:23:26.627Z",
+  "crawledAt": "2026-08-11T02:25:39.636Z",
   "sources": [
     {
       "pool": "fe-honshiken",
@@ -977,7 +977,7 @@
       "legacySection": "修了試験",
       "year": 2026,
       "date": "2026-07-26",
-      "era": null,
+      "era": "2026（令和8）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20260726_FE.pdf"
     },
@@ -989,7 +989,7 @@
       "legacySection": "修了試験",
       "year": 2026,
       "date": "2026-07-26",
-      "era": null,
+      "era": "2026（令和8）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20260726_FE.pdf"
     },
@@ -1001,7 +1001,7 @@
       "legacySection": "修了試験",
       "year": 2026,
       "date": "2026-06-14",
-      "era": null,
+      "era": "2026（令和8）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20260614_FE.pdf"
     },
@@ -1013,7 +1013,7 @@
       "legacySection": "修了試験",
       "year": 2026,
       "date": "2026-06-14",
-      "era": null,
+      "era": "2026（令和8）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20260614_FE.pdf"
     },
@@ -1025,7 +1025,7 @@
       "legacySection": "修了試験",
       "year": 2026,
       "date": "2026-01-25",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20260125_FE.pdf"
     },
@@ -1037,7 +1037,7 @@
       "legacySection": "修了試験",
       "year": 2026,
       "date": "2026-01-25",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20260125_FE.pdf"
     },
@@ -1049,7 +1049,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-12-14",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20251214_FE.pdf"
     },
@@ -1061,7 +1061,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-12-14",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20251214_FE.pdf"
     },
@@ -1073,7 +1073,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-07-27",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20250727_FE.pdf"
     },
@@ -1085,7 +1085,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-07-27",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20250727_FE.pdf"
     },
@@ -1097,7 +1097,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-06-08",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20250608_FE.pdf"
     },
@@ -1109,7 +1109,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-06-08",
-      "era": null,
+      "era": "2025（令和7）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20250608_FE.pdf"
     },
@@ -1121,7 +1121,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-01-26",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20250126_FE.pdf"
     },
@@ -1133,7 +1133,7 @@
       "legacySection": "修了試験",
       "year": 2025,
       "date": "2025-01-26",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20250126_FE.pdf"
     },
@@ -1145,7 +1145,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-12-08",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20241208_FE.pdf"
     },
@@ -1157,7 +1157,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-12-08",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20241208_FE.pdf"
     },
@@ -1169,7 +1169,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-07-28",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20240728_FE.pdf"
     },
@@ -1181,7 +1181,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-07-28",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20240728_FE.pdf"
     },
@@ -1193,7 +1193,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-06-09",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20240609_FE.pdf"
     },
@@ -1205,7 +1205,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-06-09",
-      "era": null,
+      "era": "2024（令和6）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20240609_FE.pdf"
     },
@@ -1217,7 +1217,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-01-28",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20240128_FE.pdf"
     },
@@ -1229,7 +1229,7 @@
       "legacySection": "修了試験",
       "year": 2024,
       "date": "2024-01-28",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20240128_FE.pdf"
     },
@@ -1241,7 +1241,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-12-10",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20231210_FE.pdf"
     },
@@ -1253,7 +1253,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-12-10",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20231210_FE.pdf"
     },
@@ -1265,7 +1265,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-07-23",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20230723_FE.pdf"
     },
@@ -1277,7 +1277,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-07-23",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20230723_FE.pdf"
     },
@@ -1289,7 +1289,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-06-11",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20230611_FE.pdf"
     },
@@ -1301,7 +1301,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-06-11",
-      "era": null,
+      "era": "2023（令和5）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_ans_20230611_FE.pdf"
     },
@@ -1313,7 +1313,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-01-22",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20230122_FE.pdf"
     },
@@ -1325,7 +1325,7 @@
       "legacySection": "修了試験",
       "year": 2023,
       "date": "2023-01-22",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20230122_FE.pdf"
     },
@@ -1337,7 +1337,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-12-11",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20221211_FE.pdf"
     },
@@ -1349,7 +1349,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-12-11",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20221211_FE.pdf"
     },
@@ -1361,7 +1361,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-07-24",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20220724_FE.pdf"
     },
@@ -1373,7 +1373,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-07-24",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20220724_FE.pdf"
     },
@@ -1385,7 +1385,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-06-12",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20220612_FE.pdf"
     },
@@ -1397,7 +1397,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-06-12",
-      "era": null,
+      "era": "2022（令和4）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20220612_FE.pdf"
     },
@@ -1409,7 +1409,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-01-23",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20220123_FE.pdf"
     },
@@ -1421,7 +1421,7 @@
       "legacySection": "修了試験",
       "year": 2022,
       "date": "2022-01-23",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20220123_FE.pdf"
     },
@@ -1433,7 +1433,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-12-12",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20211212_FE.pdf"
     },
@@ -1445,7 +1445,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-12-12",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20211212_FE.pdf"
     },
@@ -1457,7 +1457,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-07-25",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20210725_FE.pdf"
     },
@@ -1469,7 +1469,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-07-25",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20210725_FE.pdf"
     },
@@ -1481,7 +1481,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-06-13",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20210613_FE.pdf"
     },
@@ -1493,7 +1493,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-06-13",
-      "era": null,
+      "era": "2021（令和3）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20210613_FE.pdf"
     },
@@ -1505,7 +1505,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-01-24",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20210124_FE.pdf"
     },
@@ -1517,7 +1517,7 @@
       "legacySection": "修了試験",
       "year": 2021,
       "date": "2021-01-24",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20210124_FE.pdf"
     },
@@ -1529,7 +1529,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-12-13",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20201213_FE.pdf"
     },
@@ -1541,7 +1541,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-12-13",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20201213_FE.pdf"
     },
@@ -1553,7 +1553,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-07-26",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20200726_FE.pdf"
     },
@@ -1565,7 +1565,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-07-26",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20200726_FE.pdf"
     },
@@ -1577,7 +1577,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-06-14",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20200614_FE.pdf"
     },
@@ -1589,7 +1589,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-06-14",
-      "era": null,
+      "era": "2020（令和2）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20200614_FE.pdf"
     },
@@ -1601,7 +1601,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-01-26",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20200126_FE.pdf"
     },
@@ -1613,7 +1613,7 @@
       "legacySection": "修了試験",
       "year": 2020,
       "date": "2020-01-26",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20200126_FE.pdf"
     },
@@ -1625,7 +1625,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-12-08",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20191208_FE.pdf"
     },
@@ -1637,7 +1637,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-12-08",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20191208_FE.pdf"
     },
@@ -1649,7 +1649,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-07-28",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20190728_FE.pdf"
     },
@@ -1661,7 +1661,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-07-28",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20190728_FE.pdf"
     },
@@ -1673,7 +1673,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-06-09",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20190609_FE.pdf"
     },
@@ -1685,7 +1685,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-06-09",
-      "era": null,
+      "era": "2019（令和元）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20190609_FE.pdf"
     },
@@ -1697,7 +1697,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-01-27",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20190127_FE.pdf"
     },
@@ -1709,7 +1709,7 @@
       "legacySection": "修了試験",
       "year": 2019,
       "date": "2019-01-27",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20190127_FE.pdf"
     },
@@ -1721,7 +1721,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-12-09",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20181209_FE.pdf"
     },
@@ -1733,7 +1733,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-12-09",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20181209_FE.pdf"
     },
@@ -1745,7 +1745,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-07-22",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20180722_FE.pdf"
     },
@@ -1757,7 +1757,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-07-22",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20180722_FE.pdf"
     },
@@ -1769,7 +1769,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-06-10",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20180610_FE.pdf"
     },
@@ -1781,7 +1781,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-06-10",
-      "era": null,
+      "era": "2018（平成30）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20180610_FE.pdf"
     },
@@ -1793,7 +1793,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-01-28",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20180128_FE.pdf"
     },
@@ -1805,7 +1805,7 @@
       "legacySection": "修了試験",
       "year": 2018,
       "date": "2018-01-28",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20180128_FE.pdf"
     },
@@ -1817,7 +1817,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-12-10",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20171210_FE.pdf"
     },
@@ -1829,7 +1829,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-12-10",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20171210_FE.pdf"
     },
@@ -1841,7 +1841,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-07-23",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170723_FE.pdf"
     },
@@ -1853,7 +1853,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-07-23",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20170723_FE.pdf"
     },
@@ -1865,7 +1865,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-06-11",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf"
     },
@@ -1877,7 +1877,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-06-11",
-      "era": null,
+      "era": "2017（平成29）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20170611_FE.pdf"
     },
@@ -1889,7 +1889,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-01-22",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170122_FE.pdf"
     },
@@ -1901,7 +1901,7 @@
       "legacySection": "修了試験",
       "year": 2017,
       "date": "2017-01-22",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20170122_FE.pdf"
     },
@@ -1913,7 +1913,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-12-11",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20161211_FE.pdf"
     },
@@ -1925,7 +1925,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-12-11",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20161211_FE.pdf"
     },
@@ -1937,7 +1937,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-07-24",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20160724_FE.pdf"
     },
@@ -1949,7 +1949,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-07-24",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20160724_FE.pdf"
     },
@@ -1961,7 +1961,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-06-12",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20160612_FE.pdf"
     },
@@ -1973,7 +1973,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-06-12",
-      "era": null,
+      "era": "2016（平成28）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_ans_20160612_FE.pdf"
     },
@@ -1985,7 +1985,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-01-24",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20160124_FE.pdf"
     },
@@ -1997,7 +1997,7 @@
       "legacySection": "修了試験",
       "year": 2016,
       "date": "2016-01-24",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20160124_FE.pdf"
     },
@@ -2009,7 +2009,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-12-20",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20151220_FE.pdf"
     },
@@ -2021,7 +2021,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-12-20",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20151220_FE.pdf"
     },
@@ -2033,7 +2033,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-07-26",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20150726_FE.pdf"
     },
@@ -2045,7 +2045,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-07-26",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20150726_FE.pdf"
     },
@@ -2057,7 +2057,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-06-28",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20150628_FE.pdf"
     },
@@ -2069,7 +2069,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-06-28",
-      "era": null,
+      "era": "2015（平成27）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20150628_FE.pdf"
     },
@@ -2081,7 +2081,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-01-25",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20150125_FE.pdf"
     },
@@ -2093,7 +2093,7 @@
       "legacySection": "修了試験",
       "year": 2015,
       "date": "2015-01-25",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20150125_FE.pdf"
     },
@@ -2105,7 +2105,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-12-21",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20141221_FE.pdf"
     },
@@ -2117,7 +2117,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-12-21",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20141221_FE.pdf"
     },
@@ -2129,7 +2129,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-07-27",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140727_FE.pdf"
     },
@@ -2141,7 +2141,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-07-27",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20140727_FE.pdf"
     },
@@ -2153,7 +2153,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-06-22",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140622_FE.pdf"
     },
@@ -2165,7 +2165,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-06-22",
-      "era": null,
+      "era": "2014（平成26）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20140622_FE.pdf"
     },
@@ -2177,7 +2177,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-01-26",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140126_FE.pdf"
     },
@@ -2189,7 +2189,7 @@
       "legacySection": "修了試験",
       "year": 2014,
       "date": "2014-01-26",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20140126_FE.pdf"
     },
@@ -2201,7 +2201,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-12-15",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20131215_FE.pdf"
     },
@@ -2213,7 +2213,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-12-15",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20131215_FE.pdf"
     },
@@ -2225,7 +2225,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-07-28",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20130728_FE.pdf"
     },
@@ -2237,7 +2237,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-07-28",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20130728_FE.pdf"
     },
@@ -2249,7 +2249,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-06-23",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20130623_FE.pdf"
     },
@@ -2261,7 +2261,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-06-23",
-      "era": null,
+      "era": "2013（平成25）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20130623_FE.pdf"
     },
@@ -2273,7 +2273,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-01-27",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20130127_FE.pdf"
     },
@@ -2285,7 +2285,7 @@
       "legacySection": "修了試験",
       "year": 2013,
       "date": "2013-01-27",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20130127_FE.pdf"
     },
@@ -2297,7 +2297,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-12-16",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20121216_FE.pdf"
     },
@@ -2309,7 +2309,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-12-16",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20121216_FE.pdf"
     },
@@ -2321,7 +2321,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-07-22",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20120722_FE.pdf"
     },
@@ -2333,7 +2333,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-07-22",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20120722_FE.pdf"
     },
@@ -2345,7 +2345,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-06-24",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20120624_FE.pdf"
     },
@@ -2357,7 +2357,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-06-24",
-      "era": null,
+      "era": "2012（平成24）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20120624_FE.pdf"
     },
@@ -2369,7 +2369,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-01-22",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20120122_FE.pdf"
     },
@@ -2381,7 +2381,7 @@
       "legacySection": "修了試験",
       "year": 2012,
       "date": "2012-01-22",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20120122_FE.pdf"
     },
@@ -2393,7 +2393,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-12-18",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20111218_FE.pdf"
     },
@@ -2405,7 +2405,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-12-18",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20111218_FE.pdf"
     },
@@ -2417,7 +2417,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-07-24",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20110724_FE.pdf"
     },
@@ -2429,7 +2429,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-07-24",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20110724_FE.pdf"
     },
@@ -2441,7 +2441,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-07-02",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20110702_FE.pdf"
     },
@@ -2453,7 +2453,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-07-02",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20110702_FE.pdf"
     },
@@ -2465,7 +2465,7 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-06-26",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20110626_FE.pdf"
     },
@@ -2477,9 +2477,432 @@
       "legacySection": "修了試験",
       "year": 2011,
       "date": "2011-06-26",
-      "era": null,
+      "era": "2011（平成23）年度",
       "season": null,
       "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_20110626_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201101",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2011,
+      "date": "2011-01",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201101_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201101",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2011,
+      "date": "2011-01",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_201101_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201012",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-12",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201012_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201012",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-12",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_201012_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201007",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-07",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201007_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201007",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-07",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_201007_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201006",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-06",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201006_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201006",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-06",
+      "era": "2010（平成22）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_201006_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201001",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-01",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201001_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-201001",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2010,
+      "date": "2010-01",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_201001_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-200912",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2009,
+      "date": "2009-12",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200912_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-200912",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2009,
+      "date": "2009-12",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200912_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-200907",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2009,
+      "date": "2009-07",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-200907",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2009,
+      "date": "2009-07",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-200906",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2009,
+      "date": "2009-06",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf"
+    },
+    {
+      "pool": "fe-menjo",
+      "examKey": "fe-menjo-200906",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "修了試験",
+      "year": 2009,
+      "date": "2009-06",
+      "era": "2009（平成21）年度",
+      "season": null,
+      "url": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2023r05_fe_kamoku_a_qs",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2023,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2023r05_fe_kamoku_a_ans",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2023,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2023r05_fe_kamoku_b_qs",
+      "role": "questions",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2023,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_b_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2023r05_fe_kamoku_b_ans",
+      "role": "answers",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2023,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_b_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2024r06_fe_kamoku_a_qs",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2024,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2024r06_fe_kamoku_a_ans",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2024,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2024r06_fe_kamoku_b_qs",
+      "role": "questions",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2024,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2024r06_fe_kamoku_b_ans",
+      "role": "answers",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2024,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_b_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2025r07_fe_kamoku_a_qs",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2025,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2025r07_fe_kamoku_a_ans",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2025,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2025r07_fe_kamoku_b_qs",
+      "role": "questions",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2025,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2025r07_fe_kamoku_b_ans",
+      "role": "answers",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2025,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2026r08_fe_kamoku_a_qs",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2026,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_a_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2026r08_fe_kamoku_a_ans",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "公開問題",
+      "year": 2026,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_a_ans.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2026r08_fe_kamoku_b_qs",
+      "role": "questions",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2026,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_qs.pdf"
+    },
+    {
+      "pool": "fe-koukai",
+      "examKey": "fe-2026r08_fe_kamoku_b_ans",
+      "role": "answers",
+      "subject": "kamokuB",
+      "legacySection": "公開問題",
+      "year": 2026,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_ans.pdf"
+    },
+    {
+      "pool": "fe-sample",
+      "examKey": "fe-fe_kamoku_a_set_sample_qs",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "サンプル問題",
+      "year": null,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf"
+    },
+    {
+      "pool": "fe-sample",
+      "examKey": "fe-fe_kamoku_a_set_sample_ans",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "サンプル問題",
+      "year": null,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf"
+    },
+    {
+      "pool": "fe-sample",
+      "examKey": "fe-fe_kamoku_b_set_sample_qs",
+      "role": "questions",
+      "subject": "kamokuB",
+      "legacySection": "サンプル問題",
+      "year": null,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf"
+    },
+    {
+      "pool": "fe-sample",
+      "examKey": "fe-fe_kamoku_b_set_sample_ans",
+      "role": "answers",
+      "subject": "kamokuB",
+      "legacySection": "サンプル問題",
+      "year": null,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf"
+    },
+    {
+      "pool": "fe-sample",
+      "examKey": "fe-fe_kamoku_b_sample",
+      "role": "questions",
+      "subject": "kamokuB",
+      "legacySection": "サンプル問題",
+      "year": null,
+      "season": null,
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/syllabus/ps6vr7000000oett-att/fe_kamoku_b_sample.pdf"
     }
   ]
 }
