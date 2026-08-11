@@ -1,5 +1,5 @@
 {
-  "crawledAt": "2026-08-11T15:53:45.285Z",
+  "crawledAt": "2026-08-11T15:59:11.879Z",
   "sources": [
     {
       "pool": "fe-honshiken",
@@ -24,26 +24,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2009h21a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2009h21a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2009,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2009h21a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2009h21a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2009,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -68,26 +68,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2009h21h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2009h21h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2009,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2009h21h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2009h21h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2009,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -112,26 +112,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2010h22a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2010h22a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2010,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2010h22a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2010h22a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2010,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -156,26 +156,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2010h22h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2010h22h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2010,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2010h22h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2010h22h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2010,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -200,26 +200,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2011h23a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2011h23a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2011,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2011h23a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2011h23a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2011,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -245,28 +245,6 @@
     },
     {
       "pool": "fe-honshiken",
-      "examKey": "fe-2011h23tokubetsu_fe_pm_qs",
-      "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
-      "year": 2011,
-      "season": null,
-      "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_qs.pdf"
-    },
-    {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2011h23tokubetsu_fe_pm_ans",
-      "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
-      "year": 2011,
-      "season": null,
-      "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_ans.pdf"
-    },
-    {
-      "pool": "fe-honshiken",
       "examKey": "fe-2012h24a_fe_am_qs",
       "role": "questions",
       "subject": "kamokuA",
@@ -288,26 +266,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2012h24a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2012h24a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2012,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2012h24a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2012h24a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2012,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -332,26 +310,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2012h24h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2012h24h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2012,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2012h24h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2012h24h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2012,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -376,26 +354,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2013h25a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2013h25a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2013,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2013h25a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2013h25a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2013,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -420,26 +398,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2013h25h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2013h25h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2013,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2013h25h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2013h25h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2013,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -464,26 +442,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2014h26a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2014h26a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2014,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2014h26a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2014h26a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2014,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -508,26 +486,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2014h26h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2014h26h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2014,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2014h26h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2014h26h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2014,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -552,26 +530,26 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2015h27a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2015h27a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2015,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2015h27a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2015h27a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2015,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_ap_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -596,26 +574,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2015h27h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2015h27h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2015,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2015h27h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2015h27h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2015,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2016h28a_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2016,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2016h28a_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2016,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -640,26 +640,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2016h28a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2016h28a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2016,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2016h28a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2016h28a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2016,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2016h28h_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2016,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2016h28h_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2016,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -684,26 +706,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2016h28h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2016h28h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2016,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2016h28h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2016h28h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2016,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2017h29a_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2017,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2017h29a_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2017,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -728,26 +772,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2017h29a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2017h29a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2017,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2017h29a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2017h29a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2017,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2017h29h_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2017,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2017h29h_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2017,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -772,26 +838,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2017h29h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2017h29h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2017,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2017h29h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2017h29h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2017,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2018h30a_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2018,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2018h30a_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2018,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -816,26 +904,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2018h30a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2018h30a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2018,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2018h30a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2018h30a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2018,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2018h30h_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2018,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2018h30h_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2018,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -860,26 +970,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2018h30h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2018h30h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2018,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2018h30h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2018h30h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2018,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2019r01a_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2019,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2019r01a_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2019,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -904,26 +1036,48 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2019r01a_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2019r01a_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2019,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2019r01a_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2019r01a_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2019,
       "season": "秋期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2019h31h_sg_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2019,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sg_am_qs.pdf"
+    },
+    {
+      "pool": "ext-sg",
+      "examKey": "ext-2019h31h_sg_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2019,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sg_am_ans.pdf"
     },
     {
       "pool": "fe-honshiken",
@@ -948,26 +1102,246 @@
       "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_ans.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2019h31h_fe_pm_qs",
+      "pool": "ext-ap",
+      "examKey": "ext-2019h31h_ap_am",
       "role": "questions",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2019,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_qs.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_am_qs.pdf"
     },
     {
-      "pool": "fe-honshiken",
-      "examKey": "fe-2019h31h_fe_pm_ans",
+      "pool": "ext-ap",
+      "examKey": "ext-2019h31h_ap_am",
       "role": "answers",
-      "subject": "kamokuB",
-      "legacySection": "午後",
+      "subject": "kamokuA",
+      "legacySection": "午前",
       "year": 2019,
       "season": "春期",
       "era": null,
-      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_ans.pdf"
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2021r03a_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2021,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2021r03a_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2021,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2021r03h_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2021,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2021r03h_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2021,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2022r04a_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2022,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2022r04a_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2022,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2022r04h_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2022,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2022r04h_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2022,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2023r05a_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2023,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2023r05a_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2023,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2023r05h_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2023,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2023r05h_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2023,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2024r06a_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2024,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2024r06a_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2024,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2024r06h_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2024,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2024r06h_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2024,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2025r07a_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2025,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2025r07a_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2025,
+      "season": "秋期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2025r07h_ap_am",
+      "role": "questions",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2025,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf"
+    },
+    {
+      "pool": "ext-ap",
+      "examKey": "ext-2025r07h_ap_am",
+      "role": "answers",
+      "subject": "kamokuA",
+      "legacySection": "午前",
+      "year": 2025,
+      "season": "春期",
+      "era": null,
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_ans.pdf"
     },
     {
       "pool": "fe-menjo",

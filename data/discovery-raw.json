@@ -1,5 +1,5 @@
 {
-  "crawledAt": "2026-08-11T15:53:45.277Z",
+  "crawledAt": "2026-08-11T15:59:11.869Z",
   "pages": [
     "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
     "https://www.ipa.go.jp/shiken/mondai-kaiotu/2009h21.html",
@@ -100,15 +100,10 @@
       "text": "問題冊子 (注釈2)(PDF:4.5 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2009h21a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2009,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_qs.pdf",
+        "file": "2009h21a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子 (注釈2)(PDF:4.5 MB)"
       }
     },
     {
@@ -116,15 +111,10 @@
       "text": "解答例(PDF:86 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2009h21a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2009,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_ans.pdf",
+        "file": "2009h21a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:86 KB)"
       }
     },
     {
@@ -132,9 +122,10 @@
       "text": "採点講評(PDF:102 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_pm_cmnt.pdf",
+        "file": "2009h21a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:102 KB)"
       }
     },
     {
@@ -142,10 +133,15 @@
       "text": "問題冊子(PDF:1.3 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_qs.pdf",
-        "file": "2009h21a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:1.3 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2009h21a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2009,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_qs.pdf"
       }
     },
     {
@@ -153,10 +149,15 @@
       "text": "解答例(PDF:39 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_ans.pdf",
-        "file": "2009h21a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:39 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2009h21a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2009,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_ans.pdf"
       }
     },
     {
@@ -746,15 +747,10 @@
       "text": "問題冊子(PDF:3.6 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2009h21h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2009,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_qs.pdf",
+        "file": "2009h21h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:3.6 MB)"
       }
     },
     {
@@ -762,15 +758,10 @@
       "text": "解答例(PDF:84 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2009h21h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2009,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_ans.pdf",
+        "file": "2009h21h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:84 KB)"
       }
     },
     {
@@ -778,9 +769,10 @@
       "text": "採点講評(PDF:106 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_pm_cmnt.pdf",
+        "file": "2009h21h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:106 KB)"
       }
     },
     {
@@ -843,10 +835,15 @@
       "text": "問題冊子(PDF:1.3 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
-        "file": "2009h21h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:1.3 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2009h21h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2009,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf"
       }
     },
     {
@@ -854,10 +851,15 @@
       "text": "解答例(PDF:39 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
-        "file": "2009h21h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:39 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2009h21h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2009,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf"
       }
     },
     {
@@ -1414,15 +1416,10 @@
       "text": "問題冊子(PDF:8.4 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2010h22a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2010,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_qs.pdf",
+        "file": "2010h22a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:8.4 MB)"
       }
     },
     {
@@ -1430,15 +1427,10 @@
       "text": "解答例(PDF:76 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2010h22a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2010,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_ans.pdf",
+        "file": "2010h22a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:76 KB)"
       }
     },
     {
@@ -1446,9 +1438,10 @@
       "text": "採点講評(PDF:97 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_fe_pm_cmnt.pdf",
+        "file": "2010h22a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:97 KB)"
       }
     },
     {
@@ -1456,10 +1449,15 @@
       "text": "問題冊子(PDF:2.0 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_ap_am_qs.pdf",
-        "file": "2010h22a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:2.0 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2010h22a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2010,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_ap_am_qs.pdf"
       }
     },
     {
@@ -1467,10 +1465,15 @@
       "text": "解答例(PDF:37 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_ap_am_ans.pdf",
-        "file": "2010h22a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:37 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2010h22a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2010,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_ap_am_ans.pdf"
       }
     },
     {
@@ -2038,15 +2041,10 @@
       "text": "問題冊子(PDF:7.2 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2010h22h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2010,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_qs.pdf",
+        "file": "2010h22h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:7.2 MB)"
       }
     },
     {
@@ -2054,15 +2052,10 @@
       "text": "解答例(PDF:77 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2010h22h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2010,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_ans.pdf",
+        "file": "2010h22h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:77 KB)"
       }
     },
     {
@@ -2070,9 +2063,10 @@
       "text": "採点講評(PDF:80 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_fe_pm_cmnt.pdf",
+        "file": "2010h22h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:80 KB)"
       }
     },
     {
@@ -2080,10 +2074,15 @@
       "text": "問題冊子(PDF:2.0 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_ap_am_qs.pdf",
-        "file": "2010h22h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:2.0 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2010h22h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2010,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_ap_am_qs.pdf"
       }
     },
     {
@@ -2091,10 +2090,15 @@
       "text": "解答例(PDF:37 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_ap_am_ans.pdf",
-        "file": "2010h22h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:37 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2010h22h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2010,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004n2z-att/2010h22h_ap_am_ans.pdf"
       }
     },
     {
@@ -2662,15 +2666,10 @@
       "text": "問題冊子(PDF:6.7 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2011h23a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2011,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_qs.pdf",
+        "file": "2011h23a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:6.7 MB)"
       }
     },
     {
@@ -2678,15 +2677,10 @@
       "text": "解答例(PDF:142 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2011h23a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2011,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_ans.pdf",
+        "file": "2011h23a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:142 KB)"
       }
     },
     {
@@ -2694,9 +2688,10 @@
       "text": "採点講評(PDF:172 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_fe_pm_cmnt.pdf",
+        "file": "2011h23a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:172 KB)"
       }
     },
     {
@@ -2704,10 +2699,15 @@
       "text": "問題冊子(PDF:2.1 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_ap_am_qs.pdf",
-        "file": "2011h23a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:2.1 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2011h23a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2011,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_ap_am_qs.pdf"
       }
     },
     {
@@ -2715,10 +2715,15 @@
       "text": "解答例(PDF:58 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_ap_am_ans.pdf",
-        "file": "2011h23a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:58 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2011h23a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2011,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ojp-att/2011h23a_ap_am_ans.pdf"
       }
     },
     {
@@ -3286,15 +3291,10 @@
       "text": "問題冊子(PDF:5.3 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2011h23tokubetsu_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2011,
-        "season": null,
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_qs.pdf",
+        "file": "2011h23tokubetsu_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:5.3 MB)"
       }
     },
     {
@@ -3302,15 +3302,10 @@
       "text": "解答例(PDF:81 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2011h23tokubetsu_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2011,
-        "season": null,
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_ans.pdf",
+        "file": "2011h23tokubetsu_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:81 KB)"
       }
     },
     {
@@ -3318,9 +3313,10 @@
       "text": "採点講評(PDF:172 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000003ya2-att/2011h23tokubetsu_fe_pm_cmnt.pdf",
+        "file": "2011h23tokubetsu_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:172 KB)"
       }
     },
     {
@@ -3888,15 +3884,10 @@
       "text": "問題冊子(PDF:13.3 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2012h24a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2012,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_qs.pdf",
+        "file": "2012h24a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.3 MB)"
       }
     },
     {
@@ -3904,15 +3895,10 @@
       "text": "解答例(PDF:156 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2012h24a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2012,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_ans.pdf",
+        "file": "2012h24a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:156 KB)"
       }
     },
     {
@@ -3920,9 +3906,10 @@
       "text": "採点講評(PDF:185 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_pm_cmnt.pdf",
+        "file": "2012h24a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:185 KB)"
       }
     },
     {
@@ -3930,10 +3917,15 @@
       "text": "問題冊子(PDF:4.6 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_ap_am_qs.pdf",
-        "file": "2012h24a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.6 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2012h24a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2012,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_ap_am_qs.pdf"
       }
     },
     {
@@ -3941,10 +3933,15 @@
       "text": "解答例(PDF:24 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_ap_am_ans.pdf",
-        "file": "2012h24a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:24 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2012h24a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2012,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_ap_am_ans.pdf"
       }
     },
     {
@@ -4490,15 +4487,10 @@
       "text": "問題冊子(PDF:13.6 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2012h24h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2012,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_qs.pdf",
+        "file": "2012h24h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.6 MB)"
       }
     },
     {
@@ -4506,15 +4498,10 @@
       "text": "解答例(PDF:142 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2012h24h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2012,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_ans.pdf",
+        "file": "2012h24h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:142 KB)"
       }
     },
     {
@@ -4522,9 +4509,10 @@
       "text": "採点講評(PDF:182 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_fe_pm_cmnt.pdf",
+        "file": "2012h24h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:182 KB)"
       }
     },
     {
@@ -4532,10 +4520,15 @@
       "text": "問題冊子(PDF:4.6 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_ap_am_qs.pdf",
-        "file": "2012h24h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.6 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2012h24h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2012,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_ap_am_qs.pdf"
       }
     },
     {
@@ -4543,10 +4536,15 @@
       "text": "解答例(PDF:58 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_ap_am_ans.pdf",
-        "file": "2012h24h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:58 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2012h24h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2012,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000038er-att/2012h24h_ap_am_ans.pdf"
       }
     },
     {
@@ -5092,15 +5090,10 @@
       "text": "問題冊子(PDF:13.1 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2013h25a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2013,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_qs.pdf",
+        "file": "2013h25a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.1 MB)"
       }
     },
     {
@@ -5108,15 +5101,10 @@
       "text": "解答例(PDF:155 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2013h25a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2013,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_ans.pdf",
+        "file": "2013h25a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:155 KB)"
       }
     },
     {
@@ -5124,9 +5112,10 @@
       "text": "採点講評(PDF:176 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_fe_pm_cmnt.pdf",
+        "file": "2013h25a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:176 KB)"
       }
     },
     {
@@ -5134,10 +5123,15 @@
       "text": "問題冊子(PDF:5.1 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_ap_am_qs.pdf",
-        "file": "2013h25a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.1 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2013h25a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2013,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_ap_am_qs.pdf"
       }
     },
     {
@@ -5145,10 +5139,15 @@
       "text": "解答例(PDF:58 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_ap_am_ans.pdf",
-        "file": "2013h25a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:58 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2013h25a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2013,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p900000027za-att/2013h25a_ap_am_ans.pdf"
       }
     },
     {
@@ -5694,15 +5693,10 @@
       "text": "問題冊子(PDF:13.2 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2013h25h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2013,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_qs.pdf",
+        "file": "2013h25h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.2 MB)"
       }
     },
     {
@@ -5710,15 +5704,10 @@
       "text": "解答例(PDF:141 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2013h25h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2013,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_ans.pdf",
+        "file": "2013h25h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:141 KB)"
       }
     },
     {
@@ -5726,9 +5715,10 @@
       "text": "採点講評(PDF:189 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_fe_pm_cmnt.pdf",
+        "file": "2013h25h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:189 KB)"
       }
     },
     {
@@ -5736,10 +5726,15 @@
       "text": "問題冊子(PDF:4.7 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_qs.pdf",
-        "file": "2013h25h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.7 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2013h25h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2013,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_qs.pdf"
       }
     },
     {
@@ -5747,10 +5742,15 @@
       "text": "解答例(PDF:58 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_ans.pdf",
-        "file": "2013h25h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:58 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2013h25h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2013,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_ans.pdf"
       }
     },
     {
@@ -6296,15 +6296,10 @@
       "text": "問題冊子(PDF:14.0 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2014h26a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2014,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_qs.pdf",
+        "file": "2014h26a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:14.0 MB)"
       }
     },
     {
@@ -6312,15 +6307,10 @@
       "text": "解答例(PDF:255 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2014h26a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2014,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_ans.pdf",
+        "file": "2014h26a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:255 KB)"
       }
     },
     {
@@ -6328,9 +6318,10 @@
       "text": "採点講評(PDF:168 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_fe_pm_cmnt.pdf",
+        "file": "2014h26a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:168 KB)"
       }
     },
     {
@@ -6338,10 +6329,15 @@
       "text": "問題冊子(PDF:4.7 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_ap_am_qs.pdf",
-        "file": "2014h26a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.7 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2014h26a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2014,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_ap_am_qs.pdf"
       }
     },
     {
@@ -6349,10 +6345,15 @@
       "text": "解答例(PDF:74 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_ap_am_ans.pdf",
-        "file": "2014h26a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:74 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2014h26a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2014,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_ap_am_ans.pdf"
       }
     },
     {
@@ -6898,15 +6899,10 @@
       "text": "問題冊子(PDF:14.1 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2014h26h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2014,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_qs.pdf",
+        "file": "2014h26h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:14.1 MB)"
       }
     },
     {
@@ -6914,15 +6910,10 @@
       "text": "解答例(PDF:172 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2014h26h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2014,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_ans.pdf",
+        "file": "2014h26h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:172 KB)"
       }
     },
     {
@@ -6930,9 +6921,10 @@
       "text": "採点講評(PDF:152 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_fe_pm_cmnt.pdf",
+        "file": "2014h26h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:152 KB)"
       }
     },
     {
@@ -6940,10 +6932,15 @@
       "text": "問題冊子(PDF:4.8 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_ap_am_qs.pdf",
-        "file": "2014h26h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.8 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2014h26h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2014,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_ap_am_qs.pdf"
       }
     },
     {
@@ -6951,10 +6948,15 @@
       "text": "解答例(PDF:61 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_ap_am_ans.pdf",
-        "file": "2014h26h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:61 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2014h26h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2014,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000001dzu-att/2014h26h_ap_am_ans.pdf"
       }
     },
     {
@@ -7500,15 +7502,10 @@
       "text": "問題冊子(PDF:13.2 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2015h27a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2015,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_qs.pdf",
+        "file": "2015h27a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.2 MB)"
       }
     },
     {
@@ -7516,15 +7513,10 @@
       "text": "解答例(PDF:190 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2015h27a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2015,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_ans.pdf",
+        "file": "2015h27a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:190 KB)"
       }
     },
     {
@@ -7532,9 +7524,10 @@
       "text": "採点講評(PDF:237 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_pm_cmnt.pdf",
+        "file": "2015h27a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:237 KB)"
       }
     },
     {
@@ -7542,10 +7535,15 @@
       "text": "問題冊子(PDF:5.3 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_ap_am_qs.pdf",
-        "file": "2015h27a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.3 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2015h27a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2015,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_ap_am_qs.pdf"
       }
     },
     {
@@ -7553,10 +7551,15 @@
       "text": "解答例(PDF:41 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_ap_am_ans.pdf",
-        "file": "2015h27a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:41 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2015h27a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2015,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_ap_am_ans.pdf"
       }
     },
     {
@@ -8102,15 +8105,10 @@
       "text": "問題冊子(PDF:12.7 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2015h27h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2015,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_qs.pdf",
+        "file": "2015h27h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:12.7 MB)"
       }
     },
     {
@@ -8118,15 +8116,10 @@
       "text": "解答例(PDF:116 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2015h27h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2015,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_ans.pdf",
+        "file": "2015h27h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:116 KB)"
       }
     },
     {
@@ -8134,9 +8127,10 @@
       "text": "採点講評(PDF:159 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_fe_pm_cmnt.pdf",
+        "file": "2015h27h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:159 KB)"
       }
     },
     {
@@ -8144,10 +8138,15 @@
       "text": "問題冊子(PDF:4.8 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_ap_am_qs.pdf",
-        "file": "2015h27h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.8 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2015h27h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2015,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_ap_am_qs.pdf"
       }
     },
     {
@@ -8155,10 +8154,15 @@
       "text": "解答例(PDF:55 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_ap_am_ans.pdf",
-        "file": "2015h27h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:55 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2015h27h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2015,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_ap_am_ans.pdf"
       }
     },
     {
@@ -8672,10 +8676,15 @@
       "text": "問題冊子(PDF:3.4 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sg_am_qs.pdf",
-        "file": "2016h28a_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.4 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2016h28a_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sg_am_qs.pdf"
       }
     },
     {
@@ -8683,10 +8692,15 @@
       "text": "解答例(PDF:50 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sg_am_ans.pdf",
-        "file": "2016h28a_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:50 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2016h28a_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sg_am_ans.pdf"
       }
     },
     {
@@ -8759,15 +8773,10 @@
       "text": "問題冊子(PDF:12.6 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2016h28a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2016,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_qs.pdf",
+        "file": "2016h28a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:12.6 MB)"
       }
     },
     {
@@ -8775,15 +8784,10 @@
       "text": "解答例(PDF:196 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2016h28a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2016,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_ans.pdf",
+        "file": "2016h28a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:196 KB)"
       }
     },
     {
@@ -8791,9 +8795,10 @@
       "text": "採点講評(PDF:240 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_fe_pm_cmnt.pdf",
+        "file": "2016h28a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:240 KB)"
       }
     },
     {
@@ -8801,10 +8806,15 @@
       "text": "問題冊子(PDF:5.3 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_qs.pdf",
-        "file": "2016h28a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.3 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2016h28a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_qs.pdf"
       }
     },
     {
@@ -8812,10 +8822,15 @@
       "text": "解答例(PDF:54 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_ans.pdf",
-        "file": "2016h28a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:54 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2016h28a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_ans.pdf"
       }
     },
     {
@@ -9329,10 +9344,15 @@
       "text": "問題冊子(PDF:3.3 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_sg_am_qs.pdf",
-        "file": "2016h28h_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.3 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2016h28h_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_sg_am_qs.pdf"
       }
     },
     {
@@ -9340,10 +9360,15 @@
       "text": "解答例(PDF:49 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_sg_am_ans.pdf",
-        "file": "2016h28h_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:49 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2016h28h_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_sg_am_ans.pdf"
       }
     },
     {
@@ -9416,15 +9441,10 @@
       "text": "問題冊子(PDF:12.6 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2016h28h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2016,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf",
+        "file": "2016h28h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:12.6 MB)"
       }
     },
     {
@@ -9432,15 +9452,10 @@
       "text": "解答例(PDF:193 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2016h28h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2016,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf",
+        "file": "2016h28h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:193 KB)"
       }
     },
     {
@@ -9448,9 +9463,10 @@
       "text": "採点講評(PDF:223 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_cmnt.pdf",
+        "file": "2016h28h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:223 KB)"
       }
     },
     {
@@ -9458,10 +9474,15 @@
       "text": "問題冊子(PDF:5.2 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_ap_am_qs.pdf",
-        "file": "2016h28h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.2 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2016h28h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_ap_am_qs.pdf"
       }
     },
     {
@@ -9469,10 +9490,15 @@
       "text": "解答例(PDF:52 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_ap_am_ans.pdf",
-        "file": "2016h28h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:52 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2016h28h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2016,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_ap_am_ans.pdf"
       }
     },
     {
@@ -9986,10 +10012,15 @@
       "text": "問題冊子(PDF:3.2 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sg_am_qs.pdf",
-        "file": "2017h29a_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.2 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2017h29a_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sg_am_qs.pdf"
       }
     },
     {
@@ -9997,10 +10028,15 @@
       "text": "解答例(PDF:75 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sg_am_ans.pdf",
-        "file": "2017h29a_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:75 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2017h29a_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sg_am_ans.pdf"
       }
     },
     {
@@ -10073,15 +10109,10 @@
       "text": "問題冊子(PDF:13.4 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2017h29a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2017,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_qs.pdf",
+        "file": "2017h29a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.4 MB)"
       }
     },
     {
@@ -10089,15 +10120,10 @@
       "text": "解答例(PDF:187 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2017h29a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2017,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_ans.pdf",
+        "file": "2017h29a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:187 KB)"
       }
     },
     {
@@ -10105,9 +10131,10 @@
       "text": "採点講評(PDF:230 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_fe_pm_cmnt.pdf",
+        "file": "2017h29a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:230 KB)"
       }
     },
     {
@@ -10115,10 +10142,15 @@
       "text": "問題冊子(PDF:4.7 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_ap_am_qs.pdf",
-        "file": "2017h29a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.7 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2017h29a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_ap_am_qs.pdf"
       }
     },
     {
@@ -10126,10 +10158,15 @@
       "text": "解答例(PDF:79 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_ap_am_ans.pdf",
-        "file": "2017h29a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:79 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2017h29a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_ap_am_ans.pdf"
       }
     },
     {
@@ -10643,10 +10680,15 @@
       "text": "問題冊子(PDF:3.2 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sg_am_qs.pdf",
-        "file": "2017h29h_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.2 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2017h29h_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sg_am_qs.pdf"
       }
     },
     {
@@ -10654,10 +10696,15 @@
       "text": "解答例(PDF:75 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sg_am_ans.pdf",
-        "file": "2017h29h_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:75 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2017h29h_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sg_am_ans.pdf"
       }
     },
     {
@@ -10730,15 +10777,10 @@
       "text": "問題冊子(PDF:13.3 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2017h29h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2017,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_qs.pdf",
+        "file": "2017h29h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.3 MB)"
       }
     },
     {
@@ -10746,15 +10788,10 @@
       "text": "解答例(PDF:198 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2017h29h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2017,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_ans.pdf",
+        "file": "2017h29h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:198 KB)"
       }
     },
     {
@@ -10762,9 +10799,10 @@
       "text": "採点講評(PDF:221 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_fe_pm_cmnt.pdf",
+        "file": "2017h29h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:221 KB)"
       }
     },
     {
@@ -10772,10 +10810,15 @@
       "text": "問題冊子(PDF:4.8 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_ap_am_qs.pdf",
-        "file": "2017h29h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.8 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2017h29h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_ap_am_qs.pdf"
       }
     },
     {
@@ -10783,10 +10826,15 @@
       "text": "解答例(PDF:79 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_ap_am_ans.pdf",
-        "file": "2017h29h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:79 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2017h29h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2017,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_ap_am_ans.pdf"
       }
     },
     {
@@ -11300,10 +11348,15 @@
       "text": "問題冊子(PDF:3.4 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
-        "file": "2018h30a_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.4 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2018h30a_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf"
       }
     },
     {
@@ -11311,10 +11364,15 @@
       "text": "解答例(PDF:75 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
-        "file": "2018h30a_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:75 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2018h30a_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf"
       }
     },
     {
@@ -11387,15 +11445,10 @@
       "text": "問題冊子(PDF:14.1 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2018h30a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2018,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_qs.pdf",
+        "file": "2018h30a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:14.1 MB)"
       }
     },
     {
@@ -11403,15 +11456,10 @@
       "text": "解答例(PDF:206 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2018h30a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2018,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_ans.pdf",
+        "file": "2018h30a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:206 KB)"
       }
     },
     {
@@ -11419,9 +11467,10 @@
       "text": "採点講評(PDF:231 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_pm_cmnt.pdf",
+        "file": "2018h30a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:231 KB)"
       }
     },
     {
@@ -11429,10 +11478,15 @@
       "text": "問題冊子(PDF:5.0 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_ap_am_qs.pdf",
-        "file": "2018h30a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.0 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2018h30a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_ap_am_qs.pdf"
       }
     },
     {
@@ -11440,10 +11494,15 @@
       "text": "解答例(PDF:79 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_ap_am_ans.pdf",
-        "file": "2018h30a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:79 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2018h30a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_ap_am_ans.pdf"
       }
     },
     {
@@ -11957,10 +12016,15 @@
       "text": "問題冊子(PDF:3.3 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sg_am_qs.pdf",
-        "file": "2018h30h_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.3 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2018h30h_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sg_am_qs.pdf"
       }
     },
     {
@@ -11968,10 +12032,15 @@
       "text": "解答例(PDF:50 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sg_am_ans.pdf",
-        "file": "2018h30h_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:50 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2018h30h_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sg_am_ans.pdf"
       }
     },
     {
@@ -12044,15 +12113,10 @@
       "text": "問題冊子(PDF:19.1 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2018h30h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2018,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_qs.pdf",
+        "file": "2018h30h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:19.1 MB)"
       }
     },
     {
@@ -12060,15 +12124,10 @@
       "text": "解答例(PDF:197 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2018h30h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2018,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_ans.pdf",
+        "file": "2018h30h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:197 KB)"
       }
     },
     {
@@ -12076,9 +12135,10 @@
       "text": "採点講評(PDF:213 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_fe_pm_cmnt.pdf",
+        "file": "2018h30h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:213 KB)"
       }
     },
     {
@@ -12086,10 +12146,15 @@
       "text": "問題冊子(PDF:4.8 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_ap_am_qs.pdf",
-        "file": "2018h30h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.8 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2018h30h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_ap_am_qs.pdf"
       }
     },
     {
@@ -12097,10 +12162,15 @@
       "text": "解答例(PDF:54 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_ap_am_ans.pdf",
-        "file": "2018h30h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:54 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2018h30h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2018,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_ap_am_ans.pdf"
       }
     },
     {
@@ -12614,10 +12684,15 @@
       "text": "問題冊子(PDF:3.1 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sg_am_qs.pdf",
-        "file": "2019r01a_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.1 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2019r01a_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sg_am_qs.pdf"
       }
     },
     {
@@ -12625,10 +12700,15 @@
       "text": "解答例(PDF:51 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sg_am_ans.pdf",
-        "file": "2019r01a_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:51 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2019r01a_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sg_am_ans.pdf"
       }
     },
     {
@@ -12701,15 +12781,10 @@
       "text": "問題冊子(PDF:13.4 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2019r01a_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2019,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf",
+        "file": "2019r01a_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.4 MB)"
       }
     },
     {
@@ -12717,15 +12792,10 @@
       "text": "解答例(PDF:201 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2019r01a_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2019,
-        "season": "秋期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf",
+        "file": "2019r01a_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:201 KB)"
       }
     },
     {
@@ -12733,9 +12803,10 @@
       "text": "採点講評(PDF:227 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_cmnt.pdf",
+        "file": "2019r01a_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:227 KB)"
       }
     },
     {
@@ -12743,10 +12814,15 @@
       "text": "問題冊子(PDF:4.9 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_ap_am_qs.pdf",
-        "file": "2019r01a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.9 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2019r01a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_ap_am_qs.pdf"
       }
     },
     {
@@ -12754,10 +12830,15 @@
       "text": "解答例(PDF:55 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_ap_am_ans.pdf",
-        "file": "2019r01a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:55 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2019r01a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_ap_am_ans.pdf"
       }
     },
     {
@@ -13271,10 +13352,15 @@
       "text": "問題冊子(PDF:3.4 MB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sg_am_qs.pdf",
-        "file": "2019h31h_sg_am_qs.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 問題冊子(PDF:3.4 MB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2019h31h_sg_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sg_am_qs.pdf"
       }
     },
     {
@@ -13282,10 +13368,15 @@
       "text": "解答例(PDF:76 KB)",
       "heading": "情報セキュリティマネジメント試験（SG）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sg_am_ans.pdf",
-        "file": "2019h31h_sg_am_ans.pdf",
-        "ctx": "情報セキュリティマネジメント試験（SG） 解答例(PDF:76 KB)"
+        "pool": "ext-sg",
+        "examKey": "ext-2019h31h_sg_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sg_am_ans.pdf"
       }
     },
     {
@@ -13358,15 +13449,10 @@
       "text": "問題冊子(PDF:13.9 MB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2019h31h_fe_pm_qs",
-        "role": "questions",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2019,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_qs.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_qs.pdf",
+        "file": "2019h31h_fe_pm_qs.pdf",
+        "ctx": "基本情報技術者試験（FE） 問題冊子(PDF:13.9 MB)"
       }
     },
     {
@@ -13374,15 +13460,10 @@
       "text": "解答例(PDF:212 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "pool": "fe-honshiken",
-        "examKey": "fe-2019h31h_fe_pm_ans",
-        "role": "answers",
-        "subject": "kamokuB",
-        "legacySection": "午後",
-        "year": 2019,
-        "season": "春期",
-        "era": null,
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_ans.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_ans.pdf",
+        "file": "2019h31h_fe_pm_ans.pdf",
+        "ctx": "基本情報技術者試験（FE） 解答例(PDF:212 KB)"
       }
     },
     {
@@ -13390,9 +13471,10 @@
       "text": "採点講評(PDF:239 KB)",
       "heading": "基本情報技術者試験（FE）",
       "classified": {
-        "role": "skip",
-        "reason": "commentary/weights",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_cmnt.pdf"
+        "role": "unknown",
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_pm_cmnt.pdf",
+        "file": "2019h31h_fe_pm_cmnt.pdf",
+        "ctx": "基本情報技術者試験（FE） 採点講評(PDF:239 KB)"
       }
     },
     {
@@ -13400,10 +13482,15 @@
       "text": "問題冊子(PDF:4.9 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_am_qs.pdf",
-        "file": "2019h31h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.9 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2019h31h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_am_qs.pdf"
       }
     },
     {
@@ -13411,10 +13498,15 @@
       "text": "解答例(PDF:80 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_am_ans.pdf",
-        "file": "2019h31h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:80 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2019h31h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2019,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_am_ans.pdf"
       }
     },
     {
@@ -14456,10 +14548,15 @@
       "text": "問題冊子(PDF:5.2 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_ap_am_qs.pdf",
-        "file": "2021r03a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.2 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2021r03a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2021,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_ap_am_qs.pdf"
       }
     },
     {
@@ -14467,10 +14564,15 @@
       "text": "解答例(PDF:54 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_ap_am_ans.pdf",
-        "file": "2021r03a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:54 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2021r03a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2021,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_ap_am_ans.pdf"
       }
     },
     {
@@ -14984,10 +15086,15 @@
       "text": "問題冊子(PDF:4.9 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_am_qs.pdf",
-        "file": "2021r03h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.9 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2021r03h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2021,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_am_qs.pdf"
       }
     },
     {
@@ -14995,10 +15102,15 @@
       "text": "解答例(PDF:54 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_am_ans.pdf",
-        "file": "2021r03h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:54 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2021r03h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2021,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_am_ans.pdf"
       }
     },
     {
@@ -15512,10 +15624,15 @@
       "text": "問題冊子(PDF:4.7 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_am_qs.pdf",
-        "file": "2022r04a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.7 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2022r04a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2022,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_am_qs.pdf"
       }
     },
     {
@@ -15523,10 +15640,15 @@
       "text": "解答例(PDF:56 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_am_ans.pdf",
-        "file": "2022r04a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:56 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2022r04a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2022,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_am_ans.pdf"
       }
     },
     {
@@ -16040,10 +16162,15 @@
       "text": "問題冊子(PDF:4.5 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-        "file": "2022r04h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.5 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2022r04h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2022,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf"
       }
     },
     {
@@ -16051,10 +16178,15 @@
       "text": "解答例(PDF:113 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_ans.pdf",
-        "file": "2022r04h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:113 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2022r04h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2022,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_ans.pdf"
       }
     },
     {
@@ -16568,10 +16700,15 @@
       "text": "問題冊子(PDF:4.7 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
-        "file": "2023r05a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.7 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2023r05a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2023,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf"
       }
     },
     {
@@ -16579,10 +16716,15 @@
       "text": "解答例(PDF:39 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_ans.pdf",
-        "file": "2023r05a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:39 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2023r05a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2023,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_ans.pdf"
       }
     },
     {
@@ -17063,10 +17205,15 @@
       "text": "問題冊子(PDF:5.0 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_am_qs.pdf",
-        "file": "2023r05h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.0 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2023r05h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2023,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_am_qs.pdf"
       }
     },
     {
@@ -17074,10 +17221,15 @@
       "text": "解答例(PDF:39 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_am_ans.pdf",
-        "file": "2023r05h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:39 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2023r05h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2023,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_am_ans.pdf"
       }
     },
     {
@@ -17591,10 +17743,15 @@
       "text": "問題冊子(PDF:4.8 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
-        "file": "2024r06a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.8 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2024r06a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2024,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf"
       }
     },
     {
@@ -17602,10 +17759,15 @@
       "text": "解答例(PDF:40 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_ans.pdf",
-        "file": "2024r06a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:40 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2024r06a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2024,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_ans.pdf"
       }
     },
     {
@@ -18086,10 +18248,15 @@
       "text": "問題冊子(PDF:5.1 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
-        "file": "2024r06h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.1 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2024r06h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2024,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf"
       }
     },
     {
@@ -18097,10 +18264,15 @@
       "text": "解答例(PDF:40 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_ans.pdf",
-        "file": "2024r06h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:40 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2024r06h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2024,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_ans.pdf"
       }
     },
     {
@@ -18581,10 +18753,15 @@
       "text": "問題冊子(PDF:4.6 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
-        "file": "2025r07a_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:4.6 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2025r07a_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2025,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf"
       }
     },
     {
@@ -18592,10 +18769,15 @@
       "text": "解答例(PDF:40 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf",
-        "file": "2025r07a_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:40 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2025r07a_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2025,
+        "season": "秋期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf"
       }
     },
     {
@@ -19076,10 +19258,15 @@
       "text": "問題冊子(PDF:5.1 MB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
-        "file": "2025r07h_ap_am_qs.pdf",
-        "ctx": "応用情報技術者試験（AP） 問題冊子(PDF:5.1 MB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2025r07h_ap_am",
+        "role": "questions",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2025,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf"
       }
     },
     {
@@ -19087,10 +19274,15 @@
       "text": "解答例(PDF:40 KB)",
       "heading": "応用情報技術者試験（AP）",
       "classified": {
-        "role": "unknown",
-        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_ans.pdf",
-        "file": "2025r07h_ap_am_ans.pdf",
-        "ctx": "応用情報技術者試験（AP） 解答例(PDF:40 KB)"
+        "pool": "ext-ap",
+        "examKey": "ext-2025r07h_ap_am",
+        "role": "answers",
+        "subject": "kamokuA",
+        "legacySection": "午前",
+        "year": 2025,
+        "season": "春期",
+        "era": null,
+        "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_ans.pdf"
       }
     },
     {
