@@ -7,14 +7,5 @@
   "expected": 80,
   "ok": false,
   "why": "使える問題が 0/80 問しかない"
- },
- {
-  "exam": "2009h21h-fe-am",
-  "pages": 32,
-  "anchors": 3,
-  "usable": 1,
-  "expected": 80,
-  "ok": false,
-  "why": "使える問題が 1/80 問しかない"
  }
 ]

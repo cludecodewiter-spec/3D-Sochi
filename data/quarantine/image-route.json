@@ -12,23 +12,5 @@
     "page": 26
    }
   ]
- },
- {
-  "pdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_am_qs.pdf",
-  "reason": "使える問題が 1/80 問しかない",
-  "anchors": [
-   {
-    "no": 1,
-    "page": 3
-   },
-   {
-    "no": 2,
-    "page": 3
-   },
-   {
-    "no": 77,
-    "page": 30
-   }
-  ]
  }
 ]
