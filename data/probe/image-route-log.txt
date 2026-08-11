@@ -8,6 +8,7 @@
   OCR アンカー: 67 件 / 使える問題: 55 件 → OK (69%)
     検出した問番号: 1,2,3,5,6,8,9,10,12,13,14,15,16,18,20,21,22,24,25,26,27,28,29,32,33,34,35,36,37,38,39,40,42,43,44,45,46,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,67,68,69,70,72,73,74,75,76,77,78,80
     見つからなかった問番号: 4,7,11,17,19,23,30,31,41,47,66,71,79
-Error: extract_area: bad extract area
-    at Sharp.toFile (/home/runner/work/3D-Sochi/3D-Sochi/node_modules/sharp/lib/output.js:90:19)
-    at main (file:///home/runner/work/3D-Sochi/3D-Sochi/tools/build-image.mjs:261:12)
+  → 55 問を取り込み
+OCR の生出力を data/probe/ocr-words-sample.json に保存（3 ページぶん）
+
+=== 画像経路: 1/1 回が検証通過、55 問を取り込み

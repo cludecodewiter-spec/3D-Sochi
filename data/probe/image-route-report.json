@@ -2,10 +2,9 @@
  {
   "exam": "2009h21a-fe-am",
   "pages": 36,
-  "anchors": 2,
-  "usable": 0,
+  "anchors": 67,
+  "usable": 55,
   "expected": 80,
-  "ok": false,
-  "why": "使える問題が 0/80 問しかない"
+  "ok": true
  }
 ]

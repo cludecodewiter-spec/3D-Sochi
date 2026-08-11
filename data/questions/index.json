@@ -1,7 +1,14 @@
 {
- "generatedAt": "2026-08-11T03:50:59.810Z",
- "totalQuestions": 314,
+ "generatedAt": "2026-08-11T03:51:54.227Z",
+ "totalQuestions": 369,
  "shards": [
+  {
+   "file": "2009h21a-fe-am.json",
+   "pool": "fe-honshiken",
+   "examKey": "2009h21a-fe-am",
+   "label": "出典：平成21年度 秋期 基本情報技術者試験 午前",
+   "count": 55
+  },
   {
    "file": "2023r05_fe_kamoku_a.json",
    "pool": "fe-koukai",
