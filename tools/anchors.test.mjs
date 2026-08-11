@@ -4,6 +4,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { anchorsFromWords, longestIncreasing, usableAnchors } from './lib/anchors.mjs';
 
 const word = (text, x, y, w = 40, h = 30, conf = 90) => ({ text, x, y, w, h, conf });
@@ -82,4 +83,13 @@ test('「問1」の次に本文の数字が来ても、繋げて誤読しない'
 test('「問」だけの語の右に本文の数字があっても、離れていれば拾わない', () => {
   const got = anchorsFromWords([word('問', 60, 100, 30), word('16', 500, 100, 30)], 700);
   assert.deepEqual(nos(got), []);
+});
+
+test('実際の OCR 出力から 問1 を拾い、見出しの「問1から問50まで」は拾わない', async () => {
+  const fx = JSON.parse(await readFile('tools/fixtures/ocr-page3-strip.json', 'utf8'));
+  const got = anchorsFromWords(fx.words, fx.stripWidth);
+  assert.deepEqual(nos(got), [1]);
+
+  // 本文マージン(x=241)ではなく字下げされた見出し(x=304)を拾っていないこと
+  assert.equal(got[0].x, 241);
 });

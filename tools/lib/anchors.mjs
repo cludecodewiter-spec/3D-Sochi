@@ -29,21 +29,42 @@ function numberFromWord(text) {
 
 const isLoneMon = (text) => new RegExp(`^[${MON}]$`).test(normalizeDigits(text).replace(/[\s.．,，:：]/g, ''));
 
+const centerY = (w) => w.y + w.h / 2;
+
+/**
+ * そのページの本文の左マージンを求める。
+ * 「問1から問50まで」のような見出し行は一段字下げされているので、
+ * 本文マージンに揃っているものだけをアンカーとみなすために使う。
+ */
+function bodyMarginX(words) {
+  if (words.length === 0) return 0;
+  const xs = words.map((w) => w.x).sort((a, b) => a - b);
+  // 外れ値（罫線のかけら等）に引きずられないよう下位 10% 点を使う
+  return xs[Math.floor(xs.length * 0.1)];
+}
+
 export function anchorsFromWords(words, stripWidth) {
-  const left = words
-    .filter((w) => w.x <= stripWidth * 0.55 && w.conf >= 20)
-    .sort((a, b) => a.y - b.y || a.x - b.x);
+  const candidates = words.filter((w) => w.x <= stripWidth * 0.55 && w.conf >= 20 && w.text.trim());
+  const marginX = bodyMarginX(candidates);
 
   const anchors = [];
-  for (let i = 0; i < left.length; i++) {
-    const w = left[i];
+  for (const w of candidates) {
+    // 本文マージンから字下げされている「問」は見出しなので拾わない
+    if (w.x > marginX + 35) continue;
 
     let no = numberFromWord(w.text);
     if (no === null && isLoneMon(w.text)) {
-      // 「問」と番号が別の語に割れている場合、すぐ右の語から数字を取る
-      const near = left
-        .slice(i + 1, i + 4)
-        .find((n) => Math.abs(n.y - w.y) < Math.max(w.h, 20) * 1.5 && n.x > w.x && n.x - (w.x + w.w) < Math.max(w.w, 20) * 3);
+      // 「問」と番号が別の語に分かれている。番号の外接矩形は「問」より縦に長いことがあり、
+      // 上端 y で並べると番号が先に来てしまうので、位置関係だけで探す（並び順に頼らない）。
+      const near = words.find(
+        (n) =>
+          n !== w &&
+          n.conf >= 20 &&
+          Math.abs(centerY(n) - centerY(w)) < Math.max(w.h, 20) * 0.9 &&
+          n.x > w.x &&
+          n.x - (w.x + w.w) < Math.max(w.w, 20) * 2 &&
+          /^\d/.test(normalizeDigits(n.text)),
+      );
       const digits = near && normalizeDigits(near.text).match(/^(\d{1,3})(?!\d)/);
       if (digits) no = Number(digits[1]);
     }
@@ -51,6 +72,7 @@ export function anchorsFromWords(words, stripWidth) {
     if (no === null || no < 1 || no > 100) continue;
     anchors.push({ no, x: w.x, y: w.y, conf: w.conf });
   }
+  anchors.sort((a, b) => a.y - b.y);
 
   anchors.sort((a, b) => a.y - b.y);
   // 同じ番号が近い位置で二重に拾われることがある
