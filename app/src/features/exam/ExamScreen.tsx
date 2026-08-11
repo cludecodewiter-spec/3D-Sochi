@@ -3,6 +3,7 @@ import { CHOICE_KEYS, type ChoiceKey, type ExamMode, type ExamResult, type Quest
 import { formatTime, useExam } from './useExam';
 import { Markable } from './Markable';
 import { ScanImage } from './ScanImage';
+import { HintButton } from './HintButton';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -116,6 +117,7 @@ export function ExamScreen({ mode, questions, onFinish, onAbort }: Props) {
           {q.format === 'image' && (
             <p className="choice-hint">選択肢の内容は上の問題画像に含まれています。</p>
           )}
+          <HintButton questionId={q.id} />
         </section>
       </main>
 

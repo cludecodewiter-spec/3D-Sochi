@@ -128,3 +128,26 @@ export interface ExamResult {
   correctCount: number;
   total: number;
 }
+
+/**
+ * 解説（非公式）。
+ *
+ * IPA は午前・科目A の逐題解説を公開していないので、ここにあるのは
+ * この教材のために書いたもの。公式の解答例とは UI 上で必ず区別して見せる。
+ */
+export interface Explanation {
+  /** 解答中に見せる手がかり。答えそのものは含まない */
+  hint?: string;
+  explanation: string;
+  /** 選択肢ごとの「なぜ誤りか」 */
+  why?: Partial<Record<ChoiceKey, string>>;
+  /** 公式の解答例と一致することを取り込み時に検証済み */
+  answer: ChoiceKey;
+  author: 'claude';
+  lang?: 'zh' | 'ja';
+}
+
+export interface ExplanationIndex {
+  generatedAt: string;
+  entries: Record<string, { file: string; hint: boolean }>;
+}

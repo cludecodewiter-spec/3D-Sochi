@@ -949,3 +949,118 @@ img.scan {
   color: var(--muted);
   margin-top: 6px;
 }
+
+/* ---------------------------------------------- ヒントと解説（非公式）
+   公式の解答例と、この教材が書いた解説を、見た目でもはっきり分ける。
+   取り違えると誤った内容を公式の見解だと思い込ませてしまう。 */
+
+.hint {
+  margin-top: 12px;
+}
+
+.hint-open {
+  background: none;
+  border: 1px dashed var(--line, #b9c2cc);
+  border-radius: 4px;
+  color: #4a5560;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 12px;
+}
+
+.hint-open:hover {
+  background: #f2f5f8;
+}
+
+.hint-body {
+  background: #fffdf3;
+  border: 1px solid #e6d9a8;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 10px 12px;
+}
+
+.hint-tag,
+.unofficial {
+  background: #8a7433;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+  margin-right: 8px;
+  padding: 2px 6px;
+  vertical-align: middle;
+}
+
+.hint-body p {
+  margin: 6px 0 8px;
+}
+
+.hint-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.official-tag {
+  background: #1f4e79;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+  margin-right: 8px;
+  padding: 2px 6px;
+  vertical-align: middle;
+}
+
+.explanation {
+  background: #fbfbf7;
+  border: 1px solid #ddd8c4;
+  border-left: 4px solid #8a7433;
+  border-radius: 4px;
+  margin: 10px 0;
+  padding: 10px 14px;
+}
+
+.explanation h3 {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.explanation h4 {
+  color: #5a6570;
+  font-size: 13px;
+  margin: 12px 0 6px;
+}
+
+.explanation-body {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.explanation .why {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.explanation .why li {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.explanation .why b {
+  color: #8a7433;
+  margin-right: 4px;
+}
+
+.no-explanation {
+  color: #8b949e;
+  font-size: 13px;
+  margin: 8px 0;
+}

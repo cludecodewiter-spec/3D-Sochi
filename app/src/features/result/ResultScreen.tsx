@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CHOICE_KEYS, type ExamResult, type Question } from '../../types';
 import { formatTime } from '../exam/useExam';
 import { ScanImage } from '../exam/ScanImage';
+import { ExplanationPanel } from './ExplanationPanel';
 
 interface Props {
   result: ExamResult;
@@ -96,12 +97,15 @@ export function ResultScreen({ result, questions, onHome, onRetryWrong }: Props)
               )}
 
               <div className="answer-line">
+                <span className="official-tag">公式の解答例</span>
                 正解：<strong>{q.answer}</strong>
                 {picked && !ok && <> ／ あなたの解答：{picked}</>}
                 <a className="pdf-link" href={q.source.questionPdf} target="_blank" rel="noreferrer">
                   公式PDF（{q.source.page}ページ）
                 </a>
               </div>
+
+              <ExplanationPanel questionId={q.id} answer={q.answer} />
 
               <p className="cite">{q.source.label}</p>
               {q.appearances && q.appearances.length > 0 && (

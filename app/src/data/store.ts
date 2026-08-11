@@ -1,4 +1,4 @@
-import type { ExamResult, Question, QuestionIndex } from '../types';
+import type { ExamResult, Explanation, ExplanationIndex, Question, QuestionIndex } from '../types';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -107,4 +107,46 @@ export function reviewQuestionIds(): string[] {
     for (const id of r.questionIds) state.set(id, wrong.has(id));
   }
   return [...state.entries()].filter(([, needsReview]) => needsReview).map(([id]) => id);
+}
+
+// ------------------------------------------------------- 解説（非公式・任意読み込み）
+
+let explanationIndexCache: ExplanationIndex | null = null;
+const explanationFileCache = new Map<string, Record<string, Explanation>>();
+
+/**
+ * 解説の索引。まだ解説が無い問題のほうが多いので、
+ * 索引を見てから必要なファイルだけ読む（開始を遅くしないため）。
+ */
+export async function loadExplanationIndex(): Promise<ExplanationIndex> {
+  if (explanationIndexCache) return explanationIndexCache;
+  try {
+    const res = await fetch(`${BASE}data/explanations/index.json`);
+    explanationIndexCache = res.ok
+      ? ((await res.json()) as ExplanationIndex)
+      : { generatedAt: '', entries: {} };
+  } catch {
+    explanationIndexCache = { generatedAt: '', entries: {} };
+  }
+  return explanationIndexCache;
+}
+
+/** 解説を 1 問ぶん取る。無ければ null（無いことは異常ではない） */
+export async function loadExplanation(questionId: string): Promise<Explanation | null> {
+  const index = await loadExplanationIndex();
+  const entry = index.entries[questionId];
+  if (!entry) return null;
+
+  let file = explanationFileCache.get(entry.file);
+  if (!file) {
+    try {
+      const res = await fetch(`${BASE}data/explanations/${entry.file}`);
+      if (!res.ok) return null;
+      file = (await res.json()) as Record<string, Explanation>;
+      explanationFileCache.set(entry.file, file);
+    } catch {
+      return null;
+    }
+  }
+  return file[questionId] ?? null;
 }

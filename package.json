@@ -16,8 +16,9 @@
     "validate": "node tools/validate.mjs",
     "import": "npm run discover && npm run scan-text && npm run build-text && npm run validate",
     "report": "node tools/report.mjs",
-    "test": "node --test tools/*.test.mjs",
-    "ocr-crops": "node tools/ocr-crops.mjs"
+    "test": "node --test tools/*.test.mjs && node tools/validate-explanations.mjs",
+    "ocr-crops": "node tools/ocr-crops.mjs",
+    "validate:explanations": "node tools/validate-explanations.mjs"
   },
   "dependencies": {
     "ajv": "^8.17.1",

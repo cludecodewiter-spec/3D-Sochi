@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cludecodewiter-spec/jpfetest/schema/explanation.schema.json",
+  "title": "解説（非公式）",
+  "description": "IPA は午前・科目A の逐題解説を公開していない。ここに入るのは公式資料ではなく、この教材のために書いた解説であり、UI 上でも公式の解答例とは区別して表示する。",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": ["explanation", "answer", "author"],
+    "additionalProperties": false,
+    "properties": {
+      "hint": {
+        "type": "string",
+        "minLength": 4,
+        "maxLength": 200,
+        "description": "解答中に見せる手がかり。答えそのものは書かない。"
+      },
+      "explanation": {
+        "type": "string",
+        "minLength": 20,
+        "description": "なぜその選択肢が正解になるのかの説明。"
+      },
+      "why": {
+        "type": "object",
+        "description": "選択肢ごとに、なぜ誤りなのか（正解の選択肢は書かなくてよい）。",
+        "propertyNames": { "enum": ["ア", "イ", "ウ", "エ"] },
+        "additionalProperties": { "type": "string", "minLength": 4 }
+      },
+      "answer": {
+        "type": "string",
+        "enum": ["ア", "イ", "ウ", "エ"],
+        "description": "この解説が正解だと考えている選択肢。公式の解答例と一致することを検証する。"
+      },
+      "author": {
+        "type": "string",
+        "enum": ["claude"],
+        "description": "誰が書いたか。公式資料と取り違えないために必ず持たせる。"
+      },
+      "lang": {
+        "type": "string",
+        "enum": ["zh", "ja"],
+        "default": "zh"
+      }
+    }
+  }
+}

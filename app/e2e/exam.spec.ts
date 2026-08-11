@@ -109,3 +109,51 @@ test('残り時間が減っていく', async ({ page }) => {
   const second = await page.locator('.cbt-timer .value').textContent();
   expect(first).not.toEqual(second);
 });
+
+test('ヒントは答えを漏らさず、解説は公式の解答例と区別して表示される', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: /科目A試験（本番形式）/ }).click();
+
+  // ヒントのある問題（1 + 1 のダミー問題）まで進む
+  let found = false;
+  for (let i = 0; i < 3; i++) {
+    const body = (await page.locator('.markable').innerText()).replace(/\s+/g, ' ');
+    if (body.includes('1 + 1 はいくつか')) {
+      found = true;
+      break;
+    }
+    await page.getByRole('button', { name: /次の問題/ }).click();
+  }
+  expect(found).toBe(true);
+
+  // 押すまではヒントの中身が出ていない
+  await expect(page.locator('.hint-body')).toHaveCount(0);
+  await page.getByRole('button', { name: 'ヒントを見る' }).click();
+  const hint = page.locator('.hint-body');
+  await expect(hint).toBeVisible();
+
+  // ヒントは答えも解説も出さない
+  const hintText = await hint.innerText();
+  expect(hintText).not.toMatch(/正解|答えは/);
+  expect(hintText).not.toContain('1 に 1 を足すと 2 になります');
+  // 解説本体は解答中には出ない
+  await expect(page.locator('.explanation')).toHaveCount(0);
+
+  await hint.getByRole('button', { name: '閉じる' }).click();
+  await expect(page.locator('.hint-body')).toHaveCount(0);
+
+  // 採点まで進める
+  await pick(page, await expectedKey(page));
+  await page.getByRole('button', { name: '試験終了' }).click();
+  await page.getByRole('button', { name: '採点して終了' }).click();
+  await expect(page.getByRole('heading', { name: '採点結果' })).toBeVisible();
+
+  await page.getByRole('button', { name: /全問/ }).click();
+  const item = page.locator('.review-item', { hasText: '1 + 1 はいくつか' });
+
+  // 公式の解答例と、非公式の解説が、別の枠で区別されている
+  await expect(item.locator('.official-tag')).toHaveText('公式の解答例');
+  await expect(item.locator('.explanation .unofficial')).toHaveText('非公式');
+  await expect(item.locator('.explanation-body')).toContainText('1 に 1 を足すと 2 になります');
+  await expect(item.locator('.explanation .why li')).toHaveCount(3);
+});

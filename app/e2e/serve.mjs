@@ -40,6 +40,16 @@ const server = createServer(async (req, res) => {
     res.end(await readFile(join(fixtures, 'questions.json')));
     return;
   }
+  if (path === '/data/explanations/index.json') {
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({ generatedAt: '', entries: { 'fixture-q01': { file: 'fixture.json', hint: true } } }));
+    return;
+  }
+  if (path === '/data/explanations/fixture.json') {
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(await readFile(join(fixtures, 'explanations.json')));
+    return;
+  }
 
   if (path === '/') path = '/index.html';
   const file = join(dist, normalize(path).replace(/^(\.\.[/\\])+/, ''));
