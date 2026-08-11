@@ -12,6 +12,7 @@ import { mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
 import { findAnchors, splitQuestion, parseAnswers, questionDefects, FIELD_LABEL } from './lib/segment.mjs';
+import { resolveEra } from './lib/era.mjs';
 
 const OUT_DIR = 'data/questions';
 const QUARANTINE_DIR = 'data/quarantine';
@@ -35,9 +36,10 @@ function pairSources(sources) {
 
 /** 出典ラベル: 出典：令和5年度 基本情報技術者試験 公開問題 科目A 問1 */
 function sourceLabel(src, no) {
+  const era = resolveEra(src);
   const parts = ['出典：'];
-  if (src.era) parts.push(`${src.era} `);
-  else if (src.year) parts.push(`${src.year}年度 `);
+  if (era?.era) parts.push(`${era.era} `);
+  if (era?.season) parts.push(`${era.season} `);
   parts.push('基本情報技術者試験 ');
   if (src.legacySection) parts.push(`${src.legacySection} `);
   if (src.subject === 'kamokuA') parts.push('科目A ');
@@ -148,9 +150,9 @@ async function main() {
         id: `${examKey}-q${String(no).padStart(2, '0')}`.toLowerCase().replace(/[^a-z0-9-]/g, '-'),
         pool: q.pool,
         exam: {
-          year: yearOf(q),
-          era: q.era ?? (yearOf(q) ? `${yearOf(q)}年度` : ''),
-          ...(q.season ? { season: q.season } : {}),
+          year: resolveEra(q)?.year ?? yearOf(q),
+          era: resolveEra(q)?.era ?? `${yearOf(q)}年度`,
+          ...(resolveEra(q)?.season ? { season: resolveEra(q).season } : q.season ? { season: q.season } : {}),
           subject: q.subject,
           ...(q.legacySection ? { legacySection: q.legacySection } : {}),
         },

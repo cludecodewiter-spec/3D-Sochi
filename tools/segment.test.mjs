@@ -121,3 +121,14 @@ test('公開問題 PDF のダンプから 問N を全て見つけ、選択肢に
   assert.deepEqual(questionDefects(split), [], '切り出した問1 に不備がある');
   assert.ok(!split.body.startsWith('問'), '本文の先頭に問番号が残っている');
 });
+
+test('IPA のファイル名から和暦の年度を正しく復元する', async () => {
+  const { eraFromKey, eraFromDate } = await import('./lib/era.mjs');
+  assert.deepEqual(eraFromKey('2023r05_fe_kamoku_a_qs.pdf'), { era: '令和5年度', year: 2023, season: null });
+  assert.deepEqual(eraFromKey('2019h31h_fe_am_qs.pdf'), { era: '平成31年度', year: 2019, season: '春期' });
+  // 令和1年度ではなく令和元年度
+  assert.deepEqual(eraFromKey('2019r01a_fe_am_qs.pdf'), { era: '令和元年度', year: 2019, season: '秋期' });
+  // 1〜3 月の実施は前年度扱い
+  assert.deepEqual(eraFromDate('2010-01-15'), { era: '平成21年度', year: 2009, season: null });
+  assert.deepEqual(eraFromDate('2024-07-28'), { era: '令和6年度', year: 2024, season: null });
+});

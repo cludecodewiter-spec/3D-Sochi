@@ -19,6 +19,7 @@ import sharp from 'sharp';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
 import { parseAnswers, FIELD_LABEL, normalizeDigits } from './lib/segment.mjs';
+import { resolveEra } from './lib/era.mjs';
 
 const run = promisify(execFile);
 
@@ -148,8 +149,9 @@ function usableAnchors(flat, expectedCount) {
 }
 
 function sourceLabel(src, no) {
-  const era = src.era || (src.year ? `${src.year}年度` : '');
-  const season = src.season ? ` ${src.season}` : '';
+  const resolved = resolveEra(src);
+  const era = resolved?.era ?? '';
+  const season = resolved?.season ? ` ${resolved.season}` : '';
   const section = src.legacySection ? ` ${src.legacySection}` : '';
   const date = src.date && src.legacySection === '修了試験' ? `（${src.date} 実施）` : '';
   return `出典：${era}${season} 基本情報技術者試験${section}${date} 問${no}`.replace(/\s{2,}/g, ' ');
@@ -321,9 +323,9 @@ async function main() {
         id: `${examKey}-q${String(cur.no).padStart(2, '0')}`,
         pool: q.pool,
         exam: {
-          year: q.year ?? 0,
-          era: q.era ?? String(q.year ?? ''),
-          ...(q.season ? { season: q.season } : {}),
+          year: resolveEra(q)?.year ?? q.year ?? 0,
+          era: resolveEra(q)?.era ?? String(q.year ?? ''),
+          ...(resolveEra(q)?.season ? { season: resolveEra(q).season } : q.season ? { season: q.season } : {}),
           subject: 'kamokuA',
           ...(q.legacySection ? { legacySection: q.legacySection } : {}),
         },
