@@ -4,7 +4,7 @@
   "pool": "fe-koukai",
   "exam": {
    "year": 2025,
-   "era": "2025年度",
+   "era": "令和7年度",
    "subject": "kamokuB",
    "legacySection": "公開問題"
   },
@@ -19,7 +19,7 @@
   },
   "answer": "ア",
   "source": {
-   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目B 問2",
+   "label": "出典：令和7年度 基本情報技術者試験 公開問題 科目B 問2",
    "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf",
    "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_ans.pdf",
    "page": 6,
@@ -33,7 +33,7 @@
   "pool": "fe-koukai",
   "exam": {
    "year": 2025,
-   "era": "2025年度",
+   "era": "令和7年度",
    "subject": "kamokuB",
    "legacySection": "公開問題"
   },
@@ -48,7 +48,7 @@
   },
   "answer": "イ",
   "source": {
-   "label": "出典：2025年度 基本情報技術者試験 公開問題 科目B 問3",
+   "label": "出典：令和7年度 基本情報技術者試験 公開問題 科目B 問3",
    "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf",
    "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_ans.pdf",
    "page": 8,

@@ -1,6 +1,6 @@
 # 取り込みレポート
 
-生成: 2026-08-11T03:20:29.108Z
+生成: 2026-08-11T03:22:52.806Z
 
 ## 収録数
 
@@ -46,7 +46,7 @@
 
 ### 2023r05-fe-kamoku-a-q01
 
-- 出典：2023年度 基本情報技術者試験 公開問題 科目A 問1
+- 出典：令和5年度 基本情報技術者試験 公開問題 科目A 問1
 - 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_qs.pdf の **2 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_ans.pdf
 - 正解: **ウ**
@@ -61,7 +61,7 @@
 
 ### 2024r06-fe-kamoku-a-q07
 
-- 出典：2024年度 基本情報技術者試験 公開問題 科目A 問7
+- 出典：令和6年度 基本情報技術者試験 公開問題 科目A 問7
 - 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf の **4 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_ans.pdf
 - 正解: **ウ**
@@ -76,7 +76,7 @@ DBMS に実装すべき原子性（atomicity）を説明したものはどれか
 
 ### 2025r07-fe-kamoku-a-q14
 
-- 出典：2025年度 基本情報技術者試験 公開問題 科目A 問14
+- 出典：令和7年度 基本情報技術者試験 公開問題 科目A 問14
 - 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf の **8 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf
 - 正解: **エ**
@@ -91,7 +91,7 @@ DBMS に実装すべき原子性（atomicity）を説明したものはどれか
 
 ### fe-kamoku-a-set-sample-q01
 
-- 出典：基本情報技術者試験 サンプル問題 科目A 問1
+- 出典：2022年公開 基本情報技術者試験 サンプル問題 科目A 問1
 - 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **4 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf
 - 正解: **エ**
@@ -106,7 +106,7 @@ DBMS に実装すべき原子性（atomicity）を説明したものはどれか
 
 ### fe-kamoku-a-set-sample-q33
 
-- 出典：基本情報技術者試験 サンプル問題 科目A 問33
+- 出典：2022年公開 基本情報技術者試験 サンプル問題 科目A 問33
 - 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **18 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf
 - 正解: **ウ**
@@ -121,7 +121,7 @@ UPS の導入によって期待できる情報セキュリティ対策として�
 
 ### fe-kamoku-b-set-sample-q09
 
-- 出典：基本情報技術者試験 サンプル問題 科目B 問9
+- 出典：2022年公開 基本情報技術者試験 サンプル問題 科目B 問9
 - 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf の **14 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf
 - 正解: **ウ**
@@ -136,7 +136,7 @@ UPS の導入によって期待できる情報セキュリティ対策として�
 
 ### tokurei-mondai-200906-fe-q27
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問27
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問27
 - 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **14 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
 - 正解: **イ**
@@ -151,7 +151,7 @@ UPS の導入によって期待できる情報セキュリティ対策として�
 
 ### tokurei-mondai-200906-fe-q61
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問61
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問61
 - 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **28 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
 - 正解: **イ**
@@ -166,7 +166,7 @@ UPS の導入によって期待できる情報セキュリティ対策として�
 
 ### tokurei-mondai-200907-fe-q16
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問16
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問16
 - 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **8 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
 - 正解: **ウ**
@@ -181,7 +181,7 @@ UPS の導入によって期待できる情報セキュリティ対策として�
 
 ### tokurei-mondai-200907-fe-q47
 
-- 出典：2009（平成21）年度 基本情報技術者試験 修了試験 科目A 問47
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問47
 - 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **19 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
 - 正解: **ア**
