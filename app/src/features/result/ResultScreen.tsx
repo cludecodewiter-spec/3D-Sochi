@@ -79,7 +79,11 @@ export function ResultScreen({ result, questions, onHome, onRetryWrong }: Props)
               </div>
 
               {q.format === 'image' ? (
-                <img className="scan" src={`${BASE}data/${q.image}`} alt={q.source.label} />
+                <div className="scan">
+                  {q.images?.map((src) => (
+                    <img key={src} src={`${BASE}data/${src}`} alt={q.source.label} />
+                  ))}
+                </div>
               ) : (
                 <>
                   <p className="body">{q.body}</p>

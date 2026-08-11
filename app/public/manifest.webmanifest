@@ -1,0 +1,10 @@
+{
+  "name": "基本情報技術者試験 CBT 模擬試験",
+  "short_name": "FE模擬試験",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#eceff3",
+  "theme_color": "#1b3a63",
+  "lang": "ja",
+  "icons": []
+}

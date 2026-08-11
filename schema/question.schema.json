@@ -13,7 +13,7 @@
     },
     {
       "if": { "properties": { "format": { "const": "image" } } },
-      "then": { "required": ["image"] }
+      "then": { "required": ["images"] }
     }
   ],
   "properties": {
@@ -22,9 +22,15 @@
       "enum": ["text", "image"],
       "description": "text: PDF からテキストを構造化できた問題。image: スキャン PDF のため原本の該当領域を切り出して原寸表示する問題（転記による誤りを完全に排除するための経路）"
     },
-    "image": {
+    "images": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "format=image のときの切り出し画像の相対パス。問題がページをまたぐ場合は複数枚になる"
+    },
+    "ocrText": {
       "type": "string",
-      "description": "format=image のときの、問題本文＋選択肢を含む切り出し PNG の相対パス"
+      "description": "OCR で読んだ参考テキスト。検索・重複判定にのみ使い、出題時には表示しない（OCR 誤りを本文として見せないため）"
     },
     "id": {
       "type": "string",

@@ -31,8 +31,10 @@ export interface Question {
    *        （転記による誤りを完全に排除するための経路）
    */
   format: 'text' | 'image';
-  /** format=image のときの切り出し PNG */
-  image?: string;
+  /** format=image のときの切り出し画像（ページをまたぐ場合は複数枚） */
+  images?: string[];
+  /** OCR による参考テキスト。検索・重複判定にのみ使い、出題時には表示しない */
+  ocrText?: string;
   body?: string;
   figures?: string[];
   choices?: Record<ChoiceKey, string>;

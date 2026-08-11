@@ -4,22 +4,22 @@
   "private": true,
   "type": "module",
   "description": "基本情報技術者試験（FE）CBT模擬試験システム — IPA公式公開過去問のみを使用",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "discover": "node tools/discover.mjs",
-    "fetch": "node tools/fetch.mjs",
+    "scan-text": "node tools/scan-text.mjs",
     "probe": "node tools/probe.mjs",
-    "extract": "node tools/extract.mjs",
-    "segment": "node tools/segment.mjs",
-    "answers": "node tools/answers.mjs",
-    "dedup": "node tools/dedup.mjs",
+    "build-text": "node tools/build-text.mjs",
+    "build-image": "node tools/build-image.mjs",
     "validate": "node tools/validate.mjs",
-    "report": "node tools/report.mjs",
-    "import": "npm run discover && npm run fetch && npm run extract && npm run segment && npm run answers && npm run dedup && npm run validate && npm run report"
+    "import": "npm run discover && npm run scan-text && npm run build-text && npm run validate"
   },
   "dependencies": {
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
-    "pdfjs-dist": "^4.10.38"
+    "pdfjs-dist": "^4.10.38",
+    "sharp": "^0.33.5"
   }
 }

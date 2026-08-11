@@ -1,0 +1,85 @@
+name: import-scanned
+
+# スキャン PDF（本試験 午前・修了試験）の取り込み。
+# OCR は「問N」の位置特定にだけ使い、出題は原本の切り出し画像で行う。
+# 重いので、tools/build-image.mjs を触ったときだけ走らせる。
+on:
+  push:
+    branches: [claude/jpfetest-exam-simulator-wp0b38]
+    paths:
+      - 'tools/build-image.mjs'
+      - '.github/workflows/import-scanned.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-scanned
+  cancel-in-progress: false
+
+jobs:
+  scanned:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      # 段階的に増やす。まずは少数で OCR のアンカー検出精度を確かめる
+      MAX_EXAMS: ${{ vars.MAX_EXAMS || '2' }}
+      RENDER_DPI: '150'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: install system deps (poppler / tesseract 日本語)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-jpn
+          pdftoppm -v || true
+          tesseract --version | head -2
+
+      - name: install
+        run: npm ci
+
+      - name: restore PDF cache
+        uses: actions/cache@v4
+        with:
+          path: data/pdf-cache
+          key: ipa-pdf-cache-v1-${{ github.run_id }}
+          restore-keys: |
+            ipa-pdf-cache-v1-
+
+      - name: build-image — スキャン PDF から問題を切り出す
+        run: node tools/build-image.mjs
+
+      - name: validate
+        run: npm run validate
+
+      - name: upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanned-output
+          path: |
+            data/probe/image-route-report.json
+            data/quarantine/**
+            data/questions/**
+          if-no-files-found: warn
+
+      - name: commit data
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name  "jpfetest-importer"
+          git config user.email "noreply@github.com"
+          git add data/questions data/figures data/quarantine data/probe 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "data: import scanned FE past exams as cropped images [skip ci]"
+            git pull --rebase origin ${GITHUB_REF_NAME} || true
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi

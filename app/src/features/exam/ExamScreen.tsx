@@ -67,7 +67,9 @@ export function ExamScreen({ mode, questions, onFinish, onAbort }: Props) {
         <section className="pane pane-question">
           {q.format === 'image' ? (
             <figure className="scan">
-              <img src={`${BASE}data/${q.image}`} alt={`${q.source.label}（IPA 公開問題冊子の該当箇所）`} />
+              {q.images?.map((src) => (
+                <img key={src} src={`${BASE}data/${src}`} alt={`${q.source.label}（IPA 公開問題冊子の該当箇所）`} />
+              ))}
               <figcaption>
                 この問題は IPA 公開の問題冊子（スキャン PDF）の該当箇所をそのまま表示しています。
               </figcaption>
