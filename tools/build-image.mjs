@@ -103,15 +103,39 @@ function findAnchorsOnPage(words, pageWidth) {
   return anchors;
 }
 
-/** 1..expected の連番になっているかを厳しく見る */
-function anchorsAreSane(anchors, expected) {
-  if (anchors.length !== expected) return { ok: false, why: `アンカー ${anchors.length} 件 ≠ 期待 ${expected} 件` };
-  for (let i = 0; i < anchors.length; i++) {
-    if (anchors[i].no !== i + 1) {
-      return { ok: false, why: `${i + 1} 番目のアンカーが 問${anchors[i].no}（連番でない）` };
+/**
+ * OCR で拾ったアンカーが使えるかを判定する。
+ *
+ * 全問そろっていることは求めない（OCR は必ずどこかで読み落とす）。
+ * 代わりに「切り出した画像に 2 問ぶんが入ってしまう」ことを防ぐ:
+ *   問N を採用するのは、問N と 問N+1 の両方のアンカーが見つかっているときだけ。
+ * 最後の問題は、その回の最終問番号と一致しているときだけ採用する。
+ */
+function usableAnchors(flat, expectedCount) {
+  // 文書順に番号が増えていない＝OCR が混乱している。その回は捨てる
+  for (let i = 1; i < flat.length; i++) {
+    if (flat[i].no <= flat[i - 1].no) {
+      return { ok: false, why: `問番号が文書順に増えていない (問${flat[i - 1].no} の次が 問${flat[i].no})` };
     }
   }
-  return { ok: true };
+  if (flat.length === 0) return { ok: false, why: 'アンカーを 1 つも検出できない' };
+
+  const usable = [];
+  for (let i = 0; i < flat.length; i++) {
+    const cur = flat[i];
+    const next = flat[i + 1];
+    if (next) {
+      // 次のアンカーが連番でないなら、cur の切り出し範囲に次の問題が入り込む
+      if (next.no === cur.no + 1) usable.push({ ...cur, next });
+    } else if (cur.no === expectedCount) {
+      usable.push({ ...cur, next: null });
+    }
+  }
+  const coverage = expectedCount ? usable.length / expectedCount : 0;
+  if (coverage < 0.5) {
+    return { ok: false, why: `使える問題が ${usable.length}/${expectedCount} 問しかない`, usable };
+  }
+  return { ok: true, usable, coverage };
 }
 
 function sourceLabel(src, no) {
@@ -194,13 +218,23 @@ async function main() {
       pageAnchors.push({ png, page: pageNoOf(png), height: meta.height ?? 0, width: meta.width ?? 0, anchors, words });
     }
     const flat = pageAnchors.flatMap((p) => p.anchors.map((x) => ({ ...x, page: p.page, pageInfo: p })));
-    const sanity = anchorsAreSane(flat, expectedCount);
-    console.log(`  OCR アンカー: ${flat.length} 件 → ${sanity.ok ? 'OK' : '不採用: ' + sanity.why}`);
+    const sanity = usableAnchors(flat, expectedCount);
+    console.log(
+      `  OCR アンカー: ${flat.length} 件 / 使える問題: ${sanity.usable?.length ?? 0} 件 → ${sanity.ok ? `OK (${Math.round((sanity.coverage ?? 0) * 100)}%)` : '不採用: ' + sanity.why}`,
+    );
     console.log(`    検出した問番号: ${flat.map((x) => x.no).join(',').slice(0, 300)}`);
     const missing = [];
     for (let n = 1; n <= expectedCount; n++) if (!flat.some((x) => x.no === n)) missing.push(n);
     if (missing.length) console.log(`    見つからなかった問番号: ${missing.join(',').slice(0, 200)}`);
-    report.push({ exam: examKey, pages: pngs.length, anchors: flat.length, expected: expectedCount, ok: sanity.ok, why: sanity.why });
+    report.push({
+      exam: examKey,
+      pages: pngs.length,
+      anchors: flat.length,
+      usable: sanity.usable?.length ?? 0,
+      expected: expectedCount,
+      ok: sanity.ok,
+      why: sanity.why,
+    });
 
     if (!sanity.ok) {
       quarantined.push({ pdf: q.url, reason: sanity.why, anchors: flat.map((x) => ({ no: x.no, page: x.page })) });
@@ -213,9 +247,8 @@ async function main() {
     await mkdir(outImgDir, { recursive: true });
     const questions = [];
 
-    for (let k = 0; k < flat.length; k++) {
-      const cur = flat[k];
-      const next = flat[k + 1];
+    for (const cur of sanity.usable) {
+      const next = cur.next;
       const pad = Math.round(DPI * 0.06); // 上下の余白
       const pieces = [];
 
