@@ -49,7 +49,10 @@ jobs:
         run: node tools/scan-text.mjs
 
       - name: build-text — テキスト経路の問題を構造化
-        run: node tools/build-text.mjs
+        run: |
+          mkdir -p data/probe
+          set -o pipefail
+          node tools/build-text.mjs 2>&1 | tee data/probe/text-route-log.txt
 
       - name: dedup — 同一問題の名寄せ
         run: node tools/dedup.mjs
@@ -75,7 +78,7 @@ jobs:
         run: |
           git config user.name  "jpfetest-importer"
           git config user.email "noreply@github.com"
-          git add -A data/discovery-raw.json data/sources.json data/probe data/questions data/quarantine 2>/dev/null || true
+          git add -A data
           if git diff --cached --quiet; then
             echo "no data changes"
           else

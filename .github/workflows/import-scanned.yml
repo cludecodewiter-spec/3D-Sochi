@@ -53,7 +53,11 @@ jobs:
             ipa-pdf-cache-v1-
 
       - name: build-image — スキャン PDF から問題を切り出す
-        run: node tools/build-image.mjs
+        # ログをリポジトリに残す。Actions のログは後から機械的に読みにくいため
+        run: |
+          mkdir -p data/probe
+          set -o pipefail
+          node tools/build-image.mjs 2>&1 | tee data/probe/image-route-log.txt
 
       - name: dedup — 同一問題の名寄せ
         run: node tools/dedup.mjs
@@ -78,7 +82,7 @@ jobs:
         run: |
           git config user.name  "jpfetest-importer"
           git config user.email "noreply@github.com"
-          git add -A data/questions data/figures data/quarantine data/probe 2>/dev/null || true
+          git add -A data
           if git diff --cached --quiet; then
             echo "no data changes"
           else
