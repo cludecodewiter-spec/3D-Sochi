@@ -6,3 +6,4 @@ data/pdf-cache/
 app/test-results/
 app/playwright-report/
 app/public/data/
+data/explanations/index.json

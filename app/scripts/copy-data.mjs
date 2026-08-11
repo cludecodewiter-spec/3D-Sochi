@@ -88,3 +88,22 @@ await writeFile(
 
 console.log(`[copy-data] ${src} -> ${dest}`);
 console.log(`[copy-data] bank.json: ${bank.length} 問（名寄せ前 ${byId.size} 問）`);
+
+// ---- 解説の索引（どの問題の解説がどのファイルにあるか）
+//
+// アプリはこれを見てから必要な解説ファイルだけ読む。
+// 派生データなのでコミットせず、配信用に毎回組み立てる。
+
+const eDir = `${dest}/explanations`;
+try {
+  const eFiles = (await readdir(eDir)).filter((f) => f.endsWith('.json') && f !== 'index.json');
+  const entries = {};
+  for (const f of eFiles) {
+    const data = JSON.parse(await readFile(`${eDir}/${f}`, 'utf8'));
+    for (const [id, ex] of Object.entries(data)) entries[id] = { file: f, hint: Boolean(ex.hint) };
+  }
+  await writeFile(`${eDir}/index.json`, JSON.stringify({ generatedAt: new Date().toISOString(), entries }));
+  console.log(`[copy-data] 解説の索引: ${Object.keys(entries).length} 問`);
+} catch {
+  console.log('[copy-data] 解説がまだありません');
+}

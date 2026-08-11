@@ -14,7 +14,7 @@
  *   - ヒントが答えを漏らしていないか
  *   - 誤答理由が、正解の選択肢を「誤り」として説明していないか
  */
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import Ajv from 'ajv';
 
 const DIR = 'data/explanations';
@@ -58,7 +58,6 @@ async function main() {
 
   const questions = await loadQuestions();
   const problems = [];
-  const index = {};
   let total = 0;
   let withHint = 0;
 
@@ -102,9 +101,6 @@ async function main() {
         if (!CHOICES.includes(key)) problems.push(`${file}: ${id} に選択肢「${key}」は存在しません`);
       }
 
-      // どの問題の解説がどのファイルにあるかの索引。
-      // これがあるとアプリは解説ファイルを全部読まずに済む
-      index[id] = { file, hint: Boolean(ex.hint) };
     }
   }
 
@@ -113,11 +109,9 @@ async function main() {
   if (problems.length > 0) {
     console.error(`\n問題 ${problems.length} 件:`);
     for (const p of problems) console.error(`  - ${p}`);
-    console.error('\n索引は書き出しません。');
     process.exit(1);
   }
 
-  await writeFile(`${DIR}/index.json`, JSON.stringify({ generatedAt: new Date().toISOString(), entries: index }, null, 1));
   console.log('すべての解説が公式の解答例と一致しています。');
 }
 
