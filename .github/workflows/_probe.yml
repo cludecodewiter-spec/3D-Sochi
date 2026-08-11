@@ -1,9 +1,22 @@
 name: probe
 on:
+  push:
+    branches: [claude/jpfetest-exam-simulator-wp0b38]
+    paths: ['.github/workflows/_probe.yml']
   workflow_dispatch:
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: reach IPA
-        run: curl -sS -o /dev/null -w "%{http_code}\n" https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html
+      - name: reach IPA index
+        run: |
+          curl -sS -o idx.html -w "index.html -> %{http_code}\n" https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html
+          echo "--- bytes: $(wc -c < idx.html)"
+          echo "--- pdf links found:"; grep -oE 'href="[^"]*\.pdf"' idx.html | head -20
+          echo "--- year page links:"; grep -oE 'href="[^"]*20[0-9]{2}[hr][0-9]{2}\.html"' idx.html | head -40
+      - name: reach a known year page and menjo page
+        run: |
+          curl -sS -o y2019.html -w "2019r01.html -> %{http_code}\n" https://www.ipa.go.jp/shiken/mondai-kaiotu/2019r01.html
+          echo "--- fe pdf links on 2019 page:"; grep -oiE 'href="[^"]*(fe|2019r01)[^"]*\.pdf"' y2019.html | head -30
+          curl -sS -o menjo.html -w "menjo-fe.html -> %{http_code}\n" https://www.ipa.go.jp/shiken/about/menjo-fe.html
+          echo "--- menjo pdf links:"; grep -oE 'href="[^"]*\.pdf"' menjo.html | head -40
