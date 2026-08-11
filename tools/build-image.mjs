@@ -200,11 +200,6 @@ async function main() {
       continue;
     }
 
-    // 採用が決まった回だけ、重複判定用にページ全体を OCR する
-    for (const info of pageAnchors) {
-      info.words = await ocrImage(info.png, '4');
-    }
-
     // アンカー間を切り出す
     const outImgDir = `${IMG_DIR}/${examKey}`;
     await mkdir(outImgDir, { recursive: true });
@@ -238,20 +233,9 @@ async function main() {
         pieces.push(`figures/${examKey}/${file}`);
       }
 
-      // 重複判定・検索のために OCR テキストも残す。
-      // 誤読を含むので出題時には表示しない（表示するのは切り出した原本画像だけ）。
-      const ocrParts = [];
-      for (let p = startPage; p <= endPage; p++) {
-        const info = pageAnchors.find((x) => x.page === p);
-        if (!info) continue;
-        const top = p === startPage ? cur.y - 2 : 0;
-        const bottom = next && p === endPage ? next.y - 2 : info.height;
-        for (const w of info.words) {
-          if (w.y >= top && w.y < bottom && w.conf >= 40) ocrParts.push(w.text);
-        }
-      }
-      const ocrText = ocrParts.join('').replace(/\s+/g, ' ').trim();
-
+      // 重複判定用の OCR テキストは、ページ全体を OCR する必要があり
+      // 1 回あたり数分かかる。88 回ぶんでは現実的でないので今は取らない。
+      // （画像経路どうしの名寄せは後日の課題。重複が残っても出題内容は正しい）
       const key = answers.get(cur.no);
       if (!key || pieces.length === 0) {
         quarantined.push({ pdf: q.url, no: cur.no, reason: !key ? 'no answer' : 'empty crop' });
@@ -271,7 +255,6 @@ async function main() {
         no: cur.no,
         format: 'image',
         images: pieces,
-        ...(ocrText.length > 20 ? { ocrText } : {}),
         ...(key.field && FIELD_LABEL[key.field] ? { category: FIELD_LABEL[key.field] } : {}),
         answer: key.answer,
         source: {

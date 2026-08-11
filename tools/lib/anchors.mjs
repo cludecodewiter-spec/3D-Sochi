@@ -14,26 +14,37 @@ import { normalizeDigits } from './segment.mjs';
  */
 const MON = '問間悶闇門';
 
+/**
+ * 語をまたいで数字を繋げないのが肝。
+ * 「問1」「16 進小数…」と割れている行で連結すると「問116」になってしまい、
+ * 範囲外として捨てられる（実際にそれで取りこぼしていた）。
+ */
+function numberFromWord(text) {
+  const t = normalizeDigits(text).replace(/[\s.．,，:：]/g, '');
+  // 「問53」だけ／「問53メモリ…」のように後ろに本文が続く場合
+  const attached = t.match(new RegExp(`^[${MON}](\\d{1,3})(?!\\d)`));
+  if (attached) return Number(attached[1]);
+  return null;
+}
+
+const isLoneMon = (text) => new RegExp(`^[${MON}]$`).test(normalizeDigits(text).replace(/[\s.．,，:：]/g, ''));
+
 export function anchorsFromWords(words, stripWidth) {
   const left = words
-    .filter((w) => w.x <= stripWidth * 0.55 && w.conf >= 30)
+    .filter((w) => w.x <= stripWidth * 0.55 && w.conf >= 20)
     .sort((a, b) => a.y - b.y || a.x - b.x);
 
   const anchors = [];
   for (let i = 0; i < left.length; i++) {
     const w = left[i];
-    const text = normalizeDigits(w.text).replace(/[\s.．,，:：]/g, '');
 
-    let no = null;
-    const single = text.match(new RegExp(`^[${MON}](\\d{1,3})$`));
-    if (single) {
-      no = Number(single[1]);
-    } else if (new RegExp(`^[${MON}]$`).test(text)) {
-      // 「問」と番号が別の語に割れている場合、右隣の数字を探す
+    let no = numberFromWord(w.text);
+    if (no === null && isLoneMon(w.text)) {
+      // 「問」と番号が別の語に割れている場合、すぐ右の語から数字を取る
       const near = left
         .slice(i + 1, i + 4)
-        .find((n) => Math.abs(n.y - w.y) < w.h * 1.2 && n.x > w.x && n.x - (w.x + w.w) < w.w * 2.5);
-      const digits = near && normalizeDigits(near.text).match(/^(\d{1,3})[．.]?$/);
+        .find((n) => Math.abs(n.y - w.y) < Math.max(w.h, 20) * 1.5 && n.x > w.x && n.x - (w.x + w.w) < Math.max(w.w, 20) * 3);
+      const digits = near && normalizeDigits(near.text).match(/^(\d{1,3})(?!\d)/);
       if (digits) no = Number(digits[1]);
     }
 

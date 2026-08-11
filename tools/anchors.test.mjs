@@ -68,3 +68,18 @@ test('usableAnchors は取れ高が低すぎる回を落とす', () => {
   const r = usableAnchors(mk([1, 2]), 80);
   assert.equal(r.ok, false);
 });
+
+test('後ろに本文が続く「問53メモリ」も拾える', () => {
+  assert.deepEqual(nos(anchorsFromWords([word('問53メモリインタリーブ', 60, 100)], 700)), [53]);
+});
+
+test('「問1」の次に本文の数字が来ても、繋げて誤読しない', () => {
+  // 「問1」「16 進小数…」を連結すると 問116 になってしまうのを防ぐ
+  const got = anchorsFromWords([word('問1', 60, 100, 40), word('16', 110, 100, 30)], 700);
+  assert.deepEqual(nos(got), [1]);
+});
+
+test('「問」だけの語の右に本文の数字があっても、離れていれば拾わない', () => {
+  const got = anchorsFromWords([word('問', 60, 100, 30), word('16', 500, 100, 30)], 700);
+  assert.deepEqual(nos(got), []);
+});
