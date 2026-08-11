@@ -1,13 +1,27 @@
 {
- "generatedAt": "2026-08-11T16:14:24.825Z",
- "totalQuestions": 5182,
+ "generatedAt": "2026-08-11T16:17:52.761Z",
+ "totalQuestions": 7107,
  "shards": [
+  {
+   "file": "2009h21a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2009h21a-ap-am",
+   "label": "出典：平成21年度 秋期 応用情報技術者試験 午前",
+   "count": 57
+  },
   {
    "file": "2009h21a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2009h21a-fe-am",
    "label": "出典：平成21年度 秋期 基本情報技術者試験 午前",
    "count": 55
+  },
+  {
+   "file": "2009h21h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2009h21h-ap-am",
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前",
+   "count": 69
   },
   {
    "file": "2009h21h-fe-am.json",
@@ -17,6 +31,13 @@
    "count": 70
   },
   {
+   "file": "2010h22a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2010h22a-ap-am",
+   "label": "出典：平成22年度 秋期 応用情報技術者試験 午前",
+   "count": 64
+  },
+  {
    "file": "2010h22a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2010h22a-fe-am",
@@ -24,11 +45,25 @@
    "count": 60
   },
   {
+   "file": "2010h22h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2010h22h-ap-am",
+   "label": "出典：平成22年度 春期 応用情報技術者試験 午前",
+   "count": 68
+  },
+  {
    "file": "2010h22h-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2010h22h-fe-am",
    "label": "出典：平成22年度 春期 基本情報技術者試験 午前",
    "count": 63
+  },
+  {
+   "file": "2011h23a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2011h23a-ap-am",
+   "label": "出典：平成23年度 秋期 応用情報技術者試験 午前",
+   "count": 56
   },
   {
    "file": "2011h23a-fe-am.json",
@@ -45,11 +80,25 @@
    "count": 72
   },
   {
+   "file": "2012h24a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2012h24a-ap-am",
+   "label": "出典：平成24年度 秋期 応用情報技術者試験 午前",
+   "count": 74
+  },
+  {
    "file": "2012h24a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2012h24a-fe-am",
    "label": "出典：平成24年度 秋期 基本情報技術者試験 午前",
    "count": 68
+  },
+  {
+   "file": "2012h24h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2012h24h-ap-am",
+   "label": "出典：平成24年度 春期 応用情報技術者試験 午前",
+   "count": 66
   },
   {
    "file": "2012h24h-fe-am.json",
@@ -59,11 +108,25 @@
    "count": 66
   },
   {
+   "file": "2013h25a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2013h25a-ap-am",
+   "label": "出典：平成25年度 秋期 応用情報技術者試験 午前",
+   "count": 67
+  },
+  {
    "file": "2013h25a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2013h25a-fe-am",
    "label": "出典：平成25年度 秋期 基本情報技術者試験 午前",
    "count": 65
+  },
+  {
+   "file": "2013h25h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2013h25h-ap-am",
+   "label": "出典：平成25年度 春期 応用情報技術者試験 午前",
+   "count": 61
   },
   {
    "file": "2013h25h-fe-am.json",
@@ -73,11 +136,25 @@
    "count": 62
   },
   {
+   "file": "2014h26a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2014h26a-ap-am",
+   "label": "出典：平成26年度 秋期 応用情報技術者試験 午前",
+   "count": 68
+  },
+  {
    "file": "2014h26a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2014h26a-fe-am",
    "label": "出典：平成26年度 秋期 基本情報技術者試験 午前",
    "count": 57
+  },
+  {
+   "file": "2014h26h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2014h26h-ap-am",
+   "label": "出典：平成26年度 春期 応用情報技術者試験 午前",
+   "count": 64
   },
   {
    "file": "2014h26h-fe-am.json",
@@ -87,11 +164,25 @@
    "count": 62
   },
   {
+   "file": "2015h27a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2015h27a-ap-am",
+   "label": "出典：平成27年度 秋期 応用情報技術者試験 午前",
+   "count": 52
+  },
+  {
    "file": "2015h27a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2015h27a-fe-am",
    "label": "出典：平成27年度 秋期 基本情報技術者試験 午前",
    "count": 53
+  },
+  {
+   "file": "2015h27h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2015h27h-ap-am",
+   "label": "出典：平成27年度 春期 応用情報技術者試験 午前",
+   "count": 58
   },
   {
    "file": "2015h27h-fe-am.json",
@@ -101,11 +192,32 @@
    "count": 60
   },
   {
+   "file": "2016h28a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2016h28a-ap-am",
+   "label": "出典：平成28年度 秋期 応用情報技術者試験 午前",
+   "count": 59
+  },
+  {
    "file": "2016h28a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2016h28a-fe-am",
    "label": "出典：平成28年度 秋期 基本情報技術者試験 午前",
    "count": 48
+  },
+  {
+   "file": "2016h28a-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2016h28a-sg-am",
+   "label": "出典：平成28年度 秋期 情報セキュリティマネジメント試験 午前",
+   "count": 32
+  },
+  {
+   "file": "2016h28h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2016h28h-ap-am",
+   "label": "出典：平成28年度 春期 応用情報技術者試験 午前",
+   "count": 58
   },
   {
    "file": "2016h28h-fe-am.json",
@@ -115,11 +227,39 @@
    "count": 59
   },
   {
+   "file": "2016h28h-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2016h28h-sg-am",
+   "label": "出典：平成28年度 春期 情報セキュリティマネジメント試験 午前",
+   "count": 29
+  },
+  {
+   "file": "2017h29a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2017h29a-ap-am",
+   "label": "出典：平成29年度 秋期 応用情報技術者試験 午前",
+   "count": 52
+  },
+  {
    "file": "2017h29a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2017h29a-fe-am",
    "label": "出典：平成29年度 秋期 基本情報技術者試験 午前",
    "count": 61
+  },
+  {
+   "file": "2017h29a-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2017h29a-sg-am",
+   "label": "出典：平成29年度 秋期 情報セキュリティマネジメント試験 午前",
+   "count": 31
+  },
+  {
+   "file": "2017h29h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2017h29h-ap-am",
+   "label": "出典：平成29年度 春期 応用情報技術者試験 午前",
+   "count": 47
   },
   {
    "file": "2017h29h-fe-am.json",
@@ -129,10 +269,38 @@
    "count": 55
   },
   {
+   "file": "2017h29h-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2017h29h-sg-am",
+   "label": "出典：平成29年度 春期 情報セキュリティマネジメント試験 午前",
+   "count": 38
+  },
+  {
+   "file": "2018h30a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2018h30a-ap-am",
+   "label": "出典：平成30年度 秋期 応用情報技術者試験 午前",
+   "count": 54
+  },
+  {
    "file": "2018h30a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2018h30a-fe-am",
    "label": "出典：平成30年度 秋期 基本情報技術者試験 午前",
+   "count": 55
+  },
+  {
+   "file": "2018h30a-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2018h30a-sg-am",
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前",
+   "count": 33
+  },
+  {
+   "file": "2018h30h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2018h30h-ap-am",
+   "label": "出典：平成30年度 春期 応用情報技術者試験 午前",
    "count": 55
   },
   {
@@ -143,6 +311,20 @@
    "count": 42
   },
   {
+   "file": "2018h30h-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2018h30h-sg-am",
+   "label": "出典：平成30年度 春期 情報セキュリティマネジメント試験 午前",
+   "count": 35
+  },
+  {
+   "file": "2019h31h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2019h31h-ap-am",
+   "label": "出典：平成31年度 春期 応用情報技術者試験 午前",
+   "count": 53
+  },
+  {
    "file": "2019h31h-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2019h31h-fe-am",
@@ -150,11 +332,53 @@
    "count": 42
   },
   {
+   "file": "2019h31h-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2019h31h-sg-am",
+   "label": "出典：平成31年度 春期 情報セキュリティマネジメント試験 午前",
+   "count": 42
+  },
+  {
+   "file": "2019r01a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2019r01a-ap-am",
+   "label": "出典：令和元年度 秋期 応用情報技術者試験 午前",
+   "count": 52
+  },
+  {
    "file": "2019r01a-fe-am.json",
    "pool": "fe-honshiken",
    "examKey": "2019r01a-fe-am",
    "label": "出典：令和元年度 秋期 基本情報技術者試験 午前",
    "count": 52
+  },
+  {
+   "file": "2019r01a-sg-am.json",
+   "pool": "ext-sg",
+   "examKey": "2019r01a-sg-am",
+   "label": "出典：令和元年度 秋期 情報セキュリティマネジメント試験 午前",
+   "count": 32
+  },
+  {
+   "file": "2021r03a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2021r03a-ap-am",
+   "label": "出典：令和3年度 秋期 応用情報技術者試験 午前",
+   "count": 51
+  },
+  {
+   "file": "2021r03h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2021r03h-ap-am",
+   "label": "出典：令和3年度 春期 応用情報技術者試験 午前",
+   "count": 51
+  },
+  {
+   "file": "2022r04a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2022r04a-ap-am",
+   "label": "出典：令和4年度 秋期 応用情報技術者試験 午前",
+   "count": 49
   },
   {
    "file": "2023r05_fe_kamoku_a.json",
@@ -171,6 +395,20 @@
    "count": 5
   },
   {
+   "file": "2023r05a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2023r05a-ap-am",
+   "label": "出典：令和5年度 秋期 応用情報技術者試験 午前",
+   "count": 51
+  },
+  {
+   "file": "2023r05h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2023r05h-ap-am",
+   "label": "出典：令和5年度 春期 応用情報技術者試験 午前",
+   "count": 46
+  },
+  {
    "file": "2024r06_fe_kamoku_a.json",
    "pool": "fe-koukai",
    "examKey": "2024r06_fe_kamoku_a",
@@ -185,6 +423,20 @@
    "count": 5
   },
   {
+   "file": "2024r06a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2024r06a-ap-am",
+   "label": "出典：令和6年度 秋期 応用情報技術者試験 午前",
+   "count": 48
+  },
+  {
+   "file": "2024r06h-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2024r06h-ap-am",
+   "label": "出典：令和6年度 春期 応用情報技術者試験 午前",
+   "count": 52
+  },
+  {
    "file": "2025r07_fe_kamoku_a.json",
    "pool": "fe-koukai",
    "examKey": "2025r07_fe_kamoku_a",
@@ -197,6 +449,13 @@
    "examKey": "2025r07_fe_kamoku_b",
    "label": "出典：令和7年度 基本情報技術者試験 公開問題 科目B",
    "count": 2
+  },
+  {
+   "file": "2025r07a-ap-am.json",
+   "pool": "ext-ap",
+   "examKey": "2025r07a-ap-am",
+   "label": "出典：令和7年度 秋期 応用情報技術者試験 午前",
+   "count": 51
   },
   {
    "file": "2026r08_fe_kamoku_a.json",

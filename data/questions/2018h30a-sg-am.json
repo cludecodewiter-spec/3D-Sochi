@@ -1,0 +1,897 @@
+[
+ {
+  "id": "2018h30a-sg-am-q01",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 1,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q01.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 3,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q02",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 2,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q02.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 3,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q03",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 3,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q03.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 3,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q04",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 4,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q04.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 4,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q05",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 5,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q05.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問5",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 4,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q06",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 6,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q06.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問6",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 5,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q11",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 11,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q11.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 7,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q12",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 12,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q12.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 8,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q15",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 15,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q15.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 9,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q16",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 16,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q16.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 10,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q17",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 17,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q17.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 10,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q18",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 18,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q18.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 10,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q22",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 22,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q22.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問22",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 12,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q23",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 23,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q23.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問23",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 13,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q24",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 24,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q24.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問24",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 13,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q27",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 27,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q27.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問27",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 14,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q28",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 28,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q28.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問28",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 14,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q31",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 31,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q31.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問31",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 15,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q32",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 32,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q32.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問32",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 16,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q33",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 33,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q33.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問33",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 16,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q34",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 34,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q34.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問34",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 17,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q35",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 35,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q35.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問35",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 17,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q36",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 36,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q36.webp"
+  ],
+  "category": "マネジメント系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問36",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 18,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q37",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 37,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q37.webp"
+  ],
+  "category": "マネジメント系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問37",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 18,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q38",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 38,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q38.webp"
+  ],
+  "category": "マネジメント系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問38",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 19,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q41",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 41,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q41.webp"
+  ],
+  "category": "マネジメント系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問41",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 20,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q42",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 42,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q42.webp"
+  ],
+  "category": "マネジメント系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問42",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 20,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q43",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 43,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q43.webp"
+  ],
+  "category": "マネジメント系",
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問43",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 21,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q46",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 46,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q46.webp"
+  ],
+  "category": "テクノロジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問46",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 22,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q47",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 47,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q47.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問47",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 22,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q48",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 48,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q48.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問48",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 23,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q49",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 49,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q49.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問49",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 23,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2018h30a-sg-am-q50",
+  "pool": "ext-sg",
+  "exam": {
+   "year": 2018,
+   "era": "平成30年度",
+   "season": "秋期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 50,
+  "format": "image",
+  "images": [
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q50.webp",
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q50-2.webp",
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q50-3.webp",
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q50-4.webp",
+   "figures/2018h30a-sg-am/2018h30a-sg-am-q50-5.webp"
+  ],
+  "category": "ストラテジ系",
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成30年度 秋期 情報セキュリティマネジメント試験 午前 問50",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sg_am_ans.pdf",
+   "page": 24,
+   "sha256": "31e1e6f9883948ed3b2bc009c8c0390379626daf470fe1c9350364463463e0c4"
+  },
+  "verified": true,
+  "modified": false
+ }
+]

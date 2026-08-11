@@ -1,0 +1,1800 @@
+[
+ {
+  "id": "2009h21h-ap-am-q01",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 1,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q01.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問1",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 4,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q02",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 2,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q02.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問2",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 4,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q03",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 3,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q03.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問3",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 4,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q04",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 4,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q04.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問4",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 5,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q07",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 7,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q07.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問7",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 6,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q08",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 8,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q08.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問8",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 6,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q09",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 9,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q09.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問9",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 7,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q10",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 10,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q10.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問10",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 7,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q11",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 11,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q11.webp",
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q11-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問11",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 7,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q12",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 12,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q12.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問12",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 8,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q13",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 13,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q13.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問13",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 8,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q14",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 14,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q14.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問14",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 8,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q15",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 15,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q15.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問15",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 8,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q16",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 16,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q16.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問16",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 9,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q17",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 17,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q17.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問17",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 9,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q18",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 18,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q18.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問18",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 10,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q19",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 19,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q19.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問19",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 10,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q20",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 20,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q20.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問20",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 10,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q21",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 21,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q21.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問21",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 11,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q22",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 22,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q22.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問22",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 11,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q25",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 25,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q25.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問25",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 12,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q26",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 26,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q26.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問26",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 13,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q27",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 27,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q27.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問27",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 13,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q28",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 28,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q28.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問28",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 14,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q31",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 31,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q31.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問31",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 15,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q32",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 32,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q32.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問32",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 15,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q33",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 33,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q33.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問33",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 16,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q34",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 34,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q34.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問34",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 17,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q35",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 35,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q35.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問35",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 17,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q36",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 36,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q36.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問36",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 18,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q37",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 37,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q37.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問37",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 18,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q38",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 38,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q38.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問38",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 19,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q39",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 39,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q39.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問39",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 19,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q40",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 40,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q40.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問40",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 20,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q44",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 44,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q44.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問44",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 21,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q45",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 45,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q45.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問45",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 21,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q46",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 46,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q46.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問46",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 22,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q47",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 47,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q47.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問47",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 22,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q50",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 50,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q50.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問50",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 24,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q51",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 51,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q51.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問51",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 24,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q52",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 52,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q52.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問52",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 25,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q53",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 53,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q53.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問53",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 25,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q54",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 54,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q54.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問54",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 25,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q55",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 55,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q55.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問55",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 26,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q56",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 56,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q56.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問56",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 26,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q57",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 57,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q57.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問57",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 26,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q58",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 58,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q58.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問58",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 27,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q59",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 59,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q59.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問59",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 27,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q60",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 60,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q60.webp",
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q60-2.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問60",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 27,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q61",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 61,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q61.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問61",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 28,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q62",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 62,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q62.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問62",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 28,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q63",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 63,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q63.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問63",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 29,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q64",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 64,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q64.webp",
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q64-2.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問64",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 29,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q65",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 65,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q65.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問65",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 30,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q66",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 66,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q66.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問66",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 30,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q67",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 67,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q67.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問67",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 31,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q68",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 68,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q68.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問68",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 31,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q69",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 69,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q69.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問69",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 32,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q70",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 70,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q70.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問70",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 32,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q71",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 71,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q71.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問71",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 33,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q72",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 72,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q72.webp"
+  ],
+  "answer": "ア",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問72",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 33,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q73",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 73,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q73.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問73",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 34,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q74",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 74,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q74.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問74",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 34,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q75",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 75,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q75.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問75",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 34,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q76",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 76,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q76.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問76",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 35,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q77",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 77,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q77.webp"
+  ],
+  "answer": "エ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問77",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 35,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q78",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 78,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q78.webp"
+  ],
+  "answer": "ウ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問78",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 35,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q79",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 79,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q79.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問79",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 36,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ },
+ {
+  "id": "2009h21h-ap-am-q80",
+  "pool": "ext-ap",
+  "exam": {
+   "year": 2009,
+   "era": "平成21年度",
+   "season": "春期",
+   "subject": "kamokuA",
+   "legacySection": "午前"
+  },
+  "no": 80,
+  "format": "image",
+  "images": [
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q80.webp",
+   "figures/2009h21h-ap-am/2009h21h-ap-am-q80-2.webp"
+  ],
+  "answer": "イ",
+  "source": {
+   "label": "出典：平成21年度 春期 応用情報技術者試験 午前 問80",
+   "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_qs.pdf",
+   "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_ap_am_ans.pdf",
+   "page": 36,
+   "sha256": "7a65135279dd931a85234d916a750bba8cafbd5b1c0207277d3af9ec14a29988"
+  },
+  "verified": true,
+  "modified": false
+ }
+]
