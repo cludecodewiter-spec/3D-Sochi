@@ -1,24 +1,25 @@
 # 取り込みレポート
 
-生成: 2026-08-11T04:00:04.596Z
+生成: 2026-08-11T04:01:13.895Z
 
 ## 収録数
 
 | 指標 | 値 |
 |---|---|
-| 収録問題数（名寄せ前） | 369 |
+| 収録問題数（名寄せ前） | 439 |
 | 重複として統合された問題 | 0 |
-| **出題される一意な問題数** | **369** |
-| 取り込んだ回数 | 13 |
+| **出題される一意な問題数** | **439** |
+| 取り込んだ回数 | 14 |
 
-プール別: fe-honshiken=55 / fe-koukai=94 / fe-sample=69 / fe-menjo=151
-形式別: image=55 / text=314
+プール別: fe-honshiken=125 / fe-koukai=94 / fe-sample=69 / fe-menjo=151
+形式別: image=125 / text=314
 
 ## 回ごとの取り込み状況
 
 | 回 | プール | 取り込み |
 |---|---|---|
 | 2009h21a-fe-am | fe-honshiken | 55 問 |
+| 2009h21h-fe-am | fe-honshiken | 70 問 |
 | 2023r05_fe_kamoku_a | fe-koukai | 20 問 |
 | 2023r05_fe_kamoku_b | fe-koukai | 5 問 |
 | 2024r06_fe_kamoku_a | fe-koukai | 19 問 |
@@ -53,130 +54,123 @@
 - 正解: **エ**
 - 切り出し画像: figures/2009h21a-fe-am/2009h21a-fe-am-q01.webp
 
-### 2009h21a-fe-am-q56
+### 2009h21a-fe-am-q63
 
-- 出典：平成21年度 秋期 基本情報技術者試験 午前 問56
-- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_am_qs.pdf の **24 ページ**
+- 出典：平成21年度 秋期 基本情報技術者試験 午前 問63
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_am_qs.pdf の **27 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_am_ans.pdf
 - 正解: **エ**
-- 切り出し画像: figures/2009h21a-fe-am/2009h21a-fe-am-q56.webp
+- 切り出し画像: figures/2009h21a-fe-am/2009h21a-fe-am-q63.webp
 
-### 2023r05-fe-kamoku-a-q19
+### 2009h21h-fe-am-q36
 
-- 出典：令和5年度 基本情報技術者試験 公開問題 科目A 問19
-- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_qs.pdf の **11 ページ**
+- 出典：平成21年度 春期 基本情報技術者試験 午前 問36
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_am_qs.pdf の **15 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000009bhl-att/2009h21h_fe_am_ans.pdf
+- 正解: **エ**
+- 切り出し画像: figures/2009h21h-fe-am/2009h21h-fe-am-q36.webp
+
+### 2023r05-fe-kamoku-a-q07
+
+- 出典：令和5年度 基本情報技術者試験 公開問題 科目A 問7
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_qs.pdf の **5 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_a_ans.pdf
-- 正解: **エ**
+- 正解: **イ**
 
 ```
-CIO の説明はどれか。
-ア 経営戦略の立案及び業務執行を統括する最高責任者
-イ 資金調達，財務報告などの財務面での戦略策定及び執行を統括する最高責任者
-ウ 自社の技術戦略や研究開発計画の立案及び執行を統括する最高責任者
-エ 情報管理，情報システムに関する戦略立案及び執行を統括する最高責任者
+トランザクションが，データベースに対する更新処理を完全に行うか，全く処理しなかったかのように取り消すか，のどちらかの結果になることを保証する特性はどれか。
+ア 一貫性（consistency）
+イ 原子性（atomicity）
+ウ 耐久性（durability）
+エ 独立性（isolation）
 ```
 
-### 2025r07-fe-kamoku-a-q07
+### 2025r07-fe-kamoku-a-q02
 
-- 出典：令和7年度 基本情報技術者試験 公開問題 科目A 問7
-- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf の **5 ページ**
+- 出典：令和7年度 基本情報技術者試験 公開問題 科目A 問2
+- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf の **2 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf
-- 正解: **エ**
+- 正解: **イ**
 
 ```
-1G バイトの動画データを 40M ビット／秒の回線を使用してダウンロードしたところ，5 分掛かった。このときの回線利用率はおよそ何％か。ここで，ダウンロード時には動画データに 20％の制御情報が付加されるものとする。
-ア 10
-イ 53
-ウ 67
-エ 80
+浮動小数点形式で表現された数値の演算結果における丸め誤差の説明はどれか。
+ア 演算結果がコンピュータの扱える最大値を超えることによって生じる誤差である。
+イ 数表現のけた数に限度があるので，最下位けたより小さい部分について四捨五入や切上げ，切捨てを行うことによって生じる誤差である。
+ウ 乗除算において，指数部が小さい方の数値の仮数部の下位部分が失われることによって生じる誤差である。
+エ 絶対値がほぼ等しい数値の加減算において，上位の有効数字が失われることによって生じる誤差である。
 ```
 
-### 2026r08-fe-kamoku-b-q04
+### fe-kamoku-a-set-sample-q01
 
-- 出典：令和8年度 基本情報技術者試験 公開問題 科目B 問4
-- 公式PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_qs.pdf の **8 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_fe_kamoku_b_ans.pdf
-- 正解: **エ**
-
-```
-次のプログラム中の aと bに入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。単方向リストを，配列 dataList と配列 pointerList の二つの配列で表現する。dataList にリストの要素の値を格納し，pointerList にリストの次の要素に対応するdataList の 要 素 番 号 を 格 納 す る 。 単 方 向 リ ス ト の 先 頭 は ， dataList[1] 及 びpointerList[1] の組みである。単方向リストの末尾に対応する pointerList の要素は未定義である。dataList のうち単方向リストの要素の値を格納していない要素と，対応する pointerList の要素は未定義である。プログラムが扱う dataList 及び pointerList の内容を図 1 に示す。先頭の次の要素の要素番号は，pointerList[1] に格納された 3 であり，値は dataList[3] に格納された 20 である。その次の要素の要素番号は pointerList[3] に格納された 2 であり，値は dataList[2] に格納された 30 である。要素番号 1 2 3 4 5 dataList 10 30 20 40要素番号 1 2 3 4 5 pointerList 3 4 2注記 網掛けはその要素が未定義であることを示す。図 1 dataList 及び pointerList の内容関数 orderList は，図 1 の dataList 及び pointerList で表現した単方向リストの値を，単方向リストの先頭からたどって順番に格納した配列を返す。関数 orderListが返す配列を図 2 に示す。要素番号 1 2 3 4 10 20 30 40図 2 関数 orderList が返す配列〔プログラム〕大域: 整数型の配列: dataList ← {10, 30, 20, 40, 未定義の値}大域: 整数型の配列: pointerList ← {3, 4, 2, 未定義の値, 未定義の値}○整数型の配列: orderList()整数型: i, p ← 1整数型の配列: linearList ← {} // 要素数0の配列for (i を 1 から dataListの要素数 まで 1 ずつ増やす)linearListの末尾 に dataList[p]の値 を追加するif ( aが 未定義)繰返し処理を終了するendif p ←b endfor return linearList解答群a b
-ア dataList[p] i
-イ dataList[p] pointerList[p]
-ウ pointerList[p] i
-エ pointerList[p] pointerList[p]
-```
-
-### fe-kamoku-a-set-sample-q37
-
-- 出典：2022年公開 基本情報技術者試験 サンプル問題 科目A 問37
-- 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **20 ページ**
+- 出典：2022年公開 基本情報技術者試験 サンプル問題 科目A 問1
+- 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **4 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf
 - 正解: **エ**
 
 ```
-電子メールをドメイン A の送信者がドメイン B の宛先に送信するとき，送信者をドメイン A のメールサーバで認証するためのものはどれか。
-ア APOP
-イ POP3S
-ウ S/MIME
-エ SMTP-AUTH
+負数を 2 の補数で表すとき，8 ビットの 2 進正数 n に対し－n を求める式はどれか。ここで，＋は加算を表し，OR はビットごとの論理和，XOR はビットごとの排他的論理和を表す。
+ア (n OR 10000000) ＋ 00000001
+イ (n OR 11111110) ＋ 11111111
+ウ (n XOR 10000000) ＋ 11111111
+エ (n XOR 11111111) ＋ 00000001
 ```
 
-### tokurei-mondai-200906-fe-q04
+### fe-kamoku-a-set-sample-q46
 
-- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問4
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **4 ページ**
+- 出典：2022年公開 基本情報技術者試験 サンプル問題 科目A 問46
+- 公式PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf の **23 ページ**
+- 解答例PDF: https://www.ipa.go.jp/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf
+- 正解: **エ**
+
+```
+ディスク障害時に，フルバックアップを取得してあるテープからディスクにデータを復元した後，フルバックアップ取得時以降の更新後コピーをログから反映させてデータベースを回復する方法はどれか。
+ア チェックポイントリスタート
+イ リブート
+ウ ロールバック
+エ ロールフォワード
+```
+
+### tokurei-mondai-200906-fe-q21
+
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問21
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **12 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
 - 正解: **ウ**
 
 ```
-次の表は，文字列を検査するための状態遷移表である。検査では，初期状態を aとし，文字列の検査中に状態が e になれば不合格とする。解答群で示される文字列のうち，不合格となるものはどれか。ここで，文字列は左端から検査し，解答群中の△は空白を表す。文字空白 数字 符号 小数点 その他現在の状態aabcde babede cebede daeeee
-ア ＋0010
-イ －1
-ウ 12.2
-エ 9.△
+表計算ソフトを使って，元金千円当たりの複利による利息早見表を作成する。セル B4 に入れる式はどれか。ここで，セル B4 の式は，B4～F13 の範囲の各セルに複写される。A B C D E F 1 元金 1,000 2 利率 0.02 0.025 0.03 0.035 0.04 3 年数4 1 5 2 6 3…………………13 10
+ア $B$1＊((1＋$B2)^$A4－1)
+イ $B$1＊((1＋$B2)^A$4－1)
+ウ $B$1＊((1＋B$2)^$A4－1)
+エ $B$1＊((1＋B$2)^A$4－1)
 ```
 
-### tokurei-mondai-200906-fe-q43
+### tokurei-mondai-200906-fe-q68
 
-- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問43
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **20 ページ**
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問68
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200906_FE.pdf の **31 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200906_FE.pdf
 - 正解: **ウ**
 
 ```
-コンピュータウイルス対策のうち，適切なものはどれか。
-ア ウイルスに感染したことが分かったら，直近のバックアップファイルからシステムディスクを復元する。
-イ ウイルスに感染したことが分かったら，被害の拡大を防ぐためにも直ちにディスクの初期化を行い，その後に必ずシステム管理者に連絡する。
-ウ ソフトウェアの導入はウイルス感染の糸口となり得るので，コンピュータにソフトウェアを導入する場合はウイルス検査を行う。
-エ プログラム中のデバッグ機能は，ウイルス防止のために開発終了後も取り除かないようにする。
+事業を図の a ～ d に分類した場合，a に該当する事業の特徴はどれか。高市場成長率ab cd低小 大市場占有率
+ア 現在は大きな資金の流入をもたらしているが，同時に将来にわたって資金の投下も必要である。
+イ 現在は資金の主たる供給源の役割を果たしており，新たに資金を投下すべきではない。
+ウ 事業としての魅力はあり，資金投下を行えば，将来の資金供給源になる可能性がある。
+エ 事業を継続させていくための資金投下の必要性は低く，将来的には撤退を考えざるを得ない。
 ```
 
-### tokurei-mondai-200907-fe-q05
+### tokurei-mondai-200907-fe-q35
 
-- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問5
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **4 ページ**
+- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問35
+- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **15 ページ**
 - 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
-- 正解: **ア**
+- 正解: **エ**
 
 ```
-次の手順はシェルソートによる整列を示している。データ列 7，2，8，3，1，9，4，5，6 を手順 (1) ～ (4) に従って整列するとき，手順 (3) を何回繰り返して完了するか。ここで，［ ］は小数点以下を切り捨てた結果を表す。〔手順〕(1) ［データ数÷3］→ H とする。(2) データ列を互いに H 要素分だけ離れた要素の集まりからなる部分列とし，それぞれの部分列を，挿入法を用いて整列する。(3) ［H÷3］→ H とする。(4) H が 0 であればデータ列の整列は完了し，0 でなければ (2) に戻る。
-ア 2
-イ 3
-ウ 4
-エ 5
-```
-
-### tokurei-mondai-200907-fe-q42
-
-- 出典：平成21年度 基本情報技術者試験 修了試験 科目A 問42
-- 公式PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_200907_FE.pdf の **18 ページ**
-- 解答例PDF: https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_ans_200907_FE.pdf
-- 正解: **ア**
-
-```
-送信者からメール本文とそのハッシュ値を受け取り，そのハッシュ値と，受信者がメール本文から求めたハッシュ値とを比較して実現できることはどれか。ここで，送信者からのハッシュ値は保護されているものとする。
-ア 改ざんの有無の検出
-イ 盗聴の防止
-ウ なりすましの防止
-エ メールの送達の確認
+三つの表からなるデータベースのスキーマがある。次の項目中で外部キーはどれか。ここで，スキーマの中の下線は主キーを表す。学生（学生番号，学生名，住所，生年月日）成績（学生番号，科目番号，点数）科目（科目番号，科目名，講師番号）
+ア “学生”表の属性“学生番号”と，“科目”表の属性“科目番号”
+イ “学生”表の属性“学生番号”と，“成績”表の属性“学生番号”
+ウ “科目”表の属性“科目番号”と，“成績”表の属性“科目番号”
+エ “成績”表の属性“学生番号”と，“成績”表の属性“科目番号”
 ```

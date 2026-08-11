@@ -1,0 +1,24 @@
+取り込み済みのため 1 回をスキップ
+画像経路の対象: 14 回 (画像経路の科目A問題 PDF は全 88 本)
+  - 2012h24a_fe_am_qs.pdf (fe-honshiken, 午前)
+  - 2015h27a_fe_am_qs.pdf (fe-honshiken, 午前)
+  - 2018h30a_fe_am_qs.pdf (fe-honshiken, 午前)
+  - tokurei_Mondai_20260125_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20240728_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20230122_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20210725_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20200126_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20180722_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20170122_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20150726_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20140126_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_20120722_FE.pdf (fe-menjo, 修了試験)
+  - tokurei_Mondai_201007_FE.pdf (fe-menjo, 修了試験)
+
+[1/14] 2012h24a_fe_am_qs.pdf
+  解答例: 80 問
+  描画: 40 ページ @300dpi
+  OCR 誤読とみなして除外: 1 件
+  OCR アンカー: 74 件 / 使える問題: 68 件 → OK (85%)
+    検出した問番号: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,31,32,33,34,35,36,37,38,39,40,41,43,44,45,46,48,49,50,51,52,53,54,55,56,57,58,59,61,62,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80
+    見つからなかった問番号: 28,30,42,47,60,63
