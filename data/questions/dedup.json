@@ -1,4 +1,593 @@
 {
- "generatedAt": "2026-08-11T14:58:08.577Z",
- "groups": []
+ "generatedAt": "2026-08-11T15:03:40.775Z",
+ "groups": [
+  {
+   "canonical": "tokurei-mondai-20140622-fe-q29",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2009h21a-fe-am-q32",
+     "label": "出典：平成21年度 秋期 基本情報技術者試験 午前 問32",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_am_qs.pdf",
+     "page": 15
+    }
+   ]
+  },
+  {
+   "canonical": "2018h30a-fe-am-q34",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2009h21a-fe-am-q38",
+     "label": "出典：平成21年度 秋期 基本情報技術者試験 午前 問38",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_fe_am_qs.pdf",
+     "page": 17
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q16",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2012h24a-fe-am-q17",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問17",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20140622-fe-q26",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2012h24a-fe-am-q26",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問26",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20140622-fe-q61",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2012h24a-fe-am-q61",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問61",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20170611-fe-q65",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2012h24a-fe-am-q65",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問65",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 29
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20250608-fe-q54",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "2015h27a-fe-am-q71",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問71",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 32
+    },
+    {
+     "id": "2012h24a-fe-am-q73",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問73",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 32
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20151220-fe-q75",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2012h24a-fe-am-q75",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問75",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20151220-fe-q79",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2012h24a-fe-am-q79",
+     "label": "出典：平成24年度 秋期 基本情報技術者試験 午前 問79",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_fe_am_qs.pdf",
+     "page": 35
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q12",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20170611-fe-q12",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問12",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 8
+    },
+    {
+     "id": "2015h27a-fe-am-q12",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問12",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 8
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q33",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2015h27a-fe-am-q32",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問32",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 15
+    }
+   ]
+  },
+  {
+   "canonical": "2015h27a-fe-am-q48",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20140622-fe-q49",
+     "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-06-22 実施） 問49",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140622_FE.pdf",
+     "page": 24
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q62",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20200614-fe-q61",
+     "label": "出典：令和2年度 基本情報技術者試験 修了試験（2020-06-14 実施） 問61",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20200614_FE.pdf",
+     "page": 30
+    },
+    {
+     "id": "2015h27a-fe-am-q61",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問61",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "canonical": "2018h30a-fe-am-q72",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2015h27a-fe-am-q72",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問72",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 32
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20231210-fe-q55",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2015h27a-fe-am-q73",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問73",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q74",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2015h27a-fe-am-q74",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問74",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20170611-fe-q75",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2015h27a-fe-am-q75",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問75",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q78",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20170611-fe-q78",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問78",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 34
+    },
+    {
+     "id": "2015h27a-fe-am-q76",
+     "label": "出典：平成27年度 秋期 基本情報技術者試験 午前 問76",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_fe_am_qs.pdf",
+     "page": 34
+    }
+   ]
+  },
+  {
+   "canonical": "2018h30a-fe-am-q06",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-201012-fe-q06",
+     "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-12 実施） 問6",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201012_FE.pdf",
+     "page": 5
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20250608-fe-q09",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2018h30a-fe-am-q12",
+     "label": "出典：平成30年度 秋期 基本情報技術者試験 午前 問12",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_am_qs.pdf",
+     "page": 7
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q21",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "2018h30a-fe-am-q21",
+     "label": "出典：平成30年度 秋期 基本情報技術者試験 午前 問21",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_am_qs.pdf",
+     "page": 12
+    },
+    {
+     "id": "tokurei-mondai-20170611-fe-q22",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問22",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20200614-fe-q54",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2018h30a-fe-am-q54",
+     "label": "出典：平成30年度 秋期 基本情報技術者試験 午前 問54",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_am_qs.pdf",
+     "page": 26
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q64",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "2018h30a-fe-am-q65",
+     "label": "出典：平成30年度 秋期 基本情報技術者試験 午前 問65",
+     "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_fe_am_qs.pdf",
+     "page": 31
+    }
+   ]
+  },
+  {
+   "canonical": "2024r06-fe-kamoku-a-q14",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20151220-fe-q55",
+     "label": "出典：平成27年度 基本情報技術者試験 修了試験（2015-12-20 実施） 問55",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20151220_FE.pdf",
+     "page": 25
+    },
+    {
+     "id": "tokurei-mondai-20140622-fe-q56",
+     "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-06-22 実施） 問56",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140622_FE.pdf",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20121216-fe-q08",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-201012-fe-q07",
+     "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-12 実施） 問7",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201012_FE.pdf",
+     "page": 5
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20121216-fe-q38",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-201012-fe-q40",
+     "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-12 実施） 問40",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201012_FE.pdf",
+     "page": 20
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20121216-fe-q74",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-201012-fe-q74",
+     "label": "出典：平成22年度 基本情報技術者試験 修了試験（2010-12 実施） 問74",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_201012_FE.pdf",
+     "page": 35
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20170611-fe-q25",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20121216-fe-q29",
+     "label": "出典：平成24年度 基本情報技術者試験 修了試験（2012-12-16 実施） 問29",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20121216_FE.pdf",
+     "page": 14
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20151220-fe-q02",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20140622-fe-q02",
+     "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-06-22 実施） 問2",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140622_FE.pdf",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20151220-fe-q56",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20140622-fe-q57",
+     "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-06-22 実施） 問57",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140622_FE.pdf",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q63",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20151220-fe-q64",
+     "label": "出典：平成27年度 基本情報技術者試験 修了試験（2015-12-20 実施） 問64",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20151220_FE.pdf",
+     "page": 29
+    },
+    {
+     "id": "tokurei-mondai-20140622-fe-q62",
+     "label": "出典：平成26年度 基本情報技術者試験 修了試験（2014-06-22 実施） 問62",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20140622_FE.pdf",
+     "page": 29
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q73",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20151220-fe-q74",
+     "label": "出典：平成27年度 基本情報技術者試験 修了試験（2015-12-20 実施） 問74",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001fci-att/tokurei_Mondai_20151220_FE.pdf",
+     "page": 34
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q48",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20170611-fe-q48",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問48",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 22
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q67",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20170611-fe-q67",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問67",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 29
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q69",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20170611-fe-q68",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問68",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 30
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20181209-fe-q72",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20170611-fe-q74",
+     "label": "出典：平成29年度 基本情報技術者試験 修了試験（2017-06-11 実施） 問74",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20170611_FE.pdf",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q33",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20181209-fe-q35",
+     "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-12-09 実施） 問35",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20181209_FE.pdf",
+     "page": 19
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q51",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20181209-fe-q51",
+     "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-12-09 実施） 問51",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20181209_FE.pdf",
+     "page": 25
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20200614-fe-q71",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20181209-fe-q71",
+     "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-12-09 実施） 問71",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20181209_FE.pdf",
+     "page": 34
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q73",
+   "frequency": 3,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20200614-fe-q74",
+     "label": "出典：令和2年度 基本情報技術者試験 修了試験（2020-06-14 実施） 問74",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20200614_FE.pdf",
+     "page": 36
+    },
+    {
+     "id": "tokurei-mondai-20181209-fe-q74",
+     "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-12-09 実施） 問74",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20181209_FE.pdf",
+     "page": 35
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q77",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20181209-fe-q77",
+     "label": "出典：平成30年度 基本情報技術者試験 修了試験（2018-12-09 実施） 問77",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20181209_FE.pdf",
+     "page": 36
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20211212-fe-q24",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20200614-fe-q24",
+     "label": "出典：令和2年度 基本情報技術者試験 修了試験（2020-06-14 実施） 問24",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20200614_FE.pdf",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20250608-fe-q22",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20211212-fe-q28",
+     "label": "出典：令和3年度 基本情報技術者試験 修了試験（2021-12-12 実施） 問28",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20211212_FE.pdf",
+     "page": 15
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20250608-fe-q51",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20211212-fe-q68",
+     "label": "出典：令和3年度 基本情報技術者試験 修了試験（2021-12-12 実施） 問68",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/ug65p90000001bq0-att/tokurei_Mondai_20211212_FE.pdf",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "canonical": "tokurei-mondai-20250608-fe-q11",
+   "frequency": 2,
+   "duplicates": [
+    {
+     "id": "tokurei-mondai-20231210-fe-q11",
+     "label": "出典：令和5年度 基本情報技術者試験 修了試験（2023-12-10 実施） 問11",
+     "questionPdf": "https://www.ipa.go.jp/shiken/about/gmcbt800000077l9-att/tokurei_Mondai_20231210_FE.pdf",
+     "page": 6
+    }
+   ]
+  }
+ ]
 }

@@ -1,0 +1,17 @@
+担当: 17 ファイル / 全 98
+  2009h21h-fe-am.json: OCR 済み 70 問 (累計)
+  2012h24h-fe-am.json: OCR 済み 136 問 (累計)
+  2015h27h-fe-am.json: OCR 済み 196 問 (累計)
+  2018h30h-fe-am.json: OCR 済み 238 問 (累計)
+  tokurei-mondai-201101-fe.json: OCR 済み 308 問 (累計)
+  tokurei-mondai-20130127-fe.json: OCR 済み 374 問 (累計)
+  tokurei-mondai-20140727-fe.json: OCR 済み 444 問 (累計)
+  tokurei-mondai-20160124-fe.json: OCR 済み 500 問 (累計)
+  tokurei-mondai-20170723-fe.json: OCR 済み 562 問 (累計)
+  tokurei-mondai-20190127-fe.json: OCR 済み 621 問 (累計)
+  tokurei-mondai-20200726-fe.json: OCR 済み 679 問 (累計)
+  tokurei-mondai-20220123-fe.json: OCR 済み 736 問 (累計)
+  tokurei-mondai-20240128-fe.json: OCR 済み 777 問 (累計)
+  tokurei-mondai-20250727-fe.json: OCR 済み 823 問 (累計)
+
+=== OCR: 823 問に付与 / 0 問はスキップ（既にあり） / 0 問は失敗
