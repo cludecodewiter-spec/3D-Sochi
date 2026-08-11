@@ -1,13 +1,54 @@
 #!/usr/bin/env node
 /**
  * 題庫の検証ゲート。ここを通らないものは出題しない。
- * 「実在しない問題を出さない」ための最後の砦なので、判定は保守的にする。
+ *
+ * 既定では検出した問題を data/questions から取り除き、理由つきで
+ * data/quarantine/validate-rejected.json に移す（--check を付けると報告のみ）。
+ * 「リポジトリに置いてある題庫は常に検証済み」という状態を保つためで、
+ * 検出があった場合は終了コードを 1 にして CI を赤くする。
  */
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 
 const OUT_DIR = 'data/questions';
+const CHECK_ONLY = process.argv.includes('--check');
+
+/** 1 問ぶんの検査。問題があれば理由の配列を返す */
+function inspect(q, validate, ajv, seenIds, seenNos, file) {
+  const problems = [];
+
+  if (!validate(q)) {
+    problems.push(`スキーマ違反 ${ajv.errorsText(validate.errors, { separator: '; ' }).slice(0, 200)}`);
+    return problems; // スキーマ違反なら以降の検査は当てにならない
+  }
+
+  if (seenIds.has(q.id)) problems.push(`ID 重複 ${q.id}`);
+  const noKey = `${file}#${q.no}`;
+  if (seenNos.has(noKey)) problems.push(`同一回で問番号が重複 問${q.no}`);
+
+  // 出典が欠けた問題は「どこから来たか分からない問題」なので出さない
+  if (!q.source?.label?.startsWith('出典：')) problems.push('出典ラベルが不正');
+  if (!/^https:\/\/www\.ipa\.go\.jp\//.test(q.source?.questionPdf ?? '')) {
+    problems.push(`出典 PDF が IPA 公式ドメインでない (${q.source?.questionPdf})`);
+  }
+  if (q.modified !== false) problems.push('modified が false でない');
+  if (q.verified !== true) problems.push('verified が true でない');
+
+  if (q.format === 'text') {
+    const blob = (q.body ?? '') + Object.values(q.choices ?? {}).join('');
+    const garbled = (blob.match(/[�]|\(cid:\d+\)/g) ?? []).length;
+    if (garbled > 0) problems.push(`文字化けを検出 (${garbled} 箇所)`);
+    if ((q.body ?? '').length < 10) problems.push('問題文が短すぎる');
+    for (const [k, v] of Object.entries(q.choices ?? {})) {
+      if (!v) problems.push(`選択肢${k}が空`);
+    }
+  } else if (q.format === 'image') {
+    if (!q.images?.length) problems.push('切り出し画像がない');
+  }
+
+  return problems;
+}
 
 async function main() {
   const schema = JSON.parse(await readFile('schema/question.schema.json', 'utf8'));
@@ -17,66 +58,73 @@ async function main() {
 
   let files;
   try {
-    files = (await readdir(OUT_DIR)).filter((f) => f.endsWith('.json') && f !== 'index.json');
+    files = (await readdir(OUT_DIR)).filter((f) => f.endsWith('.json') && !['index.json', 'dedup.json'].includes(f));
   } catch {
     console.log('data/questions/ がありません（まだ取り込み前）。検証をスキップします。');
     return;
   }
 
-  const errors = [];
   const seenIds = new Set();
+  const seenNos = new Set();
+  const rejected = [];
+  const shards = [];
   let total = 0;
+  let kept = 0;
 
   for (const file of files) {
     const questions = JSON.parse(await readFile(`${OUT_DIR}/${file}`, 'utf8'));
-    const nos = new Set();
+    const good = [];
 
     for (const q of questions) {
       total++;
-      if (!validate(q)) {
-        errors.push(`${file} ${q.id ?? '(no id)'}: スキーマ違反 ${ajv.errorsText(validate.errors, { separator: '; ' }).slice(0, 200)}`);
+      const problems = inspect(q, validate, ajv, seenIds, seenNos, file);
+      if (problems.length) {
+        rejected.push({ file, id: q.id ?? null, no: q.no ?? null, problems });
         continue;
       }
-      if (seenIds.has(q.id)) errors.push(`${file}: ID 重複 ${q.id}`);
       seenIds.add(q.id);
-      if (nos.has(q.no)) errors.push(`${file}: 同一回で問番号が重複 問${q.no}`);
-      nos.add(q.no);
+      seenNos.add(`${file}#${q.no}`);
+      good.push(q);
+    }
 
-      // 出典は必須。ここが欠けた問題は「どこから来たか分からない問題」なので落とす
-      if (!q.source?.label?.startsWith('出典：')) errors.push(`${file} ${q.id}: 出典ラベルが不正`);
-      if (!/^https:\/\/www\.ipa\.go\.jp\//.test(q.source?.questionPdf ?? '')) {
-        errors.push(`${file} ${q.id}: 出典 PDF が IPA 公式ドメインでない (${q.source?.questionPdf})`);
-      }
-      if (q.modified !== false) errors.push(`${file} ${q.id}: modified が false でない`);
-      if (q.verified !== true) errors.push(`${file} ${q.id}: verified が true でない`);
-
-      if (q.format === 'text') {
-        // 文字化け（CID 欠落や置換文字）が混ざった問題は出題しない
-        const blob = q.body + Object.values(q.choices ?? {}).join('');
-        const bad = (blob.match(/[�]|\(cid:\d+\)/g) ?? []).length;
-        if (bad > 0) errors.push(`${file} ${q.id}: 文字化けを検出 (${bad} 箇所)`);
-        if ((q.body ?? '').length < 10) errors.push(`${file} ${q.id}: 問題文が短すぎる`);
-        for (const [k, v] of Object.entries(q.choices ?? {})) {
-          if (!v || v.length === 0) errors.push(`${file} ${q.id}: 選択肢${k}が空`);
-        }
-      }
+    kept += good.length;
+    if (!CHECK_ONLY && good.length !== questions.length) {
+      await writeFile(`${OUT_DIR}/${file}`, JSON.stringify(good, null, 1));
+    }
+    if (good.length > 0) {
+      const first = good[0];
+      shards.push({
+        file,
+        pool: first.pool,
+        examKey: file.replace(/\.json$/, ''),
+        label: first.source.label.replace(/\s*問\d+$/, ''),
+        count: good.length,
+      });
     }
   }
 
-  // index.json と実データの整合
-  try {
-    const index = JSON.parse(await readFile(`${OUT_DIR}/index.json`, 'utf8'));
-    const sum = index.shards.reduce((n, s) => n + s.count, 0);
-    if (sum !== index.totalQuestions) errors.push(`index.json: totalQuestions=${index.totalQuestions} だが shard 合計は ${sum}`);
-    if (sum !== total) errors.push(`index.json: shard 合計 ${sum} と実データ ${total} が一致しない`);
-  } catch {
-    errors.push('index.json を読めません');
+  if (!CHECK_ONLY) {
+    await writeFile(
+      `${OUT_DIR}/index.json`,
+      JSON.stringify({ generatedAt: new Date().toISOString(), totalQuestions: kept, shards }, null, 1),
+    );
+    await writeFile('data/quarantine/validate-rejected.json', JSON.stringify(rejected, null, 1));
   }
 
-  console.log(`検証対象: ${total} 問 / ${files.length} ファイル`);
-  if (errors.length) {
-    console.error(`\n検証エラー ${errors.length} 件:`);
-    for (const e of errors.slice(0, 50)) console.error('  - ' + e);
+  console.log(`検証: ${total} 問中 ${kept} 問が通過 / ${rejected.length} 問を除外`);
+  for (const s of shards) console.log(`  ${String(s.count).padStart(3)} 問  ${s.file}`);
+
+  if (rejected.length) {
+    const byReason = {};
+    for (const r of rejected) {
+      const key = r.problems[0].split('(')[0].trim();
+      byReason[key] = (byReason[key] ?? 0) + 1;
+    }
+    console.error('\n除外理由の内訳:');
+    for (const [reason, n] of Object.entries(byReason).sort((a, b) => b[1] - a[1])) {
+      console.error(`  ${n} 問: ${reason}`);
+    }
+    console.error('\n除外した問題の詳細は data/quarantine/validate-rejected.json を参照');
     process.exit(1);
   }
   console.log('すべての問題が検証を通過しました。');
