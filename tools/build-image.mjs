@@ -18,7 +18,8 @@ import { promisify } from 'node:util';
 import sharp from 'sharp';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
-import { parseAnswers, FIELD_LABEL, normalizeDigits } from './lib/segment.mjs';
+import { parseAnswers, FIELD_LABEL } from './lib/segment.mjs';
+import { anchorsFromWords, longestIncreasing, usableAnchors } from './lib/anchors.mjs';
 import { resolveEra } from './lib/era.mjs';
 
 const run = promisify(execFile);
@@ -79,73 +80,6 @@ async function ocrImage(pngPath, psm = '6') {
     });
   }
   return words;
-}
-
-/**
- * 「問N」を探す。
- *
- * 問題番号は必ず左マージンに置かれるので、ページ全体ではなく左端の帯だけを
- * OCR する。文字数が少ないぶん誤読が減り、速度も上がる。
- * OCR は「問 1」と分かち書きしたり「問」を「間」「悶」と誤読したりするので、
- * 行頭の数語をつないで判定し、紛らわしい字も受け入れる。
- */
-function anchorsFromWords(words, stripWidth) {
-  const byLine = new Map();
-  for (const w of words) {
-    const lineKey = Math.round(w.y / 20);
-    if (!byLine.has(lineKey)) byLine.set(lineKey, []);
-    byLine.get(lineKey).push(w);
-  }
-  const anchors = [];
-  for (const line of byLine.values()) {
-    line.sort((a, b) => a.x - b.x);
-    const head = line[0];
-    if (!head || head.x > stripWidth * 0.5) continue;
-    const joined = normalizeDigits(line.slice(0, 3).map((w) => w.text).join('')).replace(/[\s.．,，]/g, '');
-    const m = joined.match(/^[問間悶闇門]\s*(\d{1,3})(?!\d)/);
-    if (!m) continue;
-    const no = Number(m[1]);
-    if (no < 1 || no > 100) continue;
-    anchors.push({ no, x: head.x, y: head.y, conf: head.conf });
-  }
-  anchors.sort((a, b) => a.y - b.y);
-  // 同じ行が二重に拾われることがあるので、近接する同番号をまとめる
-  return anchors.filter((a, i, arr) => i === 0 || !(arr[i - 1].no === a.no && Math.abs(arr[i - 1].y - a.y) < 30));
-}
-
-/**
- * OCR で拾ったアンカーが使えるかを判定する。
- *
- * 全問そろっていることは求めない（OCR は必ずどこかで読み落とす）。
- * 代わりに「切り出した画像に 2 問ぶんが入ってしまう」ことを防ぐ:
- *   問N を採用するのは、問N と 問N+1 の両方のアンカーが見つかっているときだけ。
- * 最後の問題は、その回の最終問番号と一致しているときだけ採用する。
- */
-function usableAnchors(flat, expectedCount) {
-  // 文書順に番号が増えていない＝OCR が混乱している。その回は捨てる
-  for (let i = 1; i < flat.length; i++) {
-    if (flat[i].no <= flat[i - 1].no) {
-      return { ok: false, why: `問番号が文書順に増えていない (問${flat[i - 1].no} の次が 問${flat[i].no})` };
-    }
-  }
-  if (flat.length === 0) return { ok: false, why: 'アンカーを 1 つも検出できない' };
-
-  const usable = [];
-  for (let i = 0; i < flat.length; i++) {
-    const cur = flat[i];
-    const next = flat[i + 1];
-    if (next) {
-      // 次のアンカーが連番でないなら、cur の切り出し範囲に次の問題が入り込む
-      if (next.no === cur.no + 1) usable.push({ ...cur, next });
-    } else if (cur.no === expectedCount) {
-      usable.push({ ...cur, next: null });
-    }
-  }
-  const coverage = expectedCount ? usable.length / expectedCount : 0;
-  if (coverage < 0.5) {
-    return { ok: false, why: `使える問題が ${usable.length}/${expectedCount} 問しかない`, usable };
-  }
-  return { ok: true, usable, coverage };
 }
 
 function sourceLabel(src, no) {
@@ -236,7 +170,12 @@ async function main() {
 
       pageAnchors.push({ png, page: pageNoOf(png), height, width, anchors, words: [] });
     }
-    const flat = pageAnchors.flatMap((p) => p.anchors.map((x) => ({ ...x, page: p.page, pageInfo: p })));
+    const rawFlat = pageAnchors.flatMap((p) => p.anchors.map((x) => ({ ...x, page: p.page, pageInfo: p })));
+    // OCR の誤読を落としてから連番チェックにかける
+    const flat = longestIncreasing(rawFlat);
+    if (flat.length !== rawFlat.length) {
+      console.log(`  OCR 誤読とみなして除外: ${rawFlat.length - flat.length} 件`);
+    }
     const sanity = usableAnchors(flat, expectedCount);
     console.log(
       `  OCR アンカー: ${flat.length} 件 / 使える問題: ${sanity.usable?.length ?? 0} 件 → ${sanity.ok ? `OK (${Math.round((sanity.coverage ?? 0) * 100)}%)` : '不採用: ' + sanity.why}`,
