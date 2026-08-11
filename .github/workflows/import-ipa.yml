@@ -84,25 +84,4 @@ jobs:
       - name: commit data
         if: always()
         continue-on-error: true
-        run: |
-          git config user.name  "jpfetest-importer"
-          git config user.email "noreply@github.com"
-          git add -A data
-          if git diff --cached --quiet; then
-            echo "no data changes"
-            exit 0
-          fi
-          git commit -m "data: import IPA past exam questions [skip ci]"
-          # 別のワークフローが同じブランチに push していることがあるので、
-          # 取り込み直してから押し込む
-          for i in 1 2 3; do
-            git fetch origin "$GITHUB_REF_NAME"
-            git rebase "origin/$GITHUB_REF_NAME" || { git rebase --abort; echo "rebase failed"; exit 1; }
-            if git push origin "HEAD:$GITHUB_REF_NAME"; then
-              echo "pushed"
-              exit 0
-            fi
-            sleep $((i * 5))
-          done
-          echo "push failed after retries"
-          exit 1
+        run: bash tools/commit-data.sh "data: import IPA past exam questions"
