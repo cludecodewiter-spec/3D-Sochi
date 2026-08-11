@@ -41,6 +41,9 @@ jobs:
       - name: discover — IPA 公開 PDF を全件列挙
         run: npm run discover
 
+      - name: probe — 代表 PDF の構造をダンプ（解析器の設計用）
+        run: npm run probe
+
       - name: upload discovery output
         if: always()
         uses: actions/upload-artifact@v4
@@ -49,6 +52,7 @@ jobs:
           path: |
             data/discovery-raw.json
             data/sources.json
+            data/probe/**
           if-no-files-found: warn
 
       - name: commit discovery output
@@ -57,7 +61,7 @@ jobs:
         run: |
           git config user.name  "jpfetest-importer"
           git config user.email "noreply@github.com"
-          git add data/discovery-raw.json data/sources.json 2>/dev/null || true
+          git add data/discovery-raw.json data/sources.json data/probe 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no data changes"
           else
