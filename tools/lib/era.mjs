@@ -48,3 +48,19 @@ export function resolveEra(src) {
   if (/sample/i.test(src.url)) return { era: '2022年公開', year: 2022, season: null };
   return null;
 }
+
+/**
+ * プールごとの試験名。出典表記に使う。
+ *
+ * IPA の利用条件は出典明示を求めているので、応用情報や
+ * 情報セキュリティマネジメントの問題を「基本情報技術者試験」と
+ * 書いてしまうと出典の偽りになる。プールから機械的に決める。
+ */
+const EXAM_NAMES = {
+  'ext-ap': '応用情報技術者試験',
+  'ext-sg': '情報セキュリティマネジメント試験',
+};
+
+export function examName(pool) {
+  return EXAM_NAMES[pool] ?? '基本情報技術者試験';
+}

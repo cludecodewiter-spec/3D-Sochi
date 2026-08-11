@@ -20,7 +20,7 @@ import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
 import { parseAnswers, FIELD_LABEL } from './lib/segment.mjs';
 import { anchorsFromWords, longestIncreasing, usableAnchors, safeCropRect } from './lib/anchors.mjs';
-import { resolveEra } from './lib/era.mjs';
+import { resolveEra, examName } from './lib/era.mjs';
 
 const run = promisify(execFile);
 
@@ -41,6 +41,8 @@ const LEFT_STRIP_RATIO = Number(process.env.LEFT_STRIP_RATIO ?? 0.3);
 /** 取り込む回数の上限（0 = 制限なし）。段階的に増やすための安全弁 */
 const MAX_EXAMS = Number(process.env.MAX_EXAMS ?? 0);
 const ONLY = process.env.ONLY ?? '';
+/** 取り込むプールを絞る（空なら科目A相当のプールをすべて）。例: POOLS=ext-ap,ext-sg */
+const POOLS = (process.env.POOLS ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 /** OCR の生出力を data/probe に残す（検出不良の原因調査用） */
 const DEBUG_OCR = process.env.DEBUG_OCR === '1';
 /** 並列実行のための分割。SHARD_TOTAL 個に分けたうちの SHARD_INDEX 番目だけを処理する */
@@ -107,10 +109,11 @@ function examKeyOf(src) {
 function sourceLabel(src, no) {
   const resolved = resolveEra(src);
   const era = resolved?.era ?? '';
-  const season = resolved?.season ? ` ${resolved.season}` : '';
+  const season = src.season ? ` ${src.season}` : resolved?.season ? ` ${resolved.season}` : '';
   const section = src.legacySection ? ` ${src.legacySection}` : '';
   const date = src.date && src.legacySection === '修了試験' ? `（${src.date} 実施）` : '';
-  return `出典：${era}${season} 基本情報技術者試験${section}${date} 問${no}`.replace(/\s{2,}/g, ' ');
+  // 試験名はプールから決める。応用情報の問題を「基本情報技術者試験」と書くと出典を偽ることになる
+  return `出典：${era}${season} ${examName(src.pool)}${section}${date} 問${no}`.replace(/\s{2,}/g, ' ');
 }
 
 async function main() {
@@ -118,8 +121,14 @@ async function main() {
   const scan = JSON.parse(await readFile('data/probe/text-scan.json', 'utf8'));
   const routeOf = new Map(scan.filter((s) => s.ok).map((s) => [s.url, s.route]));
 
+  // FE 本体に加えて、拡張プール（応用情報・情報セキュリティマネジメントの午前）も取り込む。
+  // どちらも四肢択一で形式が同じなので、切り出しの手順はそのまま使える。
   const questionsSrc = sources.filter(
-    (s) => s.role === 'questions' && routeOf.get(s.url) === 'image' && s.subject === 'kamokuA',
+    (s) =>
+      s.role === 'questions' &&
+      routeOf.get(s.url) === 'image' &&
+      s.subject === 'kamokuA' &&
+      (POOLS.length === 0 || POOLS.includes(s.pool)),
   );
   const answersSrc = sources.filter((s) => s.role === 'answers');
 

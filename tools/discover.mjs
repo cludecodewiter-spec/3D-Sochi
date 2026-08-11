@@ -11,6 +11,7 @@
  */
 import { mkdir, writeFile } from 'node:fs/promises';
 import { get, extractLinks } from './lib/http.mjs';
+import { pathToFileURL } from 'node:url';
 
 const ORIGIN = 'https://www.ipa.go.jp';
 const INDEX = `${ORIGIN}/shiken/mondai-kaiotu/index.html`;
@@ -109,7 +110,11 @@ export function classify(link) {
   //    命名は年度で揺れるため、要素を個別に拾う。
   const feInFile = /(^|[^a-z])fe([^a-z]|$)/i.test(file);
   const feInCtx = /基本情報技術者試験|基本情報/.test(ctx);
-  if (isPdf(url) && (feInFile || feInCtx)) {
+  // 年度ページは複数区分の PDF を並べて載せているので、見出しに「基本情報」が
+  // 入っているだけで他区分の PDF まで拾ってしまう。ファイル名の区分コードが
+  // 他区分を示していたら、FE として扱わない（出典を偽ることになる）。
+  const otherExamInFile = /_(ap|sg|st|sa|nw|sc|sm|pm|db|es|au|ip)_/i.test(file);
+  if (isPdf(url) && (feInFile || feInCtx) && !otherExamInFile) {
     const ym = file.match(/(\d{4})([hr])(\d{2})([ha])?/i) || url.match(/\/(\d{4})[hr]\d{2}\//);
     const isAns = /(_ans|kaito|kaitou|解答)/i.test(file) || /解答/.test(ctx);
     const isQs = /(_qs|mondai|問題)/i.test(file) || /問題/.test(ctx);
@@ -147,6 +152,30 @@ export function classify(link) {
         url,
       };
     }
+  }
+
+  // 3) 拡張プール: 応用情報(AP) と情報セキュリティマネジメント(SG) の午前・科目A
+  //
+  //    IPA は修了試験について「60% 以上が基本情報の過去問、残りは応用情報・
+  //    情報セキュリティマネジメントの過去問から」と説明している。
+  //    つまりこの 2 科目の問題はもともと基本情報の出題範囲を回っている。
+  //    形式も四肢択一で同じなので、そのまま演習に使える。
+  //
+  //    午後は形式が違う（大問と設問）ので、ここでは取らない。
+  const ext = file.match(/^(\d{4})[hr]\d{2}([ha])?_(ap|sg)_(?:am|kamoku_a)_(qs|ans)\.pdf$/i);
+  if (ext) {
+    const [, y, seasonCode, exam, role] = ext;
+    return {
+      pool: `ext-${exam.toLowerCase()}`,
+      examKey: `ext-${file.replace(/\.pdf$/i, '').replace(/_(qs|ans)$/i, '')}`,
+      role: /ans/i.test(role) ? 'answers' : 'questions',
+      subject: 'kamokuA',
+      legacySection: '午前',
+      year: Number(y),
+      season: seasonCode === 'h' ? '春期' : seasonCode === 'a' ? '秋期' : null,
+      era: null,
+      url,
+    };
   }
 
   return { role: 'unknown', url, file, ctx: ctx.slice(0, 120) };
@@ -223,7 +252,10 @@ async function main() {
   log(`\n合計 sources: ${sources.length} 件 → data/sources.json`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// classify() をテストから読めるように、直接実行されたときだけ巡回する
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

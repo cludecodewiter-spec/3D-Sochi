@@ -12,7 +12,7 @@ import { mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
 import { findAnchors, splitQuestion, parseAnswers, questionDefects, FIELD_LABEL } from './lib/segment.mjs';
-import { resolveEra } from './lib/era.mjs';
+import { resolveEra, examName } from './lib/era.mjs';
 
 const OUT_DIR = 'data/questions';
 const QUARANTINE_DIR = 'data/quarantine';
@@ -40,7 +40,8 @@ function sourceLabel(src, no) {
   const parts = ['出典：'];
   if (era?.era) parts.push(`${era.era} `);
   if (era?.season) parts.push(`${era.season} `);
-  parts.push('基本情報技術者試験 ');
+  // 試験名はプールから決める。出典を取り違えると引用として成り立たない
+  parts.push(`${examName(src.pool)} `);
   if (src.legacySection) parts.push(`${src.legacySection} `);
   if (src.subject === 'kamokuA') parts.push('科目A ');
   else if (src.subject === 'kamokuB') parts.push('科目B ');
