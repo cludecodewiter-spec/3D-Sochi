@@ -65,6 +65,11 @@ jobs:
       - name: validate
         run: npm run validate
 
+      - name: report — 人間向けの取り込みレポート
+        if: always()
+        continue-on-error: true
+        run: node tools/report.mjs > /dev/null
+
       - name: upload outputs
         if: always()
         uses: actions/upload-artifact@v4

@@ -14,7 +14,8 @@
     "build-text": "node tools/build-text.mjs",
     "build-image": "node tools/build-image.mjs",
     "validate": "node tools/validate.mjs",
-    "import": "npm run discover && npm run scan-text && npm run build-text && npm run validate"
+    "import": "npm run discover && npm run scan-text && npm run build-text && npm run validate",
+    "report": "node tools/report.mjs"
   },
   "dependencies": {
     "ajv": "^8.17.1",
