@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: ipa-data
+  group: import-ipa
   cancel-in-progress: false
 
 jobs:
