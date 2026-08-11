@@ -10,4 +10,4 @@
     見つからなかった問番号: 4,7,11,17,19,23,30,31,41,47,66,71,79
 Error: extract_area: bad extract area
     at Sharp.toFile (/home/runner/work/3D-Sochi/3D-Sochi/node_modules/sharp/lib/output.js:90:19)
-    at main (file:///home/runner/work/3D-Sochi/3D-Sochi/tools/build-image.mjs:255:12)
+    at main (file:///home/runner/work/3D-Sochi/3D-Sochi/tools/build-image.mjs:261:12)
