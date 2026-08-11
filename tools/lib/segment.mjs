@@ -147,3 +147,55 @@ export const FIELD_LABEL = {
   M: 'マネジメント系',
   S: 'ストラテジ系',
 };
+
+/**
+ * 切り出した 1 問が「本当にちゃんと切れているか」を判定する。
+ *
+ * スキャンと文字が混在した PDF では、テキスト層が壊れていて
+ * 「選択肢アの中に選択肢イの本文が丸ごと入っている」ような切れ方をする。
+ * そういう問題を出題してしまうと、受験者は実在しない選択肢を読むことになる。
+ * 迷ったら落とす。
+ */
+export function questionDefects({ body, choices }) {
+  const defects = [];
+  const keys = ['ア', 'イ', 'ウ', 'エ'];
+
+  if (!body || body.length < 10) defects.push('問題文が短すぎる');
+  if (body && /^[アイウエ][\s　]/.test(body)) defects.push('問題文が選択肢から始まっている');
+
+  for (const [i, key] of keys.entries()) {
+    const text = choices?.[key];
+    if (!text) {
+      defects.push(`選択肢${key}が空`);
+      continue;
+    }
+    if (text.length > 400) defects.push(`選択肢${key}が長すぎる(${text.length}字)`);
+    // 後続の選択肢マーカーが本文に紛れ込んでいたら、切り分けに失敗している
+    for (const later of keys.slice(i + 1)) {
+      if (new RegExp(`${later}[\\s　]`).test(text)) {
+        defects.push(`選択肢${key}の中に選択肢${later}が混入`);
+        break;
+      }
+    }
+  }
+
+  // 「１ ビ ッ ト」のように 1 文字ごとに空白が入るのは、テキスト層が壊れている兆候。
+  // 重なりも数えたいので先読みで数え、本文と各選択肢を個別に見る
+  // （全体で平均すると、1 つの選択肢だけ壊れている場合に埋もれてしまう）
+  const CJK = '぀-ヿ一-鿿０-９Ａ-Ｚａ-ｚ';
+  for (const field of [body ?? '', ...Object.values(choices ?? {})]) {
+    if (field.length < 12) continue;
+    const spaced = (field.match(new RegExp(`(?=[${CJK}][ 　][${CJK}])`, 'g')) ?? []).length;
+    if (spaced / field.length > 0.1) {
+      defects.push(`日本語が1文字ずつ分断されている(${spaced}/${field.length}字)`);
+      break;
+    }
+  }
+
+  // 文字化け
+  const blob = (body ?? '') + Object.values(choices ?? {}).join('');
+  const garbled = (blob.match(/[�]|\(cid:\d+\)/g) ?? []).length;
+  if (garbled > 0) defects.push(`文字化け ${garbled} 箇所`);
+
+  return defects;
+}

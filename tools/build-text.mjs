@@ -11,7 +11,7 @@
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
-import { bodyLines, findAnchors, splitQuestion, parseAnswers, FIELD_LABEL } from './lib/segment.mjs';
+import { findAnchors, splitQuestion, parseAnswers, questionDefects, FIELD_LABEL } from './lib/segment.mjs';
 
 const OUT_DIR = 'data/questions';
 const QUARANTINE_DIR = 'data/quarantine';
@@ -46,6 +46,18 @@ function sourceLabel(src, no) {
   return parts.join('').replace(/\s+/g, ' ').replace('出典： ', '出典：');
 }
 
+/**
+ * 年度を決める。ファイル名に年が無いサンプル問題は、
+ * 新制度サンプルが公開された 2022 年度として扱う（推測ではなく公開年）。
+ */
+function yearOf(src) {
+  if (src.year) return src.year;
+  const m = src.url.match(/\/(\d{4})[hr]\d{2}/) || src.url.match(/henkou\/(\d{4})\//);
+  if (m) return Number(m[1]);
+  if (/sample/i.test(src.url)) return 2022;
+  return 0;
+}
+
 function examKeyOf(src) {
   return src.url.split('/').pop().replace(/\.pdf$/i, '').replace(/_qs$/, '');
 }
@@ -73,11 +85,11 @@ async function main() {
   const quarantined = [];
   let totalQuestions = 0;
 
-  for (const { q, a, qName, expected } of pairs) {
+  for (const { q, a, qName, expected: expectedAnsName } of pairs) {
     console.log(`\n=== ${qName}`);
     if (!a) {
-      console.log(`  ! 解答例 PDF が見つからない (期待: ${expected}) → 取り込まない`);
-      quarantined.push({ pdf: q.url, reason: `answer pdf not found: ${expected}` });
+      console.log(`  ! 解答例 PDF が見つからない (期待: ${expectedAnsName}) → 取り込まない`);
+      quarantined.push({ pdf: q.url, reason: `answer pdf not found: ${expectedAnsName}` });
       continue;
     }
     if (routeOf.get(a.url) !== 'text') {
@@ -87,7 +99,7 @@ async function main() {
     }
 
     const qFile = await getCached(q.url, `data/pdf-cache/${qName}`);
-    const aFile = await getCached(a.url, `data/pdf-cache/${expected}`);
+    const aFile = await getCached(a.url, `data/pdf-cache/${expectedAnsName}`);
     if (!qFile.body || !aFile.body) {
       quarantined.push({ pdf: q.url, reason: 'download failed' });
       continue;
@@ -123,13 +135,18 @@ async function main() {
         reject('解答例に該当する問番号がない');
         continue;
       }
+      const defects = questionDefects(split);
+      if (defects.length) {
+        reject(defects.join(' / '));
+        continue;
+      }
 
       questions.push({
         id: `${examKey}-q${String(no).padStart(2, '0')}`.toLowerCase().replace(/[^a-z0-9-]/g, '-'),
         pool: q.pool,
         exam: {
-          year: q.year ?? 0,
-          era: q.era ?? String(q.year ?? ''),
+          year: yearOf(q),
+          era: q.era ?? (yearOf(q) ? `${yearOf(q)}年度` : ''),
           ...(q.season ? { season: q.season } : {}),
           subject: q.subject,
           ...(q.legacySection ? { legacySection: q.legacySection } : {}),
@@ -152,7 +169,16 @@ async function main() {
       });
     }
 
-    console.log(`  構造化できた問題: ${questions.length} / アンカー ${anchors.length}`);
+    // 回全体として壊れている PDF（テキスト層が破損したスキャン混在 PDF など）は
+    // 部分的に拾えた問題も含めて丸ごと採用しない
+    const expectedCount = answers.size;
+    const acceptRate = expectedCount ? questions.length / expectedCount : 0;
+    console.log(`  構造化できた問題: ${questions.length} / 解答例 ${expectedCount} 問 (${Math.round(acceptRate * 100)}%)`);
+    if (expectedCount > 0 && acceptRate < 0.8) {
+      console.log(`  ! 取りこぼしが多すぎる(${Math.round(acceptRate * 100)}%) → この回はまるごと隔離`);
+      quarantined.push({ pdf: q.url, reason: `accept rate ${Math.round(acceptRate * 100)}% < 80%`, parsed: questions.length, expected: expectedCount });
+      continue;
+    }
     if (rejects.length) {
       console.log(`  隔離: ${rejects.length} 問`);
       for (const r of rejects.slice(0, 5)) console.log(`    問${r.no}: ${r.reason} | ${r.preview}`);

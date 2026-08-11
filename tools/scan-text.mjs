@@ -8,6 +8,7 @@
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { getCached } from './lib/http.mjs';
 import { extractPdf, toLines } from './lib/pdf.mjs';
+import { normalizeDigits, parseAnswers } from './lib/segment.mjs';
 
 const LIMIT = Number(process.env.SCAN_LIMIT ?? 0); // 0 = 全件
 
@@ -56,7 +57,17 @@ async function main() {
         chars,
         anchors,
         maxAnchor: anchorNos.length ? Math.max(...anchorNos) : 0,
-        route: chars > 200 ? 'text' : 'image',
+        answerCount,
+        // 「読めるか」で判定する。文字数のような間接的な指標だと、
+        // 短い解答例 PDF を画像扱いして取りこぼす
+        route:
+          s.role === 'answers'
+            ? answerCount > 0
+              ? 'text'
+              : 'image'
+            : anchors > 0
+              ? 'text'
+              : 'image',
       };
     } catch (e) {
       r = { url: s.url, name, pool: s.pool, role: s.role, ok: false, error: String(e).slice(0, 120) };
