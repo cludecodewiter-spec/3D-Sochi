@@ -41,6 +41,8 @@ const MAX_EXAMS = Number(process.env.MAX_EXAMS ?? 0);
 const ONLY = process.env.ONLY ?? '';
 /** OCR の生出力を data/probe に残す（検出不良の原因調査用） */
 const DEBUG_OCR = process.env.DEBUG_OCR === '1';
+/** 1 回ぶんの処理にかける時間の上限（秒）。0 で無制限 */
+const TIME_BUDGET_SEC = Number(process.env.TIME_BUDGET_SEC ?? 0);
 
 /** ページを PNG に描画する（poppler-utils はランナーに入っている） */
 async function renderPages(pdfPath, outPrefix) {
@@ -122,7 +124,12 @@ async function main() {
   const report = [];
   const ocrSamples = [];
 
+  const startedAt = Date.now();
   for (const [i, q] of targets.entries()) {
+    if (TIME_BUDGET_SEC && (Date.now() - startedAt) / 1000 > TIME_BUDGET_SEC) {
+      console.log(`時間の上限 ${TIME_BUDGET_SEC}s に達したのでここまでにする（${i}/${targets.length} 回を処理）`);
+      break;
+    }
     const qName = q.url.split('/').pop();
     const expected = qName.replace(/_qs\.pdf$/i, '_ans.pdf').replace(/^tokurei_Mondai_/i, 'tokurei_ans_');
     const a = answersSrc.find((x) => x.url.split('/').pop() === expected);
