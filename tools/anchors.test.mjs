@@ -93,3 +93,30 @@ test('実際の OCR 出力から 問1 を拾い、見出しの「問1から問50
   // 本文マージン(x=241)ではなく字下げされた見出し(x=304)を拾っていないこと
   assert.equal(got[0].x, 241);
 });
+
+test('safeCropRect は画像の外に出る矩形を作らない', async () => {
+  const { safeCropRect } = await import('./lib/anchors.mjs');
+  const H = 1000;
+  const W = 800;
+
+  // 普通のケース
+  assert.deepEqual(safeCropRect({ top: 100, bottom: 400, imageHeight: H, imageWidth: W, minHeight: 45 }), {
+    left: 0,
+    top: 100,
+    width: 800,
+    height: 300,
+  });
+
+  // 下端が画像を突き抜けている → 画像内に収める
+  const clamped = safeCropRect({ top: 900, bottom: 1500, imageHeight: H, imageWidth: W, minHeight: 45 });
+  assert.deepEqual(clamped, { left: 0, top: 900, width: 800, height: 100 });
+
+  // 上下が逆・高さ 0・画像外 → 切り出さない
+  assert.equal(safeCropRect({ top: 500, bottom: 400, imageHeight: H, imageWidth: W, minHeight: 45 }), null);
+  assert.equal(safeCropRect({ top: 500, bottom: 500, imageHeight: H, imageWidth: W, minHeight: 45 }), null);
+  assert.equal(safeCropRect({ top: 1200, bottom: 1300, imageHeight: H, imageWidth: W, minHeight: 45 }), null);
+  // 薄すぎる切れ端は捨てる
+  assert.equal(safeCropRect({ top: 100, bottom: 130, imageHeight: H, imageWidth: W, minHeight: 45 }), null);
+  // 画像サイズが取れなかった場合
+  assert.equal(safeCropRect({ top: 0, bottom: 100, imageHeight: 0, imageWidth: W, minHeight: 45 }), null);
+});

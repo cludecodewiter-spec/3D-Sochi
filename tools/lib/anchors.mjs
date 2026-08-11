@@ -142,3 +142,23 @@ export function usableAnchors(flat, expectedCount) {
   return { ok: true, usable, coverage };
 }
 
+
+/**
+ * 切り出し矩形を画像の内側に収める。
+ *
+ * OCR が返す座標や、ページをまたぐ問題の計算では、
+ * 画像の外に出る矩形や高さ 0 の矩形が simple に発生する。
+ * sharp はそれを "bad extract area" で落とすので、
+ * ここで必ず有効な矩形にするか、null（切り出さない）に倒す。
+ */
+export function safeCropRect({ top, bottom, imageHeight, imageWidth, minHeight }) {
+  if (!Number.isFinite(imageHeight) || imageHeight <= 0) return null;
+  if (!Number.isFinite(imageWidth) || imageWidth <= 0) return null;
+
+  const t = Math.max(0, Math.min(Math.round(top), imageHeight - 1));
+  const b = Math.max(0, Math.min(Math.round(bottom), imageHeight));
+  const height = b - t;
+  if (height < Math.max(1, minHeight)) return null;
+
+  return { left: 0, top: t, width: Math.round(imageWidth), height };
+}

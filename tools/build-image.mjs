@@ -19,7 +19,7 @@ import sharp from 'sharp';
 import { getCached, sha256 } from './lib/http.mjs';
 import { extractPdf } from './lib/pdf.mjs';
 import { parseAnswers, FIELD_LABEL } from './lib/segment.mjs';
-import { anchorsFromWords, longestIncreasing, usableAnchors } from './lib/anchors.mjs';
+import { anchorsFromWords, longestIncreasing, usableAnchors, safeCropRect } from './lib/anchors.mjs';
 import { resolveEra } from './lib/era.mjs';
 
 const run = promisify(execFile);
@@ -244,11 +244,17 @@ async function main() {
           next && p === endPage
             ? Math.max(top + 1, next.y - pad)
             : Math.round(info.height * 0.93);
-        const height = Math.max(1, bottom - top);
-        if (height < DPI * 0.15) continue; // 実質空の切れ端は捨てる
+        const rect = safeCropRect({
+          top,
+          bottom,
+          imageHeight: info.height,
+          imageWidth: info.width,
+          minHeight: DPI * 0.15, // 実質空の切れ端は捨てる
+        });
+        if (!rect) continue;
         const file = `${examKey}-q${String(cur.no).padStart(2, '0')}${pieces.length ? `-${pieces.length + 1}` : ''}.webp`;
         await sharp(info.png)
-          .extract({ left: 0, top, width: info.width, height })
+          .extract(rect)
           .trim({ threshold: 12 })
           .resize({ width: Math.min(info.width, OUT_MAX_WIDTH), withoutEnlargement: true })
           .webp({ quality: 78 })
