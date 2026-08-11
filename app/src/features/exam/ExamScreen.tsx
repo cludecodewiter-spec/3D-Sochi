@@ -64,7 +64,7 @@ export function ExamScreen({ mode, questions, onFinish, onAbort }: Props) {
         </div>
       </div>
 
-      <main className="cbt-main">
+      <main className={`cbt-main ${q.format === 'image' ? 'is-scan' : ''}`}>
         <section className="pane pane-question">
           {q.format === 'image' ? (
             <figure className="scan-figure">

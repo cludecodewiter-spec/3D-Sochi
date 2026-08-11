@@ -908,3 +908,44 @@ img.scan {
   border-radius: 4px;
   font-weight: 700;
 }
+
+/* 画像で出題する問題は、選択肢の文言も画像に含まれている。
+   2 ペインに割ると問題画像が小さくなって読みにくいので、
+   問題を全幅で見せ、選択肢はその下に横並びで置く。 */
+.cbt-main.is-scan {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+}
+
+.cbt-main.is-scan .pane-choices {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cbt-main.is-scan .choice {
+  flex: 1 1 140px;
+}
+
+.cbt-main.is-scan .choice-main {
+  justify-content: center;
+  padding: 12px 14px;
+}
+
+.cbt-main.is-scan .choice-hint {
+  flex: 1 0 100%;
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .cbt-main.is-scan {
+    grid-template-rows: auto auto;
+  }
+}
+
+.scan-figure figcaption {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 6px;
+}
