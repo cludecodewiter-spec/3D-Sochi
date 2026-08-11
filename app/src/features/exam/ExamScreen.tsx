@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CHOICE_KEYS, type ChoiceKey, type ExamMode, type ExamResult, type Question } from '../../types';
 import { formatTime, useExam } from './useExam';
 import { Markable } from './Markable';
+import { ScanImage } from './ScanImage';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -66,12 +67,13 @@ export function ExamScreen({ mode, questions, onFinish, onAbort }: Props) {
       <main className="cbt-main">
         <section className="pane pane-question">
           {q.format === 'image' ? (
-            <figure className="scan">
-              {q.images?.map((src) => (
-                <img key={src} src={`${BASE}data/${src}`} alt={`${q.source.label}（IPA 公開問題冊子の該当箇所）`} />
-              ))}
+            <figure className="scan-figure">
+              <ScanImage
+                images={q.images ?? []}
+                alt={`${q.source.label}（IPA 公開の問題冊子の該当箇所）`}
+              />
               <figcaption>
-                この問題は IPA 公開の問題冊子（スキャン PDF）の該当箇所をそのまま表示しています。
+                IPA 公開の問題冊子（スキャン PDF）の該当箇所をそのまま表示しています。タップで拡大できます。
               </figcaption>
             </figure>
           ) : (

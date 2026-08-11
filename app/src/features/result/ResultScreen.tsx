@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { CHOICE_KEYS, type ExamResult, type Question } from '../../types';
 import { formatTime } from '../exam/useExam';
-
-const BASE = import.meta.env.BASE_URL;
+import { ScanImage } from '../exam/ScanImage';
 
 interface Props {
   result: ExamResult;
@@ -79,11 +78,7 @@ export function ResultScreen({ result, questions, onHome, onRetryWrong }: Props)
               </div>
 
               {q.format === 'image' ? (
-                <div className="scan">
-                  {q.images?.map((src) => (
-                    <img key={src} src={`${BASE}data/${src}`} alt={q.source.label} />
-                  ))}
-                </div>
+                <ScanImage images={q.images ?? []} alt={q.source.label} />
               ) : (
                 <>
                   <p className="body">{q.body}</p>

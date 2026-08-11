@@ -858,3 +858,53 @@ img.scan {
     gap: 4px;
   }
 }
+
+/* ---------------------------------------------------------------- スキャン問題の拡大表示 */
+
+.scan-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.scan-thumb img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.scan-figure {
+  margin: 0;
+}
+
+.zoom-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.85);
+  overflow: auto;
+  padding: 12px;
+}
+
+.zoom-body img {
+  /* 原寸で表示し、はみ出したぶんはスクロールで読む（縮小して潰さない） */
+  max-width: none;
+  display: block;
+  background: #fff;
+}
+
+.zoom-close {
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  padding: 10px 18px;
+  background: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+}
