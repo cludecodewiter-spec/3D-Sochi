@@ -1,8 +1,19 @@
 name: deploy-pages
 
-# 注意: このリポジトリには既存の GitHub Pages サイトがあるため、
-# 自動デプロイはしない。手動実行したときだけ公開する。
+# アプリを直せば公開物も直る、という状態にしておく。
+#
+# 以前は workflow_dispatch だけにしていたが、既定ブランチに無いワークフローは
+# GitHub に登録されず、手動実行もできない（dispatch が 404 になる）。
+# そのせいで一度も公開できていなかった。
+#
+# データの取り込みコミットでは動かさない。切り出し画像を含めると
+# 成果物が 150MB を超えるので、アプリを変えたときだけ公開する。
 on:
+  push:
+    branches: [claude/jpfetest-exam-simulator-wp0b38]
+    paths:
+      - 'app/**'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
