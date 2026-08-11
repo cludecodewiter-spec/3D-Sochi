@@ -1,0 +1,66 @@
+name: import-ipa
+
+# 本リポジトリの開発環境からは ipa.go.jp へ到達できないため、
+# IPA 公式 PDF の取得・解析は GitHub Actions ランナー上で実行する。
+on:
+  push:
+    branches: [claude/jpfetest-exam-simulator-wp0b38]
+    paths:
+      - 'tools/**'
+      - 'schema/**'
+      - '.github/workflows/import-ipa.yml'
+  workflow_dispatch:
+    inputs:
+      step:
+        description: '実行するステップ (discover / all)'
+        required: false
+        default: 'discover'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-ipa
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: discover — IPA 公開 PDF を全件列挙
+        run: npm run discover
+
+      - name: upload discovery output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery
+          path: |
+            data/discovery-raw.json
+            data/sources.json
+          if-no-files-found: warn
+
+      - name: commit discovery output
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name  "jpfetest-importer"
+          git config user.email "noreply@github.com"
+          git add data/discovery-raw.json data/sources.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "data: refresh IPA source discovery [skip ci]"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi

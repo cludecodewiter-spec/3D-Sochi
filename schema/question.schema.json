@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cludecodewiter-spec/jpfetest/schema/question.schema.json",
+  "title": "jpfetest question",
+  "description": "1問＝1オブジェクト。出典情報は必須。問題文は IPA 公式 PDF から一切改変せず取り込む。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "pool", "exam", "no", "body", "choices", "answer", "source", "verified", "modified"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "安定した一意ID 例: fe-2019r01-aki-am-q01"
+    },
+    "pool": {
+      "type": "string",
+      "enum": ["fe-honshiken", "fe-menjo", "fe-koukai", "fe-sample", "ext-ap", "ext-sg"],
+      "description": "出題プール。既定で有効なのは fe-* のみ。ext-* は明示的に有効化した場合のみ出題"
+    },
+    "exam": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["year", "era", "subject"],
+      "properties": {
+        "year": { "type": "integer", "minimum": 2000, "maximum": 2100 },
+        "era": { "type": "string", "description": "例: 令和元年度 / 平成21年度" },
+        "season": { "type": "string", "enum": ["春期", "秋期", "第1回", "第2回", "第3回", "第4回", "通年"] },
+        "subject": { "type": "string", "enum": ["kamokuA", "kamokuB"] },
+        "legacySection": { "type": "string", "enum": ["午前", "午後", "修了試験", "サンプル問題", "公開問題"] }
+      }
+    },
+    "no": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "category": { "type": "string", "description": "分野（弱点分析用）例: テクノロジ系 > ネットワーク" },
+    "body": { "type": "string", "minLength": 5, "description": "問題文（日本語原文・改変禁止）" },
+    "figures": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "PDF から切り出した図表 PNG の相対パス"
+    },
+    "choices": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ア", "イ", "ウ", "エ"],
+      "properties": {
+        "ア": { "type": "string", "minLength": 1 },
+        "イ": { "type": "string", "minLength": 1 },
+        "ウ": { "type": "string", "minLength": 1 },
+        "エ": { "type": "string", "minLength": 1 }
+      }
+    },
+    "choiceFigures": {
+      "type": "object",
+      "description": "選択肢が図の場合の PNG パス",
+      "additionalProperties": { "type": "string" }
+    },
+    "answer": { "type": "string", "enum": ["ア", "イ", "ウ", "エ"], "description": "IPA 公式「解答例」PDF 由来" },
+    "source": { "$ref": "#/definitions/source" },
+    "appearances": {
+      "type": "array",
+      "description": "同一問題が別回でも出題された場合の全出典",
+      "items": { "$ref": "#/definitions/source" }
+    },
+    "frequency": { "type": "integer", "minimum": 1, "description": "出題回数（appearances を含む）" },
+    "verified": {
+      "type": "boolean",
+      "const": true,
+      "description": "検証済みの問題のみが本題庫に入る。false のものは data/quarantine/ へ隔離"
+    },
+    "modified": {
+      "type": "boolean",
+      "const": false,
+      "description": "IPA 利用条件により改変時は明示が必要。本プロジェクトは一切改変しないため常に false"
+    }
+  },
+  "definitions": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "questionPdf", "page"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "pattern": "^出典：",
+          "description": "例: 出典：令和元年度 秋期 基本情報技術者試験 午前 問1"
+        },
+        "questionPdf": { "type": "string", "format": "uri" },
+        "answerPdf": { "type": "string", "format": "uri" },
+        "page": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  }
+}
