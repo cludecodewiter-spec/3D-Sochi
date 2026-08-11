@@ -1,18 +1,1 @@
-[
- {
-  "exam": "2009h21a-fe-am",
-  "pages": 36,
-  "anchors": 24,
-  "expected": 80,
-  "ok": false,
-  "why": "アンカー 24 件 ≠ 期待 80 件"
- },
- {
-  "exam": "2009h21h-fe-am",
-  "pages": 32,
-  "anchors": 38,
-  "expected": 80,
-  "ok": false,
-  "why": "アンカー 38 件 ≠ 期待 80 件"
- }
-]
+[]
