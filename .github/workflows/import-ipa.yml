@@ -33,6 +33,10 @@ jobs:
       - name: install
         run: npm ci
 
+      # ネットワークを使う前に、解析ロジックの回帰テストを通す
+      - name: test
+        run: npm test
+
       # PDF は毎回 IPA から取り直さない（相手サーバへの負荷と実行時間の両方を減らす）
       - name: restore PDF cache
         uses: actions/cache@v4

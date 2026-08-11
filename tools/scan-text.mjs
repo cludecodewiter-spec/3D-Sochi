@@ -37,13 +37,16 @@ async function main() {
       for (const page of doc.pages) {
         for (const line of toLines(page)) {
           chars += line.text.length;
-          const m = line.text.match(/^問\s*(\d{1,2})[^\d]/);
+          // 問番号は「問１」のように全角で書かれる回があるので正規化してから見る
+          const m = normalizeDigits(line.text).match(/^問\s*(\d{1,3})(?!\d)/);
           if (m) {
             anchors++;
             anchorNos.push(Number(m[1]));
           }
         }
       }
+      // 解答例 PDF は文字数が少ないので、実際に解答を取り出せるかで判定する
+      const answerCount = s.role === 'answers' ? parseAnswers(doc.pages).size : 0;
       r = {
         url: s.url,
         name,

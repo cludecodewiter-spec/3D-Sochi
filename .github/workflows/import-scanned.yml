@@ -44,6 +44,10 @@ jobs:
       - name: install
         run: npm ci
 
+      # ネットワークを使う前に、解析ロジックの回帰テストを通す
+      - name: test
+        run: npm test
+
       - name: restore PDF cache
         uses: actions/cache@v4
         with:
