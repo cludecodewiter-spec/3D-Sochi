@@ -16,12 +16,32 @@ const ORIGIN = 'https://www.ipa.go.jp';
 const INDEX = `${ORIGIN}/shiken/mondai-kaiotu/index.html`;
 const MENJO = `${ORIGIN}/shiken/about/menjo-fe.html`;
 
-/** 追加で巡回するページ（年度ページは index から自動発見する） */
+/**
+ * 追加で巡回するページ（年度ページは index から自動発見する）。
+ * CBT 公開問題は /shiken/mondai-kaiotu/sg_fe/koukai/ 配下にあり、
+ * 通常の年度ページからはリンクされていないため明示的に列挙する。
+ */
+const KOUKAI_YEARS = ['2023r05', '2024r06', '2025r07', '2026r08'];
 const EXTRA_SEEDS = [
   MENJO,
+  `${ORIGIN}/shiken/mondai-kaiotu/sg_fe/koukai/index.html`,
+  ...KOUKAI_YEARS.map((y) => `${ORIGIN}/shiken/mondai-kaiotu/sg_fe/koukai/${y}.html`),
   `${ORIGIN}/shiken/syllabus/henkou/2022/index.html`,
   `${ORIGIN}/shiken/syllabus/index.html`,
+  `${ORIGIN}/shiken/syllabus/henkou/2022/ssf7ph000000h5tb.html`,
 ];
+
+/**
+ * 巡回では届かない既知のサンプル問題 PDF。
+ * 404 のものは fetch 段階で落ちるだけなので、候補として入れておく。
+ */
+const KNOWN_PDFS = [
+  '/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_qs.pdf',
+  '/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_a_set_sample_ans.pdf',
+  '/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_qs.pdf',
+  '/shiken/syllabus/henkou/2022/ssf7ph000000h5tb-att/fe_kamoku_b_set_sample_ans.pdf',
+  '/shiken/syllabus/ps6vr7000000oett-att/fe_kamoku_b_sample.pdf',
+].map((p) => ({ url: ORIGIN + p, text: 'サンプル問題', heading: '新制度サンプル問題（2022）' }));
 
 const log = (...a) => console.log(...a);
 
@@ -65,19 +85,21 @@ export function classify(link) {
   const file = url.split('/').pop();
   const ctx = `${link.heading} ${link.text}`;
 
-  // 1) 科目A免除 修了試験（特例措置）: tokurei_Mondai_20240728_FE.pdf / tokurei_ans_...
-  let m = file.match(/^tokurei_(Mondai|ans)_(\d{4})(\d{2})(\d{2})_FE\.pdf$/i);
+  // 1) 科目A免除 修了試験（特例措置）
+  //    新しい回: tokurei_Mondai_20240728_FE.pdf（YYYYMMDD）
+  //    古い回  : tokurei_Mondai_200906_FE.pdf （YYYYMM、2009〜2011 頃）
+  let m = file.match(/^tokurei_(Mondai|ans)_(\d{4})(\d{2})(\d{2})?_FE\.pdf$/i);
   if (m) {
     const [, role, y, mo, d] = m;
     return {
       pool: 'fe-menjo',
-      examKey: `fe-menjo-${y}${mo}${d}`,
+      examKey: `fe-menjo-${y}${mo}${d ?? ''}`,
       role: /mondai/i.test(role) ? 'questions' : 'answers',
       subject: 'kamokuA',
       legacySection: '修了試験',
       year: Number(y),
-      date: `${y}-${mo}-${d}`,
-      era: null,
+      date: d ? `${y}-${mo}-${d}` : `${y}-${mo}`,
+      era: link.heading || null,
       season: null,
       url,
     };
@@ -166,7 +188,7 @@ async function main() {
 
   // PDF リンクを一意化
   const pdfMap = new Map();
-  for (const l of allLinks) {
+  for (const l of [...allLinks, ...KNOWN_PDFS]) {
     if (!isPdf(l.url)) continue;
     if (!pdfMap.has(l.url)) pdfMap.set(l.url, l);
   }
