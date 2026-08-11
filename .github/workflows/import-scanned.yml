@@ -112,11 +112,27 @@ jobs:
           # 各シャードは自分が担当した回のファイルだけを出す。
           # index.json のような派生ファイルはこのあと作り直すので上書きしない。
           mkdir -p data/questions data/figures data/probe
+          echo "--- 取得したアーティファクトの中身 ---"
+          find collected -maxdepth 3 -type d | head -20
+
           find collected -name '*.json' -path '*questions*' \
             ! -name 'index.json' ! -name 'dedup.json' -exec cp {} data/questions/ \;
-          if [ -d collected/figures ]; then cp -r collected/figures/. data/figures/; fi
+          # アーティファクトはワークスペース相対のパスを保つので data/figures 配下に入る。
+          # 展開先が変わっても拾えるよう、候補をすべて見る
+          for d in collected/data/figures collected/figures; do
+            [ -d "$d" ] && cp -r "$d/." data/figures/
+          done
           find collected -name 'image-route-log-*.txt' -exec cp {} data/probe/ \; || true
-          echo "問題ファイル: $(ls data/questions/*.json | wc -l) / 図: $(find data/figures -name '*.webp' | wc -l)"
+
+          echo "問題ファイル: $(ls data/questions/*.json 2>/dev/null | wc -l) / 図: $(find data/figures -name '*.webp' | wc -l)"
+          # 画像が 1 枚も無いのに画像形式の問題を配ってしまうと、
+          # 出題時に空欄が並ぶことになる。そうなるくらいなら失敗させる
+          if ls data/questions/*.json >/dev/null 2>&1; then
+            if grep -l '"format": "image"' data/questions/*.json >/dev/null 2>&1; then
+              test "$(find data/figures -name '*.webp' | wc -l)" -gt 0 || {
+                echo "画像形式の問題があるのに切り出し画像が 1 枚も無い"; exit 1; }
+            fi
+          fi
 
       - name: dedup / validate / report
         run: |
