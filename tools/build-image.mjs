@@ -253,12 +253,26 @@ async function main() {
         });
         if (!rect) continue;
         const file = `${examKey}-q${String(cur.no).padStart(2, '0')}${pieces.length ? `-${pieces.length + 1}` : ''}.webp`;
-        await sharp(info.png)
-          .extract(rect)
-          .trim({ threshold: 12 })
-          .resize({ width: Math.min(info.width, OUT_MAX_WIDTH), withoutEnlargement: true })
-          .webp({ quality: 78 })
-          .toFile(`${outImgDir}/${file}`);
+        const outPath = `${outImgDir}/${file}`;
+        const write = (pipeline) =>
+          pipeline
+            .resize({ width: Math.min(info.width, OUT_MAX_WIDTH), withoutEnlargement: true })
+            .webp({ quality: 78 })
+            .toFile(outPath);
+
+        try {
+          // 余白を落とすときれいに収まるが、切り出しが真っ白だと
+          // trim が画像を消してしまい sharp が "bad extract area" で落ちる。
+          // その場合は余白を残したまま書き出す。
+          await write(sharp(info.png).extract(rect).trim({ threshold: 12 }));
+        } catch {
+          try {
+            await write(sharp(info.png).extract(rect));
+          } catch (e) {
+            console.log(`    ! 問${cur.no} p${p} の切り出しに失敗: ${String(e).slice(0, 80)}`);
+            continue;
+          }
+        }
         pieces.push(`figures/${examKey}/${file}`);
       }
 
